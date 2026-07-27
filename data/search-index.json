@@ -88840,6 +88840,2081 @@
   "Five minutes."
  ],
  [
+  11,
+  0,
+  "Here on stage together because they represent a lot of very different, very important directions we have in the Ethereum ecosystem or in the"
+ ],
+ [
+  11,
+  11,
+  " general decentralized technology ecosystem. I don't think I need to introduce them, but yeah, I'm very excited to have a panel, salon discu"
+ ],
+ [
+  11,
+  22,
+  "ssion here and to see what comes out of this."
+ ],
+ [
+  11,
+  25,
+  "And I'll slowly hand the words to Tomas as the moderator, and then we can introduce the panel and get started together. I'm in a state of ut"
+ ],
+ [
+  11,
+  40,
+  "ter panic now, like like impossible panic state because I forgot I was a moderator here."
+ ],
+ [
+  11,
+  50,
+  "Oh, I I I And so I relaxed that I didn't check the topic. I saw they'll be talking about l twos. But I can I I I think I can try that becaus"
+ ],
+ [
+  11,
+  60,
+  "e I as a breaks, I assume that we'll be talking about l twos and interoperability and Ethereum space and Yeah? So maybe to give you a bit of"
+ ],
+ [
+  11,
+  69,
+  " context and maybe also support you in the moderation, I can also be a co moderator if that helps. It's extremely embarrassing."
+ ],
+ [
+  11,
+  78,
+  "It's okay. That happens. It makes you very human. That's that's the goal here, for all of us to be human and vulnerable. And and do we have "
+ ],
+ [
+  11,
+  88,
+  "questions prepared. Right? Together. We we can do it together. If you just share those questions with me, then I can moderate pretty pretty "
+ ],
+ [
+  11,
+  98,
+  "ad hoc if I just open them and I also have, like, questions, so I'm happy to throw questions at you. Oh, okay. Maybe Martin wants to be the "
+ ],
+ [
+  11,
+  108,
+  "moderator now."
+ ],
+ [
+  11,
+  109,
+  "Maybe let's briefly give the initial context and title of this panel actually. So the original title of this panel was critical paths for th"
+ ],
+ [
+  11,
+  118,
+  "e future of Ethereum. Okay. The idea was to get people from different big directions we currently see. So for example, Dankrad is in the l o"
+ ],
+ [
+  11,
+  127,
+  "ne scaling field or like Martin Keppelmann with circles and decentralized currencies."
+ ],
+ [
+  11,
+  132,
+  "We have SAC from Astec from cryptography and privacy angle and Bartech from l two. Yeah. Think that actually, I mean, I look here like this "
+ ],
+ [
+  11,
+  141,
+  "are some extremely experienced people that will be able talk. I can moderate it. I think about the future Ethereum. As long as they feel oka"
+ ],
+ [
+  11,
+  149,
+  "y that they maybe didn't receive the questions, they didn't know the questions, we can we can do it very well, I think. So well,"
+ ],
+ [
+  11,
+  157,
+  "and I I think that since this is about critical future paths of of Ethereum, is that fine for for all of us? Awesome. Yeah. Well You're righ"
+ ],
+ [
+  11,
+  165,
+  "t. Because I see you'll be able to talk about the centralization, about acceleration, about privacy, about interoperability, and we have, as"
+ ],
+ [
+  11,
+  172,
+  " you said, representation of all the paths of the future for Ethereum. And maybe it's even more authentic salon culture with that. Super aut"
+ ],
+ [
+  11,
+  180,
+  "hentic in a salon style."
+ ],
+ [
+  11,
+  181,
+  "Questions come and maybe they come from from audience. Mhmm. So do we do it a bit more traditional? It's probably the first panel that I'll "
+ ],
+ [
+  11,
+  191,
+  "be moderating without shoes and so You may be socks. I mean, you still have you still have socks? Yeah. That's better. So maybe introduction"
+ ],
+ [
+  11,
+  202,
+  " and think why why you'll be with Ethereum five or ten years from now,"
+ ],
+ [
+  11,
+  207,
+  "because this is I think all of you participate in critical paths and why will you stay? Where yours where is your role on that critical path"
+ ],
+ [
+  11,
+  219,
+  "? Martin? Okay. Yeah. Yeah. It was actually quite similar to the question I wanted to throw at you guys. Why will I be in Ethereum still in "
+ ],
+ [
+  11,
+  230,
+  "five to ten years? Yeah."
+ ],
+ [
+  11,
+  232,
+  "So I'm already it's already over ten years now, so I'm not sure if I can we'll do another ten, but but yeah. So the okay. Yeah. The that's a"
+ ],
+ [
+  11,
+  248,
+  " big one. So so to me, a big promise of of Ethereum has been this idea of"
+ ],
+ [
+  11,
+  257,
+  "of platforms where the where those that are using the platforms are actually have more agency or more own ownership in the platform. So we h"
+ ],
+ [
+  11,
+  269,
+  "ad this wave in the years February where we all had those web two platforms that were incredibly successful and in my view also valuable."
+ ],
+ [
+  11,
+  281,
+  "So they created values, they created network effects, but they also created quite powerful entities. And in the end, quite a big disconnect "
+ ],
+ [
+  11,
+  291,
+  "from those using it versus those owning and controlling it. And to me, still the promise of Ethereum was, okay, we can create platforms that"
+ ],
+ [
+  11,
+  301,
+  " are global that have network effects, but that,"
+ ],
+ [
+  11,
+  304,
+  "yeah, are owned by those where ownership is is much broader. Now have I guess the question is have we achieved that? And I would say not rea"
+ ],
+ [
+  11,
+  317,
+  "lly. So I would say, in in in the years of 2017 kind of well, there there was this this hype of, yeah, let's do decentralize this, decentral"
+ ],
+ [
+  11,
+  330,
+  "ize that, and kind of do an SEO for it and so on. And I would say,"
+ ],
+ [
+  11,
+  336,
+  "absolutely most. I mean, we don't have a decentralized Uber. We don't have a decentralized yeah. Hard I mean, social networks hardly I mean,"
+ ],
+ [
+  11,
+  347,
+  " little bit here and there experiments. So I think the only thing that has so far really sticked is finance, DeFi. And I think that's totall"
+ ],
+ [
+  11,
+  357,
+  "y valid and important."
+ ],
+ [
+  11,
+  359,
+  "But but yeah. Back to your question, I still I still would like to see much more examples of platforms that actually are re are used by mill"
+ ],
+ [
+  11,
+  369,
+  "ions, tens of millions, hundreds of millions of people, but where the platform is fundamentally built in such a way that it's yeah. I mean, "
+ ],
+ [
+  11,
+  380,
+  "Twitter is, I guess, the most extreme one right now where I think it's such an such an important"
+ ],
+ [
+  11,
+  387,
+  "piece. I mean, we just had the very nice input talk about saloons and and in the best form I felt Twitter at times can be this global digita"
+ ],
+ [
+  11,
+  397,
+  "l saloon and it can, of course, also be something much, much, much worse. And currently, think it is. Yeah. Sorry. I've been probably alread"
+ ],
+ [
+  11,
+  406,
+  "y Well, in was very humble. I think that's Martin as a as a founder of Nosys and the leader of I think the institution that I very much woul"
+ ],
+ [
+  11,
+  416,
+  "d think is the closest to what I see a bit as, like, a second foundation in the interim space."
+ ],
+ [
+  11,
+  422,
+  "Like, very, very dedicated to to privacy, to real adoption, to making a change. So I think that whatever happens in five, ten years, this is"
+ ],
+ [
+  11,
+  432,
+  " the place where you can always look for the for the space to survive as an idea. So it's great to see you here. And, Dan, critical features"
+ ],
+ [
+  11,
+  443,
+  ", why why you'll be on the critical paths of Ethereum,"
+ ],
+ [
+  11,
+  447,
+  "and maybe also tell people what you what you're working on now. So wait. Is the question Like in the critical futures of Ethereum, what's yo"
+ ],
+ [
+  11,
+  457,
+  "ur place there in five, ten years? If you if you focused on the thing that's what you're working on now and will continue, how it how the fu"
+ ],
+ [
+  11,
+  467,
+  "ture will look? I mean, it's it's so I think, like, five, ten years is now so far out. That's already very hard to imagine in many ways. But"
+ ],
+ [
+  11,
+  477,
+  "I think to me, I'm I I think, like, recently I mean, I it's a lot actually inspired by Martin as well. But, like, for me, it's more and more"
+ ],
+ [
+  11,
+  486,
+  " that I think, like, about, like, just how is it gonna be used and how can, like, how can the technology get out of the way in the way of, l"
+ ],
+ [
+  11,
+  495,
+  "ike, the user? Because, like, so far, Ethereum has always be in the user's face very much and, like, oh, yeah, like, it has to be this compl"
+ ],
+ [
+  11,
+  504,
+  "icated because that's what we need. And, like, to me, right now, at least where I see it for the next five, ten years, much more like, okay,"
+ ],
+ [
+  11,
+  513,
+  " like,"
+ ],
+ [
+  11,
+  513,
+  "it's now the time to like let the users use it and just like let them have the benefits and and us not, like, being in their face all the ti"
+ ],
+ [
+  11,
+  524,
+  "me time about, like, what's how it should be and so on, but, like, just, like yeah. So, again, I'll be introducing people a bit very very hu"
+ ],
+ [
+  11,
+  536,
+  "mble."
+ ],
+ [
+  11,
+  536,
+  "Dankert now has a a lot of responsibility as a strategic adviser to many of the critical short term paths, but he's also setting a lot of, l"
+ ],
+ [
+  11,
+  545,
+  "ike, motivation and encouragement for acceleration of work of Ethereum that's that gets faster and is really more available for everyone to "
+ ],
+ [
+  11,
+  554,
+  "use. So we probably will hear more and more from Dankert. Zach, maybe introduction from you, very short and five, ten years, your fight for "
+ ],
+ [
+  11,
+  563,
+  "privacy."
+ ],
+ [
+  11,
+  564,
+  "Yeah. Yeah. I'll I'll I'll start with the introduction. So hi, everyone. I'm Zach. I'm the CEO and cofounder of Aztec. We are a privacy firs"
+ ],
+ [
+  11,
+  575,
+  "t l two for Ethereum effectively. I'd be oh, I've been in this space eight years, seven years ago. I I set out to try and effectively, like,"
+ ],
+ [
+  11,
+  586,
+  " create"
+ ],
+ [
+  11,
+  587,
+  "this a smart contract style ecosystem like Ethereum on top of Ethereum, but one where you have private data as a first class primitive where"
+ ],
+ [
+  11,
+  597,
+  " you can prove information that is that is encrypted so that you can put sensitive data on chain but still in a permissionless decentralized"
+ ],
+ [
+  11,
+  607,
+  " environment. And yeah. So, you know, originally, I was attracted to Ethereum back"
+ ],
+ [
+  11,
+  613,
+  "in 2017 during the ZSIO days because of that very, yeah, very idealist utopian view of what this technology could enable. I'm just echoing m"
+ ],
+ [
+  11,
+  622,
+  "any people here, I think, when I talk about things like, you know, people being able to coordinate with themselves how they spend their own "
+ ],
+ [
+  11,
+  632,
+  "assets, being able to provide access to high quality services, web two star services, financial services, anything which manages information"
+ ],
+ [
+  11,
+  641,
+  "or money, doing it in a way where it's much more permissionless, where you are less reliant on third parties that aren't aligned with you, w"
+ ],
+ [
+  11,
+  651,
+  "here you can be a real stakeholder. You know, I still believe in the idea of DAOs even if the execution still needs work. And, you know, I g"
+ ],
+ [
+  11,
+  660,
+  "uess the question is kind of two twofold, really. It's like, like, what will I be doing in five, ten years, and why do I why would I be doin"
+ ],
+ [
+  11,
+  670,
+  "g it on Ethereum?"
+ ],
+ [
+  11,
+  671,
+  "And, I mean, for me, like, the the the the magic and also the frustration with Ethereum, the the the the ecstasy and the agony is its decent"
+ ],
+ [
+  11,
+  682,
+  "ralized nature, not just in terms of, like, the mechanically how it operates, but also in terms of the community of builders and and its eco"
+ ],
+ [
+  11,
+  693,
+  "system. Take my"
+ ],
+ [
+  11,
+  694,
+  "my personal journey as an example. You know, I set out in 2017 to basically build financial instruments on top of Ethereum. Realized that I "
+ ],
+ [
+  11,
+  704,
+  "couldn't because of this fundamental lack of privacy. And so, here I am still eight years later trying to add it. Yes. As an l two, but ulti"
+ ],
+ [
+  11,
+  714,
+  "mately still very much part of and connected with the Ethereum ecosystem."
+ ],
+ [
+  11,
+  719,
+  "It's very, very rare to have these kinds of networks, these platforms where people identify problems, and then they can solve them in a in a"
+ ],
+ [
+  11,
+  727,
+  " very positive some way where where that solution gets added back into the ecosystem instead of being taken off as its own own thing. It's e"
+ ],
+ [
+  11,
+  736,
+  "xceptionally rare. And and I think that Ethereum it is a it is a very unique strength of Ethereum still."
+ ],
+ [
+  11,
+  742,
+  "It comes with costs. As I think maybe the start of this panel shows, the cost of a it's challenging to organize things in a decentralized en"
+ ],
+ [
+  11,
+  751,
+  "vironment, challenging to find consensus to build, iterate quickly. It's why I think, you know, we've not we've not really achieved what, li"
+ ],
+ [
+  11,
+  760,
+  "ke, we as a as a as an ecosystem really wanted to back in 2017, 2016."
+ ],
+ [
+  11,
+  765,
+  "But I still think I said it was the only game in town where it's going where it's remotely possible. Thank you. I'll I'll also add that in a"
+ ],
+ [
+  11,
+  774,
+  " moment, I'll try to ask you about the criticality of privacy so you can start thinking about it. I think it's a good for this space. I've b"
+ ],
+ [
+  11,
+  782,
+  "een in the previous Zuberlins, so I almost start to feel like happy about causing this this trouble. It's amazing that we all want to be par"
+ ],
+ [
+  11,
+  791,
+  "ticipated in so many panels and know how stressful it is to prepare and get the questions known, but it makes it more real indeed."
+ ],
+ [
+  11,
+  799,
+  "But like so, you've been working on l two beats. Send direction from you. And one more challenge, I think, for everyone. I know that when I "
+ ],
+ [
+  11,
+  806,
+  "was starting, I was imagine that after five years, I'll be retired, and I'll not have to work ever again. So I think whenever you ask people"
+ ],
+ [
+  11,
+  813,
+  " with great vision what you'll do in five, ten years, very often they get stressed for a moment, and they think, like, I was planning to jus"
+ ],
+ [
+  11,
+  820,
+  "t have it all done. And then in the future, especially now, is so unclear. That's interesting that very often the people start talking about"
+ ],
+ [
+  11,
+  828,
+  " the vision for the next year or two, but actually it's a vision for the next five, ten years because they can never stop fighting for they "
+ ],
+ [
+  11,
+  835,
+  "really care even if we all hope that we can finish the journey someday. So I wonder, does it feel like this for you, Bartek? And maybe you'l"
+ ],
+ [
+  11,
+  842,
+  "l tell what you've been working on and how it will be critical for Ethereum or for your journey, why you would be critical for all of us."
+ ],
+ [
+  11,
+  849,
+  "So I'm actually surprised I'm not the moderator here and you actually pushed me into this chair. I'm typically a moderator, but but let me j"
+ ],
+ [
+  11,
+  861,
+  "ust, you know, like, wear the hat of of a panelist. So for you then that don't know me, I'm right now, my main focus is l two b. I'm a found"
+ ],
+ [
+  11,
+  872,
+  "er before I was working"
+ ],
+ [
+  11,
+  874,
+  "for MakerDAO for five years. MakerDAO was this one of the first and the biggest DeFi protocol, but not just DeFi protocol, also champion of "
+ ],
+ [
+  11,
+  884,
+  "modern smart contract engineering for more verification and whatnot, you name it. Right? It was a good place to be at the time. Not sure rig"
+ ],
+ [
+  11,
+  894,
+  "ht now, but at the time, certainly."
+ ],
+ [
+  11,
+  896,
+  "And I consider myself to be a bit of a skeptic on the panel. I was skeptic when I joined the space seven years ago. And I do remember that a"
+ ],
+ [
+  11,
+  908,
+  "t that time, the main two issues to solve for were scalability and privacy. I think we're doing a great job, you know, with scalability."
+ ],
+ [
+  11,
+  920,
+  "It feels like almost, you know, this problem is solved or almost solved. But remember, it's been like seven years. Right? You know, I defini"
+ ],
+ [
+  11,
+  931,
+  "tely did not imagine it would take that long. The second problem is probably even harder and I would really welcome Zach's opinions here. Yo"
+ ],
+ [
+  11,
+  942,
+  "u know, it's like Alexey Petsev,"
+ ],
+ [
+  11,
+  945,
+  "he's been sentenced, right, for five years to prison in one month. Roman Storm is facing a trial in US. And if we don't solve privacy, if we"
+ ],
+ [
+  11,
+  957,
+  " just have, you know, scalability and whatnot, I think we're not gonna make it too far because, like, privacy is super important for for for"
+ ],
+ [
+  11,
+  968,
+  " anyone really for both"
+ ],
+ [
+  11,
+  970,
+  "enterprises and for for people who are not crypto natives. Like, I don't know how many, you know, of your friends and family, non crypto, ar"
+ ],
+ [
+  11,
+  980,
+  "e actually using crypto. But I think, you know, for me, like, the litmus test, whether we made it or not, is whether, you know, my partner, "
+ ],
+ [
+  11,
+  990,
+  "my wife, my my kids, you know, my friends, do they actually use crypto? Today,"
+ ],
+ [
+  11,
+  995,
+  "for me at least, the answer is no. So we still have a long way to go. And and yeah. I mean, we're doing a great job, you know. We talk to ea"
+ ],
+ [
+  11,
+  1008,
+  "ch other. That's that's amazing. You know, we will hopefully create common interpretive standards. We will improve UX. We will"
+ ],
+ [
+  11,
+  1019,
+  "but there's just still so much to do. And it's not just deciding whether, you know, you should like say privacy or privacy. I mean, that's t"
+ ],
+ [
+  11,
+  1028,
+  "hat's confusing for me. Right? But but, yeah, I mean, I have never imagined that it would take so long. So now that you're asking me, you kn"
+ ],
+ [
+  11,
+  1037,
+  "ow, what are we gonna do five years in the future, I think we'll still be fighting, you know, some of these problems, unfortunately."
+ ],
+ [
+  11,
+  1046,
+  "That's that's like my my take. I think that you would be excellent moderator. I also think that you're humble because there are a few people"
+ ],
+ [
+  11,
+  1054,
+  " that are so critical for for the future of Ethereum, like in a sense that interoperability is one of our main directions, main goals, and l"
+ ],
+ [
+  11,
+  1063,
+  " two bit has done so much for really understanding what l twos what the roles of l twos are and and how to restart thinking about where the "
+ ],
+ [
+  11,
+  1071,
+  "interoperability should be. Thank you for that."
+ ],
+ [
+  11,
+  1074,
+  "So I promised question about privacy as something critical for for many of us or all of us. Really, it's a underlying value of Ethereum, and"
+ ],
+ [
+  11,
+  1084,
+  " you very gradually trend like, naturally transition to talk about privacy. Zach, for you, this is all the critical. I I've seen few people "
+ ],
+ [
+  11,
+  1093,
+  "that actually didn't give up during the time where privacy was so much under attack in the last years."
+ ],
+ [
+  11,
+  1100,
+  "I remember that people that were on the edge of trying everything that was potentially criminal with tokens, like criminal in the sense unde"
+ ],
+ [
+  11,
+  1109,
+  "fined, they would not touch privacy, but you would continue. Like, and and people were calling me and asking if they can work with you or I "
+ ],
+ [
+  11,
+  1118,
+  "consider that it's dangerous, and they continued building. So now now you're a bit it feels like it's it's a bit easier now, but how"
+ ],
+ [
+  11,
+  1126,
+  "how critical it is and why you why you fight for that? Yeah. It's it's it's pretty critical. You know, I think yeah. Yeah. We had some we we"
+ ],
+ [
+  11,
+  1136,
+  " had some very dark moments. I'm going through some dark moments now with Alex Percep being sentenced with the with the trial of of of Roman"
+ ],
+ [
+  11,
+  1147,
+  ". The silver lining is that"
+ ],
+ [
+  11,
+  1149,
+  "to this, I think, a very small silver lining is it doesn't show that what we do here matters because they wouldn't be facing consequences if"
+ ],
+ [
+  11,
+  1156,
+  " that wasn't the case. I think often we have that we we we can we can lull ourselves with this idea that, you know, we're just we're this we"
+ ],
+ [
+  11,
+  1164,
+  "'re this very small group. Right? Small group, one group of people in this salon like cult culture. We're just we're experimenting. We're in"
+ ],
+ [
+  11,
+  1171,
+  "novating. We're building cool stuff. Well,"
+ ],
+ [
+  11,
+  1173,
+  "And then, like, what we're doing is kind of divorced from the the the rest of the world, which in my opinion is I I think that is a vibe tha"
+ ],
+ [
+  11,
+  1183,
+  "t that some people might feel subconsciously, and I think that vibe is wrong because we should be building things that are meaningful in the"
+ ],
+ [
+  11,
+  1192,
+  " real world and affects people. And unfortunately, Alex and Roman have felt firsthand"
+ ],
+ [
+  11,
+  1198,
+  "what happens when you try to disrupt existing systems. They might not be ready for it. Yeah. I mean, what kept me going? To to be honest, it"
+ ],
+ [
+  11,
+  1208,
+  "'s it's to me, it's just when I when I started making some meaningful progress on this on privacy, was 2019. I was doing cryptography resear"
+ ],
+ [
+  11,
+  1218,
+  "ch with Ariel Gabbison, a bunch of other brilliant people"
+ ],
+ [
+  11,
+  1222,
+  "figuring out thinking really really realizing, oh, wow. There's something that can be done here. You can like, we we can probably eventually"
+ ],
+ [
+  11,
+  1230,
+  ", we'll we can make private smart contracts. I just got this incredible sense of belonging and purpose because for the first time in my life"
+ ],
+ [
+  11,
+  1238,
+  ", I was actually felt like I was doing something meaningful. And and that I wasn't just wasting my life, you know, writing"
+ ],
+ [
+  11,
+  1245,
+  "PowerPoint presentations for the deputy regional district manager. And, yeah, I mean, I wouldn't give that up for anything, not for anything"
+ ],
+ [
+  11,
+  1254,
+  ". You know? Suddenly, also, I I I joked at the time. Right? It's a it's a regular no. It's a regular fear based arbitrage, basically. You kn"
+ ],
+ [
+  11,
+  1263,
+  "ow? The defensibility of Aztec as everyone else is was for a long time too afraid"
+ ],
+ [
+  11,
+  1268,
+  "to to to work on similar stuff to us. But, yeah, mean, sorry. I'm a bit of a long just one last thing. I mean, what I I think that privacy i"
+ ],
+ [
+  11,
+  1276,
+  "s is absolutely foundational. I actually disagree with you when you said that it's a core value of Ethereum. I think it might be, but it's n"
+ ],
+ [
+  11,
+  1285,
+  "ot today. You know, I think it's wonderful that Vitalik is advocating for it. A lot of people are advocating for it, but but that that that"
+ ],
+ [
+  11,
+  1293,
+  "those those beliefs need to be backed up with action, and and that means solving unbelievably hard problems. Because without without privacy"
+ ],
+ [
+  11,
+  1300,
+  ", this isn't mainstream. Right? Like, with I've been I've been a broken record on this for years. Without privacy, you can't link a cryptocu"
+ ],
+ [
+  11,
+  1308,
+  "rrency account to a to an identity, to a human, or to an entity. And without that, you can't put anything meaningful on chain and and have i"
+ ],
+ [
+  11,
+  1315,
+  "t handled them by a smart contract because that smart contract doesn't know who you are."
+ ],
+ [
+  11,
+  1320,
+  "And yeah. So it's it's just a really necessary ingredient. It's, it's actually I think it's very important sentence that without privacy, th"
+ ],
+ [
+  11,
+  1331,
+  "ere's no identity. Without identity, there's no privacy. And it's something that only starting to discover now. And in the context, also, of"
+ ],
+ [
+  11,
+  1342,
+  " the AI solutions, the humanity"
+ ],
+ [
+  11,
+  1344,
+  "that you understand that the AI is really much less connected to identity. We start talking about identity of AI, but there's not that much "
+ ],
+ [
+  11,
+  1352,
+  "identity there. The models can be fluent. And then when I started realizing it, I also started realizing people like Zach or Srikar from Fra"
+ ],
+ [
+  11,
+  1359,
+  "ser who are saying that we are now fighting for identity, that we might be losing identity soon. And, if you haven't talked to him, he's qui"
+ ],
+ [
+  11,
+  1367,
+  "te inspiring as well."
+ ],
+ [
+  11,
+  1368,
+  "Look at these new founders exploring big questions. Now for Dankert, actually, question, I'll I think it'll be interesting because I think t"
+ ],
+ [
+  11,
+  1377,
+  "hat me and Dankert now maybe represents that wave of Ethereum of saying, look, we're fighting for the values, but also there is an answer of"
+ ],
+ [
+  11,
+  1386,
+  " accelerating, scaling, talking to institutions, which makes very like many people uneasy."
+ ],
+ [
+  11,
+  1392,
+  "So the question is when you think about privacy, you think it as a as a blocker or you see yourself somewhere there deeply actually as comin"
+ ],
+ [
+  11,
+  1402,
+  "g to the space because of because of privacy or because of technical challenges, what will drive you and how is privacy world looking for yo"
+ ],
+ [
+  11,
+  1412,
+  "u in the future? I think I I I I really"
+ ],
+ [
+  11,
+  1415,
+  "well, I think it's both, critical for our space, like, a sense, like, that I don't see a future where a lot of people use blockchains, but t"
+ ],
+ [
+  11,
+  1423,
+  "here's no sense of privacy. But I also think, like, in term when we talk about values, like, one of the things that I have thought about a l"
+ ],
+ [
+  11,
+  1432,
+  "ot recently, like, about okay. Like, what I mean, I wasn't always in this kind of role that, like, Tomasz just described now. Like, oh, like"
+ ],
+ [
+  11,
+  1440,
+  ", he's a I I know almost it became associated with me now, but I used to be much more one of the purest in some ways, I would say. But, like"
+ ],
+ [
+  11,
+  1449,
+  ", one of the things I thought about now, like, what what does it mean? What our values now? And I actually think, like, I would like privacy"
+ ],
+ [
+  11,
+  1457,
+  " to be much more"
+ ],
+ [
+  11,
+  1458,
+  "of a value that because, like, when I think about what can crypto really do, like, I feel like the revolution also always has to be updated."
+ ],
+ [
+  11,
+  1465,
+  " And, like, fighting yesterday's fight isn't really worth it. And, like, one of the things that we can very obviously still do is fight for "
+ ],
+ [
+  11,
+  1473,
+  "privacy, like, whatever wherever we are. And I think, like, I would like that actually to take that up more. And, like, it's been actually n"
+ ],
+ [
+  11,
+  1480,
+  "eglected in Ethereum a little bit. Like, it wasn't, like, the"
+ ],
+ [
+  11,
+  1483,
+  "at the forefront, but I think, like, now it would be a good time to actually bring it more there and be like, it's both a necessary ingredie"
+ ],
+ [
+  11,
+  1491,
+  "nt, but it's also, like, just a great fight that we should actually take up. And I think we might actually have a major contribution here. L"
+ ],
+ [
+  11,
+  1500,
+  "ike, that's actually something we can do and that, there's yeah. Where we don't have to compromise very much to get it done."
+ ],
+ [
+  11,
+  1507,
+  "It's oh, sorry. That's oh, yeah. Yeah. Maybe just just to comment here on the on the privacy topic. So I think we have also been, well, tryi"
+ ],
+ [
+  11,
+  1517,
+  "ng to push that, but I would also say it's I I feel it's still so far from being solved, unfortunately. So kind of being, well, being one th"
+ ],
+ [
+  11,
+  1528,
+  "at's building solutions like"
+ ],
+ [
+  11,
+  1530,
+  "this is this this community currency and and yeah. No. I don't want to borrow you with details, but we have kind of having or or but I'm ver"
+ ],
+ [
+  11,
+  1539,
+  "y aware of of what what's available in terms of tornado cache and so on. And but if you then try to combine that with smart contract wallets"
+ ],
+ [
+  11,
+  1548,
+  ", whatever, whatever. I don't want to go into details, but I I just feel like we are still, unfortunately,"
+ ],
+ [
+  11,
+  1555,
+  "and I know all the programs I want to go into detail detail about it. So so so okay. Okay. Okay. Let's but the point I'm I'm where where I w"
+ ],
+ [
+  11,
+  1566,
+  "as going, yes, I think we should still push. I think there is another interesting argument from actually someone else, Albert Wenger, who ar"
+ ],
+ [
+  11,
+  1577,
+  "gues in his book, what, after capital whatever,"
+ ],
+ [
+  11,
+  1581,
+  "to to see the argument why are we valuing privacy and what are what are things so so usually, we value privacy because well, we want we we d"
+ ],
+ [
+  11,
+  1593,
+  "on't want to or we want to allow people to not reveal specific information. But then I think it is worse going one step further and say, why"
+ ],
+ [
+  11,
+  1604,
+  " is that?"
+ ],
+ [
+  11,
+  1605,
+  "And and to what extent can we shape our world so that privacy becomes less important? Maybe just as the challenging thought kind of yeah. Ye"
+ ],
+ [
+  11,
+  1616,
+  "ah. Well, let's go there because I think that a world where privacy is less important is much in my mind, one which is much more dehumanizin"
+ ],
+ [
+  11,
+  1627,
+  "g"
+ ],
+ [
+  11,
+  1627,
+  "and disturbing. Because, like, I think saying, like, why privacy? Because we wanna hide information. That's a very surface level treatment. "
+ ],
+ [
+  11,
+  1639,
+  "As in who who we are and who we present to be to the world, to our loved ones, sometimes even to ourselves, they're different things. Right?"
+ ],
+ [
+  11,
+  1650,
+  " We all wear a mask to some degree because"
+ ],
+ [
+  11,
+  1654,
+  "we all have insecurity, source vulnerabilities. We have dreams and desires that we don't share with other people. And to to to have that and"
+ ],
+ [
+  11,
+  1664,
+  " and I find I feel like privacy is is is core to the essence of not it's not just a useful thing. It's not just a social construct. I think "
+ ],
+ [
+  11,
+  1675,
+  "it's fundamental to the experience of being human, and the"
+ ],
+ [
+  11,
+  1679,
+  "ability to keep secrets, the ability to make plans and act on them without exposing that to the world. And this gets reflected in the in how"
+ ],
+ [
+  11,
+  1688,
+  " we communicate, and blockchain is a communication technology at its core. And and so I would profoundly disagree with you when about saying"
+ ],
+ [
+  11,
+  1696,
+  " how can we restructure things so that we don't need so much privacy. That's saying how can we structure things, I think, to become a bit mo"
+ ],
+ [
+  11,
+  1705,
+  "re antihuman"
+ ],
+ [
+  11,
+  1706,
+  "and a bit more mechanistic. Let's just I just tried to so so you say, to some extent, wearing a mask and so on, but I I would say, why is th"
+ ],
+ [
+  11,
+  1716,
+  "at? So or kind of or the the argument goes, why is it necessary to wear a mask? So kind of what would be a what would what would a society l"
+ ],
+ [
+  11,
+  1725,
+  "ook like where it would would less be necessary? Mean, that okay. Yeah. That would be nice. But, I mean, okay. Okay. Like, if you work on ma"
+ ],
+ [
+  11,
+  1735,
+  "king society less judgmental and hostile to people and I work on privacy,"
+ ],
+ [
+  11,
+  1740,
+  "despite privacy being very hard, I think I'll beat you in that race, unfortunately. No. No. Fair fair enough. Fair enough. No. Absolutely. A"
+ ],
+ [
+  11,
+  1748,
+  "nd and, again, I I said, let's try to to, I'm just saying. You're right. People can be cruel, society can be cruel, but it can be like so I'"
+ ],
+ [
+  11,
+  1755,
+  "m making an assumption here that, like, for, like, benign privacy, wholesome privacy. Obviously, if you if you want to do if you want to hur"
+ ],
+ [
+  11,
+  1763,
+  "t people, you want to do cruel things, right, you need privacy. And I'm not in that spectrum, I'm saying I don't"
+ ],
+ [
+  11,
+  1769,
+  "care about. Like, I I don't I don't want I don't put any value on that. So to talk about, like, what what would society need for it to be le"
+ ],
+ [
+  11,
+  1777,
+  "ss for us to need privacy less? Well, we've been need to much more comfortably think share things like our financial data and our spending h"
+ ],
+ [
+  11,
+  1785,
+  "abits. That's one thing maybe that I connected with Zuberlin experience because the last last Zugarden,"
+ ],
+ [
+  11,
+  1791,
+  "my very last conversation at Zugarden was with a person whose name I don't remember, but I mentioned that I actually am not a privacy fighte"
+ ],
+ [
+  11,
+  1800,
+  "r. I'm thinking that future of humanity is that kind of single identity, this hive mind where we know each other's secret and we start actin"
+ ],
+ [
+  11,
+  1808,
+  "g with curiosity. And I they really scared them. Like, so they they and I wonder what somehow we ending up being in the same space."
+ ],
+ [
+  11,
+  1816,
+  "And you know how the fight of big groups of, like, some movements like blockchain or fights of people to to break something from the past, b"
+ ],
+ [
+  11,
+  1824,
+  "ut then they discover something the melton differences and the future splits. Maybe the future is this, like, Hive Mind versus identity and "
+ ],
+ [
+  11,
+  1833,
+  "people and privacy. You think you have the space for Hive Mind in the future? I'm I'm I'm just, again, trying to so I am on the team trying "
+ ],
+ [
+  11,
+  1841,
+  "to fight for privacy. We are building whatever VP gnosis VPN and we had and so on. But I just just because of that, see how complex the prob"
+ ],
+ [
+  11,
+  1850,
+  "lem is, and I think we might lose this fight and kind of to just and and well, then there's the whole AI"
+ ],
+ [
+  11,
+  1856,
+  "issues and so on. So I I'm just saying kind of what might happen if we are or kind of we might be in a situation where they yeah. With with "
+ ],
+ [
+  11,
+  1867,
+  "AI, there will be so much metadata that can be then that can be used by, well, much more powerful systems. Well, thanks to AI that I'm just "
+ ],
+ [
+  11,
+  1878,
+  "cautiously saying we might lose the privacy fight and what then?"
+ ],
+ [
+  11,
+  1883,
+  "I think if we ultimately completely lose the privacy fight, right, it's also hard to imagine that there's still space for crypto in that wor"
+ ],
+ [
+  11,
+  1893,
+  "ld. Like, the at the very minimum, you need the ability to keep secrets for, like, cryptography even to make sense. Right? Fundamentally in "
+ ],
+ [
+  11,
+  1903,
+  "the concept. So, I mean, I can see that world, but it's also,"
+ ],
+ [
+  11,
+  1907,
+  "at least on the current path, I see I don't see it as necessarily where it's going, but and also not clear if it's desirable. I mean, I thin"
+ ],
+ [
+  11,
+  1915,
+  "k this is why it's important to reaffirm privacy as a fundamental value because there is a world, yes, where we can lose the privacy fight. "
+ ],
+ [
+  11,
+  1924,
+  "And in that world, we are lost. We are lost because what we have done is we've created the most perfect"
+ ],
+ [
+  11,
+  1930,
+  "surveillance technology that no no authoritarian or totalitarian could even have dreamt of because they would not have been willing to take "
+ ],
+ [
+  11,
+  1940,
+  "the steps we've taken to build it. A world without privacy that which has blockchain within it is a world where you don't have financial aut"
+ ],
+ [
+  11,
+  1950,
+  "onomy because everything you spend your money on is surveilled and analyzed by anybody who cares to look."
+ ],
+ [
+  11,
+  1958,
+  "And I do think, at the risk of becoming a little bit libertarian, I'm not, but money is speeches. It is agency. Like, we we express our desi"
+ ],
+ [
+  11,
+  1968,
+  "res, our our needs through what we spend our money on. And, having that being visible by everybody, like, just go home. Go home. Why are her"
+ ],
+ [
+  11,
+  1978,
+  "e? I mean, if that's the end state, then just go home."
+ ],
+ [
+  11,
+  1982,
+  "I'll move it move it to a bit more, like, different topics. Not a big it's it's actually is a good starter for many of you here. You'll be t"
+ ],
+ [
+  11,
+  1990,
+  "hinking about privacy, and you'll see how much of a big questions one can ask about this and why it matters. So move it away. My inflection "
+ ],
+ [
+  11,
+  1998,
+  "points of the future of when you think that battle well, battle, that's that's movement. When it when it wins, what's the inflection point? "
+ ],
+ [
+  11,
+  2006,
+  "Is it just because now the stablecoins"
+ ],
+ [
+  11,
+  2008,
+  "start winning and we have institutions, we have adoption. Does it mean there's already oh, that's the inflection point or something else def"
+ ],
+ [
+  11,
+  2016,
+  "ines it, like, billion people around the world using Ethereum? You you mentioned particular people, like partner of yours, Gates, would use "
+ ],
+ [
+  11,
+  2025,
+  "Ethereum. How would you define it? When do you think that happens? Has it already started happening? Is it something totally different? So,"
+ ],
+ [
+  11,
+  2033,
+  "like, if you look at the the different waves of what we call a crypto adoption, it was always like ICOs in 17, you know, three, five really "
+ ],
+ [
+  11,
+  2045,
+  "good ones and then thousands of crappy ones. Right? Then NFT, the same thing. Right? Maybe, you know, hundreds of thousands of really good t"
+ ],
+ [
+  11,
+  2057,
+  "o genuine artists and then"
+ ],
+ [
+  11,
+  2059,
+  "hundreds of thousands of copycats, you know, essentially destroying the brand in the eyes of the casual people who are not like crypto nativ"
+ ],
+ [
+  11,
+  2069,
+  "es. Probably the same can be said about meme coins and and whatnot. So I'm I'm still thinking, you know, how do we actually make it better s"
+ ],
+ [
+  11,
+  2079,
+  "o that I mean, my my family, my like, my children"
+ ],
+ [
+  11,
+  2083,
+  "are artists. Right? And every time I try to get them interested in NFT, they they look at me weirdly as if I were to hurt them, you know, hu"
+ ],
+ [
+  11,
+  2094,
+  "rt like literally their I mean, this is not a good word for them because they see NFT as something completely compromised as a concept becau"
+ ],
+ [
+  11,
+  2105,
+  "se of such a big amount of scams and whatnot."
+ ],
+ [
+  11,
+  2109,
+  "And this is literally why I decided to to create l two beat because I I kind of knew that the same would have happened with l twos. And to s"
+ ],
+ [
+  11,
+  2119,
+  "ome extent, it did, You know? Like, we started really well. We started with, 10 really good ones, and then they were followed by by hundreds"
+ ],
+ [
+  11,
+  2129,
+  " of thousands of copycats"
+ ],
+ [
+  11,
+  2131,
+  "for the most part. And this is what happens when you've got the permissionless environment. Right? You know, there are a lot of good builder"
+ ],
+ [
+  11,
+  2140,
+  "s, but then there are a lot of followers essentially trying to take advantage. So I'm kind of assuming that, you know, it's gonna be permiss"
+ ],
+ [
+  11,
+  2149,
+  "ionless in the future as well. It makes zero sense for me to build permission platforms."
+ ],
+ [
+  11,
+  2155,
+  "However, if you wanna succeed, we need to sort of, like, make sure that whatever is the next thing that we build, be it the privacy, it has "
+ ],
+ [
+  11,
+  2165,
+  "to be genuine. Right? It has to be good. It can't be a scam. It can't be like a like a, I don't know, honeypot for, you know, for for for mo"
+ ],
+ [
+  11,
+  2174,
+  "ney, for scammers. How to build privacy so that it's not used by bad guys because if it's used by bad guys, not only the the regulators will"
+ ],
+ [
+  11,
+  2184,
+  " come after us, but but also"
+ ],
+ [
+  11,
+  2186,
+  "the rest of the society will look at this crowd and say, hey, guys. I mean, you're literally building, you know, a place to hide for for for"
+ ],
+ [
+  11,
+  2194,
+  " the bad people, and that's probably not what we want. Right? You know, we want Will you measure privacy on l two bit? Like, do you display "
+ ],
+ [
+  11,
+  2202,
+  "any metrics about privacy? I'm I'm hoping that we will have l two bit for privacy for wallet or DeFi and, you know, like, some other initiat"
+ ],
+ [
+  11,
+  2210,
+  "ives."
+ ],
+ [
+  11,
+  2210,
+  "Right? We can't do everything. Like, we are a small team and, you know, like, roll ups and l twos is more than enough for us. But but I thin"
+ ],
+ [
+  11,
+  2219,
+  "k this is like super important that similar initiatives are around. And it's even more important that people care about it. Right? Because i"
+ ],
+ [
+  11,
+  2228,
+  "f people don't care about our rating, then then you know, like, why are we even doing this?"
+ ],
+ [
+  11,
+  2234,
+  "If people do care, then it's important. Right? Then, you know, we can, like, genuinely say that we did something, like, of value to the comm"
+ ],
+ [
+  11,
+  2243,
+  "unity because we help people to distinguish good projects from thousands of bad projects. And that's important in a permissionless environme"
+ ],
+ [
+  11,
+  2252,
+  "nt where anyone can build anything. Before I continue, I'll ask how much more time do we have?"
+ ],
+ [
+  11,
+  2258,
+  "I can manage it for any amount of time, but I just need to know. Ten minutes more. That's perfect. So I'll ask a bit more about this inflect"
+ ],
+ [
+  11,
+  2266,
+  "ion point. And then because since it might be critical in touching privacy, identity, and challenges, I'll ask a bit about AI because it's o"
+ ],
+ [
+  11,
+  2274,
+  "ne of the topics that we have here. So, Dankert, how would you measure success, the inflection point? Is it happening already? Is it in the "
+ ],
+ [
+  11,
+  2282,
+  "future?"
+ ],
+ [
+  11,
+  2282,
+  "Is it about numbers? Is it about people? Is it about technology? Yeah. I mean, I definitely think there is an inflection point right now hap"
+ ],
+ [
+  11,
+  2296,
+  "pening. Like, we are seeing, I would say, like, at least a major wave of, like, real world crypto adoption happening. Success. Yeah. That's"
+ ],
+ [
+  11,
+  2309,
+  "definitely a difficult one. And I think, like, I would say, yeah, like, the best measure is since we are we are, like, a kind of, like, a pr"
+ ],
+ [
+  11,
+  2319,
+  "oject with values. Like, our aim is not, like, just to make as much money as possible or something like that, which I think is actually rare"
+ ],
+ [
+  11,
+  2328,
+  ", like but, like, just I think it's it's"
+ ],
+ [
+  11,
+  2331,
+  "the product of, like, how many people or maybe other also other entities, like, are using our products and and what are they getting out of "
+ ],
+ [
+  11,
+  2341,
+  "it? Like, what's, like what we define our as our values. We have to kind of understand how much they get of our values. So maybe, like, some"
+ ],
+ [
+  11,
+  2350,
+  "one who uses a stable coin gets, like, less than someone who uses, like, some pure crypto thing, but they don't get nothing. Right? So, like"
+ ],
+ [
+  11,
+  2360,
+  ", you need to you need to understand those things. And,"
+ ],
+ [
+  11,
+  2364,
+  "and, yeah, like, I think, like, that would be the measure for me. And, Martin, you recently, were publishing circles v two. Right? I imagine"
+ ],
+ [
+  11,
+  2375,
+  " that you can define some measures of success of how many people join all the payment systems that you've been working on. Is this the measu"
+ ],
+ [
+  11,
+  2385,
+  "re or is it something beyond that? Very"
+ ],
+ [
+  11,
+  2388,
+  "similar to Dankalda, would say, yes, in a way, I mean, if you want to kind of formulate it in a, how people's lives positively affected by t"
+ ],
+ [
+  11,
+  2401,
+  "he technology. I mean, I would still say that that is a good measure. And so far, yeah, so far, yes, probably stablecoins"
+ ],
+ [
+  11,
+  2412,
+  "has been maybe the only application other than financial or other than broadly investing speculation. Stablecoins I think have been so far t"
+ ],
+ [
+  11,
+  2426,
+  "he only application that has reached very large numbers of to some extent positively affected lives, I guess."
+ ],
+ [
+  11,
+  2437,
+  "Yeah. We try to go beyond that. We would say Circles is an attempt to be also a means of payment. So kind of have the same value of stableco"
+ ],
+ [
+  11,
+  2453,
+  "ins, but push even more towards this self sovereignty"
+ ],
+ [
+  11,
+  2459,
+  "user agency or, yes, user benefit ultimately lies positively affected, I guess. Thank you. Actually try yeah? To Sorry. I just before we mov"
+ ],
+ [
+  11,
+  2468,
+  "e on to another question, would it be possible for me? I I have a very somewhat slightly different view on what what how to measure success "
+ ],
+ [
+  11,
+  2476,
+  "here. Because you're right. Everyone here is I think is in agreement like it's a nebulous concept. Right?"
+ ],
+ [
+  11,
+  2483,
+  "We want the same outcome as you improve people's lives. But what does that mean? It means creating value, like unique, actually unique value"
+ ],
+ [
+  11,
+  2491,
+  ", not just moving money around from different people, different factions, actually making it easier to do things like service products, crea"
+ ],
+ [
+  11,
+  2500,
+  "te businesses, coordinate with people, communicate with people. And that means basically that that what that means is being able to particip"
+ ],
+ [
+  11,
+  2508,
+  "ate in certain parts of our economy more efficiently"
+ ],
+ [
+  11,
+  2511,
+  "with fewer barriers to entry. It means disrupting existing incumbents. And for me, the ultimate metric of whether we're successful is fear. "
+ ],
+ [
+  11,
+  2519,
+  "It's measuring fear because if we are successful, then existing economic elites and economic incumbents should be absolutely terrified of wh"
+ ],
+ [
+  11,
+  2528,
+  "at we're building, and they should be complaining about it, and they should be lobbying against it and advocating against it and trying to d"
+ ],
+ [
+  11,
+  2536,
+  "estroy it. And,"
+ ],
+ [
+  11,
+  2537,
+  "clearly, that's I mean, there's anti crypto sentiment, but that's more opportunistic than than than born out of any actual genuine sense of "
+ ],
+ [
+  11,
+  2545,
+  "fear. So that's when things will change. And you you're talking about fear. I think that nowadays, there's a lot of fear about AI. Many peop"
+ ],
+ [
+  11,
+  2553,
+  "le almost, like, avoid the topics of AI because they feel the fear technology sometimes get excited. Like, they remove the fear and they sta"
+ ],
+ [
+  11,
+  2560,
+  "rt talking about technology."
+ ],
+ [
+  11,
+  2562,
+  "And we also were talking about human connection. So now when you think about the role of of what we are building in human connection versus "
+ ],
+ [
+  11,
+  2573,
+  "AI, the fear of AI, how do we address it? Do we address it by building privacy and, like, ability to maybe to alienate or to protect yoursel"
+ ],
+ [
+  11,
+  2584,
+  "f, or do we build something that's"
+ ],
+ [
+  11,
+  2587,
+  "makes it safer to meet in the spaces like this? How would you connect all of these topics together? AI, privacy. Well, I think that AI is it"
+ ],
+ [
+  11,
+  2597,
+  "s own own beast. I think for me, the thing when it comes to privacy technology and and whether that can kind of counteract the excesses of A"
+ ],
+ [
+  11,
+  2607,
+  "I, I often think of the the Greek myth of Pandora's box where,"
+ ],
+ [
+  11,
+  2612,
+  "you know, I think we've all had it in some form or another, right, where Pandora's given a box and has gone, don't open the box. Don't open "
+ ],
+ [
+  11,
+  2619,
+  "the box. And, obviously, she opens the box. And all of the evils of the world come pouring out of it, pestilence, disease, famine, natural d"
+ ],
+ [
+  11,
+  2625,
+  "isasters, basically, all, like, all the all the horrible things that happened to the ancient Greeks that they couldn't they couldn't they co"
+ ],
+ [
+  11,
+  2632,
+  "uldn't rationalize within a just more framework. They came out of Pandora's books. Then at the very end of it,"
+ ],
+ [
+  11,
+  2637,
+  "hope came out. Hope for a better future. Hope that some of these problems could be solved. And for me, privacy technology, it's the it's the"
+ ],
+ [
+  11,
+  2646,
+  " hope in the AI's Pandora's box, but it's not much more than that. As in, for better or worse, you know, these incredible forces have been u"
+ ],
+ [
+  11,
+  2655,
+  "nleashed. Very powerful, very dangerous. Yeah. I think that I privacy that can be used to"
+ ],
+ [
+  11,
+  2661,
+  "prove that you're human, prove you're not machine. I think within the context of blockchain networks, we can make these relatively human cen"
+ ],
+ [
+  11,
+  2669,
+  "tric, human focused networks where, you know, where you can still know that you're coordinating between humans and not being manipulated by "
+ ],
+ [
+  11,
+  2677,
+  "AI agents, not having your data harvested. But ultimately, these are just these are just reports in a storm that that we have to weather. I "
+ ],
+ [
+  11,
+  2685,
+  "would say privacy is also part of the front door's box because"
+ ],
+ [
+  11,
+  2689,
+  "I would say and also the blockchain. I would say we are close to creating a new form of life, and and that is AI agents. And, yeah, there wa"
+ ],
+ [
+  11,
+  2701,
+  "s an interview with Eric Schmidt kind of half a year ago, a year ago where he said, okay, as soon as the AI the AI agents"
+ ],
+ [
+  11,
+  2712,
+  "talk to each other and do it in a way that we can't understand what they are saying, we should shut them down. Now we have been building the"
+ ],
+ [
+  11,
+  2723,
+  " last ten years systems that can't be shut down. And I absolutely think that, yeah, AI will make heavy use of blockchain. That's where agent"
+ ],
+ [
+  11,
+  2735,
+  "s will will have their resources. And I think we are very close to a moment where we will have agents that live, yeah,"
+ ],
+ [
+  11,
+  2744,
+  "outside of our control, communicate outside of our control, have assets outside of our control. And I'm saying this completely neutral. I'm "
+ ],
+ [
+  11,
+  2755,
+  "I'm not making a judgment whether that's a good or a bad thing, but that's just what I I think will will happen. Dankra? Oh, no. Sorry. Yeah"
+ ],
+ [
+  11,
+  2766,
+  ". I I just wanted to share this thought that, you know, in my opinion,"
+ ],
+ [
+  11,
+  2771,
+  "this this rise and inevitability of AI and the fact that, you know, very, very soon we will see this inflection point where we won't be able"
+ ],
+ [
+  11,
+  2781,
+  " to survive in any digital realm as humans because, you know, we'll be surrounded by by AI bots and whatnot. Right? I think this is a great "
+ ],
+ [
+  11,
+  2792,
+  "opportunity actually for for for blockchain"
+ ],
+ [
+  11,
+  2795,
+  "because someone will have to credibly in a credibly neutral way kind of help us distinguish, right, as humans from from bots. And, you know,"
+ ],
+ [
+  11,
+  2804,
+  " it's either third parties and we know exactly what's gonna happen if we allow third parties to do that or we actually create a system where"
+ ],
+ [
+  11,
+  2814,
+  ", you know, there are no third parties that gets to decide. Right? It's it's like, you know, cryptography gets to decide or or maybe I don't"
+ ],
+ [
+  11,
+  2823,
+  " know. I mean, something"
+ ],
+ [
+  11,
+  2825,
+  "that will be decided by math, by algorithm. You know? And I I I I really think that that could be a much bigger inflection point for for bro"
+ ],
+ [
+  11,
+  2836,
+  "ader blockchain usage than than, let's say, DeFi and anything else. Because, like banks and regular people, they might not need DeFi. Right?"
+ ],
+ [
+  11,
+  2847,
+  " Like the majority of them will are perfectly fine with banks."
+ ],
+ [
+  11,
+  2852,
+  "But they will be, I think, weaponless against, you know, digital entities suddenly surrounding them, you know, from left and right. So I don"
+ ],
+ [
+  11,
+  2864,
+  "'t know. I mean, we will face them whether we want it or not, but but I actually see it as a as a interesting opportunity for for our space "
+ ],
+ [
+  11,
+  2877,
+  "here."
+ ],
+ [
+  11,
+  2877,
+  "Thank you. And I I wonder sometimes, is it blockchain or is it cryptography only that will protect us from AI? And Pandora's box is blockcha"
+ ],
+ [
+  11,
+  2888,
+  "in as a as something unavoidable. Cryptography will protect us, maybe combined. Tancred, AI in the future of Ethereum, how much time do you "
+ ],
+ [
+  11,
+  2900,
+  "spend thinking of it? I mean, I've I spent some time"
+ ],
+ [
+  11,
+  2904,
+  "a couple of years ago thinking about it. And, I mean, there there are the the obvious questions with, like, what I mentioned earlier. For ex"
+ ],
+ [
+  11,
+  2913,
+  "ample, like, well, like, for example, if you if you imagine the the one vision of, like, the godlike AI that just does everything, then in t"
+ ],
+ [
+  11,
+  2922,
+  "hat world, it feels like crypto doesn't really make that much sense anymore because if you don't have the ability to keep secrets,"
+ ],
+ [
+  11,
+  2930,
+  "then, like, you can't really do any you can't even have a key. So, like, what does it even mean? I think beyond that, like, right now, it's "
+ ],
+ [
+  11,
+  2941,
+  "it's all, like I mean, it's very clear that it's gonna have a very big impact, but it's also kind of in this realm where, like, it's"
+ ],
+ [
+  11,
+  2952,
+  "it's a big point of change and very, very hard to predict over the longer course, which is why I said earlier, five or ten years, that's ver"
+ ],
+ [
+  11,
+  2962,
+  "y, very hard because so much is gonna change in that time that it's almost Two years? Two years? Two years. Right. In the two year, I would "
+ ],
+ [
+  11,
+  2971,
+  "say, like, on the two year horizon, I would I would think the biggest"
+ ],
+ [
+  11,
+  2976,
+  "change will just be how we create technology. Like, I mean, the obvious point is, we can code much faster. Like, that's gonna keep improving"
+ ],
+ [
+  11,
+  2985,
+  ". Maybe right now, many are still skeptical. I think in two years, it's very likely that, like, anything below the architecture of the code "
+ ],
+ [
+  11,
+  2994,
+  "will more or less be done by AI. So I think this is actually really good for Ethereum because it will massively accelerate, like, what we ca"
+ ],
+ [
+  11,
+  3003,
+  "n do. Will it make it safer?"
+ ],
+ [
+  11,
+  3005,
+  "Yeah. I think so. Yeah. I think, like, we can we can at least make it safer. Like, we have for example, formal verification will probably be"
+ ],
+ [
+  11,
+  3015,
+  "come easier if you have more help from AI. Testing will become easier. Like, I mean, fuzzing can include AI and so on. So, yeah, I think, li"
+ ],
+ [
+  11,
+  3024,
+  "ke, if you invest in the right areas, I think you can make it safer for sure. Yep. I think we have the last minute or two. So what I'll do, "
+ ],
+ [
+  11,
+  3034,
+  "I'll just let you"
+ ],
+ [
+  11,
+  3035,
+  "ask one short simple question that you think that everyone here over the next few days should ask themselves, you know, maybe something that"
+ ],
+ [
+  11,
+  3044,
+  " would initiate their thinking, discussions, salon process. Maybe we'll start many salons. I kind of from this discussion, I think that, wow"
+ ],
+ [
+  11,
+  3053,
+  ", we have much more critical things that are waiting for us. It feels like, really, this AI problems and privacy problems are totally new ag"
+ ],
+ [
+  11,
+  3061,
+  "ain, and we have something to fight for."
+ ],
+ [
+  11,
+  3064,
+  "So one question for for everyone here to ask themselves. Who would like to start? So I have a question regarding privacy. I I'm in this spac"
+ ],
+ [
+  11,
+  3076,
+  "e mainly for transparency of blockchains. I think this is a radical departure from, like, those opaque systems that we are used to and that "
+ ],
+ [
+  11,
+  3087,
+  "gives us"
+ ],
+ [
+  11,
+  3088,
+  "amazing superpowers. And I'd like to see the future where you get to have a cake and eat a cake. Right? Like, you know, have privacy but at "
+ ],
+ [
+  11,
+  3099,
+  "the same time, you know, have this transparency that allows us to to see the good guys from the bad guys. And, yeah, that's that's the one f"
+ ],
+ [
+  11,
+  3109,
+  "or me. Zach? Should I answer that or ask or ask a question? Ask a question that people should Don't get to answer that. Themselves. Sorry. A"
+ ],
+ [
+  11,
+  3120,
+  "question for for that people should ask themselves. I guess it's kind of if you if you had an opportunity to do so, so if you had the resour"
+ ],
+ [
+  11,
+  3132,
+  "ces of the agency, what would you want to be doing here? You know, I I find that that's always been a good guide for me that, you know, I've"
+ ],
+ [
+  11,
+  3144,
+  "been like, well, if I had more you know, if I could hire more people or if I had more funding, I would do this. And then then, you know, thi"
+ ],
+ [
+  11,
+  3151,
+  "nk about it. And I'm like, well, I can just try and do it anyways and see how it goes. I mean, it usually works out. Yeah. And, obviously, s"
+ ],
+ [
+  11,
+  3158,
+  "orry. Just gonna have I'm gonna have to do bit of shilling. I'm afraid. It's my fee. Check out the Aztec network and check out Noir if you w"
+ ],
+ [
+  11,
+  3165,
+  "anna work on privacy and build some cool stuff."
+ ],
+ [
+  11,
+  3167,
+  "That would be amazing. That's just so many topics that we'll be discussing here. I'll give you some more time and ask my own question. I'll "
+ ],
+ [
+  11,
+  3177,
+  "refer to this godlike AI, and many of you here, actually, I I've heard that when walking around, work on MEV solutions, and I feel there are"
+ ],
+ [
+  11,
+  3186,
+  " some barriers to centralization to the God AI like sorry, God like AI."
+ ],
+ [
+  11,
+  3191,
+  "So ask a question of how we how we prove that because of MEV, the AI cannot be ultimately centralized. Dankrad? I don't know. One question f"
+ ],
+ [
+  11,
+  3206,
+  "or the audience that they should think of for the next seven days. I mean, I think it's the the we're starting with the interop days. I thin"
+ ],
+ [
+  11,
+  3221,
+  "k, like"
+ ],
+ [
+  11,
+  3222,
+  "yeah. Like, thinking how to how to improve Ethereum interoperability seems like a very good question to ask right now. Nice. I I mentioned o"
+ ],
+ [
+  11,
+  3231,
+  "n Twitter recently that it actually starts with people. That that interop, we think it's technical, but it's people. So let's see. It'll mat"
+ ],
+ [
+  11,
+  3239,
+  "ter of what connections, one interop we'll build here over the next days. Martin? Yeah. I I need to share the circuits a little bit. So kind"
+ ],
+ [
+  11,
+  3248,
+  " of the question is"
+ ],
+ [
+  11,
+  3249,
+  "yes, I think there is some broader sense that, okay, stablecoins and that's now the big thing for Ethereum or for blockchain, maybe broader."
+ ],
+ [
+  11,
+  3261,
+  " And I would say money is a super interesting question to ask. How is is money made? Where does money come from? How does or or money is pro"
+ ],
+ [
+  11,
+  3272,
+  "bably the most universal"
+ ],
+ [
+  11,
+  3274,
+  "tool or communication tool that we have as as humans to coordinate. So kind of wherever you go in whatever country, you don't speak the lang"
+ ],
+ [
+  11,
+  3284,
+  "uage, you don't understand the culture, but money is almost universally understood and accepted. And the question is just how does money wor"
+ ],
+ [
+  11,
+  3294,
+  "k and is might it be worse to challenge the status quo of how our existing"
+ ],
+ [
+  11,
+  3299,
+  "fiat money works? And those are the questions that Zakirits is also trying to give answers. But even just asking the question is I think alr"
+ ],
+ [
+  11,
+  3309,
+  "eady a good or interesting step. Thank you so much. We had a beautiful and fantastically knowledgeable panelists that saved us. Apologies to"
+ ],
+ [
+  11,
+  3318,
+  " everyone here and to the panelists for not preparing questions before. I"
+ ],
+ [
+  11,
+  3323,
+  "I hope that you still enjoyed it a lot. I think it was amazing, not not because of me, but because of people around here. Thanks, Chris, for"
+ ],
+ [
+  11,
+  3332,
+  " for inviting all of us and for creating this amazing space, everyone with you, Sonya and the team. And thanks to Thomas. It was amazingly m"
+ ],
+ [
+  11,
+  3341,
+  "oderated, especially for not being prepared, but even with thank you so much, panelists."
+ ],
+ [
+  11,
+  3347,
+  "Alright. Thanks a lot to all of our panelists. And now we'll have a quick fruit sharing. Sanya will will guide and then we have dinner at 06"
+ ],
+ [
+  11,
+  3370,
+  ":30PM upstairs. So, yeah. Thank you so much."
+ ],
+ [
   12,
   1226,
   "We're gonna have some embodiment consciousness mapping in chaos, I believe. Sending that song out as a prayer, I would hope that our world c"
