@@ -301,7 +301,9 @@
     "id": "1nZ2RuTwFSzy0ZftyPe7NU-3cyeGsg4mz",
     "kind": "video",
     "size": 0,
-    "stream": true
+    "stream": true,
+    "preview": "dead",
+    "folder": true
    }
   ],
   "transcript": null,
