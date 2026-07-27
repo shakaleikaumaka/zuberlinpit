@@ -21550,6 +21550,6371 @@
   "hank you."
  ],
  [
+  4,
+  4,
+  "Alright. Welcome back to the data wizard day at Zubraling, for the afternoon session. And one thing I missed out in the opening this morning"
+ ],
+ [
+  4,
+  13,
+  " is that, like, big thanks to organizer of Zubalin and Chris and Pascal and many other people, gave us the stage and to curate the whole day"
+ ],
+ [
+  4,
+  23,
+  ". And so just a quick rundown of what's gonna happen this afternoon."
+ ],
+ [
+  4,
+  27,
+  "We'll have around three talks, basically focusing on all kinds of data talks around, like, the practice and solutions. And then we will have"
+ ],
+ [
+  4,
+  36,
+  " a big mac about all kinds of thing around the Uniswap. We'll have from the data scientists from Uniswap. And then Boxer will give us a open"
+ ],
+ [
+  4,
+  45,
+  "ing data review that's gonna be spicy comparing Ethereum and Solana. So any enthusiastic"
+ ],
+ [
+  4,
+  51,
+  "debater about this to ecosystem, please, you know, stay on and try to join the conversation. We'll make it spicy. And then in the end, 4PM, "
+ ],
+ [
+  4,
+  60,
+  "we'll have a, Ethereum data with, quit, and please participate, and it will be fun historical and, data questions and, yeah, you will see. A"
+ ],
+ [
+  4,
+  69,
+  "nd so the first talk to open up the afternoon session is from Sarah from Protocol Labs, and the talk will be around decentralized"
+ ],
+ [
+  4,
+  77,
+  "data storage, privacy, resilience, efficiency, and decentralization. Please welcome. Cool. Thanks, Danny. Oh, hi, everyone. Nice to meet you"
+ ],
+ [
+  4,
+  87,
+  ". Have met some of you. If not, hi. My name is Sarah. Today, I'm gonna be talking about the topic that Danny introduced. So I was kind of br"
+ ],
+ [
+  4,
+  96,
+  "ainstorming a little bit of context. I was brainstorming with the people, like, where should decentralized storage come in?"
+ ],
+ [
+  4,
+  105,
+  "I think one thing I've realized in the past few days is our the world of Falcon IPFS, our Weave walrus of decentralized storage is very diff"
+ ],
+ [
+  4,
+  114,
+  "erent from the world of Ethereum infra l two scaling needs for storage. Right now, a lot of it sits on more centralized web two framework, p"
+ ],
+ [
+  4,
+  124,
+  "latforms. I'll be interested to see how we can maybe connect the dots a little bit to give some ideas to people here in the room on how you "
+ ],
+ [
+  4,
+  133,
+  "want to build that out further."
+ ],
+ [
+  4,
+  135,
+  "Okay. So a little bit about myself. I used to be the ex lead at Protocol Labs, mostly for Filecoin Virtual Machine. I currently have my own "
+ ],
+ [
+  4,
+  144,
+  "team, which is part of the Protocol Labs network. So Protocol Labs is now a huge network of innovation. We have a bunch of companies and no "
+ ],
+ [
+  4,
+  153,
+  "single organization. So I still lead the developer experience chapter for the network."
+ ],
+ [
+  4,
+  159,
+  "I've spent about three years in web three wrapping my head around decentralized storage, sovereign systems as well as public goods. So a lot"
+ ],
+ [
+  4,
+  168,
+  " of this happens. As you know, in web three, you kinda do 10 things at once. If you can, you do 30. I managed to do three, so that's pretty "
+ ],
+ [
+  4,
+  177,
+  "good. So, yes, I am happy to talk to anyone if you wanna geek out a little bit more after this talk."
+ ],
+ [
+  4,
+  184,
+  "Okay. So some goals that I'm gonna run through today, and what I hope to achieve with this talk for all of you. It's gonna be a short talk, "
+ ],
+ [
+  4,
+  192,
+  "but I hope it sticks in your mind. The goals are to help you form your why on decentralized storage, how you can like, why is it useful, may"
+ ],
+ [
+  4,
+  199,
+  "be it is, maybe it isn't, for you to connect what you're doing today with decentralized storage and think about parking your data there."
+ ],
+ [
+  4,
+  207,
+  "The second would be to provide a useful evaluation framework of how you can approach these storage options that I'll share with you in a bit"
+ ],
+ [
+  4,
+  216,
+  ". And some of these you might already know, and to give you some options that you can begin exploring today. Sounds good? Yeah. Awesome. Oka"
+ ],
+ [
+  4,
+  226,
+  "y. So, why decentralized storage? In in the world that I come from, which is more decentralized storage infra,"
+ ],
+ [
+  4,
+  233,
+  "decentralized storage is really it's very aligned with the web two ethos. We look at centralized, censorship resistance. So if you look over"
+ ],
+ [
+  4,
+  242,
+  " here, this white paper, IPFS, I'm sure IPFS, guys? Anyone? Okay. Oh, great. Okay. Most people use IPFS. We love it. This white paper, think"
+ ],
+ [
+  4,
+  252,
+  " Juan told me he wrote it in New York in a really shitty apartment"
+ ],
+ [
+  4,
+  256,
+  "way back. So if you think that's a great piece of work, you know, maybe find a really shitty apartment and sit there and try sit there for t"
+ ],
+ [
+  4,
+  264,
+  "hree days. So that really came up because we wanted to combat censorship resistance, data sovereignty, how you can own your data yourself. I"
+ ],
+ [
+  4,
+  273,
+  "t IPFS does not include a blockchain, just to clarify for everyone. It is mostly p two p file sharing. So think of, like, when you turn a mo"
+ ],
+ [
+  4,
+  281,
+  "vie"
+ ],
+ [
+  4,
+  281,
+  "on whatever you use. I don't wanna know. But that's kinda like how IPFS works. And then we think about things like resilience of your data. "
+ ],
+ [
+  4,
+  290,
+  "So, you know, there was an outage a few weeks ago or one week ago on Google. How do you make sure that your data is replicated and resilient"
+ ],
+ [
+  4,
+  298,
+  " and doesn't disappear completely? We think about data sovereignty. So I was recently at Funding the Commons. If you look over here at this "
+ ],
+ [
+  4,
+  307,
+  "photo, I was at Funding the Commons SF in"
+ ],
+ [
+  4,
+  309,
+  "April, and they talked about how since inauguration in this administration in The US, about one hand 10,000 web pages have since been delete"
+ ],
+ [
+  4,
+  317,
+  "d. So there are organizations like the Internet Archive trying to back all this up. And it might not seem important today right now, but who"
+ ],
+ [
+  4,
+  324,
+  " knows in five to ten years, if your data disappears, you have no way to track the history, you're not in charge of that decision, it's gonn"
+ ],
+ [
+  4,
+  332,
+  "a hurt in some way."
+ ],
+ [
+  4,
+  333,
+  "So it's really important to think about who owns your data. And then lastly, web three ideology. So on top of the useful factors mentioned h"
+ ],
+ [
+  4,
+  341,
+  "ere, of course, in the ethos of things, web three is very much about all these things that I mentioned above. So I was recently at protocol "
+ ],
+ [
+  4,
+  348,
+  "bug as well this week. I think it was Ata from Shtaka Research was saying he had this really interesting slide about there was one point tha"
+ ],
+ [
+  4,
+  356,
+  "t stuck out to me of people use web three storage or they try to use decentralized storage because of public opinion in web three. So someti"
+ ],
+ [
+  4,
+  363,
+  "mes we just wanna follow the ethos, even though it's a little bit less"
+ ],
+ [
+  4,
+  367,
+  "great today, we stick in it for the long run. These are a few reasons as to why decentralized storage is important. I hope that resonates wi"
+ ],
+ [
+  4,
+  375,
+  "th all of you here. So I think what I'm realizing in the past week of, like, you know, coming to me all the Zubilant people, I think traditi"
+ ],
+ [
+  4,
+  382,
+  "onally, two protocol apps in the file world has kind of been in our own bubble. And I think everyone kinda understands what it feels like. Y"
+ ],
+ [
+  4,
+  390,
+  "ou know, WebView, you can go pretty deep in rabbit hole, and it's hard to see outside of your world."
+ ],
+ [
+  4,
+  395,
+  "I think today, decentralized storage is very much applied to traditional use cases. So when I say that, I mean, like, think Dropbox, YouTube"
+ ],
+ [
+  4,
+  403,
+  " streaming. We have options like, if you ever heard of, Livepeer, whereas, like, video streaming. Yeah. Blue Sky applications, you wanna you"
+ ],
+ [
+  4,
+  411,
+  " wanna back up your data. Those use IPFS and Filecoin today. So those are some of the applications, but more traditional. Right? But there i"
+ ],
+ [
+  4,
+  419,
+  "s an opportunity that lies in applying it to web three's priorities today."
+ ],
+ [
+  4,
+  423,
+  "And for the Ethereum focused crowd here, and I know some Solana people in the crowd too, when you think about l two scaling, you know, that "
+ ],
+ [
+  4,
+  430,
+  "is very much missing from the conversation. And, again, like, it might not matter today, but it might matter about ten years from now if you"
+ ],
+ [
+  4,
+  437,
+  "r data suddenly disappears. If you're Google, if you're Google Bigtable, like, disappears and, you know, you don't have your data, it might "
+ ],
+ [
+  4,
+  444,
+  "hurt in the future. So let's think about how we can apply it to web three priorities."
+ ],
+ [
+  4,
+  448,
+  "So I don't claim to be an expert. I'm also very new to Ethereum l two scaling, but I did try to get a huge download. Thank you for everyone "
+ ],
+ [
+  4,
+  455,
+  "that had conversations with me and tried to teach me stuff. Here are some opportunities I've been thinking about, and I'll love to talk more"
+ ],
+ [
+  4,
+  463,
+  " to people about them. But hearing from your conversations here, I think there are a few things we can think about. So why decentralized sto"
+ ],
+ [
+  4,
+  470,
+  "rage for Ethereum l twos and MEV today? So"
+ ],
+ [
+  4,
+  472,
+  "historical call data, state snapshots, those are gonna be useful for maybe, like, things like fraud proofs, rehydrating state, or re or mayb"
+ ],
+ [
+  4,
+  480,
+  "e, replaying simulations. So these are things that you can think about for l two scaling. I think as of today, I'm not sure where this data "
+ ],
+ [
+  4,
+  488,
+  "sits or maybe it's temporarily stored and then deleted afterwards. Maybe I think similar to block storage that lasts for about eighteen days"
+ ],
+ [
+  4,
+  495,
+  " and then it disappears. So even for block context storage, could we store it somewhere that will then introduce then allow you to support a"
+ ],
+ [
+  4,
+  503,
+  "ccount extraction, bundle less, and intense better?"
+ ],
+ [
+  4,
+  506,
+  "These are also some opportunities out there. And then around the topic of mempool transparency. Right? If you wanna have maybe dispute resol"
+ ],
+ [
+  4,
+  514,
+  "ution or as of today, I'm not sure if all mempool transactions are being stopped for a long time, like MEV bundles, auction bids, and so on."
+ ],
+ [
+  4,
+  523,
+  " Where do this get stopped and how long did it get stopped for? If we can make it open and accessible to the public and make sure they're st"
+ ],
+ [
+  4,
+  531,
+  "ored in a secure way, it also unlocks public analysis and also helps to improve the space in the long run. So that's something to think abou"
+ ],
+ [
+  4,
+  539,
+  "t as well."
+ ],
+ [
+  4,
+  540,
+  "Lastly, I know PBS is a common is a hot topic today. Can we think about open builder markets for PBS? Because I think right now, blocks are "
+ ],
+ [
+  4,
+  548,
+  "formed in a black box. Right? So you don't really see how they are being formed. Could we make that data transparent, and can it be more ope"
+ ],
+ [
+  4,
+  556,
+  "n to public analysis, public builder analysis? So these are some ideas. To give you an example too, I added this example here. I don't know "
+ ],
+ [
+  4,
+  564,
+  "if anyone has heard."
+ ],
+ [
+  4,
+  565,
+  "Very different from Ethereum l two scaling, but Solana has parked their entire ledger history on Filecoin. This was an effort that started l"
+ ],
+ [
+  4,
+  573,
+  "ast year. It's still ongoing to today. So that's a really big commitment from from a major chain, and it does show the move of the ecosystem"
+ ],
+ [
+  4,
+  581,
+  " as these platforms improve in UX and reliability to rely more on web three systems rather than web two ones. So yeah. So opening this up fo"
+ ],
+ [
+  4,
+  589,
+  "r thought and discussion, I may be totally wrong, but I'm yeah. Some ideas here, and please come talk to me about these."
+ ],
+ [
+  4,
+  596,
+  "Cool. So, I hope that sparked some I some interest from, people and other relevant topics that you've been talking about. So I'll introduce "
+ ],
+ [
+  4,
+  603,
+  "a framework for evaluating decentralized storage and some options. So if, let's say, you're approaching this space for the first time, some "
+ ],
+ [
+  4,
+  611,
+  "key things to think about, the first being privacy. So for example, I know web three privacy now is a new, movement and also a team that has"
+ ],
+ [
+  4,
+  618,
+  " been getting a lot of traction. Privacy was also talked about in the first day of Zoo Berlin, super hot topic."
+ ],
+ [
+  4,
+  624,
+  "There was a really interesting tweet thread if you haven't checked this out where the question was asked of Vitalik, and he was like, you kn"
+ ],
+ [
+  4,
+  630,
+  "ow, if you think about it from a high level, you might think privacy doesn't matter at any stage of what you're trying to do today or the go"
+ ],
+ [
+  4,
+  636,
+  "als you're trying to fulfill. But once your data's out there, you never know when it's gonna get used. So privacy is gonna be something to t"
+ ],
+ [
+  4,
+  643,
+  "hink about. So when you store on decentralized storage, some platforms are fully public, immutable,"
+ ],
+ [
+  4,
+  647,
+  "can't change it. Some allow encryption before you store it onto that onto those networks. So these are things to consider when you when you "
+ ],
+ [
+  4,
+  654,
+  "evaluate these options. The second being resilience. So how many replicas of your data are being stored? How reliable are these node operato"
+ ],
+ [
+  4,
+  661,
+  "rs? How are they incentivized to make sure that they don't they don't get rid of your data or that they guarantee that your data is being st"
+ ],
+ [
+  4,
+  667,
+  "ored for a long time? So these are things to think about as well. I'll give the example of, like, the Google outage last week. A whole bunch"
+ ],
+ [
+  4,
+  674,
+  " of apps were major major apps were affected because a single centralized point"
+ ],
+ [
+  4,
+  678,
+  "was had failure. Right? And so that affects everything. It has has wide ranging effects. So thinking about resilience of your data and the r"
+ ],
+ [
+  4,
+  686,
+  "esilience of the platform is also going to be very important. So think about how your note operators are are operating their notes. And then"
+ ],
+ [
+  4,
+  694,
+  " there's efficiency, which is okay. So that's efficiency. I think first thing that might come to your mind is probably cost."
+ ],
+ [
+  4,
+  701,
+  "If you look at decentralized storage platforms today, they'll definitely sell you on cost. They'll be like, you know, it's a fraction of the"
+ ],
+ [
+  4,
+  708,
+  " cost, maybe five times cheaper. For example, I think Filecoin is about five times cheaper than AWS for storing on, certain kinds of storage"
+ ],
+ [
+  4,
+  715,
+  ", especially archival. But it's not just cost. It's also around UX and, I think mostly UX. So if you think about storing data, can you retri"
+ ],
+ [
+  4,
+  723,
+  "eve that data? How fast can you store that data? How fast can you retrieve that data? Is it comparable to the apps that you use on your phon"
+ ],
+ [
+  4,
+  730,
+  "e today? Can it come back that quickly? Is there a CDM backing it up? So do think very, very deeply about the cost and the UX that that plat"
+ ],
+ [
+  4,
+  737,
+  "form offers to you."
+ ],
+ [
+  4,
+  738,
+  "Lastly, decentralization. So the reason we wanna move to the storage is because it's decentralized and not so much centralized. So, you know"
+ ],
+ [
+  4,
+  745,
+  ", don't think a platform's work for it. Definitely go check out how governance happens on a platform. Is it a single team that's deciding th"
+ ],
+ [
+  4,
+  752,
+  "e future forward? Because then that would be basically the same deal that we have in web two today. Also think about, you know, not just the"
+ ],
+ [
+  4,
+  759,
+  " storage points where you're uploading our data to, but the gateways that you're retrieving your data from. Are those decentralized?"
+ ],
+ [
+  4,
+  765,
+  "And how again, all these other points above, how are those managed? So all in all, these are the four points that I would definitely conside"
+ ],
+ [
+  4,
+  773,
+  "r that you use to evaluate your storage options. Oh, and also I included a snapshot here around s three compatibility. So in case you didn't"
+ ],
+ [
+  4,
+  782,
+  " know, decentralized storage platforms like Acave, Storacha, these are a few data storage on ramps. They do think really hard about how to m"
+ ],
+ [
+  4,
+  790,
+  "ake it seamless when you convert from your s three API across to decentralized storage. So they are thinking about these things. Space is im"
+ ],
+ [
+  4,
+  799,
+  "proving,"
+ ],
+ [
+  4,
+  799,
+  "but definitely do your homework and make sure that it's what you need today. Okay. So I'm not gonna run through this whole table, but I want"
+ ],
+ [
+  4,
+  807,
+  "ed to give some options for decentralized storage. I know some I did talk to some people here and maybe some people are super new to the spa"
+ ],
+ [
+  4,
+  814,
+  "ce. These are some options that have come out a few times. And, yes, ChatGPT did generate this table for me for disclosure."
+ ],
+ [
+  4,
+  821,
+  "But it's not wrong though. I did fact check most of it. So as I said, like, this is to give you a sense of when you evaluate your options. F"
+ ],
+ [
+  4,
+  829,
+  "or example, privacy, some might expect you to encrypt it before you upload it. Some might have native encryption. Do think about it. Some of"
+ ],
+ [
+  4,
+  837,
+  " them, we can't even encrypt it at all, so that might not be for your use case. Resilience, again, think about, you know, how, what are the "
+ ],
+ [
+  4,
+  845,
+  "incentives that make your note, operators that store your data guarantee that they will keep storing your data,"
+ ],
+ [
+  4,
+  851,
+  "and how many replicas of your data are being stored, how long are they being stopped for, if the claim is that it's permanent, how is it bei"
+ ],
+ [
+  4,
+  858,
+  "ng permanent for exactly how long. So, for example, how we say it's permanent, but it's actually a hundred and sixty years. Great. So it's m"
+ ],
+ [
+  4,
+  865,
+  "ost of our use cases, but what happens after a hundred sixty years? So these are things to think about too. Efficiencies, I mentioned cost h"
+ ],
+ [
+  4,
+  872,
+  "ere, but I also mentioned, like, speed. So think about, like, you know, cost, speed,"
+ ],
+ [
+  4,
+  876,
+  "storage versus retrieval, what's available today. So even so I come from the Filecoin ecosystem, and we have always found retrieval to be a "
+ ],
+ [
+  4,
+  883,
+  "challenge. We are solving it by the end of this year, but we mostly have cold storage today. You can store your data, but it takes a long ti"
+ ],
+ [
+  4,
+  890,
+  "me to retrieve it. How can we allow you to do a fast storage and fast retrieval? So these are also options to really do a homework on. And t"
+ ],
+ [
+  4,
+  897,
+  "hen lastly, decentralization, how check out the governance teams, whether it's DAO supported, whether it's a team that a a small team of sta"
+ ],
+ [
+  4,
+  904,
+  "keholders, how diverse is it?"
+ ],
+ [
+  4,
+  905,
+  "So think about those pieces too. So this is super high level. One dive dive into all of this, but I'm around if you wanna talk to me about i"
+ ],
+ [
+  4,
+  912,
+  "t. But yeah. So these are some options for you to get started. So then the last question to you is how will you build sovereign systems? And"
+ ],
+ [
+  4,
+  920,
+  " I think sovereign systems is a very, useful term to apply here. Like, we can talk from different parts of the web three stack. We can talk "
+ ],
+ [
+  4,
+  927,
+  "about the chain itself. We can talk about storage. We can talk about, the front ends. But how do we build things that are fully sovereign fr"
+ ],
+ [
+  4,
+  934,
+  "om the whole stack through? Right? I think that's the ultimate goal, and we really need to think deeply on how we can achieve that."
+ ],
+ [
+  4,
+  941,
+  "So, yeah, that's the question for you. And Tom Hardy because that's always nice to have. Okay. And as a quick pitch, we have if you are inte"
+ ],
+ [
+  4,
+  950,
+  "rested in this topic, we are hosting Protocol Labs is hosting its first ever hackathon. It's called Modular Worlds. It's already in action. "
+ ],
+ [
+  4,
+  959,
+  "The dates, it lasts all the way to July 16, so you have time to you have a month to hack if you want. Price pool's 200 k, so that's really p"
+ ],
+ [
+  4,
+  968,
+  "retty big."
+ ],
+ [
+  4,
+  969,
+  "Key tracks. So why I was talking about sovereign systems, those are one of the key tracks that are coming up. We also have decentralized gov"
+ ],
+ [
+  4,
+  977,
+  "ernance, economies, and science. And lastly, AI and autonomous infrastructure. A lot of sponsors here. A few less sponsors here, which means"
+ ],
+ [
+  4,
+  984,
+  " might be easier to win the prizes. You can combine all of them and win the top prizes as well. But do consider if you are interested, come "
+ ],
+ [
+  4,
+  992,
+  "join our hackathon."
+ ],
+ [
+  4,
+  993,
+  "We would love to have more l two scaling type use cases, which we don't see very often, and we are super supportive of cross chain today in "
+ ],
+ [
+  4,
+  1003,
+  "the protocol apps, network. So do come by and join the hack. And if you're interested, take a photo, scan the QR code. If not, you can defin"
+ ],
+ [
+  4,
+  1013,
+  "itely Google the hackathon name that I just mentioned. Yeah. So that's it. That's all for me. Thank you so much."
+ ],
+ [
+  4,
+  1021,
+  "Thanks, Sarah. Any questions? Kofi, go ahead. Yeah. The one of the things that you mentioned that was very interesting to me was the idea ar"
+ ],
+ [
+  4,
+  1032,
+  "ound storing information that is very important to analyze but doesn't get held on Ethereum and l two blockchains forever. So specifically t"
+ ],
+ [
+  4,
+  1042,
+  "hings like mempool data and blob data."
+ ],
+ [
+  4,
+  1045,
+  "It made me think how programmable is Filecoin? Because one of the advantages I could see of using decentralized storage to store these thing"
+ ],
+ [
+  4,
+  1055,
+  "s instead of using a centralized provider was if there was some way that we could use smart contracts and bridges to have blob data automati"
+ ],
+ [
+  4,
+  1066,
+  "cally be stored in a decentralized"
+ ],
+ [
+  4,
+  1068,
+  "storage facility or mempool data, like, automatically get, what's the word, ported somewhere as opposed because as opposed to somebody index"
+ ],
+ [
+  4,
+  1078,
+  "ing these things on Ethereum and then moving it into s three and then moving it into Snowflake and then, you know, we work with it there. It"
+ ],
+ [
+  4,
+  1088,
+  "'s like if there's some way of automating"
+ ],
+ [
+  4,
+  1091,
+  "some of that, I think that then that becomes a data source that is, yeah, a lot more interesting because nobody would need to do as much mai"
+ ],
+ [
+  4,
+  1100,
+  "ntenance on it and everybody would have access to it. So, yeah, programmability. That's a really good question. I actually mean that that no"
+ ],
+ [
+  4,
+  1110,
+  "t like, oh, it's a great question, but it's a really good question. So and then I I saw a tweet on it the other day. But yeah. I so how many"
+ ],
+ [
+  4,
+  1119,
+  " of you in here know that Falcon has a virtual machine?"
+ ],
+ [
+  4,
+  1123,
+  "Cool. So now more people today know that Falcon has a virtual machine. It is fully EVM compatible. So we have interop bridges completely sup"
+ ],
+ [
+  4,
+  1131,
+  "ported like Axler, Sela. We have those supported. Actually, Eva here in the room is the one in charge of bringing those integrations on. So "
+ ],
+ [
+  4,
+  1138,
+  "we are constantly improving the DX experience. Do your use case of can you port it over for Ethereum and then get it seamlessly stored on Fi"
+ ],
+ [
+  4,
+  1146,
+  "lecoin?"
+ ],
+ [
+  4,
+  1146,
+  "Yes. So I'll give a quick example. We've been working on something for about a year. It's called cross chain bridge. And so we have a smart "
+ ],
+ [
+  4,
+  1153,
+  "contract sitting on any EVM compatible chain and a smart contract sitting on Filecoin. And based on how you configure that smart contract, i"
+ ],
+ [
+  4,
+  1160,
+  "t could your smart contract from your application, it could seamlessly pull the data, send an event to the smart contract, it sends it acros"
+ ],
+ [
+  4,
+  1167,
+  "s Exela, sends it by a filecoin and gets stored, then you get approved of your deal back."
+ ],
+ [
+  4,
+  1172,
+  "I will definitely caveat that as of today, that's like cold storage. So think of that archival. Hot storage coming to filecoin by end of thi"
+ ],
+ [
+  4,
+  1182,
+  "s year, so that will definitely be added to the bridge as well. But it's possible. Yeah. Very cool. Thank you. Awesome. Any other questions "
+ ],
+ [
+  4,
+  1192,
+  "from the room? Yes. Yeah. I think the centralized storage has been around for, like, more than ten years now. There was, like, Cyclone befor"
+ ],
+ [
+  4,
+  1201,
+  "e. Yeah."
+ ],
+ [
+  4,
+  1202,
+  "So my question is because there used to be, like, under utilization of total storage capacity of those protocols. And I don't know about the"
+ ],
+ [
+  4,
+  1210,
+  " latest trends. So do you see any adoption there? Any yeah. It's about, like, the usage of the centralized storage capacity. Yeah. Yeah. So "
+ ],
+ [
+  4,
+  1218,
+  "huge amount of still. And I'll talk from the Falcon experience because I'm I don't really know how the capacity is being filled on other net"
+ ],
+ [
+  4,
+  1227,
+  "works."
+ ],
+ [
+  4,
+  1227,
+  "Falcon today has about I think it's like 300 pips of data capacity on the network. So there's a huge amount of data available. I think we ha"
+ ],
+ [
+  4,
+  1236,
+  "ve about a good 50% or so committed 70% committed. Out of that 70%, I think it's about 30% of it has data sitting on that committed capacity"
+ ],
+ [
+  4,
+  1244,
+  ". And we're constantly onboarding more institutional institutional data is a huge source for us, so that takes up a lot of data space. I thi"
+ ],
+ [
+  4,
+  1253,
+  "nk the Solana piece definitely"
+ ],
+ [
+  4,
+  1255,
+  "added to a big chunk of that data being used as well. But that gives you a sense of what capacity you have in the network and how much more "
+ ],
+ [
+  4,
+  1264,
+  "there is to fill. Yeah. Yeah. Okay. And yeah. Let's yeah. Yeah. Do you see, like, mainstream adoption usage? Like, for example, mainstream s"
+ ],
+ [
+  4,
+  1273,
+  "ervices from web two are going through decentralized storage. Are there any, like, traction on that? So growing. I think maybe not on the we"
+ ],
+ [
+  4,
+  1282,
+  "b two front as robustly, but, like, think of popular web three"
+ ],
+ [
+  4,
+  1286,
+  "web three native dApps today. So, like, I would would I consider Blue Sky a fully web three functions like a web two kinda uses web three in"
+ ],
+ [
+  4,
+  1294,
+  "fra? So that's a really good example. Mirror today, the block site uses Arweave. They're using Filecoin but use Arweave and that fully runs "
+ ],
+ [
+  4,
+  1302,
+  "like any other medium site. So I would see like there's a whole new host of application layers that are using some web three infra, but also"
+ ],
+ [
+  4,
+  1310,
+  " using some web two that are coming up more. The web two, like, old school web two, I think they they will wait for this layer to be more ma"
+ ],
+ [
+  4,
+  1318,
+  "ture first. Like, there are conversations happening, but nothing concrete. Maybe one or two, but nothing super concrete that has been happen"
+ ],
+ [
+  4,
+  1326,
+  "ing at that layer just yet. Yeah. Thank you."
+ ],
+ [
+  4,
+  1328,
+  "Alright. So I I think, like, the use cases you listed on the Ethereum front for, like, decentralized storage is on point, like, very nice. L"
+ ],
+ [
+  4,
+  1337,
+  "ike, for example, like, how to put blobs in, decentralized storage or because right now, like, there is only one data provider that has it a"
+ ],
+ [
+  4,
+  1347,
+  "nd you have to go ask them for the actual, like, blob content,"
+ ],
+ [
+  4,
+  1351,
+  "etcetera. And but for example, like, one of the thing you said, like, the blob how to say, like, block building content, which is, like, lik"
+ ],
+ [
+  4,
+  1360,
+  "e, a huge dataset. And I just pulled up, like, that stats. One time we asked the one of the relay ultrasound relay for retrieving the block "
+ ],
+ [
+  4,
+  1368,
+  "block content. So to know how were the builders are, like, actively reconstructing the block."
+ ],
+ [
+  4,
+  1374,
+  "For, like, six months data is, 90 TB. And, like, it's gonna be really big to, like, have them stored in a decentralized way. And I just wann"
+ ],
+ [
+  4,
+  1382,
+  "a ask the questions, like, how do you just, like who's who's gonna pay for the cost? And, like, who would be funding this kind of process if"
+ ],
+ [
+  4,
+  1390,
+  " you have any, like, guide for how can this, like, business model or things can be constructed. Because, like, yeah, we do want it, but, lik"
+ ],
+ [
+  4,
+  1398,
+  "e, it sounds like costly and yeah. What how can we do it? Definitely."
+ ],
+ [
+  4,
+  1402,
+  "That's also a really an important question. I I think off the top of my mind, there are two two things to consider. So if you look at the wa"
+ ],
+ [
+  4,
+  1408,
+  "y, like, Solana did it, right, ChainLedger is, like, a public good. Right? And if it's a public good for the Ethereum ecosystem, there's def"
+ ],
+ [
+  4,
+  1414,
+  "initely a system where there could be a huge grant that comes from the foundation itself to support this so that the ecosystem can grow. Tha"
+ ],
+ [
+  4,
+  1421,
+  "t's one way. The second way would probably be something like a multisig, like a DAO governed dataset. So there's a concept of data DAOs. Don"
+ ],
+ [
+  4,
+  1427,
+  "'t know if you there have been variations of it in the web three space."
+ ],
+ [
+  4,
+  1430,
+  "But essentially, it function like a DAO, and then there's a multisig that the team would consider dripping funds into to make sure that the "
+ ],
+ [
+  4,
+  1437,
+  "data is stored. So let's say you know that there's a year left, how can you, keep getting funds from your DAO to then store the data longer?"
+ ],
+ [
+  4,
+  1445,
+  " There's also a treasury component to it such that if that data is useful and it and it provides profit via the outcomes, like, if it suppor"
+ ],
+ [
+  4,
+  1452,
+  "ts scaling or,"
+ ],
+ [
+  4,
+  1453,
+  "l twos to scale and their profits that come off, that that profit can also drip back. A percentage that can drip back to the treasury, so th"
+ ],
+ [
+  4,
+  1463,
+  "en you get refunded. All that treasury itself just fully funds the dataset. So that could be two different ways of business model. Yeah. But"
+ ],
+ [
+  4,
+  1473,
+  " that's actually a really good question. Would love to see if there's actually an out of box, combining this and that into an out of box sol"
+ ],
+ [
+  4,
+  1483,
+  "ution would be awesome. Alright. That seems to be the questions for the talk. Thanks. And"
+ ],
+ [
+  4,
+  1489,
+  "now to continue, we have Hildobi with a talk about datasets. So going from data storage to how do we actually, you know, sort and reason abo"
+ ],
+ [
+  4,
+  1499,
+  "ut this data and build datasets that the on chain analyst can then use. And Hildebi, of course, being one of the main people who built datas"
+ ],
+ [
+  4,
+  1510,
+  "ets in this space. So his talk's title is datasets, datasets, datasets. Are you gonna do the impression now? No. No. No. No."
+ ],
+ [
+  4,
+  1519,
+  "Extended. Okay. Okay. That will do. Hello, everyone. My name is Hill Dobby. I am head of data at,"
+ ],
+ [
+  4,
+  1549,
+  "venture field called Dragonfly. This is the logo. I thought it was cool. You can find you can also find it in elevators if you wanna go quic"
+ ],
+ [
+  4,
+  1560,
+  "k. So yeah. So, you might have seen around my June dashboards. That's what I do in terms of public goods. So here's a bunch of them. It's a "
+ ],
+ [
+  4,
+  1570,
+  "mess. There's a bit of everything. There's staking. There's ETFs. There's blobs. There's"
+ ],
+ [
+  4,
+  1577,
+  "a bunch of stuff that I forgot as well. And this is actually not what I'll be talking about. I'll be talking about datasets, not dashboards,"
+ ],
+ [
+  4,
+  1586,
+  " because one of the mystic conceptions, around people building dashboards is that the core component is building the visualization when that"
+ ],
+ [
+  4,
+  1595,
+  "'s not really the case. That's gonna be probably the top 1% of the 10% of the work."
+ ],
+ [
+  4,
+  1600,
+  "And the real piece of meat is gonna be, you know, the actual datasets underneath the dashboard. And I think those go a much longer way than "
+ ],
+ [
+  4,
+  1610,
+  "any dashboard does simply because, you know, if you have, like, a single query that, like, fetches everything, if you go from raw data to ME"
+ ],
+ [
+  4,
+  1620,
+  "V profits, first of all, I mean, it's gonna be a hell to maintain."
+ ],
+ [
+  4,
+  1625,
+  "You wanna have building blocks. It's just overall better, but it's also kind of a contribution to the space. It allows for others to use tho"
+ ],
+ [
+  4,
+  1634,
+  "se those datasets. It allows for people to build on top of those datasets. So what I one of the things that I've been doing over the past th"
+ ],
+ [
+  4,
+  1644,
+  "ree years at Dragonfly and even before then is actually building datasets, not dashboards."
+ ],
+ [
+  4,
+  1650,
+  "Those are some of the datasets that actually back my dashboards. They'll open for everyone to use. I'll go over them later as well. But, ess"
+ ],
+ [
+  4,
+  1659,
+  "entially, if you look at some of my dashboards, the important part for all of them is gonna be the underlying dataset like I say again. So f"
+ ],
+ [
+  4,
+  1669,
+  "or blobs, for example, Dune, you have three datasets that I use,"
+ ],
+ [
+  4,
+  1673,
+  "blob submissions, blob main interactions. So that's gonna be both on the execution layer and the and the consensus layer. You need to group "
+ ],
+ [
+  4,
+  1682,
+  "those two to actually get the full picture as well as labeling who's who, who's who's actually posting for base, who's posting for optimism,"
+ ],
+ [
+  4,
+  1691,
+  " and so on. And this this is there there's there's multiple types of datasets we'll get I'll get on to later."
+ ],
+ [
+  4,
+  1698,
+  "But it's the same for ETFs where I'm actually trying to track specific addresses to see flows of ETFs instead of just tracking from Bloomber"
+ ],
+ [
+  4,
+  1707,
+  "g terminal and stuff like this. I'll go and and sleuth for different addresses where they hold those Ethereum or Bitcoin depending on the ET"
+ ],
+ [
+  4,
+  1716,
+  "F I'm looking at and tag those and keep on updating them through heuristics,"
+ ],
+ [
+  4,
+  1721,
+  "but also some manual inspection. NFTs, there's NFT trades, which has been, involving a lot of, actually, data wizards at Dune. A lot of peop"
+ ],
+ [
+  4,
+  1730,
+  "le have contributed to it. Some of the, you know, some of the different teams, there's, the, you know, OpenSea, Blur, all this. They actuall"
+ ],
+ [
+  4,
+  1739,
+  "y require a lot of maintenance to add not only new versions, but also maintain if anything goes wrong as well as update it to add new chains"
+ ],
+ [
+  4,
+  1748,
+  " and so on. And this is the backbone."
+ ],
+ [
+  4,
+  1750,
+  "It's kind of like one of the the most popular dataset on Dune is gonna be dex.trades, and it requires a lot of maintenance over there. Like,"
+ ],
+ [
+  4,
+  1758,
+  " you you have no idea how many people actually contribute to go and add their protocol. And I don't think people realize the value of the da"
+ ],
+ [
+  4,
+  1766,
+  "taset because without it, you wouldn't actually have all these dashboards pop up and all these different types of analysis."
+ ],
+ [
+  4,
+  1773,
+  "You could look at volume, but you could actually go much deeper into some very intricate things, and anyone can do what they like. So I enco"
+ ],
+ [
+  4,
+  1783,
+  "urage everyone to contribute and build datasets. There's also sandwiches, which DEX trades uses as well as two others to to surface actual M"
+ ],
+ [
+  4,
+  1794,
+  "EV trades, in this case, sandwich attacks."
+ ],
+ [
+  4,
+  1797,
+  "And then there's another one which I'll share more at, ETC if you're around on the the July 1, where I try to sleuth for central exchanges o"
+ ],
+ [
+  4,
+  1808,
+  "n chain and what you can actually gather from that data. Well, the funny thing is so this is my Dune profile. I'm not here to flex, but the "
+ ],
+ [
+  4,
+  1819,
+  "reason I show the the reason I'm showcasing this is"
+ ],
+ [
+  4,
+  1823,
+  "I actually use Inspect Element to hide the dashboard aspects to go straight to the queries. And what you will see is the two most popular qu"
+ ],
+ [
+  4,
+  1831,
+  "eries is basically just datasets that I've put together. So there's interest. The the way Dune works is the dashboard is gonna be what most "
+ ],
+ [
+  4,
+  1839,
+  "of you use, but the actual other builders on Dune are gonna be interested in the queries more than the dashboards. And"
+ ],
+ [
+  4,
+  1846,
+  "my most popular query to date is something that I started three years ago because I use in many occasions, which is central exchange address"
+ ],
+ [
+  4,
+  1857,
+  "es, trying to tag those on chain. And I'll finally get something out in a few weeks to showcase with just those, but it actually is part of "
+ ],
+ [
+  4,
+  1867,
+  "a of a bigger picture, kind of a building block. So"
+ ],
+ [
+  4,
+  1871,
+  "yeah. One of the thing I spend the most time doing on Dune is actually sleuthing for addresses. So the dashboard I use the most is actually "
+ ],
+ [
+  4,
+  1880,
+  "my least popular dashboard. It's just a dashboard called sleuthing where I add a bunch of those queries for all kinds of things. So here you"
+ ],
+ [
+  4,
+  1889,
+  " have staking. Here I'm looking at, like, who the top stakers are. And each of these icons, there's gonna be Etherscan,"
+ ],
+ [
+  4,
+  1896,
+  "Nensen, Sam CZs, Labelthing, GitHub, and Arkham. So I can quickly go and inspect on those explorers and actually, you know, find out if ther"
+ ],
+ [
+  4,
+  1907,
+  "e's any info on them and if I can get any heuristics together to actually come up with who the hell this is. Same for blobs. Here, OPstack a"
+ ],
+ [
+  4,
+  1918,
+  "ctually has a cool thing where when they post a blob, the two address it posts to contain the, chain ID,"
+ ],
+ [
+  4,
+  1926,
+  "which is super valuable info as long as you can actually find that chain ID listed somewhere, which isn't always the case. So in these these"
+ ],
+ [
+  4,
+  1935,
+  " cases, they're not listed. And if you have any clue, please, you know, I'm I'm open to any tips on Telegram or Twitter as to who this is. C"
+ ],
+ [
+  4,
+  1944,
+  "entral exchanges, like I said, I'm working on it right now, but it's actually involved in many other pieces."
+ ],
+ [
+  4,
+  1951,
+  "Like, because of their prominence on chain, you can't just ignore them. Like, it it's just it's a very, very important dataset. So I constan"
+ ],
+ [
+  4,
+  1959,
+  "tly try to hear the way the what I'm looking at is, when you make a deposit on central exchanges, you the way it works is so you can send ET"
+ ],
+ [
+  4,
+  1968,
+  "H, any native token, and then it's all good. They can actually send from the deposit to themselves. But if you send an ERC 20, you actually "
+ ],
+ [
+  4,
+  1976,
+  "need gas to send that ERC 20 over to their wallet afterwards. So what they'll often do is actually fund this wallet with gas and then send i"
+ ],
+ [
+  4,
+  1985,
+  "t. But the funding wallets and the receiving wallet can be different. So if you only have one of the two, with a few heuristics, you can act"
+ ],
+ [
+  4,
+  1993,
+  "ually figure out the other. And this is what I'm doing here is"
+ ],
+ [
+  4,
+  1997,
+  "you got one node, what's the other one, and vice versa. Blobs, you can look at it through chain ID, but you can also look at it by prominenc"
+ ],
+ [
+  4,
+  2006,
+  "e of blob posted. Who's posting a lot of blobs? Maybe that's where I wanna focus. You wanna tag, you know, the more prominent, the tail end "
+ ],
+ [
+  4,
+  2015,
+  "isn't as relevant. You'll always have tail end chains that you're just never gonna tag because, obviously, not everyone is willing to be dox"
+ ],
+ [
+  4,
+  2025,
+  "xed."
+ ],
+ [
+  4,
+  2025,
+  "But, yeah, datasets are kind of like Lego bricks. Look at this cool design I did yesterday at night. But, yeah, what I wanna showcase is how"
+ ],
+ [
+  4,
+  2035,
+  " contributing to datasets actually help others build on top. And my view is that over time, you know, we started from DeFi summer was, like,"
+ ],
+ [
+  4,
+  2045,
+  " fairly you look at, like, token transfers and, like, DEXs, but, actually, over time, there's MEV and there's more and more new progress."
+ ],
+ [
+  4,
+  2055,
+  "The the two just just a caveat. The two green ones that are a bit white as well, those aren't available, but those are theoretically availab"
+ ],
+ [
+  4,
+  2064,
+  "le in the future if someone builds it, maybe me. But, yeah, just to showcase how, you know, I kind of see all these datasets as kind of a py"
+ ],
+ [
+  4,
+  2074,
+  "ramids pyramid of LEGO blocks. And over time, you wanna go further and further. And the more you have avail the datasets available, the more"
+ ],
+ [
+  4,
+  2083,
+  " you can go further and actually investigate."
+ ],
+ [
+  4,
+  2086,
+  "So this is one of the reasons I built on Dune because of the community aspects, and that there's a lot of other people contributing. I could"
+ ],
+ [
+  4,
+  2097,
+  " never maintain most of these datasets just by myself. Like I said, there's multiple types of datasets, and I'll label them in three differe"
+ ],
+ [
+  4,
+  2108,
+  "nt main types."
+ ],
+ [
+  4,
+  2109,
+  "The manual tagging is pretty straightforward. It's just labeling addresses. It is straightforward in how it's built, but I think it's also a"
+ ],
+ [
+  4,
+  2117,
+  "bout, people often forget the accuracy metric, which is the most important. I'd rather have, you know, a small dataset with, like, super acc"
+ ],
+ [
+  4,
+  2126,
+  "urate labeling than, like, a huge dataset. That's that's what you'll see on mainly labeling website. Like, we have 3,000,000"
+ ],
+ [
+  4,
+  2133,
+  "addresses, which is a completely useless metric, but it's I guess, it gets a message. And, I don't care about that. I'd rather have, you kno"
+ ],
+ [
+  4,
+  2141,
+  "w, all the DEXs in one place, and therefore, I have the DEX space actually tagged properly rather than, like, 3,000,000 random addresses of,"
+ ],
+ [
+  4,
+  2149,
+  " like, just ENSs. Sure. I can I could tag a million addresses? That's not that's not the hard part. The hard part is actually having a compl"
+ ],
+ [
+  4,
+  2157,
+  "ete picture of an ecosystem,"
+ ],
+ [
+  4,
+  2159,
+  "and that is the most valuable yet not really understood by, I think, tagging platforms, today. The other type is gonna be decoded event role"
+ ],
+ [
+  4,
+  2169,
+  ", and that's gonna be your DEX trades. That's gonna be your NFT trades. So that's actually looking at smart contracts, events they emit if t"
+ ],
+ [
+  4,
+  2179,
+  "hose happen to be decoded, which most good protocols are. If not,"
+ ],
+ [
+  4,
+  2184,
+  "that's not great. But, yeah, this is all about, like, actually working with the events and augmenting it with extra info that you may need i"
+ ],
+ [
+  4,
+  2193,
+  "n order to have a result dataset from which you can do a ton of stuff. And then there's heuristics based. This is something that you don't b"
+ ],
+ [
+  4,
+  2203,
+  "ase on well, I mean, you can use decoded datasets,"
+ ],
+ [
+  4,
+  2206,
+  "but it's gonna be more based on, like, let's say, Dexter trades where from this, based on a few heuristics, I'm looking at, like, singling o"
+ ],
+ [
+  4,
+  2215,
+  "ut sandwich transactions, singling out atomic arbitrage, all stuff like this. And I would say I put a difficulty scale here for as an indica"
+ ],
+ [
+  4,
+  2223,
+  "tion. It's not obviously you know, it's not exactly this for everything, but it should be an indicator of, like,"
+ ],
+ [
+  4,
+  2230,
+  "if you wanna get started in data, it's probably easier to start from there than to start from there. Yeah. So yeah. There's let let's say th"
+ ],
+ [
+  4,
+  2242,
+  "ree different views of of, like, how data works. Most platform will be closed source. So that means you actually have only the visualization"
+ ],
+ [
+  4,
+  2255,
+  ","
+ ],
+ [
+  4,
+  2255,
+  "which is great, but you can't actually investigate into. It's much harder also to cross check versus all the platforms simply, for example, "
+ ],
+ [
+  4,
+  2263,
+  "because the price feed is gonna be different. And therefore, like, how do you compare volumes? Like, is it just because of the price feed, o"
+ ],
+ [
+  4,
+  2271,
+  "r is it, like, some other outlier? There's also slight interpretation changes. So, you know, you know, the better platform is gonna be the o"
+ ],
+ [
+  4,
+  2278,
+  "pen ended one where you can actually see the code and investigate"
+ ],
+ [
+  4,
+  2282,
+  "what is going on, what did the the the dev that actually built it try to do, Why did it go for this approach? And why is it different from o"
+ ],
+ [
+  4,
+  2291,
+  "ther source? So I mentioned Dune, but, obviously, there's stuff like D Phylama. There's stuff like Grow the Pie. All these were the dataset "
+ ],
+ [
+  4,
+  2301,
+  "I opened it go a really long way, and I think you don't appreciate it enough. But it's it's it's just hard to measure because"
+ ],
+ [
+  4,
+  2309,
+  "there's also a citation issue, but that's another thing, I guess. And my my ideal future is is one where everyone shares their datasets. It'"
+ ],
+ [
+  4,
+  2318,
+  "s it's more of a utopia than anything, of course. Of course, when you make a datasets, that's also your pile of gold and you're not giving o"
+ ],
+ [
+  4,
+  2327,
+  "ut your gold for free. It makes sense. That's what, you know, data businesses do,"
+ ],
+ [
+  4,
+  2332,
+  "and I understand it. But we should encourage, analysts to share this dataset, I think, in general. Right now, what you'll see on Twitter and"
+ ],
+ [
+  4,
+  2341,
+  " social media is the cloud goes to the dashboards rather than the datasets when, like I said, I think the dataset is more important. So, lik"
+ ],
+ [
+  4,
+  2350,
+  "e, the the incentives are kind of, like, the wrong way around. If we actually incentivize for better datasets, we could build a shit ton of "
+ ],
+ [
+  4,
+  2360,
+  "really cool dashboard on top of it,"
+ ],
+ [
+  4,
+  2362,
+  "and that would be much more productive. So, yeah, come contribute to Starbuck. This is my June chill. So the horse guy is is this guy, he'll"
+ ],
+ [
+  4,
+  2373,
+  " be presenting later. And he there was just a recent made recently made change to Spellbook. Wait. Just to clarify, Spellbook is the open pl"
+ ],
+ [
+  4,
+  2383,
+  "atform on Dune, which allows for anyone to contribute and create datasets."
+ ],
+ [
+  4,
+  2389,
+  "Everyone can iterate on them. And it used to be a little too open ended, but now they're refocusing to high priority datasets like DEX trade"
+ ],
+ [
+  4,
+  2399,
+  "s, NFT trades, which tend to be high impact rather than, like, this obscure protocols, TVL or whatever, you know, which only this one dev is"
+ ],
+ [
+  4,
+  2409,
+  " gonna look at. So, yeah, please join. There's, like,"
+ ],
+ [
+  4,
+  2413,
+  "over 400, analysts who have contributed to it, and we're always looking for more. It's yeah. I don't work at Dune, but, you know, I'm a heav"
+ ],
+ [
+  4,
+  2423,
+  "y user and a heavy benefiter as well as contributor to the platform. When I when I arrived at Zoo Berlin, didn't really know what I was gonn"
+ ],
+ [
+  4,
+  2433,
+  "a talk about. And then, I talked about datasets, to some people,"
+ ],
+ [
+  4,
+  2437,
+  "and I realized I had this, like, this dashboard that was, in my, like, privates for a while. I've been using it. It's just a list of dataset"
+ ],
+ [
+  4,
+  2446,
+  "s that I use, and I thought I might as well public make it public. And it's kind of my curated list. So this is where the whole idea of the "
+ ],
+ [
+  4,
+  2454,
+  "talk that it stems from is you Spellbook in its current form does have a lot of datasets."
+ ],
+ [
+  4,
+  2460,
+  "But like all things, when it's open ended, you're gonna you're gonna have good and less good datasets. So this is all the datasets. You can "
+ ],
+ [
+  4,
+  2470,
+  "actually go check on donotcom/lw/spells. This is all the datasets that I can vet because I've usually heavily contributed or created them, a"
+ ],
+ [
+  4,
+  2480,
+  "s well as, like, the roll tables, the price feeds."
+ ],
+ [
+  4,
+  2483,
+  "Yeah. Most of my analysis are gonna be based on this, and I'll keep adding some over time. So, yeah, feel free to go track and let me know i"
+ ],
+ [
+  4,
+  2494,
+  "f there's anything I should add on there that you think warrants an addition. Yeah. Hopefully hopefully, this is the takeaway. This is the t"
+ ],
+ [
+  4,
+  2505,
+  "he current takeaway of this talk."
+ ],
+ [
+  4,
+  2508,
+  "And, actually, if you are around for ECC, this is probably the takeaway that I want you to have. And, yeah, this is the end of my talk. Than"
+ ],
+ [
+  4,
+  2530,
+  "k you. Alright. Thanks. Any questions from the room?"
+ ],
+ [
+  4,
+  2538,
+  "Yeah. Like about your ETF datasets, like, comes from off chain data. Right? No. Just only on chain. Okay. Nice. Okay. So my question was, th"
+ ],
+ [
+  4,
+  2548,
+  "ere's a lot of off chain data that is also being used in June. Like, you can do, like, API calls in queries and things like that. Yeah. So w"
+ ],
+ [
+  4,
+  2557,
+  "hat's your take on that, yeah, your view on using off chain and mixing it with on chain? My view is that if it's the only way you should use"
+ ],
+ [
+  4,
+  2567,
+  " it, but I always try to minimize third party reliance."
+ ],
+ [
+  4,
+  2571,
+  "It's just more complex down the line, and you're setting yourself up for later, you know, things breaking. And when I build a dataset or a d"
+ ],
+ [
+  4,
+  2580,
+  "ashboard, my goal is to have it be as low maintenance as possible so I can actually build all the dashboards afterwards instead of just gett"
+ ],
+ [
+  4,
+  2589,
+  "ing stuck on it and maintaining. Yeah, in terms of ETFs, it's it's all based on"
+ ],
+ [
+  4,
+  2594,
+  "for Bitcoin, I have, like, 7,500 addresses tagged, then Ethereum is gonna be, like, 3,000. And I keep on adding new ones based on heuristics"
+ ],
+ [
+  4,
+  2603,
+  ". It's gonna be mostly, like, Coinbase Prime, who's the custodian. So I kinda know which addresses those tokens come from, and I roughly kno"
+ ],
+ [
+  4,
+  2612,
+  "w the amounts that I'm looking for. I cross check with off chain sources. I cross check with"
+ ],
+ [
+  4,
+  2618,
+  "Chainlink Oracles like the one twenty one share provides. I also am in touch with Bitwise who has an API and actually made all these address"
+ ],
+ [
+  4,
+  2627,
+  "es public. That's awesome from them. But I kinda wanna use this dashboard as a showcase for how, you know, how we can actually use crypto fo"
+ ],
+ [
+  4,
+  2636,
+  "r what it's worth rather than just having an ETF on top. Like, we can actually prove that the addresses hold this amount"
+ ],
+ [
+  4,
+  2644,
+  "and follow the flows ourselves. So my idea would be to build TradFi into actually seeing the benefits of on chain data through that dashboar"
+ ],
+ [
+  4,
+  2655,
+  "d. For now, it's mostly used as a data source for flows, which is also great. But, you know, maybe later down the line, hopefully, that gets"
+ ],
+ [
+  4,
+  2666,
+  " institution moving on this."
+ ],
+ [
+  4,
+  2668,
+  "Thank you. Yeah. Thanks for your talk. I know you talk a lot about trusting and, like, verifying that the dataset is actually correct. Can y"
+ ],
+ [
+  4,
+  2686,
+  "ou maybe walk me through when you go to a completely random"
+ ],
+ [
+  4,
+  2693,
+  "June dashboard and you wanna make sure that you actually read correct data, how do you like, what is your process for verifying data? And al"
+ ],
+ [
+  4,
+  2705,
+  "so, how do you make sure that you can trust a dataset? I mean, the truth is I don't trust most datasets. That's why I build them."
+ ],
+ [
+  4,
+  2717,
+  "It's it's hard. It's a like, it's a it's a big problem in in general. Like, curation is hard in data. Like, I no one has it figured out. Any"
+ ],
+ [
+  4,
+  2725,
+  "one could publish anything. And based on the Twitter followers, it looks like it may be accurate because you have a lot of followers, but in"
+ ],
+ [
+  4,
+  2733,
+  " actuality, it doesn't make you an expert to have a lot of Twitter followers. Right? So it's a it's a tough problem and I don't think like, "
+ ],
+ [
+  4,
+  2741,
+  "everyone's"
+ ],
+ [
+  4,
+  2742,
+  "it's it's I I I do what we call, you know, child crimes all the time. You can't have it all accurate all the time. That's all all I request "
+ ],
+ [
+  4,
+  2751,
+  "though that if you do, like, correct it and actually, you know, get things moving rather than, like, not learning from your mistake. And the"
+ ],
+ [
+  4,
+  2759,
+  "n in terms of datasets, ideally, I can actually inspect the dataset and actually how it's made."
+ ],
+ [
+  4,
+  2765,
+  "The more complex the query, the the more worrisome it is to me. Like, if it's, you know, hard coding a bunch of addresses in random places, "
+ ],
+ [
+  4,
+  2774,
+  "it's like unless it's like something specific like staking where you need, okay, the staking address, of course. But in most cases, the more"
+ ],
+ [
+  4,
+  2783,
+  " it's hard coded, the more it's, like, specific to certain flows, the more it's gonna be missing out and likely inaccurate."
+ ],
+ [
+  4,
+  2791,
+  "But it's it's it's the verification process right now is hard. I would actually love to talk about this if you have ideas on how we can push"
+ ],
+ [
+  4,
+  2800,
+  " for something better and better curation all around. I do think we probably need some kind of social layer on top of datasets to actually n"
+ ],
+ [
+  4,
+  2808,
+  "ot social layer can mean a lot of things, but, like, you know, calling out bad datasets,"
+ ],
+ [
+  4,
+  2814,
+  "actually showcasing why like, what are the pros, what are the cons of these datasets. If it's outdated, you know, it would be nice to have i"
+ ],
+ [
+  4,
+  2823,
+  "t flagged by the first person who sees it so that others later on don't, like, not realize it. But it's tough. It's a it's a very weird prob"
+ ],
+ [
+  4,
+  2832,
+  "lem because the issue with dataset is maintenance. Eventually,"
+ ],
+ [
+  4,
+  2836,
+  "every dataset goes unmaintained. And where do you go from there? I do think right now Dune is the best place to collaborate and hopefully ha"
+ ],
+ [
+  4,
+  2849,
+  "nd it over to other people, but I wish other platforms, followed that in the Dune footsteps and and made their data more open ended in a way"
+ ],
+ [
+  4,
+  2862,
+  ". Thank you."
+ ],
+ [
+  4,
+  2863,
+  "As June, I can say it's very hard. Yeah. Like yeah. The data creation and, like, the maintenance of Spellbook and the overhead that produces"
+ ],
+ [
+  4,
+  2872,
+  " by just having a lot of contributors from all around the world with, like, all kinds of language barriers, culture barriers. Like a lot of "
+ ],
+ [
+  4,
+  2880,
+  "data analysts in web three are actually kind of self taught, which I think is super cool. Like it's actually kind of a power of web three th"
+ ],
+ [
+  4,
+  2889,
+  "at like anyone can go in here,"
+ ],
+ [
+  4,
+  2891,
+  "like learn a little bit of SQL, and then kind of like model the state of all of these different protocols. But As as being on the receiving "
+ ],
+ [
+  4,
+  2902,
+  "end of like getting a bunch of non very optimized SQL queries, things do get things do get a bit dicey. So yeah. Just to just to kind of thr"
+ ],
+ [
+  4,
+  2913,
+  "ow it in, I think,"
+ ],
+ [
+  4,
+  2914,
+  "like, my I I am now responsible for Sparbox. So, like, my kind of idea is, okay, like, let's actually let's build a community around this an"
+ ],
+ [
+  4,
+  2921,
+  "d, like, let's build datasets together. I don't think that has happened in the past. Like, you've you've just gone off and done your thing a"
+ ],
+ [
+  4,
+  2929,
+  "nd, like, we've kind of maintained extra trades. We've kind of maintained Solana dex trades. But, like, overall, it's, very like, it's just,"
+ ],
+ [
+  4,
+  2936,
+  " like, a wild growth of everything. And like, yeah, I I agree that like we"
+ ],
+ [
+  4,
+  2940,
+  "should come together and build these datasets to progress the space. And if Dune can be a facilitator of that, we'd love to be. But at the s"
+ ],
+ [
+  4,
+  2948,
+  "ame time, Dune's also running a business. We're not a we're not a we're not a nonprofit organization. And so so there's always consideration"
+ ],
+ [
+  4,
+  2956,
+  "s to be made, but of course, let let's try to build these datasets together. Was pretty hard. And I think that's actually a perfect bridge"
+ ],
+ [
+  4,
+  2964,
+  "towards the next talk, which is Lawrence who works who works with Grow the to surprise you. And Grow the Pie famously being a website that t"
+ ],
+ [
+  4,
+  2976,
+  "racks all kinds of l two stats. I'm sure Lawrence can give a can give a quick introduction, and Lawrence is gonna talk about an initiative h"
+ ],
+ [
+  4,
+  2988,
+  "e's been trying to get started over the last year or so, which is the open labels initiative. He's been"
+ ],
+ [
+  4,
+  2997,
+  "hard at work. I see the the call summaries every Thursday in Telegram. And, yeah, Lawrence, take it away and and maybe he's trying to solve "
+ ],
+ [
+  4,
+  3007,
+  "one of the data collaboration problems, so I'm super interested in what what's what's what his perspective will be on on these topics. Yeah."
+ ],
+ [
+  4,
+  3017,
+  " Thanks for the introduction. My name is Laurence."
+ ],
+ [
+  4,
+  3020,
+  "I'm currently the researcher at Grow the Pie. And, yeah, we are trying to push forward a standardized data model and entry point for labels."
+ ],
+ [
+  4,
+  3032,
+  " I know everyone kinda hates labels because it's so much work, but I think there's a lot of problems that can be solved quite easily. And I "
+ ],
+ [
+  4,
+  3044,
+  "think"
+ ],
+ [
+  4,
+  3044,
+  "yeah. I will just jump into it, what Open Labels ish Labels initiative is, how we came to it because honestly, we didn't wanna build it. But"
+ ],
+ [
+  4,
+  3053,
+  " when we ran into a bunch of problems, we were like, damn. This problem needs fixing. Otherwise, we can't build the products. And then we ta"
+ ],
+ [
+  4,
+  3062,
+  "lk to other data teams and realize, wow, so many other data teams suffer from the same problems like"
+ ],
+ [
+  4,
+  3068,
+  "so many countless hours are wasted on just redundantly labeling addresses, which is kinda sad because we could be doing something better. We"
+ ],
+ [
+  4,
+  3078,
+  " could be writing better SQL queries, better datasets, but also, yeah, just get more analytics out. So, yeah, maybe let's start off with a l"
+ ],
+ [
+  4,
+  3088,
+  "ittle quiz. Here, I have an Ethereum address. Who knows what it is? Yeah. Boxer. Yep. Perfect. It's wrapped Ethereum."
+ ],
+ [
+  4,
+  3096,
+  "Correct. Very good. Okay. One more. Maybe a little bit more tough. I I hope some people yeah. Okay. Okay. I I will I will tell you. It's a T"
+ ],
+ [
+  4,
+  3107,
+  "itan builder on Ethereum. It's a tricky one, but last time I did something like that, everyone guessed it instantly, so I had to put in some"
+ ],
+ [
+  4,
+  3118,
+  "thing more complicated."
+ ],
+ [
+  4,
+  3120,
+  "But, yeah, my point being here is that blockchain data is hard. Right? It's so, like, so cryptic and without labels, we are kinda lost. And "
+ ],
+ [
+  4,
+  3131,
+  "also, what if I told you this was Uniswap? Would you believe me? Probably yes, right? Maybe it's not even Titan builder. So these these addr"
+ ],
+ [
+  4,
+  3142,
+  "ess labels are also just as good as the person you trust"
+ ],
+ [
+  4,
+  3146,
+  "providing them to you. And as I said, Open Labels initiative was something we spun out of Grow the Pie and we really didn't want to build it"
+ ],
+ [
+  4,
+  3156,
+  ". But when we were starting our project with block space section, which you can see behind me, which is basically analyzing the whole block "
+ ],
+ [
+  4,
+  3166,
+  "space section of different layer twos and categorizing them into different categories,"
+ ],
+ [
+  4,
+  3172,
+  "we realized, wow, there there's a labeling problem in our space. We started by looking at the space. Okay? We are public goods. We don't wan"
+ ],
+ [
+  4,
+  3183,
+  "na spend too much money on labels. What are open datasets we can use? And then we came across, yeah, June labels, some other GitHub maintain"
+ ],
+ [
+  4,
+  3194,
+  "ed labels, some random websites,"
+ ],
+ [
+  4,
+  3196,
+  "and we really realized, hey, everyone is doing something else, everyone has a different data model. It was a complete complete mess. And wha"
+ ],
+ [
+  4,
+  3207,
+  "t we did like many others, right, we just build our own dataset and started from scratch ultimately, which was a painful process. So while s"
+ ],
+ [
+  4,
+  3218,
+  "ourcing labels, think we found three problems."
+ ],
+ [
+  4,
+  3222,
+  "First of all, labels are hard to get so a lot of companies actually put them behind paywalls. For example, I guess the biggest example is Et"
+ ],
+ [
+  4,
+  3230,
+  "herscan, they have one of the best label sets But of course, they spend or like they have five or six full time employers working on labels."
+ ],
+ [
+  4,
+  3239,
+  " Of course, they need to make money off that. So they charge around, I think, 600 or $700"
+ ],
+ [
+  4,
+  3244,
+  "per month to access these labels. Then we also realized, yes, they are centralized. So let's say you are a dApp builder and you want to labe"
+ ],
+ [
+  4,
+  3253,
+  "l your contracts, there's no neutral entity. You have to go to Etherscan and upload your labels there. Then if you want your labels to be on"
+ ],
+ [
+  4,
+  3263,
+  " Dune, you go to Dune and upload them there. Then you go to Allium,"
+ ],
+ [
+  4,
+  3267,
+  "upload your labels there. So it's like a centralized system. Everyone has their own datasets they maintain and you have to go there to uploa"
+ ],
+ [
+  4,
+  3276,
+  "d them individually. And the third thing is a lot of them are unmaintained. So we came to the realization when looking for GitHub repos, sur"
+ ],
+ [
+  4,
+  3285,
+  "e everyone is excited to get started but after a few months everyone is kind of sick and tired of maintaining"
+ ],
+ [
+  4,
+  3292,
+  "label datasets so they just get abandoned and then you're left with a bunch of outdated labels. So these I think are the three major problem"
+ ],
+ [
+  4,
+  3302,
+  "s and how can we now solve them? And I think that's actually a hard problem but also a cool problem because there's a lot of tech we can use"
+ ],
+ [
+  4,
+  3313,
+  " which is web free native to make these problems go away."
+ ],
+ [
+  4,
+  3317,
+  "Oh, yeah. And one one more problem, everyone stores their labels differently. So Etherscan has a different data model they use, Dune does it"
+ ],
+ [
+  4,
+  3326,
+  " differently, Allium does it differently, random people on GitHub does it differently. There's like no standardization. Yeah. So there's rea"
+ ],
+ [
+  4,
+  3335,
+  "lly no standardization in how to store labels and also in data teams creating"
+ ],
+ [
+  4,
+  3340,
+  "their own because they can't find datasets that are applicable to their use cases. So where do we go from here? So as you now understand the"
+ ],
+ [
+  4,
+  3350,
+  " problem, how can we actually solve it? And for us, it took us now almost one year of development because we did it as a side project and th"
+ ],
+ [
+  4,
+  3360,
+  "en it took up more and more work. But now we are really doubling down on on what we are trying to build here because we see that there are a"
+ ],
+ [
+  4,
+  3369,
+  " lot of other data teams,"
+ ],
+ [
+  4,
+  3371,
+  "that can leverage this. So where do we wanna go? So as I said, first of all, it's important that we have a decentralized way of storing labe"
+ ],
+ [
+  4,
+  3381,
+  "ls. Right? We don't want some data team having full control of them and if they go bankrupt, all the labels disappear similar to our first t"
+ ],
+ [
+  4,
+  3392,
+  "alk today. It's, it's important that we store them in a decentralized way and let everyone contribute but also consume labels."
+ ],
+ [
+  4,
+  3401,
+  "But to really get there, we don't really want the data lake. Right? We want high quality labels. So we kinda need to agree on a data model. "
+ ],
+ [
+  4,
+  3411,
+  "So what we thought about ourselves, okay, let's first start off with agreeing on a data model. And we spent literally almost 3 or 4 months g"
+ ],
+ [
+  4,
+  3421,
+  "etting all data teams together, kind of agreeing to a data model. And I feel like that was one of the biggest problems"
+ ],
+ [
+  4,
+  3429,
+  "and I think we came up with a good solution. Okay. But, yeah, now we have a data model everyone agrees on. We have a bunch of data or like a"
+ ],
+ [
+  4,
+  3438,
+  " bunch of labels in a decentralized way. Everyone can contribute. But now we run into a third problem. Right? There's like no quality assura"
+ ],
+ [
+  4,
+  3447,
+  "nce. How can we trust some random guy on the Internet with the labels?"
+ ],
+ [
+  4,
+  3452,
+  "So we need some way of filtering down only to the highest quality of labels. So we don't want spammers or, I don't know, ruggers labeling th"
+ ],
+ [
+  4,
+  3463,
+  "emselves as Uniswap and ruggling people. Right? We only want high quality labels that we can trust. So how can we build something like that "
+ ],
+ [
+  4,
+  3474,
+  "in a decentralized way?"
+ ],
+ [
+  4,
+  3476,
+  "Anyhow, now shameless plug, Open Labels Initiative, check it out. What we did at Open Labels Initiative is, first of all, we agreed on a dat"
+ ],
+ [
+  4,
+  3486,
+  "a model and the data model is super simple but flexible. So you can see the whole data model on the right here. It's, called the OLI framewo"
+ ],
+ [
+  4,
+  3496,
+  "rk and it simply has an address and chain ID and then different tags"
+ ],
+ [
+  4,
+  3501,
+  "and different tags are associated one value and that's it. So a tag could be contract name for example which would be WEPH or Uniswap or wha"
+ ],
+ [
+  4,
+  3514,
+  "tever. But it could also be category like a DEX or it could be a project Uniswap. And by taking the approach of a very flexible"
+ ],
+ [
+  4,
+  3526,
+  "data model, we could finally convince the whole data community to agree on it. Right? Because you can always come up with new data IDs and t"
+ ],
+ [
+  4,
+  3536,
+  "hen create new categories for that or like a new a new type of labeling. Then the next thing we did was create or like think about decentral"
+ ],
+ [
+  4,
+  3547,
+  "ized ways to store"
+ ],
+ [
+  4,
+  3548,
+  "labels where anyone can send labels to but also retrieve labels from. And that was also not that simple because a lot of decentralized stora"
+ ],
+ [
+  4,
+  3558,
+  "ge solutions, they are not, I don't know, they are still in the early days. I think IPFS is doing great job here. But ultimately, if nobody "
+ ],
+ [
+  4,
+  3569,
+  "maintains or like pins these IPFS"
+ ],
+ [
+  4,
+  3571,
+  "data, it also get lost. So we ended choosing the Fiori metastation service, which is fully on chain, with the option to store stuff on IPFS "
+ ],
+ [
+  4,
+  3582,
+  "and pinning that to chain basically. And by doing that so, we can now enable anyone to contribute labels but also directly read them from fr"
+ ],
+ [
+  4,
+  3594,
+  "om on chain. So they will never be lost as long as we have our beloved blockchains running."
+ ],
+ [
+  4,
+  3601,
+  "And now the hardest problem, the label confidence. So okay, now everyone can go to the EAS contracts, attest their labels, but ultimately, o"
+ ],
+ [
+  4,
+  3612,
+  "kay, can we trust them? And for that, we looked into a lot of research and there is a lot of research being done on that because it's a it's"
+ ],
+ [
+  4,
+  3623,
+  " basically a problem"
+ ],
+ [
+  4,
+  3625,
+  "of trusting people in a group you don't know who is in that group basically. And we talked to the Ethereum attestation service guys and they"
+ ],
+ [
+  4,
+  3635,
+  " actually released a paper that addresses this problem which is basically a transitive trust algorithm. So for example, I'm an entity that p"
+ ],
+ [
+  4,
+  3646,
+  "osts labels into the"
+ ],
+ [
+  4,
+  3647,
+  "label pool. If I trust, let's say, Ko fi and Hildobi and Boxer, I know they will submit valid labels. And let's say Boxer knows five other p"
+ ],
+ [
+  4,
+  3659,
+  "eople, then I can trust Boxer's five other people with a certain percentage. And if we create such a network, we can actually create a trans"
+ ],
+ [
+  4,
+  3672,
+  "itive trust score to each label submitted to the label pool."
+ ],
+ [
+  4,
+  3677,
+  "So let's say you're an entity that tries to scam people with fake labels, no one will know you, no one will like maybe people will see that "
+ ],
+ [
+  4,
+  3686,
+  "you attested a wrong label and they will instantly know nobody will trust you meaning you will never have a high score. And we are currently"
+ ],
+ [
+  4,
+  3694,
+  " building this into the open labels initiative so anyone can just have a list of certain trusted entities and it will directly give them all"
+ ],
+ [
+  4,
+  3703,
+  " the labels that are associated and transitive trust with a certain percentage. So you can actually say, oh, I only want the top 10%"
+ ],
+ [
+  4,
+  3711,
+  "of high quality labels or I want top 90% if you like a little bit more okay with having one or two wrong labels into them. Yeah, by doing it"
+ ],
+ [
+  4,
+  3723,
+  " this way, we can literally make sure that everyone can get as many labels as they want or as a high quality they would like from this label"
+ ],
+ [
+  4,
+  3734,
+  " pool."
+ ],
+ [
+  4,
+  3735,
+  "Yeah. And like I said, we started a year ago and this conceptualizing this took quite a long time. But now we finally launched and we also h"
+ ],
+ [
+  4,
+  3747,
+  "ave a leader board on our website so you can you can see your favorite data contributor on there, especially on the on the third on the thir"
+ ],
+ [
+  4,
+  3758,
+  "d place, shout out to you Kofi,"
+ ],
+ [
+  4,
+  3761,
+  "for attesting all your bundler based labels. And So we now have it live and anyone can now access these labels and you can say, hey, I trust"
+ ],
+ [
+  4,
+  3770,
+  " Ko fi, I trust Grow the Pie and instantly can get only the highest quality of labels that you trust. So this is the system we're trying to "
+ ],
+ [
+  4,
+  3779,
+  "build and we're still early, we're still building our tooling. So recently we launched the pip package, So it's like within three lines of c"
+ ],
+ [
+  4,
+  3788,
+  "ode in your back end, you can now attest labels but also retrieve them."
+ ],
+ [
+  4,
+  3793,
+  "And we're working on multiple integrations. So for example, agnostics, they added ours and Sourceify is also now using our, the labels in th"
+ ],
+ [
+  4,
+  3804,
+  "e label pool. So, yeah, if you have any label need or also labels to contribute, feel free to reach out to me and, yeah, let's let's solve t"
+ ],
+ [
+  4,
+  3814,
+  "his labeling problem. Let's stop spending so much time and label"
+ ],
+ [
+  4,
+  3819,
+  "together as a community. Thank you. Yeah. Any any questions? No questions from the room. How much How what's the extent of the labels datase"
+ ],
+ [
+  4,
+  3838,
+  "t today? Like, how much of I think you're you're basically using this for, like, powering GoldePie's"
+ ],
+ [
+  4,
+  3852,
+  "block space allocation, which I think is, a good measure of, like, how how many relevant smart contracts have you actually mapped. So what's"
+ ],
+ [
+  4,
+  3860,
+  " the what's the percentage of I think you you call it like unidentified or something on Ethereum mainnet today. Yeah. So that's a good point"
+ ],
+ [
+  4,
+  3868,
+  " because the label label pool is only as good as the contributors. Right? And Grow to Pie is one of the biggest contributors. We cover mostl"
+ ],
+ [
+  4,
+  3876,
+  "y layer two ecosystem."
+ ],
+ [
+  4,
+  3877,
+  "Therefore, that's where the most labels are. I mean, there's also other labels, like we even support Solana labels or Bitcoin labels. But ul"
+ ],
+ [
+  4,
+  3889,
+  "timately, for Ethereum mainnet, I think we have around 70% of transactions to addresses mapped. Yeah. K. That's pretty solid. Can you descri"
+ ],
+ [
+  4,
+  3902,
+  "be the trust process? So how's the verification"
+ ],
+ [
+  4,
+  3906,
+  "process of these of these labels? Yeah. So the trust process currently works. We have only a raw alpha currently running. It works by you se"
+ ],
+ [
+  4,
+  3918,
+  "lecting the people you trust and that might only be five or six people which is fine and you can also define which tag ID you trust. So not "
+ ],
+ [
+  4,
+  3930,
+  "just only who you trust but also which tag ID."
+ ],
+ [
+  4,
+  3934,
+  "And then we have a filtering system. You just give it that list and instantly it will filter down the whole label pool, all the attestations"
+ ],
+ [
+  4,
+  3943,
+  " in the label pool on EAS and will only give you back the labels submitted by them. Then that is already working. The next step would be to "
+ ],
+ [
+  4,
+  3953,
+  "then have a repo where you upload your trusted entities. I upload my trusted entities. Everyone uploads their trusted entities and then we b"
+ ],
+ [
+  4,
+  3962,
+  "uild this transitive trust score."
+ ],
+ [
+  4,
+  3964,
+  "Yeah. And then it calculates, hey, I trust you. You trust someone else so I can trust that that third person maybe 50% of the time. And by d"
+ ],
+ [
+  4,
+  3973,
+  "oing that so then we would be able to really get this transitive trust score going. But, yeah, it's it's currently still under development. "
+ ],
+ [
+  4,
+  3983,
+  "But, yeah, the basic filtering works so far. Yeah. How are you thinking about"
+ ],
+ [
+  4,
+  3988,
+  "label updatability with the new PIP package? Right? Because, basically, what my question is is if I attest to a label today saying, oh, here"
+ ],
+ [
+  4,
+  3997,
+  "'s this address with three tags. And then later on, I'm just like, oh, I want to add I want to make another attestation for that same addres"
+ ],
+ [
+  4,
+  4006,
+  "s, but now with four tags. Like, there's an additional tag that I added. If I do that using the pip package, will there end up being two"
+ ],
+ [
+  4,
+  4015,
+  "labels in the, like, attestation pool that then need to be compared against each other in this trust score thing, or would the first label g"
+ ],
+ [
+  4,
+  4026,
+  "et updated to include the fourth tag that I that I included? Yeah. That's a good question. So, it's like you said at the beginning, you basi"
+ ],
+ [
+  4,
+  4036,
+  "cally then have two attestations."
+ ],
+ [
+  4,
+  4039,
+  "And with the package also comes the retrieval process. So in the PIP package, if it detects two attestation to the same contract with the sa"
+ ],
+ [
+  4,
+  4052,
+  "me tag IDs, it will always pick the later one. We hard coded that. So if you notice a mistake and readtest,"
+ ],
+ [
+  4,
+  4062,
+  "the old attestation is still there but it will not be, yeah, picked up upon. Then there's actually a second way to do it. So the EAS has fun"
+ ],
+ [
+  4,
+  4073,
+  "damentally, like, allows revocations. So you can also simply say, okay, this label is wrong but I I also don't know what the correct version"
+ ],
+ [
+  4,
+  4084,
+  " is. I will just revoke that old attestation"
+ ],
+ [
+  4,
+  4088,
+  "and then it will just become invalid and not picked up by the retrieval system through open labels initiative. Yeah. Yeah. That makes sense."
+ ],
+ [
+  4,
+  4097,
+  " And one last thing about the of this ability, if you've got like you do a bunch of labels and then more labels got added to those labels an"
+ ],
+ [
+  4,
+  4106,
+  "d you're doing an attestation again, does the does the package currently check if there"
+ ],
+ [
+  4,
+  4111,
+  "if you're about to attest something that you've already attested the exact same thing? So, like, this is the exact same address with the exa"
+ ],
+ [
+  4,
+  4119,
+  "ct same tags, and maybe it can be skipped. Like, is there something inside of the package for checking if it can be skipped, or would you ju"
+ ],
+ [
+  4,
+  4127,
+  "st, again, end up just attest attesting the same thing accidentally? Currently, there's no checks in place that checks if you actually alrea"
+ ],
+ [
+  4,
+  4134,
+  "dy attested"
+ ],
+ [
+  4,
+  4135,
+  "the same thing. Feature request. But yeah. Okay. That's that's a good that's a good I will write it down. Yeah. The the PIP package is defin"
+ ],
+ [
+  4,
+  4143,
+  "itely also, there will be new versions coming out soon, but I think I think that's that definitely makes it more useful and, yeah, a better "
+ ],
+ [
+  4,
+  4152,
+  "way to make sure that you're not just wasting gas money by just sending new transactions for attestations you already made."
+ ],
+ [
+  4,
+  4159,
+  "Thank you. And quick follow-up question. So if I do, like, a redeployment of a contract or a protocol, I'll just redeploy, a series of thing"
+ ],
+ [
+  4,
+  4168,
+  "s. Right? Some might stay, some might change. Right? So then is there a way that your package or that I can query, like, the latest version "
+ ],
+ [
+  4,
+  4178,
+  "of, let's say, a deployment of a protocol, for instance? Like, how do I Yeah. Deduplicate,"
+ ],
+ [
+  4,
+  4184,
+  "like, the equally tagged contracts which will have the same label. Right? But it's just a newer version of the deployment. Yeah. So I guess "
+ ],
+ [
+  4,
+  4194,
+  "that's so there are multiple things. As long as it's a new address, right, the old address tag will stay unless it's revoked. And then if it"
+ ],
+ [
+  4,
+  4204,
+  "'s like a oh, it's just Uniswap v four now or v five,"
+ ],
+ [
+  4,
+  4208,
+  "there's also a tag ID that tracks versions of projects. And then you just basically assign a tag ID called version, assign it to Uniswap ref"
+ ],
+ [
+  4,
+  4220,
+  "ree, which would just be version three, and then assign that tag to the Uniswap name, and that's how we currently have it handled in the dat"
+ ],
+ [
+  4,
+  4233,
+  "a model. Yeah. Alright. Any more questions from the room?"
+ ],
+ [
+  4,
+  4238,
+  "Yep. Hey there. Yeah. So I've been working with ENS to try figuring out how we can identify open source repos and associate an ENS name with"
+ ],
+ [
+  4,
+  4249,
+  " them so that we can stream funding. So I guess my main question is that is there any synergy between ENS and the open label initiatives"
+ ],
+ [
+  4,
+  4260,
+  "to actually make things, kind of they already have an identity standard. So is there anything to kind of bandwagon off that whether through "
+ ],
+ [
+  4,
+  4271,
+  "sub ENSs or even registering their own? Yeah. Actually, that's that's a good point because what the open labels initiative currently lacks i"
+ ],
+ [
+  4,
+  4282,
+  "s especially like social links"
+ ],
+ [
+  4,
+  4284,
+  "or website links, stuff like that because we are trying to tag mainly static things. And I know you at ENS have some sort of social profile "
+ ],
+ [
+  4,
+  4296,
+  "behind each, yeah, ENS domain. And I think cooperating on that would be where I see a lot of synergies. So we can we can incorporate you and"
+ ],
+ [
+  4,
+  4308,
+  " rather than maintaining"
+ ],
+ [
+  4,
+  4310,
+  "random website names on the open labels initiative, which would, I think, just be too messy. I think it's better. Yeah. So I see there a lot"
+ ],
+ [
+  4,
+  4319,
+  " of synergies. Yeah. We should definitely talk. Alright. Any more questions from the room? It doesn't seem like it. Yeah. It would be beauti"
+ ],
+ [
+  4,
+  4328,
+  "ful if the ENS names were just inside of the own labels initiative. If somebody would just build a build a script to pull all the ENS names,"
+ ],
+ [
+  4,
+  4338,
+  " but that's quite a few at this point."
+ ],
+ [
+  4,
+  4340,
+  "But yeah. Thank you, Lawrence. Thank you for coming and sharing your insights on labels. And hopefully, one day, the space can align on stan"
+ ],
+ [
+  4,
+  4351,
+  "dards. Or maybe you've just created the sixteenth standard. Classic problem. Next up, we have Grace. She's a data scientist at Uniswap. I ho"
+ ],
+ [
+  4,
+  4362,
+  "pe that's the correct title."
+ ],
+ [
+  4,
+  4364,
+  "If not, correct me. And she's gonna take she's gonna tell us about Uniswap, Unichain, and Uniswap X. Alright. Got it right. Your microphone "
+ ],
+ [
+  4,
+  4378,
+  "is where you are. K. Give me one second to set this up. I can keep talking. Yeah. Keep going. You missed a v four and,"
+ ],
+ [
+  4,
+  4390,
+  "like, a little bit about smart wallets at the end, if we have time. Oh, yeah. I saw that. Yeah. Uniswap Uniswap Wallet is adopting EIP seven"
+ ],
+ [
+  4,
+  4398,
+  " seven zero two, I think, which is very exciting. It's a prediction I made on the index podcast a while ago where I was like, the wallets ne"
+ ],
+ [
+  4,
+  4406,
+  "ed to actually do, like, bring forward the integration of smart wallets. That's a that's a weird sentence. But they need to adopt these thes"
+ ],
+ [
+  4,
+  4415,
+  "e standards because the users themselves will never do it."
+ ],
+ [
+  4,
+  4418,
+  "So, yeah, very exciting. Yeah. Okay. Thanks for the intro. Sorry about that. Yeah. So today, I'm just going to be going over all Uniswap dat"
+ ],
+ [
+  4,
+  4428,
+  "a that is on chain. So a little bit about me, I am a data scientist at Uniswap Labs. I specifically focus on our protocols team, but that ki"
+ ],
+ [
+  4,
+  4438,
+  "nd of seeps into everything that we do at labs. So,"
+ ],
+ [
+  4,
+  4442,
+  "yeah, I'm just gonna cover what's on chain today, obviously. But the goal is to kind of show you how we think about all of the data that we "
+ ],
+ [
+  4,
+  4451,
+  "produce, and the building blocks that we have. So, yeah, starting kind of from the bottom to the top, I would say, even though they're all r"
+ ],
+ [
+  4,
+  4460,
+  "ealistically in the same kind of zone. We're gonna go over Unichain, the Uniswap protocols, which is v one through v four, though we're gonn"
+ ],
+ [
+  4,
+  4469,
+  "a mainly focus on v four since that is what is new."
+ ],
+ [
+  4,
+  4472,
+  "Uniswap x, we're gonna cover a little bit on liquidity sources on Ethereum as well as kind of, you know, Uniswap x on base as well. And then"
+ ],
+ [
+  4,
+  4481,
+  " if we have time, which I think we will because I'm gonna try to get through this, we're just gonna cover a little bit on Uniswap Labs' Smar"
+ ],
+ [
+  4,
+  4489,
+  "t Wallet, the delegations that we've seen, and kind of the activity that we've seen coming from Smart Wallets."
+ ],
+ [
+  4,
+  4496,
+  "Alright. So starting off with Unichain. So the goal also of this presentation is there is a million metrics that I could possibly show you a"
+ ],
+ [
+  4,
+  4505,
+  "bout all these things. I'm kind of going to show you a few of our favorites that we like to track internally, and kind of how we think about"
+ ],
+ [
+  4,
+  4514,
+  " what metrics we're looking at and and what they tell us actually. So starting off strong with this active contracts metric,"
+ ],
+ [
+  4,
+  4522,
+  "you may have seen that there have been, you know, over a 150 k contracts, deployed on the chain. Well, you know, unfortunately, that doesn't"
+ ],
+ [
+  4,
+  4531,
+  " really tell us much about, like, what types of contracts and or and or their usage on Unichain. And so we have this active contracts heuris"
+ ],
+ [
+  4,
+  4540,
+  "tic that was kind of based off of an old heuristic the OP team used to use, which looks at a combination of traces,"
+ ],
+ [
+  4,
+  4547,
+  "transaction, transactions in terms of who is calling the transactions as well as how many there are, and the actual logs emitted or yeah. I "
+ ],
+ [
+  4,
+  4555,
+  "guess that's traces as well from these transactions to kind of tell us on a given day, you know, how can we define what an active contract i"
+ ],
+ [
+  4,
+  4564,
+  "s? And so this metric actually is really fun to play with in terms of, you know, setting the thresholds for these different things because t"
+ ],
+ [
+  4,
+  4572,
+  "he heuristic ultimately affects kind of what the result is. But we've come to kind of this heuristic of, like, we call it five five ten,"
+ ],
+ [
+  4,
+  4580,
+  "which is, like, five traces sent by at least five different wallets that or five traces per transaction that are or overall that are sent by"
+ ],
+ [
+  4,
+  4588,
+  " at least five different wallets and at least 10 transactions per day. If we do that over time, that is how many active contracts we see. On"
+ ],
+ [
+  4,
+  4597,
+  " a given day, this active contracts metric is usually between a 100 to 200 contracts. We ideally would like to go more into this in the futu"
+ ],
+ [
+  4,
+  4605,
+  "re kind of looking at, you know, tokens deployed, you know, any bytecode that's the same, etcetera,"
+ ],
+ [
+  4,
+  4611,
+  "but we just haven't got there yet. So, yeah, another metric that we like to look at is, you know, average daily transactions. I kind of incl"
+ ],
+ [
+  4,
+  4618,
+  "uded this chart showing daily gas versus the number of transactions because I think it's hard to just see a raw number of transactions and u"
+ ],
+ [
+  4,
+  4626,
+  "nderstand what's going on. And you can see that, like, the rise in transactions doesn't doesn't, like, correlate to, you know, the spikes in"
+ ],
+ [
+  4,
+  4633,
+  " gas. And so I think the gas without the transactions or the transactions without the gas doesn't really tell you what you need to know."
+ ],
+ [
+  4,
+  4640,
+  "And then the last is average gas per second, which, like, we are nowhere near our gas limit, but it is cool to track and see how that has be"
+ ],
+ [
+  4,
+  4649,
+  "en going up in the most recent months, which is probably due to TVL, which we'll get to later. So yeah. Step number two is Unichain economic"
+ ],
+ [
+  4,
+  4658,
+  "s. So a lot of this work has piggybacked off of the wonderful roll up economics dashboard on Dune. Shout out Kofi for that incredible datase"
+ ],
+ [
+  4,
+  4667,
+  "t."
+ ],
+ [
+  4,
+  4667,
+  "And, yeah, these are priced in dollars, but we also track things in ETH. We tend to look at as well kind of the percentage of, revenue that "
+ ],
+ [
+  4,
+  4676,
+  "comes from priority fees. When we first launched Unichain, we actually saw a lot larger portion of the, quote, unquote, revenue coming from "
+ ],
+ [
+  4,
+  4685,
+  "all sorts of things, but definitely not priority fees."
+ ],
+ [
+  4,
+  4689,
+  "I would say more of the l one fee, which was kind of strange. And then, you know, we like to track blob gas cost kind of as and understand, "
+ ],
+ [
+  4,
+  4704,
+  "like, their percentage of, the actual l one cost that we end up paying. Most almost all, I think, our data is posted on blobs. So, yeah. It "
+ ],
+ [
+  4,
+  4718,
+  "remains mainly constant over time,"
+ ],
+ [
+  4,
+  4722,
+  "I would say. It doesn't well, we haven't seen quite enough demand to make it kind of stretch. That makes sense. Okay. Cool. Then, you know, "
+ ],
+ [
+  4,
+  4733,
+  "I could show you a bunch of economic charts, but instead, I get to show you everyone's favorite cumulative volume. So sorry. Also, there's t"
+ ],
+ [
+  4,
+  4744,
+  "wo charts included on the right hand side because for some reason, the DEX volume on DeFi Lama is not comprehensive on certain days."
+ ],
+ [
+  4,
+  4755,
+  "So kind of encourage you if you see something like that where all of a sudden it drops off on a given day to actually check what you see on "
+ ],
+ [
+  4,
+  4763,
+  "other platforms as well because sometimes there can be errors. And so this actually shows you, like, TVL in comparison to daily DEX volume, "
+ ],
+ [
+  4,
+  4771,
+  "which I think is important to understand. You know? You really like, the DEX volume is ultimately driven by TVL. Yeah. And then a few of oth"
+ ],
+ [
+  4,
+  4778,
+  "er the metrics that we kind of track is the percentage of Uniswap TVL on Unichain."
+ ],
+ [
+  4,
+  4783,
+  "So this in in basically is looking at, like, of all the TVL and all the Uniswap protocols, what percentage of that is on Unichain? And given"
+ ],
+ [
+  4,
+  4791,
+  " the fact that we build both of those protocols, you know, that is something that we like to know and understand. And then I guess I should "
+ ],
+ [
+  4,
+  4800,
+  "mention this percentage of liquidity in Uniswap metric. The denominator is a little bit confusing in the sense that it is comes from DeFi Ll"
+ ],
+ [
+  4,
+  4808,
+  "ama as well, and it's just the total, like, liquidity or TVL in DeFi, any DeFi contract."
+ ],
+ [
+  4,
+  4813,
+  "So it's not just DEXs. So it's interesting to look at, but, like, we always take it with a grain of salt. I just thought we'd include it her"
+ ],
+ [
+  4,
+  4822,
+  "e. It essentially says that a little over half of DeFi TVL on Unichain is in Uniswap. Okay. We're gonna blaze through TBS. The main takeaway"
+ ],
+ [
+  4,
+  4831,
+  " here, honestly, is that one, externally bridged volume has almost caught up to what we've seen from the canonical bridge,"
+ ],
+ [
+  4,
+  4839,
+  "which a few months ago, that was not the case. Most native ETH is bridged through the canonical bridge, so almost all of that comes from jus"
+ ],
+ [
+  4,
+  4847,
+  "t people bridging native ETH. As well as if we look at the inflows and outflows by chain, I think the biggest takeaway here is that while mo"
+ ],
+ [
+  4,
+  4855,
+  "st of the inflows kind of come from Ethereum, which is what we'd expect, actually, we see kind of more of the more of the portion of outflow"
+ ],
+ [
+  4,
+  4864,
+  "s. Like, there's greater outflows than inflows for Arbitrum and Barachain,"
+ ],
+ [
+  4,
+  4868,
+  "which is quite interesting because, you know, theoretically, these are potentially DeFi power users, which is what we built Unichain for. Bu"
+ ],
+ [
+  4,
+  4876,
+  "t they're not bridging to Unichain. They're actually bridging from Unichain, which is interesting. Alright. Now onto the Uniswap protocol. O"
+ ],
+ [
+  4,
+  4884,
+  "h, another cumulative volume metric, but we just crossed 3,000,000,000,000, so I had to throw it on here. You know, we see about 14%"
+ ],
+ [
+  4,
+  4892,
+  "of the daily volume is from v four. I mentioned this because, actually, already this year, we've seen v four surpass v two in volume, which "
+ ],
+ [
+  4,
+  4901,
+  "traditionally v two has been about a third of the volume we see, a third of v three volume specifically. We don't see much v one volume anym"
+ ],
+ [
+  4,
+  4909,
+  "ore. But, yeah, we're only you know, we launched v four back in February,"
+ ],
+ [
+  4,
+  4914,
+  "and it's already surpassed v two, which is pretty exciting. So, most of the v four volume comes from three chains. It's actually Binance, Un"
+ ],
+ [
+  4,
+  4923,
+  "ichain, and then Ethereum, which is a strange ordering. But, if we, you know, look at the percentage of Uniswap volume on Binance that, you "
+ ],
+ [
+  4,
+  4932,
+  "know, comes from different versions, we see that it's like, you know, 40%"
+ ],
+ [
+  4,
+  4937,
+  "comes from Unichain or it's come Unichain comes from v four on Binance. So, yeah, you can see Unichain is mainly v four volume, which incent"
+ ],
+ [
+  4,
+  4948,
+  "ives. Anyways, onto Uniswap TVL. So currently, we've see about 24% of TVL across all versions of Uniswap in v four. If we look at that kind "
+ ],
+ [
+  4,
+  4958,
+  "of average, obviously, because TVL fluctuates over the past month, we actually see that around 20%"
+ ],
+ [
+  4,
+  4966,
+  "of t TVL is in v four and then an even split between v three and v two. So even though we've kind of seen more volume in v four, we still ha"
+ ],
+ [
+  4,
+  4975,
+  "ven't seen that same distribution of TBL. And we are almost at $11,000,000,000 in TVL and v four. That'll be a very exciting another great m"
+ ],
+ [
+  4,
+  4984,
+  "etric. Alright. So on to v four hooks. I think this is probably the most exciting given the fact that last time I talked about v four, we di"
+ ],
+ [
+  4,
+  4993,
+  "dn't have v four data yet. So it is launched. It is out there. We have a bunch of great dashboards on hooks."
+ ],
+ [
+  4,
+  5000,
+  "Also, all the charts and resources that I'm mentioning are linked at the end. So when I share out this deck, it'll kind of be like a data gl"
+ ],
+ [
+  4,
+  5009,
+  "ossary for everything to do with Unichain or Uni Uniswap. Sorry. A lot of different products. So, yeah, I think, you know, we've seen almost"
+ ],
+ [
+  4,
+  5018,
+  " 1,200 hooks deployed. Bunny and Aegis are definitely the two largest with this increase in, you know, hook to pool volume kind of in the pa"
+ ],
+ [
+  4,
+  5028,
+  "st week or so has been"
+ ],
+ [
+  4,
+  5029,
+  "mainly driven on Unichain due to incentives run by the foundation. They added three hooked pools to their incentives program, and so this is"
+ ],
+ [
+  4,
+  5037,
+  " mainly where that has been coming from. But this wonderful dashboard, which I have linked at the end, kind of shows you a high level, how e"
+ ],
+ [
+  4,
+  5046,
+  "ach of these hooks have been doing, the volume that's been going through them, what are the top pools."
+ ],
+ [
+  4,
+  5052,
+  "And I think it's it's extremely interesting to look at. You know, volume through hooks right now still makes up around 1% only of v four vol"
+ ],
+ [
+  4,
+  5061,
+  "ume. And so we're kind of hoping to increase that as, you know, more hook development occurs and, people start adopting. So yeah. Okay. On t"
+ ],
+ [
+  4,
+  5070,
+  "o Uniswap X, which we typically don't talk too much about, but we are starting to."
+ ],
+ [
+  4,
+  5075,
+  "So the total volume through Uniswap X has been 22,000,000,000. This number of fillers is just on Ethereum. We do have different fillers on b"
+ ],
+ [
+  4,
+  5084,
+  "ase and Arbitrum. Yeah. We have, you know, we have a pretty high fill rate as well as daily and number of orders filled. The fill rate comes"
+ ],
+ [
+  4,
+  5092,
+  " from, like, if a user submits an order that is through, you know, swap x, basically, that is how likely we are to fill it."
+ ],
+ [
+  4,
+  5100,
+  "Yeah. Around 23,000,000 in volume every day. That volume, I will get to in a second, but it's pretty evenly split between base and Ethereum,"
+ ],
+ [
+  4,
+  5111,
+  " actually. So liquidity sources, we're specifically focused on, Ethereum here. But, if we look at you know, this is okay. So one thing to no"
+ ],
+ [
+  4,
+  5122,
+  "te about these charts is that a"
+ ],
+ [
+  4,
+  5124,
+  "the, when you fill Uniswap x order, it doesn't have to be through one liquidity source. So if you summed the number of transactions, it woul"
+ ],
+ [
+  4,
+  5132,
+  "d actually be higher than the actual number of Uniswap x transactions. That is not a bug that is by design. We wanna know just how many tran"
+ ],
+ [
+  4,
+  5139,
+  "sactions essentially are using different filler or different liquidity sources. And you can see this is on a log scale just so we can, like,"
+ ],
+ [
+  4,
+  5147,
+  " see it, and it's not huge."
+ ],
+ [
+  4,
+  5148,
+  "But most of Uniswap x volume still goes through private private sources of liquidity, essentially. 71% of you know? Or 71% of transactions g"
+ ],
+ [
+  4,
+  5159,
+  "oing through Uniswap x use some source or some sort of private liquidity source. And then this is kind to give you a relative picture, of, y"
+ ],
+ [
+  4,
+  5171,
+  "ou know, the percentage of"
+ ],
+ [
+  4,
+  5173,
+  "swaps on Uniswap that end up going through Uniswap x. Right now, it's around 30%. This is by just looking at the universal router. And I thi"
+ ],
+ [
+  4,
+  5183,
+  "nk this is just for Ethereum. Danning, you can correct me if I'm wrong. But it it if we extrapolate to base, it is around the same as well. "
+ ],
+ [
+  4,
+  5192,
+  "And I I fact checked that internally."
+ ],
+ [
+  4,
+  5195,
+  "So, okay. And then these charts kind of look at Uniswap x across chains. So what we see here is that, you know, the number of orders filled "
+ ],
+ [
+  4,
+  5206,
+  "actually has increased on base. So there's more Uniswap x orders on base now than Ethereum, which, you know, we kind of, in early April, rol"
+ ],
+ [
+  4,
+  5217,
+  "led out Uniswap x to all of,"
+ ],
+ [
+  4,
+  5219,
+  "potentially Labs users. So we kind of saw that increase as a function of that. But what's interesting to note as well as the distribution, l"
+ ],
+ [
+  4,
+  5228,
+  "ike, on Uniswap x on Ethereum, we see much larger size swaps versus on base. It's much more even distribution across different sizes. So tha"
+ ],
+ [
+  4,
+  5238,
+  "t's been exciting to see, and we actually do see really great price improvement through Uniswap X."
+ ],
+ [
+  4,
+  5244,
+  "So yeah. Or, I guess, around since April, you know, 50% of orders make up 35% of volume through Uniswap X on base, which is pretty cool. Arb"
+ ],
+ [
+  4,
+  5254,
+  "itrum has been kind of a smaller portion of UniswapEx volume, but we are working on that currently. So yeah. Alright. We made it to smart wa"
+ ],
+ [
+  4,
+  5264,
+  "llets. I hope I'm not too far on time. Hope you're not sick of me talking yet. But this is looking at delegations by chain. So,"
+ ],
+ [
+  4,
+  5273,
+  "we've recently I think we're over 8,000, maybe we're at 9,000 delegations on chain, which is huge because, you know, in order to one, well, "
+ ],
+ [
+  4,
+  5281,
+  "one, we just launched, like, two weeks ago. So if you wanna check it out, go download the Uniswap smart wallet and click enable. It's awesom"
+ ],
+ [
+  4,
+  5289,
+  "e. Or if you create a new wallet, actually, it is auto enabled. That is a feature as well that we decided upon to kind of give users the bes"
+ ],
+ [
+  4,
+  5297,
+  "t UX experience we possibly can."
+ ],
+ [
+  4,
+  5299,
+  "And this is super exciting because, you know, in order to delegate on chain, you actually have to, you know, swap first. And so it kind of g"
+ ],
+ [
+  4,
+  5308,
+  "ives us a picture as to, you know, how how many users are enabling and then as well as continuing with the enable and going through, and see"
+ ],
+ [
+  4,
+  5317,
+  "ing that on chain delegation. So, you know, just if we looked at, you know, the number of, you know, swap wallets that we have totally enabl"
+ ],
+ [
+  4,
+  5326,
+  "ed,"
+ ],
+ [
+  4,
+  5326,
+  "either via creating a new or by, you know, clicking enable, we see about 40,000 right now, which means that, you know, almost a quarter of t"
+ ],
+ [
+  4,
+  5334,
+  "hem have actually gone through and continue swapping, which obviously has some selection bias due to the fact that if you are clicking enabl"
+ ],
+ [
+  4,
+  5343,
+  "e, you are probably more of a power user. Or if you're new, you're more likely to swap in your first few days, but that still is exciting."
+ ],
+ [
+  4,
+  5351,
+  "And then this kind of harps on that point right now, but I included this chart from Wintermute on the right hand side. They did a wonderful "
+ ],
+ [
+  4,
+  5360,
+  "report on 7702. One thing to specify is when I first saw this, I was a little confused because I was like, wait. That would be awesome if we"
+ ],
+ [
+  4,
+  5370,
+  " had that many delegations already. That would be insane. But, actually, these are just transactions done by authorized wallets."
+ ],
+ [
+  4,
+  5378,
+  "So transactions being I think they don't specify to swapping, but I'm not quite sure. And then on the left hand side, this actually just sho"
+ ],
+ [
+  4,
+  5387,
+  "ws delegations versus swaps. So we see users that have delegated on a few of these chains, I think, notably, Ethereum based bridge transacti"
+ ],
+ [
+  4,
+  5395,
+  "ons are essentially like in internally, we look at, like, if a user has bridged from a chain to a different chain, we kind of categorize tho"
+ ],
+ [
+  4,
+  5404,
+  "se as differently just because they aren't on a specific chain. So we kind of bundle the delegation either with a bridge transaction, which "
+ ],
+ [
+  4,
+  5413,
+  "technically under the hood is just a swap via a cross,"
+ ],
+ [
+  4,
+  5416,
+  "or we do that based off of whatever swap on one of chain. Yeah. So these are all the resources. I'm sorry. There were a few charts in here t"
+ ],
+ [
+  4,
+  5425,
+  "hat include data that I probably can't share, unfortunately, but there are wonderful, wonderful resources here. Most of these charts have co"
+ ],
+ [
+  4,
+  5434,
+  "me from public datasets, public work that people have done, which is absolutely incredible. And, yeah, I will"
+ ],
+ [
+  4,
+  5441,
+  "continue adding to this as I as I find more incredible sources. And I think one thing that is missing from here is actually grow the pie on "
+ ],
+ [
+  4,
+  5453,
+  "Unichain, so I will add that as well. That is all from me. Sorry. That was a lot. Thank you. That much. Could have gone longer. Any question"
+ ],
+ [
+  4,
+  5466,
+  "s from the room?"
+ ],
+ [
+  4,
+  5467,
+  "I've got a question. Yes. What does the feature set look like for this version of the Uniswap SmartWorld? I mean, I know that you guys will "
+ ],
+ [
+  4,
+  5476,
+  "have the bundled actions to, like, you know, approve and swap at one transaction, but are you also doing gas sponsorship? And are there any "
+ ],
+ [
+  4,
+  5484,
+  "other smart wallet, you know, magic things that you're trying out? Yes. So the first feature we rolled out with is just bundled transactions"
+ ],
+ [
+  4,
+  5493,
+  "."
+ ],
+ [
+  4,
+  5493,
+  "However, our Spiral Wallet was built with gas sponsorship in mind, with session keys in mind. And so, ultimately, we really wanna explore th"
+ ],
+ [
+  4,
+  5502,
+  "e full design space of what a smart wallet will allow us to do. And so our team, you know, spends a lot of time thinking about what is the n"
+ ],
+ [
+  4,
+  5511,
+  "ext most important feature that we can launch, how can we best build this. But the actual, you know, implementation of our $7.07 $0.02 contr"
+ ],
+ [
+  4,
+  5521,
+  "act was"
+ ],
+ [
+  4,
+  5521,
+  "thought about with all these, decisions in mind, and, those are the main two that I think we are thinking about right now. I think there's a"
+ ],
+ [
+  4,
+  5533,
+  " few more actually on the horizons as well. But, yes, ultimately, we want to have as many of the key benefits of a $7.07 $0.02 wallet access"
+ ],
+ [
+  4,
+  5544,
+  "ible to our users. No more questions on news, Rob. I guess"
+ ],
+ [
+  4,
+  5549,
+  "that was very self explanatory. I'm so glad. We have a lot of data. That's for sure. So Yeah. Alright. Do have a question? Sure. Talk about "
+ ],
+ [
+  4,
+  5558,
+  "the smart wallets? Like, when you're putting smart wallets before, is that people using Uniswap wallet or Yes. Like, using safes or somethin"
+ ],
+ [
+  4,
+  5567,
+  "g to interact with Uniswap? Like, what do you What are we Like, what do you mean when you say smart wallets? Like, how do people like, what'"
+ ],
+ [
+  4,
+  5576,
+  "s the how do people engage with smart wallets? Yeah. Great question."
+ ],
+ [
+  4,
+  5580,
+  "So when I talk about our smart wallets, I'm specifically focused on the Uniswap wallet, both mobile and extensions. We have mobile app and e"
+ ],
+ [
+  4,
+  5589,
+  "xtension. Those two things kind of are just different platforms of the same thing. And not the server. No. I'm not. Though we yes. I'm talki"
+ ],
+ [
+  4,
+  5598,
+  "ng about the Uniswap wallet specifically. Though I should mention that, like, on the web app, actually, from day one, we have been"
+ ],
+ [
+  4,
+  5607,
+  "we basically made sure to include and allow for batched swaps. So if you do have either a five seven nine two or a seven seven zero two impl"
+ ],
+ [
+  4,
+  5617,
+  "ementation, or your wallet allows that, you will be able to benefit from that feature if you use our web app as well. So it was only two we "
+ ],
+ [
+  4,
+  5627,
+  "we launched that since Petra on May 7,"
+ ],
+ [
+  4,
+  5630,
+  "but it was only a few weeks ago that we actually rolled out our own seven seven zero two implementation. And only last week, we rolled it ou"
+ ],
+ [
+  4,
+  5642,
+  "t to a 100%, meaning all of our users have the ability to enable, and delegate their wallet to our seven seven zero two implementation. Yeah"
+ ],
+ [
+  4,
+  5653,
+  ". It's it's not similar to a SafeWallet, actually. It's,"
+ ],
+ [
+  4,
+  5658,
+  "essentially, like, our users have a leg like, if you have an existing wallet, it's just a legacy UA. What enabling allows you to do is deleg"
+ ],
+ [
+  4,
+  5670,
+  "ate the code of your UA to our 7702 contract, which has a bunch of features kind of in it. But, essentially, right now,"
+ ],
+ [
+  4,
+  5681,
+  "it's basically a baseline, you know, seven seven zero two contract, essentially, that just allows you to, basically ex when you execute a tr"
+ ],
+ [
+  4,
+  5691,
+  "ansaction, you're executing through the code of that contract versus actually signing off on that transaction as just an EOA. So it's it's s"
+ ],
+ [
+  4,
+  5701,
+  "lightly different than what a SAFE is."
+ ],
+ [
+  4,
+  5704,
+  "But yeah. Yeah. Exactly. Exactly. And we've been we've been thinking about this for a long time. So we we've been working on this for many, "
+ ],
+ [
+  4,
+  5721,
+  "many months before PACTURE went live, and it's gonna be something that we continue working on in the future as well. Cool."
+ ],
+ [
+  4,
+  5736,
+  "Yeah? I mean, you can introduce me. Okay. Cool. So thanks, Grace, for a super comprehensive talk. I have a present for you. This is a sticke"
+ ],
+ [
+  4,
+  5751,
+  "r from the index podcast, and it says, I bet your BDT mastered for this cumulative chart. Nice. Cool. So"
+ ],
+ [
+  4,
+  5763,
+  "the last talk that being streamed here would be from Voxer. He will open up a debate floor. We will probably, like, after his talk, we will "
+ ],
+ [
+  4,
+  5772,
+  "sit in a circle. We'll cut the stream and starting debate about Solana Ethereum, like, maybe, you know, from the ecosystem level to the prot"
+ ],
+ [
+  4,
+  5780,
+  "ocol level. But first, Boxer gonna try to compare, you know, the data metrics and the, you know, like, the talks around these two ecosystems"
+ ],
+ [
+  4,
+  5789,
+  "."
+ ],
+ [
+  4,
+  5789,
+  "So for free, you can use this one. Alright. So how do I best start this? I guess, does IVV allow us to compare crypto networks"
+ ],
+ [
+  4,
+  5813,
+  "and then specifically comparing Ethereum and Solana based on real economic value? And I guess for that, we need to know what real economic v"
+ ],
+ [
+  4,
+  5822,
+  "alue is. And this has been a debate that's kind of been ongoing since, I would say, like, early February or something on Twitter, with lots "
+ ],
+ [
+  4,
+  5830,
+  "of prominent voices kind of chipping their chipping their thoughts in. It's like, is REV good is REV a good metric? Is it a bad metric? So i"
+ ],
+ [
+  4,
+  5839,
+  "n this kind of presentation, I'm gonna"
+ ],
+ [
+  4,
+  5841,
+  "try to just lay out the argument, and then I hope we can continue the conversation afterwards to see, like, how does the room align on, like"
+ ],
+ [
+  4,
+  5849,
+  ", is this a good metric? Is this not a good metric? What should we do with the with the knowledge that we can maybe gain from looking at the"
+ ],
+ [
+  4,
+  5857,
+  " Solana perspective of valuing networks? So yeah. There's a bunch of, like, headlines on, like, IV, and I don't know what the formatting wha"
+ ],
+ [
+  4,
+  5864,
+  "t happened with the formatting here. I hope that doesn't continue through the whole presentation, but it's been much reported on media's"
+ ],
+ [
+  4,
+  5872,
+  "picking this up of, hey, IV, and, like, I think the the the bottom left one is Solana drafts Ethereum with record breaking RV. And then, lik"
+ ],
+ [
+  4,
+  5881,
+  "e, what but what does that mean? Like, how how can we interpret this? It's just one metric that somebody made up. And then on the other side"
+ ],
+ [
+  4,
+  5890,
+  ", we have, of course, Sasol, the the forever defender of Ethereum, saying, IV is shit, and we should not we should not deal with this, and t"
+ ],
+ [
+  4,
+  5899,
+  "he ETH maxes will kill IV, and, like, it's an irrelevant metric. So there's been a lively discussion."
+ ],
+ [
+  4,
+  5905,
+  "And then there's also takes like, okay. Like, I I think, like, the the basis of all of this is, how do we value crypto networks? And, yeah, "
+ ],
+ [
+  4,
+  5914,
+  "how how do we value crypto networks, and what are the metrics that can maybe kind of facilitate evaluation like that? In traditional finance"
+ ],
+ [
+  4,
+  5923,
+  ", you would look at a start up. You'd be like, okay. The start up has 50,000,000 of revenue. We'll apply a PE ratio of 20."
+ ],
+ [
+  4,
+  5931,
+  "Like, maybe it's a high-tech growth startup that's, like, 20 to 50 is, like, a reasonable amount. Sometimes there's weird things that happen"
+ ],
+ [
+  4,
+  5940,
+  ", like Palantir going to a PE ratio of 400. But, generally, markets are are rational, and, like, what my market's always trying to assess is"
+ ],
+ [
+  4,
+  5950,
+  ", like, this asset produces produces profits. So, like, how much"
+ ],
+ [
+  4,
+  5954,
+  "do I like, how how much do I think the future profits of this enterprise will be based on the growth rates and the current profit profitabil"
+ ],
+ [
+  4,
+  5962,
+  "ity? And we kind of need to so, like, this is more about, like, ease the asset and solve the asset. And, like, why is that actually importan"
+ ],
+ [
+  4,
+  5969,
+  "t? And it's like, we just chart the chart these market caps against each other. I'm I'm sure some of you are are familiar and, like, Ethereu"
+ ],
+ [
+  4,
+  5977,
+  "m nowadays is sitting at 300,000,000,000,"
+ ],
+ [
+  4,
+  5979,
+  "Solana just about under a 100,000,000,000. And, yeah, Solana Solana, actually, the price has been very volatile, but just because the issuan"
+ ],
+ [
+  4,
+  5988,
+  "ce of Solana is actually, I think, they're inflating at, 8% a year. So, like, the price can go down, but the market can still go up. But tha"
+ ],
+ [
+  4,
+  5996,
+  "t in the end, that means, like, that the market actually there's demand for, like, just buying up the assets that, like, are are net issued."
+ ],
+ [
+  4,
+  6005,
+  "So yeah. But why is this important? Why do we actually care about the price of ETH? Yeah. We've switched to a proof of stake system. I'm sur"
+ ],
+ [
+  4,
+  6013,
+  "e there's a lot of, like, people who are, like, more familiar with the economic security of ETH and, like, how all of that works, but the th"
+ ],
+ [
+  4,
+  6022,
+  "e the high level takes here. The higher the ETH market cap is, the more expensive it will be to 51% tech the network."
+ ],
+ [
+  4,
+  6029,
+  "And the rest is, like, just kind of downstream effects of that is, like, the lower the ETH price, the the less the income of the validators "
+ ],
+ [
+  4,
+  6037,
+  "is gonna be. So it's, like, getting less attractive to actually run a validator, given the same issuance rate. Since the issuance rate is, l"
+ ],
+ [
+  4,
+  6044,
+  "ike, denominated in ETH. Right? It's not like, oh, we are gonna give out 3,000,000 a year or, like, $5,000,000,000 a year. No. It's like we'"
+ ],
+ [
+  4,
+  6052,
+  "re giving out however many ETH a year. I don't know the number."
+ ],
+ [
+  4,
+  6055,
+  "But yeah. So these are like, that's why we care about the price of ETH, and I think the Ethereum ecosystem as a whole does not kind of care "
+ ],
+ [
+  4,
+  6062,
+  "about the price of ETH. There's been a lot of conversations like ETH's money or like ETH's oil or like ETH's whatever. And but, like, in the"
+ ],
+ [
+  4,
+  6070,
+  " end, I I I think, like, it's very peculiar to me that, like, okay. Like, you transition your network to proof of stake, and then it's like,"
+ ],
+ [
+  4,
+  6077,
+  " yeah. But, like, we don't care about the price. Like, we we're just like, oh, the mission is important and, like, what it's like, no. Like,"
+ ],
+ [
+  4,
+  6085,
+  " you've"
+ ],
+ [
+  4,
+  6085,
+  "you've made the bargain with the devil. Like, you need to now care about the price. At least that that would be that would be my interpretat"
+ ],
+ [
+  4,
+  6094,
+  "ion, and, like, hopefully, we can discuss that later. But yeah. So why why so what is RV? Why should why should we care about a RV? And also"
+ ],
+ [
+  4,
+  6104,
+  " why RV might be stupid. And then we'll we'll go into an open discussion of"
+ ],
+ [
+  4,
+  6109,
+  "of, yeah, how how do we resolve this. So, yeah, what is real economic value? Really, the history of this is that Blockworks research or, lik"
+ ],
+ [
+  4,
+  6119,
+  "e, BlockWorks has a great research team. They're standardizing a bunch of metrics throughout the industry or, like, especially IVs, like, wh"
+ ],
+ [
+  4,
+  6129,
+  "at what they defined. And then if we if we just look through this table here"
+ ],
+ [
+  4,
+  6134,
+  "or, like, let's put it into words first, and then we can kind of look like what are the components of this. And it really is the sum of all "
+ ],
+ [
+  4,
+  6142,
+  "fees that people are willing to pay for block space. And in Ethereum's case, that would be the base fees, the priority fees, the blob fees, "
+ ],
+ [
+  4,
+  6151,
+  "and then also whatever is happening in MEV boost and on the Flashbots side and, like, things that people pay out of protocol."
+ ],
+ [
+  4,
+  6158,
+  "And then if we kind of apply that same contest to Solana, we have the vote fees, we have the base, and we have the priority fees. So that's "
+ ],
+ [
+  4,
+  6166,
+  "kind of like the the the core fees that you pay in Solana. And then in Solana, the MEV pipeline is called or, like, the the yeah. The MEV si"
+ ],
+ [
+  4,
+  6174,
+  "decar to the client is is built by JITO, and therefore, it's just just called JITO tips. So, like, in Ethereum, we could call them FlashBot "
+ ],
+ [
+  4,
+  6181,
+  "tips, but that doesn't really make sense. JITO"
+ ],
+ [
+  4,
+  6184,
+  "kind of runs like a more integrated service where, like I don't know. I'm I'm not super familiar with, like, how JITO works, but part of tha"
+ ],
+ [
+  4,
+  6192,
+  "t revenue actually goes to JITU itself and not like, Flashbots doesn't take a cut. Right? It's like so, like, in in Solana, it's like, the M"
+ ],
+ [
+  4,
+  6200,
+  "EV space is a bit more centralized so much so that JITU actually, like, at one point, recognized that they were harming the network and shut"
+ ],
+ [
+  4,
+  6207,
+  " down part of their part of their MEV operations"
+ ],
+ [
+  4,
+  6210,
+  "and disabled, like, a feature because they were recognizing that, like, people were getting sandwiched too much. But yeah. And then finally,"
+ ],
+ [
+  4,
+  6217,
+  " you can kind of look at we we could look at all blockchains and, like, we could do this calculation for Tron and for Bitcoin for all of the"
+ ],
+ [
+  4,
+  6225,
+  "se things. But for the for the purpose of this presentation, we're gonna we're gonna focus on Ethereum, Solana, and OPstacks or, like, Base "
+ ],
+ [
+  4,
+  6232,
+  "specifically"
+ ],
+ [
+  4,
+  6233,
+  "since that's the most used l l two today and I think most relevant to this discussion. And there, we we just have l one data fees, l two bas"
+ ],
+ [
+  4,
+  6242,
+  "e, and priority fees. There's zero MEV on bay I mean, there's there's MEV on base, but there's no there's no other protocol tips that that w"
+ ],
+ [
+  4,
+  6251,
+  "ould facilitate something like that. But yeah. So that's kind of like, okay. That is that that's real economic value, and then we can actual"
+ ],
+ [
+  4,
+  6260,
+  "ly kind of look at the specific things here, and I I recognize that this will be hard to read from the back, so I can can now read this out "
+ ],
+ [
+  4,
+  6270,
+  "to you."
+ ],
+ [
+  4,
+  6270,
+  "It's gonna be a bit hard. But so this is the Solana IV, and we can see that in May, we basically lended a bit over 100,000,000 in real econo"
+ ],
+ [
+  4,
+  6281,
+  "mic value. So that's all the fees that people are paying on Solana to be included inside of the Solana block space. And then we can kind of "
+ ],
+ [
+  4,
+  6292,
+  "see the makeup of this is,"
+ ],
+ [
+  4,
+  6294,
+  "I would say, like, 40% priority fees, 50% g two tips, and then base fee base fee, both fees, they those make up about, like, 1010%, somethin"
+ ],
+ [
+  4,
+  6304,
+  "g like that. So we can see that the that the JITO part of this, the MEV, like, the the the part that people tip to kind of, like, get priori"
+ ],
+ [
+  4,
+  6314,
+  "ty in the in the in the block space,"
+ ],
+ [
+  4,
+  6317,
+  "is actually very high. And on Ethereum, in the past, it's also been that high, but we'll we'll get to that in a bit. Yeah. Like, a bit over "
+ ],
+ [
+  4,
+  6325,
+  "a 100,000,000, quite steady. Like, this topped out at whatever, 550,000,000 in January when when the Trump token launch was and the Libra to"
+ ],
+ [
+  4,
+  6333,
+  "ken was and the the whole meme coin mania was just going crazy on Solana. And then, obviously, the meme coin market kind of died down afterw"
+ ],
+ [
+  4,
+  6341,
+  "ards, so, like, the the the IV"
+ ],
+ [
+  4,
+  6343,
+  "revenue also down or, like, the the IV died down. But now it's kind of slowly picking back up as the as the markets are coming back. So kind"
+ ],
+ [
+  4,
+  6351,
+  " of very reflexive in in terms of, like, this is very dependent on the market. There's not, some kind of fixed fee. This is very dependent o"
+ ],
+ [
+  4,
+  6359,
+  "n, like, what's what's actually happening on the blockchain at the moment. And then we can look at the same chart for Ethereum."
+ ],
+ [
+  4,
+  6366,
+  "So this is base fees, priority fees, MEV boost tips, block fees. And here, actually included the total, so this is 50,000,000. And we we can"
+ ],
+ [
+  4,
+  6375,
+  " see that the the base fees actually make up 20,000,000. The priority fees make up also kind of 20,000,000, and then the EBV boost tips are "
+ ],
+ [
+  4,
+  6385,
+  "just 7,000,000. So that just I'm I'm just kind of, like laying the groundwork so we can so we can all form proper arguments afterwards. Oh, "
+ ],
+ [
+  4,
+  6394,
+  "and then there's blob fees as well with a 112,000, which is fantastic."
+ ],
+ [
+  4,
+  6399,
+  "And then oh, and I think one thing to mention is that IV for Ethereum was a lot higher before the blob upgrade just because, like, the l two"
+ ],
+ [
+  4,
+  6408,
+  "s were clogging the l one with posting call data to the l one. Right? And then as as we kind of, like, got rid of the block space demand of "
+ ],
+ [
+  4,
+  6418,
+  "the l twos posting posting the call data directly to the l one,"
+ ],
+ [
+  4,
+  6422,
+  "we've seen a very, very dramatic decrease in in the demand for block space or, like, yeah, blob space on Ethereum, which is which is kind of"
+ ],
+ [
+  4,
+  6433,
+  " bad for revenue for Ethereum. Alright. So and then we can also look at Base. And, of course, in Base, like, the the striking feature here i"
+ ],
+ [
+  4,
+  6443,
+  "s there's no MEV fees."
+ ],
+ [
+  4,
+  6445,
+  "And, also, if we compare this to the other numbers or, like, actually, it's interesting. So Ethereum is earning 50,000,000, and then Base is"
+ ],
+ [
+  4,
+  6455,
+  " earning 5,000,000. And this is mostly driven by l two priority fees. So, like, people are just kind of, like, just the normal hosted EIP ca"
+ ],
+ [
+  4,
+  6465,
+  "lls. I I forgot when we last changed the gas when we last changed the gas gas calculations,"
+ ],
+ [
+  4,
+  6472,
+  "but people just pay priority fees to be included earlier inside of the block, so the base sequencer picks them up in the in the next block. "
+ ],
+ [
+  4,
+  6482,
+  "And then his research has kind shown there's a lot of wastefulness there and whatever, but, like, we we won't get we won't get too deep into"
+ ],
+ [
+  4,
+  6491,
+  " that right now. And, yeah, maybe oh, yeah. And one other thing to call out here maybe is that"
+ ],
+ [
+  4,
+  6498,
+  "before we had blobs on Ethereum, a significant part of the kind of fees that people would pay on Base would be paid towards Ethereum one. Ri"
+ ],
+ [
+  4,
+  6508,
+  "ght? So, like, that was the call data that Base needed to post. The revenue the revenue on this side from Ethereum actually was, we we could"
+ ],
+ [
+  4,
+  6518,
+  " also, like, see or, like, we could see that as fees being paid on base,"
+ ],
+ [
+  4,
+  6523,
+  "on the other side. So, yeah, after the block upgrades, a lot of things kind of, like, slowed down on Ethereum side. But okay. So that's kind"
+ ],
+ [
+  4,
+  6532,
+  " of the introduction to to to IV and, like, okay. Why does this matter, and and what what even try does this try to describe? So why so, lik"
+ ],
+ [
+  4,
+  6541,
+  "e, now, okay, this is some like, okay. This is the sum of the block space"
+ ],
+ [
+  4,
+  6546,
+  "that that that we pay for. And my my thesis is quite simple. It's like blockchains are generally or, like, the thesis the thesis of people t"
+ ],
+ [
+  4,
+  6554,
+  "hat that are fans of RUV is quite simple, which is blockchains generally are in the business of selling block space, which does seem quite s"
+ ],
+ [
+  4,
+  6562,
+  "elf explanatory. It's like you build a network and you want people to use that network, and you want the demand for the block space in that "
+ ],
+ [
+  4,
+  6571,
+  "net or, like, you want there to be demand for the block space you are selling. Otherwise, like, you you'll never make a profit."
+ ],
+ [
+  4,
+  6578,
+  "And IV simply describes the sum of all fees paid for all in protocol and out out of protocol fees. So, like, the important thing here is, li"
+ ],
+ [
+  4,
+  6586,
+  "ke, to also consider the MEV fees. I think that's, like, something like, if you if you ignore, like, okay, people are willing to pay, whatev"
+ ],
+ [
+  4,
+  6593,
+  "er, half of Solana's IV or however many million on Ethereum, I think 5,000,000 or something like that, to be included in blocks. Like, that'"
+ ],
+ [
+  4,
+  6601,
+  "s not a you you you can't you you haven't made a good argument if you if you just ignore that."
+ ],
+ [
+  4,
+  6606,
+  "So then yeah. It's also like, I think the like, why this metric is getting popular right now and why Blockbench is kind of like, Blockbench "
+ ],
+ [
+  4,
+  6614,
+  "runs an institutional research service. Right? And they've been really pushing this metric. And it's like, they have institutions on the oth"
+ ],
+ [
+  4,
+  6623,
+  "er side, and those institutions, they don't wanna fucking look at 100 doing dashboards. They don't wanna, like, deal with all the complexiti"
+ ],
+ [
+  4,
+  6631,
+  "es. They want they want simple, like, things. They they're gonna look at TL."
+ ],
+ [
+  4,
+  6636,
+  "Active addresses, they're probably already smart enough or, like, Blockbuster can tell them, like, hey. This is probably not relevant. But, "
+ ],
+ [
+  4,
+  6643,
+  "like, what are other, like, numbers, metrics that we can make up that probably is a good indicator of, like, how successful is this blockcha"
+ ],
+ [
+  4,
+  6650,
+  "in at the moment? And IV is just one one such metric that the team came up with, and that has found, widespread adoption in the space and an"
+ ],
+ [
+  4,
+  6657,
+  "d and kind of, like, steered up a a lot of discussion. And it's something that we can actually kind of standardize between all of the differ"
+ ],
+ [
+  4,
+  6664,
+  "ent,"
+ ],
+ [
+  4,
+  6664,
+  "chains. Right? Like, I measure active wallets in Solana versus active wallets on Ethereum versus active wallets on Tron versus active, None "
+ ],
+ [
+  4,
+  6672,
+  "of this makes sense. Then we look at, like, stable coin transfer volumes since, like, I can run a bot on base for, like, $50 a month that ca"
+ ],
+ [
+  4,
+  6679,
+  "n inflate the volume to, like, millions and millions. It's like none of these metrics really matter. What matters is, like, this is actual, "
+ ],
+ [
+  4,
+  6687,
+  "like, user signal."
+ ],
+ [
+  4,
+  6688,
+  "Like, if I am a PM. So, like, if you if you look at I'm not a PM. If you look at user signals and, like, this is the revealed preferences of"
+ ],
+ [
+  4,
+  6696,
+  " people of, like, what are they willing to pay to be included in the block space. So I think that's, like, that's super relevant, and, like,"
+ ],
+ [
+  4,
+  6704,
+  " that's just the economic kind of reality of the situation right now. It's like, okay. Ethereum, like, people are only willing to pay, whate"
+ ],
+ [
+  4,
+  6713,
+  "ver I said, 50,000,000."
+ ],
+ [
+  4,
+  6714,
+  "50,000,000 to be included in the Ethereum block space in a month. And then on Solana, it's and we can actually compare these numbers. And So"
+ ],
+ [
+  4,
+  6724,
+  "lana, it's a 120,000,000. And then on base, it's only 5,000,000. And then I think if we if we look at the entire if we look at the entirety "
+ ],
+ [
+  4,
+  6733,
+  "of the Ethereum Ethereum ecosystem, it won't be that much more. Like, if we're being"
+ ],
+ [
+  4,
+  6739,
+  "of course, like, you can now make like, throw arguments of me of, like, hey. You don't you don't have this data for all the l two chains, bu"
+ ],
+ [
+  4,
+  6746,
+  "t I think there's enough people in the room who've kind of, like, familiar with this data. Maybe Arbitrum has, another two, three million. M"
+ ],
+ [
+  4,
+  6753,
+  "aybe OP Chain has, like, 500,000, and then but, like, the the air gets very thin very fast. So, really, this is the like, if we just think a"
+ ],
+ [
+  4,
+  6760,
+  "bout, like, okay, we've built all of these blockchain systems, and there's all of these ecosystems, and all of these millions of people, and"
+ ],
+ [
+  4,
+  6767,
+  ", like, we're all here because we're fans of blockchains, and we want this this technology to spread and, like, enable, I don't know, a bett"
+ ],
+ [
+  4,
+  6774,
+  "er world."
+ ],
+ [
+  4,
+  6774,
+  "This is the absolute reality of the, like if you just look at this, it's like, yeah, people are willing willing to pay much more money to be"
+ ],
+ [
+  4,
+  6785,
+  " included in the Solana block space. There's much more kind of like this is currently the winning system. That could be an argument that you"
+ ],
+ [
+  4,
+  6796,
+  " could make. So shit. We have a problem here."
+ ],
+ [
+  4,
+  6799,
+  "But we can stay calm. Why why might RUV be stupid? What are the arguments against RUV? So first of all, first come, serve roll ups have no M"
+ ],
+ [
+  4,
+  6810,
+  "EV bribes. So as I mentioned earlier, on base of something like this, we'll get to questions in the end. There there's no like, you you can'"
+ ],
+ [
+  4,
+  6820,
+  "t bribe the base sequencer. So, like, even though there might be there might be demand"
+ ],
+ [
+  4,
+  6827,
+  "to, like, pay the base sequencer, to bribe the base sequencer, there might be send bridges to be had. There might be, I don't know, some MEV"
+ ],
+ [
+  4,
+  6836,
+  " opportunities on base that might be that might be great. You can never have them. And then Ethereum has widespread usage of MEV protected r"
+ ],
+ [
+  4,
+  6845,
+  " r c RPCs and swaps. So this is what what Denning talked of talked about earlier in the day. We can we can kind of see that a lot of the"
+ ],
+ [
+  4,
+  6854,
+  "a lot of the order flow of decentralized exchanges and and kind of DEX swaps are one of the main things that people can extract MEV with or,"
+ ],
+ [
+  4,
+  6862,
+  " like, it's one of the more more valuable kind of use cases of blockchains today. So we can see that actually a lot of the order flow of dec"
+ ],
+ [
+  4,
+  6871,
+  "entralized exchanges today lands in private man pools and, therefore, is MEV protected. So, like, if we if we think about our"
+ ],
+ [
+  4,
+  6878,
+  "our concept of how we how we calculate REV, it's actually, like, not, like, the the it's just protected. Like, there's no such protections o"
+ ],
+ [
+  4,
+  6896,
+  "n Solana. So, like, even if you want to do a like, if you want to do MEV protected swap on Solana, I think there's some, like, early early s"
+ ],
+ [
+  4,
+  6914,
+  "olutions. Okay."
+ ],
+ [
+  4,
+  6916,
+  "Okay. So we're we're getting comment from the audience that most of JITO's revenue okay. So a a portion of JITO's revenue is people being pr"
+ ],
+ [
+  4,
+  6926,
+  "otected from MEV attacks or, like, protecting themselves from MEV attacks and not not just, sandwich attackers trying to sandwich other peop"
+ ],
+ [
+  4,
+  6937,
+  "le. Yeah. Yep. So people are starting to recognize there's,"
+ ],
+ [
+  4,
+  6941,
+  "there there is, like, I mean, there's an MEV problem on Solana, and they're starting to protect against it, but still most of the retail flo"
+ ],
+ [
+  4,
+  6961,
+  "w is still, like, pretty exposed. No? Okay. Maybe he's just re derate my talk, but I'll just keep going."
+ ],
+ [
+  4,
+  6975,
+  "But yeah. So maybe we can't we can't really compare apples to apples here because these ecosystems are just fundamentally different. Because"
+ ],
+ [
+  4,
+  6984,
+  " Solana maybe maybe is not that advanced in its MEV protection, maybe maybe there's not that many out of protocol solutions. And I think fun"
+ ],
+ [
+  4,
+  6993,
+  "damentally, it's just different activities and different users have different IV profiles."
+ ],
+ [
+  4,
+  6999,
+  "So if we oh, and here's actually there's a bunch more l l two IV. I don't know why that how that ended up here. But if we look oh, this char"
+ ],
+ [
+  4,
+  7012,
+  "t is a bit misaligned. So let's just kind of recall, this is Solana IV. Over 50% of this is, due to g digital tips."
+ ],
+ [
+  4,
+  7023,
+  "Some pro or, like, a lot of priority fees, very few base fees, very few vote fees. So that's just kind of the basic operations of the of the"
+ ],
+ [
+  4,
+  7032,
+  " of the blockchain. And then we look at okay. We can actually kind of like this is a Doom query. This is weekly DEX volumes over the last ye"
+ ],
+ [
+  4,
+  7042,
+  "ar or so. And we can see currently, Binance has, like, a really big spike because Binance has"
+ ],
+ [
+  4,
+  7048,
+  "Binance has integrated DEXs into their into their centralized exchange, but that's not the story here. I just wanted to kind of, like, compa"
+ ],
+ [
+  4,
+  7058,
+  "re. Okay. Like, how does the Solana DEX volumes, how does that stack up against the Ethereum volumes and also against all layer two volumes?"
+ ],
+ [
+  4,
+  7067,
+  " So I think, like, if you if you kind of ignore this Binance chart, it it kind of seems to be, like,"
+ ],
+ [
+  4,
+  7074,
+  "half of the half of the DEX volume today is, like, on Ether layer twos, and then half of or, like, Ether main net and its layer twos, and th"
+ ],
+ [
+  4,
+  7082,
+  "en the other half is basically on Solana. And then everything centralized exchanges, I don't I don't have any idea about, but that's like, w"
+ ],
+ [
+  4,
+  7090,
+  "e're we're just looking at IV at the moment, so that's the argument I'm trying to make here. And then if we look at Solana dex volume over t"
+ ],
+ [
+  4,
+  7097,
+  "he last thirty days, we can see"
+ ],
+ [
+  4,
+  7099,
+  "that about 60%, 70% of the volume is just PalmSwap. So PalmSwap famously being the meme coin launchpad on Solana. So okay. So the DEX activi"
+ ],
+ [
+  4,
+  7114,
+  "ty on Solana is being driven by Meme Points. And then we can actually"
+ ],
+ [
+  4,
+  7122,
+  "we can actually look at this in sole dex pair categories. So this is also curated by Workers Research. They've made a chart and they basical"
+ ],
+ [
+  4,
+  7131,
+  "ly categorize all, like, the equivalent of ERC twenties, like, just the tokens that are being traded on Solana. And you can see that 60,000,"
+ ],
+ [
+  4,
+  7140,
+  "000,000 volume or is it 60? It's even more. Almost 80,000,000,000 volume in May have have been contributed by MemeCoins."
+ ],
+ [
+  4,
+  7147,
+  "And then there's another, like, maybe $5,050,000,000, which is which is other kind of project based or sold stablecoin based trading pairs. "
+ ],
+ [
+  4,
+  7157,
+  "So most of the activity on Solana is really driven by memes. It's just how how to how to read this chart and then sold stablecoins. It's pro"
+ ],
+ [
+  4,
+  7168,
+  "bably like a second order effect of like the people trading"
+ ],
+ [
+  4,
+  7172,
+  "like, memes. So it's like you you you trade whatever all the pump dot swap all pump swap tokens trade against SOL. And, like, even all of th"
+ ],
+ [
+  4,
+  7181,
+  "ese newer launch pads, they also trade against SOL. So, like, these traders will enter their trades via SOL SOL meme coin, but then as they "
+ ],
+ [
+  4,
+  7191,
+  "exit, actually go to USDC or USDT. USDC on Solana mostly. So, like,"
+ ],
+ [
+  4,
+  7195,
+  "most of the trading activity on Solana is probably just because Solana is a decentralized casino, which is great. So kind of like these are "
+ ],
+ [
+  4,
+  7207,
+  "the arguments against IV. Maybe the MEV argument is a bit is a bit out of maybe it's a bit old. But so so in the end, I think or, like,"
+ ],
+ [
+  4,
+  7218,
+  "what what we can kind of make of these two sides of the argument is I don't think IV alone is the is the solution. So, like, IV is a snapsho"
+ ],
+ [
+  4,
+  7226,
+  "t snapshot in time and there's low prediction power. So, like, what if the SEC actually starts investigating pump swap tomorrow? Like, what "
+ ],
+ [
+  4,
+  7234,
+  "if Meme Coins are just I don't know. They're going out of favor. Like, the Ethereum or, like, we as the Ethereum community thought that, lik"
+ ],
+ [
+  4,
+  7242,
+  "e, the NFT ecosystem would grow forever and, like, everything's gonna be great. And there's so much revenue that we're making because all of"
+ ],
+ [
+  4,
+  7250,
+  " these gas intensive applications are on Ethereum mainnet. It's like nothing lasts forever. We don't know where where this MemeCoin thing is"
+ ],
+ [
+  4,
+  7259,
+  " gonna go, and it's like this is super reflexive. A lot of the a lot of the RIV, like, revenue or, like, the RIV depends on the meme coins. "
+ ],
+ [
+  4,
+  7267,
+  "So it's like, what do we do with this long term? Yeah. What if people start crying in the casino, basically?"
+ ],
+ [
+  4,
+  7273,
+  "So but I e ROVs, that's the baseline for how much budget the network can pay for security, besides inflation. So, like, the the market caps "
+ ],
+ [
+  4,
+  7282,
+  "that I showed in the very beginning, I think they're closely related to IV or, like, there's kind of, like, a downstream metric of IV, which"
+ ],
+ [
+  4,
+  7290,
+  " is like, okay. How much can you actually pay your stakers and operators and and stuff like that?"
+ ],
+ [
+  4,
+  7296,
+  "And yeah. That's so, like, there there isn't one there isn't one thing here and so okay. We can kind of we can kind of calm down. But so the"
+ ],
+ [
+  4,
+  7304,
+  "re's there's more metrics you can use to to kind of, like, assess blockchain health and, like, this is like this is like four different talk"
+ ],
+ [
+  4,
+  7311,
+  "s that you could have, but it's like, okay. The average stablecoin supply per day or per month, in which Ethereum is absolutely smashing it."
+ ],
+ [
+  4,
+  7319,
+  " It's still 50% of the stablecoins are in Ethereum."
+ ],
+ [
+  4,
+  7322,
+  "Even more than Entron, which was actually surprising to me, to find out in this research, in the research for this presentation. And then, l"
+ ],
+ [
+  4,
+  7329,
+  "ike, Solana is somewhere, like, it's the pink bar on top, and it's like, it's it's pretty it's pretty small. So, like, not that many stablec"
+ ],
+ [
+  4,
+  7336,
+  "oins on Solana, even though lots of people have been trying to, like, increase the supply of of stablecoins on Solana. And then we can also "
+ ],
+ [
+  4,
+  7344,
+  "look at TBL. Of course, you can have arguments against for and against TBL, but it's still like, okay. Ethereum is still at 58% of TBL and a"
+ ],
+ [
+  4,
+  7351,
+  "ll of crypto. So it's like, okay. Like, okay. Calm. We can we can we can calm down."
+ ],
+ [
+  4,
+  7355,
+  "So maybe IV is a really bad metric for valuing one assets, and it's not time for for that today. But there's one more thing. And I think if "
+ ],
+ [
+  4,
+  7367,
+  "we if we look back at the ETH IV and we think about what the road map was until very recently, it's like we have we have the block fees with"
+ ],
+ [
+  4,
+  7378,
+  " a 112,000"
+ ],
+ [
+  4,
+  7379,
+  "down here, and this was supposed to be the future the future of kind of the network security and how Ethereum scales and how Ethereum sustai"
+ ],
+ [
+  4,
+  7386,
+  "ns itself. So I think this is very, very problematic, and, thankfully, the Ethereum foundation has now recognized, like, hey. We need to act"
+ ],
+ [
+  4,
+  7393,
+  "ually scale the l one. There needs to be transaction fees that people actually pay for these things. We need to make the block space be in d"
+ ],
+ [
+  4,
+  7399,
+  "emand and, like, we need to stay the place where the most TBL live TBL lives,"
+ ],
+ [
+  4,
+  7403,
+  "and we need we need to have the high value applications. If somebody wants to deposit a 100,000,000 into other, they should make they should"
+ ],
+ [
+  4,
+  7411,
+  " do that on Ethereum mainnet. There should be space for it. So I think yeah. We we can't really we can't really say this. I think in the end"
+ ],
+ [
+  4,
+  7419,
+  ", this the the economic security budget that you acquire through having valuable block space that you can sell is very important."
+ ],
+ [
+  4,
+  7427,
+  "So yeah. If you if you have another have another view of, like, the the income through block fees is an absolute joke. This is a this is a S"
+ ],
+ [
+  4,
+  7437,
+  "ankey diagram of of the all the fees or, the the yeah. This is a Sankey diagram split they split out parts of IV and and how it kind of flow"
+ ],
+ [
+  4,
+  7448,
+  "s flows through the ecosystem."
+ ],
+ [
+  4,
+  7450,
+  "And if you if you look at how how little the blob blob fees are are contributing to this, this is an absolute disaster. Ethereum is is givin"
+ ],
+ [
+  4,
+  7458,
+  "g away valuable kind of networking capacity of their validators for free, which is not great. But on the other side, we need to, like, build"
+ ],
+ [
+  4,
+  7466,
+  " l l twos and, like, if you make the blob space very expensive from the start, like, nobody will ever build on it. So I don't know. It's all"
+ ],
+ [
+  4,
+  7474,
+  " hard problems. I'm just pointing this out."
+ ],
+ [
+  4,
+  7476,
+  "So, yeah, this might be the actual the full picture. And with that, we had panic again. So yeah. But, yeah, there's no silver bullets. IV sh"
+ ],
+ [
+  4,
+  7485,
+  "ould be taken into consideration. It should probably not be optimized for I'm I'm I'm gonna finish soon. We really can't ignore it. I think "
+ ],
+ [
+  4,
+  7495,
+  "they're, like, Sasa being Sasa saying, like, publicly on Twitter, like, hey. We like, what the fuck? RV is a bad metric. Like, you're just f"
+ ],
+ [
+  4,
+  7504,
+  "ooling yourself, bro. Like like, we need to secure this network. Like, there's no way we we can ignore this."
+ ],
+ [
+  4,
+  7511,
+  "But I think the Solana people on the other side should really, really kind of consider, like, what is my RV actually made up of and how long"
+ ],
+ [
+  4,
+  7520,
+  " can this party go go on. So yeah. I I guess the the the end of this is really like, how do we value EtherShall? It's really hard really har"
+ ],
+ [
+  4,
+  7528,
+  "d questions. The data cannot answer this. Everyone needs to find their own model and what they're comfortable with."
+ ],
+ [
+  4,
+  7535,
+  "And, yeah, are these assets and money, commodity, stock? Nobody really knows. I think the, like, the fact that the space is now at least thi"
+ ],
+ [
+  4,
+  7544,
+  "nking about, like, hey. Is this thing making revenue? Is this sustainable? Can we kind of build a long term business with these things? Runw"
+ ],
+ [
+  4,
+  7553,
+  "ays are not infinite. Money actually costs money again. Zero interest rates are over."
+ ],
+ [
+  4,
+  7559,
+  "I think those are hard like, it's a very good aspect and actually shows me that the industry is kind of maturing and, like, more, like, fina"
+ ],
+ [
+  4,
+  7567,
+  "ncial players are coming to the space who want these kinds of metrics, and they they will just blindly apply them. So I think I think it's a"
+ ],
+ [
+  4,
+  7576,
+  " good it's a good development. But, yeah, let's let's keep discussing this and and see see where we learn. Thank you for the talk. Super int"
+ ],
+ [
+  4,
+  7584,
+  "eresting data breakdown and stuff. So I wanna invite their room to kinda like divide. If you wanna split the setting, like seating a little "
+ ],
+ [
+  4,
+  7592,
+  "bit, maybe like this side is Ethereum people and this is the Solana side. And"
+ ],
+ [
+  4,
+  7597,
+  "I wanna maybe start the debate and we'll have to keep the time around, like, ten minutes max. And then we will go to the trivia part. But I "
+ ],
+ [
+  4,
+  7607,
+  "wanna say I invited a roast master, Jonah. And so I wanna ask your, how to say, comments first. Like, what are the hot takes you have heard "
+ ],
+ [
+  4,
+  7616,
+  "from this talk? What are the what? Hot takes. Give him the mic. I"
+ ],
+ [
+  4,
+  7621,
+  "I didn't find the arguments against RAV compelling. I mean, if you go back to the slide, I can run through them. Like, if if I'm, like, a sh"
+ ],
+ [
+  4,
+  7631,
+  "op and I sell my product for half the price, I'm still gonna be judged on my profits. Right? So, like, just because Ethereum is able to give"
+ ],
+ [
+  4,
+  7640,
+  " you a transaction and you don't have to pay from EV doesn't mean that therefore it's comparing apples to oranges. Right? Like, if there's t"
+ ],
+ [
+  4,
+  7650,
+  "wo businesses and one makes more profit, the one that makes more profit is a better business even if it's on the the the each product for ch"
+ ],
+ [
+  4,
+  7660,
+  "eaper. So that's that's number one."
+ ],
+ [
+  4,
+  7662,
+  "When I like, I I don't see why, like, decomposing what like, the different stuff that goes the components of RV particularly matters. I mean"
+ ],
+ [
+  4,
+  7669,
+  ", at the the day, like, you're trying to compare demand for block space, not something you're selling. And that's comes to the fourth point "
+ ],
+ [
+  4,
+  7677,
+  "as well. And then when it comes to roll ups, no MEV bribes. I mean, MEV is captured in roll ups via spam. Right? So if you look at base, the"
+ ],
+ [
+  4,
+  7684,
+  " majority of transactions because there's no MEV pipeline are basically people spamming, and then the role to actually internalize r e the R"
+ ],
+ [
+  4,
+  7691,
+  "EV via or MEV via priority fees."
+ ],
+ [
+  4,
+  7693,
+  "So you actually are capturing it. So it's just it's capturing a different way, and we're just labeling things differently. So it seems like "
+ ],
+ [
+  4,
+  7701,
+  "there's pretty good arguments against every single point there. I I I just wanna clarify that. I'm just the messenger here. I'm trying to la"
+ ],
+ [
+  4,
+  7710,
+  "y out Well, but us no. Yeah. Yeah. No. No. No. It's great arguments. It's great arguments. This would make a great v two of this presentatio"
+ ],
+ [
+  4,
+  7718,
+  "n. I just find that, like, a lot of, like, the anger against r e v is cope."
+ ],
+ [
+  4,
+  7723,
+  "And and, like, what's funny then is then people now wanna define, like, the value of Ethereum by its by the TVL it's supporting, which is we"
+ ],
+ [
+  4,
+  7730,
+  "ird. That's like saying, well, if a bank is stores a trillion dollars, therefore, the bank must be worth more than a trillion dollars. But, "
+ ],
+ [
+  4,
+  7736,
+  "like, if I said that argument, everyone would think that's stupid. Right? Just the money and someone else is storing for you doesn't mean ho"
+ ],
+ [
+  4,
+  7743,
+  "w much they're right? So it doesn't make any sense. And importantly, so TVL is a backwards looking metric. So if you look at, for example, s"
+ ],
+ [
+  4,
+  7749,
+  "tablecoins,"
+ ],
+ [
+  4,
+  7750,
+  "Ethereum might have more stablecoin supply, but Solana has more stablecoin transactions. As a blockchain, you only are able to charge on a t"
+ ],
+ [
+  4,
+  7758,
+  "ransaction. So if you actually look at the amount of economic value to stablecoins are generating for a network, it's Solana's kicking Ether"
+ ],
+ [
+  4,
+  7765,
+  "eum's ass, frankly. So, I I just don't think supply is interesting. If anything, supply is a drain on network. These are because it means ne"
+ ],
+ [
+  4,
+  7773,
+  "twork requires more security to keep up with that supply. And the supply is not paying back fees in the form of, like, velocity, and the sup"
+ ],
+ [
+  4,
+  7781,
+  "ply is in some sense parasitic and not a net good for the network. So I I reject the stablecoin supply as being an interesting point."
+ ],
+ [
+  4,
+  7788,
+  "Okay. I actually agree with, like, the thing you said, like, the MEV still exists regardless of the sidecar or just priority fee. Like, it's"
+ ],
+ [
+  4,
+  7795,
+  " just different representation of it. But what what do you think of the, you know, like, the everything kinda is driven by meme coin activit"
+ ],
+ [
+  4,
+  7803,
+  "y and could be short lived. Even this, stablecoin act like, how to say, transaction volume, it's probably because people are swapping, you k"
+ ],
+ [
+  4,
+  7810,
+  "now, like, Trump to USDC there as well. Right? Ethereum in its heyday was basically all NFTs,"
+ ],
+ [
+  4,
+  7815,
+  "and no one was complaining about that then. I think that also if you're looking at major pairs, so you're looking at the the short tail of a"
+ ],
+ [
+  4,
+  7823,
+  "ssets, Solana is increasingly dominating there, which is important. Also, when it comes to the more kind of apples to apples comparison, lik"
+ ],
+ [
+  4,
+  7831,
+  "e a Camino, which is Solana's version of lending for less TVL makes way more pro like, more revenue. So it's better business models built on"
+ ],
+ [
+  4,
+  7839,
+  " Solana. So I I just think things are changing and judging the meme coin thing also feels like hope. And and importantly, I think a lot of p"
+ ],
+ [
+  4,
+  7847,
+  "eople in Ethereum don't call things meme coins that are meme coins. Like, you have projects that"
+ ],
+ [
+  4,
+  7853,
+  "the core team isn't there anymore and they don't generate any revenue. And for some reason, that's considered a major coin, but it's it's no"
+ ],
+ [
+  4,
+  7861,
+  " better than a meme coin. Right? So, like, I I just I also think that, like, we're quick to call, like, with a meme coin, but not some other"
+ ],
+ [
+  4,
+  7869,
+  " product that's clearly is a meme coin. So I just think it's a little bit of intellectual dishonesty. Yeah. The point that one of the points"
+ ],
+ [
+  4,
+  7877,
+  " that you made made some good points, but I think there was a third one that flagged my attention, which was the idea that we already have a"
+ ],
+ [
+  4,
+  7885,
+  " good idea on l twos, like, base of how much people are willing to pay for MEV because, you know, all of these bots pay priority fees to, yo"
+ ],
+ [
+  4,
+  7893,
+  "u know, spam. And that's what can doing all of that. I think that"
+ ],
+ [
+  4,
+  7897,
+  "I I'm not totally sold on the idea that this priority fee paying represents the full scope of what people would be willing to pay for, to en"
+ ],
+ [
+  4,
+  7905,
+  "gage in MEV because, I mean, if Base or and other l twos were to have auctions, we've seen the case on Ethereum l one where searches are wil"
+ ],
+ [
+  4,
+  7913,
+  "ling to pay up to 90% of their profits to get included. Right? And I feel like what they're paying in priority fees now is probably still a "
+ ],
+ [
+  4,
+  7922,
+  "very small percentage of what they would be willing to pay if they had to compete against each other in an auction. And, of course, you made"
+ ],
+ [
+  4,
+  7930,
+  " the argument of, well, this is a metric that measures what's happening today. You're a good business based on what you're doing today. Why "
+ ],
+ [
+  4,
+  7938,
+  "does it matter? What you could potentially theoretically capture? And then I guess that comes back to what the purpose of Rev is because if "
+ ],
+ [
+  4,
+  7946,
+  "the if we if if we're comfortable with it just being a snapshot of"
+ ],
+ [
+  4,
+  7950,
+  "who's top to date, then that's perfectly fine. But if we want to use it to value networks in the long term and say, oh, we're going to use t"
+ ],
+ [
+  4,
+  7957,
+  "his to justify, say, the valuation of a token, then I think that it does actually matter what is the actual potential amount that could be p"
+ ],
+ [
+  4,
+  7964,
+  "aid as opposed to what it is today because, you know, valuations usually are based on, like, forward looking, what is the potential, what's "
+ ],
+ [
+  4,
+  7972,
+  "the growth of the future of the network and stuff. For sure. But, like, again, this debate is Ethereum versus Solana. So if they started cha"
+ ],
+ [
+  4,
+  7979,
+  "rging for MEV, none of that fees will go to Ethereum. Right? All of that would be captured by the l two. And as we saw Uniswap talk before,"
+ ],
+ [
+  4,
+  7986,
+  "effectively the amount of fees now an L2 pays L1 is divorced from the value that L2 generates. So yes, maybe the L2s can become better busin"
+ ],
+ [
+  4,
+  7993,
+  "esses. By the way, they're for profit businesses that are separate than Ethereum, but none of that value is going to Ethereum. So again, on "
+ ],
+ [
+  4,
+  8000,
+  "like a so even if you believe that l twos can generate more value in r REV, it has nothing to do with Ethereum to base assets. So just an or"
+ ],
+ [
+  4,
+  8006,
+  "thogonal argument. So I'm happy to debate whether or not in a limit base is better than Solana,"
+ ],
+ [
+  4,
+  8011,
+  "but that's a different conversation than Ethereum versus Solana. No. I think that is a good point because you are right that in the argument"
+ ],
+ [
+  4,
+  8018,
+  " I was presenting, if l two start capturing more of the value, it doesn't necessarily mean that Ethereum will immediately start capturing a "
+ ],
+ [
+  4,
+  8025,
+  "ton of value as well. It's actually an interesting one because in particular, this is valued at a 100% doesn't go to the L one. Right? So if"
+ ],
+ [
+  4,
+  8032,
+  " an L two runs in our like a MEV auction, that is 100% value that's not captured by the L one. In fact, to make it even scarier"
+ ],
+ [
+  4,
+  8039,
+  "because we don't really know how to run MEV auctions and protocols particularly well, see like all the EPBS or PBS or APS research is typica"
+ ],
+ [
+  4,
+  8047,
+  "lly at a protocol, most of the MEV value that would be captured by an L2 if it's not via priority fees would probably go to the equity side "
+ ],
+ [
+  4,
+  8055,
+  "of the business, which means we'll actually never be given back to the token holders of those l twos. So if anything, it's probably net bad "
+ ],
+ [
+  4,
+  8062,
+  "for the token holders if the MEV gets taken out and has separate auctions for it. So,"
+ ],
+ [
+  4,
+  8067,
+  "yeah, so it's actually probably worse for token holders. Yeah. One thing I wanted to add is that I don't think looking at meme point revenue"
+ ],
+ [
+  4,
+  8077,
+  " is necessarily cope just because, like, the Ethereum ecosystem didn't consider it during the NFT boom because maybe we should look at how t"
+ ],
+ [
+  4,
+  8086,
+  "he ecosystem did continue did consider NFTs during the NFT boom a mistake. Right? We we didn't"
+ ],
+ [
+  4,
+  8093,
+  "the ecosystem didn't really say that, oh, yeah. This is mostly just, like, scams and frauds and, like, people are not gonna, like, want to p"
+ ],
+ [
+  4,
+  8100,
+  "ay for this long term, so it's not, like, sustainable revenue model. And I think similar framework applies to MemeCoins. And I think you're "
+ ],
+ [
+  4,
+  8108,
+  "very correct that there's maybe a lot of projects on Ethereum that are, like, similarly valueless. I just don't think they comprises, like, "
+ ],
+ [
+  4,
+  8115,
+  "as much revenue of Ethereum as does in Solana. I think it's a valid Well, to push back on the Meme Coin point, if you look at Fantom as a wa"
+ ],
+ [
+  4,
+  8123,
+  "llet or the wallets on Solana in totality, they have more users than Ethereum users now. And the meme coins brought people on top of funnel."
+ ],
+ [
+  4,
+  8130,
+  " So even if meme coins went away today, the most users now do not exist in Ethereum but in other networks. That's number one. Number two is "
+ ],
+ [
+  4,
+  8137,
+  "because of the meme coin craze, you've actually seen a huge push to more, I guess, you would consider legitimate activities. So you're seein"
+ ],
+ [
+  4,
+  8145,
+  "g increasingly amounts of majors being traded on Solana in respect to Ethereum. At this point, Jupiter is doing more volume than Uniswap is."
+ ],
+ [
+  4,
+  8152,
+  " At this point, you have major organizations like BlackRock and Apollo putting, like, actual real assets on Solana. So, yeah, maybe meme coi"
+ ],
+ [
+  4,
+  8160,
+  "ns are not gonna be a thing forever, but it actually sets the groundwork for pretty good network effects and very legitimate business coming"
+ ],
+ [
+  4,
+  8167,
+  " to the platform."
+ ],
+ [
+  4,
+  8168,
+  "I would also disagree with that part. I I don't have the data right now, but BlackRock didn't go to Solano? No. No. Not the not the BlackRoc"
+ ],
+ [
+  4,
+  8175,
+  "k part, but that MemeCoins is a good way to onboard users and build good customer relationships with users and retain them long term to do m"
+ ],
+ [
+  4,
+  8181,
+  "ore like quote unquote serious things things on chain. Like, I I forget the exact time. Maybe it's was like a just a snapshot or wrong pictu"
+ ],
+ [
+  4,
+  8188,
+  "re, but I saw something about like the the user retention of people who onboard to different wallets because of Meme Coins is actually very "
+ ],
+ [
+  4,
+  8195,
+  "low they don't stay around for long after they've lost their first, like, thousand dollars on Meme Coins."
+ ],
+ [
+  4,
+  8200,
+  "I I think it's like a a weird argument because you would have had to levy that against Ethereum. That's the truth. Right? Sorry. What do you"
+ ],
+ [
+  4,
+  8207,
+  " mean? Like, wouldn't that have been a good argument against Ethereum? Like, it doesn't I mean, it would have been. Right? Like, a lot of us"
+ ],
+ [
+  4,
+  8214,
+  "ers, like, left and never came back after the NFT boom. I would argue, like, the worst user experience or the reason you wouldn't come back "
+ ],
+ [
+  4,
+  8220,
+  "is you wanna make an $100 transfer and it cost you $30."
+ ],
+ [
+  4,
+  8223,
+  "Yeah. Definitely. That's also an argument why maybe we lost a lot of users during NFT boom. I'd rather lose a thousand dollars gambling than"
+ ],
+ [
+  4,
+  8231,
+  " a thousand dollars to transfer a 100. Yeah. Maybe. But that's not the case anymore. I'm speaking about, like, what what is the case like ri"
+ ],
+ [
+  4,
+  8238,
+  "ght now? It's it's only cheaper now, not because there's fundamental fixes, but because there's no activity. Sure. I have one problem with R"
+ ],
+ [
+  4,
+  8246,
+  "UV because I think, like, it doesn't capture one components of the economic value that actually also being captured, which is, like, the fro"
+ ],
+ [
+  4,
+  8253,
+  "nt end fees. All the, like, wallets and, like, Uniswap are charging or, I I guess that may not be a strong case for Ethereum because Jupiter"
+ ],
+ [
+  4,
+  8261,
+  " and Phantom Power is also generating a lot of fee. But still, I think that could be a one, how to say, critique of the metrics."
+ ],
+ [
+  4,
+  8268,
+  "Yeah. I mean, if if the argument is that a lot of value is captured by the, like, actual applications, not the chain itself, that's great. B"
+ ],
+ [
+  4,
+  8275,
+  "ut then, I mean, the numbers suggest that it's you make better money on Solana as an application in Ethereum. So then it it actually it woul"
+ ],
+ [
+  4,
+  8282,
+  "d strengthen Solana. But for what it's worth, I I prefer Ethereum. Like, I sell my sort of bear. Like like, I like the values of Ethereum be"
+ ],
+ [
+  4,
+  8289,
+  "tter. I want Ethereum to win and I want like, I think Ethereum can get better. I just think that, like, in order to get better, you have to "
+ ],
+ [
+  4,
+  8295,
+  "recognize a problem. Like, I prefer the vision of the world that Ethereum has of, like, at a centralized base, something that is, like, nati"
+ ],
+ [
+  4,
+  8302,
+  "on state resistant, something that actually cares about centralization concerns. Like, Solana isn't perfect, but we have to be honest if you"
+ ],
+ [
+  4,
+  8309,
+  " wanna solve a problem. And like, I think trying to like redefine terms or trying to like lie about a problem or like say, well, actually, i"
+ ],
+ [
+  4,
+  8316,
+  "f you think like when it's not true, like be honest with the problems, you can actually solve it. I think this is completely fixable for wha"
+ ],
+ [
+  4,
+  8323,
+  "t it's worth. Like, think Ethereum can get better and I'm not this not is like I'm not trying to be a doomsday person. In fact, I'm giving a"
+ ],
+ [
+  4,
+  8330,
+  " talk I think on Friday about how Ethereum can get better for what it's worth. So I guess that's like a plug."
+ ],
+ [
+  4,
+  8335,
+  "Okay. We can all calm down. Alright. I think that is the end of this Debate. Discussion. Thank you, Jonah. That was Thank you. Super good in"
+ ],
+ [
+  4,
+  8348,
+  "sights. Yeah. Couldn't couldn't have made those arguments better myself as you saw. Yep. So No. Yeah. Thanks everyone for participating and"
+ ],
+ [
+  4,
+  8360,
+  "Yeah. Thanks for setting up, you know, all those arguments and as well the big talk. So we have one last part of the day and we kinda run la"
+ ],
+ [
+  4,
+  8368,
+  "te. So I'm gonna just say whoever wanna take a break, go ahead. But I'm gonna start to present you this Ethereum trivia that I'm really exci"
+ ],
+ [
+  4,
+  8377,
+  "ted about. And Dolby and Grace will hand over a bunch of papers where everyone can grab one if you wanna participate. I promise it's gonna b"
+ ],
+ [
+  4,
+  8385,
+  "e super fun. And especially if you're gonna be a Ethereum OG, a lot of these are kinda like historical,"
+ ],
+ [
+  4,
+  8391,
+  "you know, like, how to say, quids. And I already did this once in the zoo garden, and I was gonna, like, revamp the whole question list, but"
+ ],
+ [
+  4,
+  8400,
+  " I thought love lot of them are actually really fun, so I kept kinda recycle some of them. But, you know, like, some of the answers might ha"
+ ],
+ [
+  4,
+  8409,
+  "ve changed already, you know, like, in terms of, like, the metrics about two, etcetera."
+ ],
+ [
+  4,
+  8414,
+  "So we will just run it now and we'll have mysterious, how to say, gifts for the winners and all the participants. And we have a bunch of pen"
+ ],
+ [
+  4,
+  8424,
+  " as well and we will hand it over to everyone in a minute. And, so when you participate, I want you to write down both the number of the que"
+ ],
+ [
+  4,
+  8434,
+  "stion and also the answer next to the number. And when we finish, nobody can, you know, like check chat g b chat b GBT or like search online"
+ ],
+ [
+  4,
+  8444,
+  ". That's illegal."
+ ],
+ [
+  4,
+  8445,
+  "And when we finish, I will ask you to hand over your paper next to it your the person next to you. And so you're gonna, you know, review eve"
+ ],
+ [
+  4,
+  8457,
+  "ryone's questions like for each other. Okay. So let's start. There's 30 questions, so it might take actually thirty minutes or more. And for"
+ ],
+ [
+  4,
+  8468,
+  " the audience, I guess we are streaming still. If you wanna participate"
+ ],
+ [
+  4,
+  8474,
+  "is do you think we can also stream this part? Yeah. Yeah. Okay. Cool. Yeah. It's for our for our streaming audience. If you wanna participat"
+ ],
+ [
+  4,
+  8489,
+  "e and DM me after on Twitter, tell me what's your points. I will try to give you the gifts as well. So let's see. Alright."
+ ],
+ [
+  4,
+  8503,
+  "Try again. Okay. Has everyone got a pen and a paper yet? I'm gonna start with the first question. We will have some simple question. Right? "
+ ],
+ [
+  4,
+  8516,
+  "Like, for example, this one. It's like, it's obviously, you know, who who wrote the Ethereum white paper. So but we will go over and, like, "
+ ],
+ [
+  4,
+  8530,
+  "get more and more Djinn. Yeah. Some of the answers might be buried in some of the talks today already. So"
+ ],
+ [
+  4,
+  8540,
+  "first question is who wrote the Ethereum white paper? You will write down their name, either one person or multiple if you think there is. W"
+ ],
+ [
+  4,
+  8550,
+  "rite down the name, make sure the spelling is correct. Yeah. And write a number one next to it. So the person who is reviewing your results "
+ ],
+ [
+  4,
+  8559,
+  "will know which answers to which question. So who wrote the Ethereum white paper?"
+ ],
+ [
+  4,
+  8565,
+  "Okay. The second question, who wrote the Ethereum yellow paper? You will write down their name as well. So two and then the name. It might b"
+ ],
+ [
+  4,
+  8577,
+  "e the same person, but it may not be two. So the third question, what was DeFi called before it's called DeFi? What? So what was the name fo"
+ ],
+ [
+  4,
+  8589,
+  "r DeFi when it just started, you know, like, before everyone's calling it DeFi?"
+ ],
+ [
+  4,
+  8596,
+  "Yeah. If you were around, you know, like, 2018, 2019, what people were calling it? Okay. Number four, what what are the most two common use "
+ ],
+ [
+  4,
+  8609,
+  "the ERC types for NFT? What's the most two common you use the ERC standards token type for NFTs? So ERC"
+ ],
+ [
+  4,
+  8618,
+  "something, ERC something. Okay. I'm seeing people are discussing, so it's fine. Number five, when did the merger happen? Oh, you have to put"
+ ],
+ [
+  4,
+  8638,
+  " down the year, the month, and the date. When did the merger happen? Exactly."
+ ],
+ [
+  4,
+  8649,
+  "When did the merger happen? Yeah. It kinda happened in Berlin, actually. At at least I was here. Okay. Okay. Number six, which chain has MEM"
+ ],
+ [
+  4,
+  8668,
+  "PU? Ethereum, Optimism, Base,"
+ ],
+ [
+  4,
+  8672,
+  "Polygon, Tyco. For just a hint, Tyco is the base to roll up. And if you remember what David said in the morning yeah. So which chain has Mem"
+ ],
+ [
+  4,
+  8684,
+  "pool? Ethereum, Optimism, Base, Polygon, or Tyco? Oh, the answer can be multiple, by the way. So you have to write down, like,"
+ ],
+ [
+  4,
+  8695,
+  "you know, multiple results. Okay. Number seven, what does DAO stand for? You have to spell it correctly. What? What does DAO stand for? D a "
+ ],
+ [
+  4,
+  8711,
+  "o. What are the words for the name? What's the full name it stands for? I"
+ ],
+ [
+  4,
+  8719,
+  "mean, it's kinda dead, but okay. Cool. Number eight. Is it wrong? Good. Okay. Number eight. Which one is related to account abstraction? Oka"
+ ],
+ [
+  4,
+  8733,
+  "y. So it's kinda tricky one, and it kinda has a trap in it. So numb a EIP 4337, b EIP seven seven zero two, and three,"
+ ],
+ [
+  4,
+  8745,
+  "EIP three zero four seven, and d 4337. It can be multiple again. This is me. Yeah. If anyone wanna bribe a coffee for the answer, he's, like"
+ ],
+ [
+  4,
+  8762,
+  ", in the front. I think this is me. On base. Right? Yeah. On base. Okay."
+ ],
+ [
+  4,
+  8770,
+  "Number nine. Where was DevCon four held? Where was DevCon four? Yeah. So Thailand was DevCon seven. So where was Devcon four held? I believe"
+ ],
+ [
+  4,
+  8790,
+  " it was 2018. Just"
+ ],
+ [
+  4,
+  8793,
+  "a hint. Yeah. Okay. Number 10, what was the fork called that created Ethereum Classic? Or, like, you know, what what was the you know, whate"
+ ],
+ [
+  4,
+  8810,
+  "ver the event name is. Like, what happened and caused, like, a fork that had Ethereum classic. Okay. Number 11. What was the first order boo"
+ ],
+ [
+  4,
+  8828,
+  "k decks on Ethereum?"
+ ],
+ [
+  4,
+  8830,
+  "Yeah. I mentioned to you when we're chatting. But yeah. What was the fur you you still have to spell it right. So what was the first order b"
+ ],
+ [
+  4,
+  8843,
+  "ook decks on Ethereum? Are we good? The first order book decks on Ethereum. Okay. Number 12, who was the miner that mined the last proof of "
+ ],
+ [
+  4,
+  8857,
+  "work block on Ethereum?"
+ ],
+ [
+  4,
+  8859,
+  "Like, you have the name is okay, the format, but you have to get the name. Like, it's a mining pool back in the POW day. Who was the last mi"
+ ],
+ [
+  4,
+  8870,
+  "ner that mined the block before it transitioned to POS on the merge day? You know? Yeah. Exactly. You can put, like, a nice Exactly. They pu"
+ ],
+ [
+  4,
+  8881,
+  "t a message in the transaction. I will show you guys."
+ ],
+ [
+  4,
+  8885,
+  "Okay. Even if you don't have answer for it, make sure you mark the number. Yeah? Okay. Number 13. What was the famous DAX launched with a Wi"
+ ],
+ [
+  4,
+  8894,
+  "ndows ritual UI? Yeah. This one is easy. Right? They're they're still around. I don't know how many people are using that UI, but I also, th"
+ ],
+ [
+  4,
+  8902,
+  "ey kinda, like, abandoned that UI at some point. Yeah. What was the famous decks was the Windows Virtual UI."
+ ],
+ [
+  4,
+  8909,
+  "Okay. Number 14, what was the first interactive Solidity learning game called, if anyone have played it? It was it was like a solidity Like,"
+ ],
+ [
+  4,
+  8926,
+  " basically, you can play this game and learn Solidity. Okay."
+ ],
+ [
+  4,
+  8933,
+  "Somebody's writing hard. I'm sitting there. Okay. Number 15. What was the first Ponzi scheme game on Ethereum? Like, this Ponzi scheme kinda"
+ ],
+ [
+  4,
+  8952,
+  ", like, clogged the whole chain kinda. Ponzi"
+ ],
+ [
+  4,
+  8958,
+  "scheme game. You think about enough. Well, but this is a particularly a thing where it's like, if you put in money, this amount, you will ge"
+ ],
+ [
+  4,
+  8968,
+  "t two x back. And everyone yeah. Yeah. Yeah. Yeah. Yeah. And then you have to basically, you know, be early because the last people are the "
+ ],
+ [
+  4,
+  8978,
+  "one that's getting nothing back. Right? Okay. What was the first Ponzi scheme game on Ethereum? Yeah."
+ ],
+ [
+  4,
+  8985,
+  "Okay. Number 17, how many EIPs were shipped in the Petra upgrade? Oh, 16. How many EIPs were shipped in the Petra upgrade? Is there 10 or 11"
+ ],
+ [
+  4,
+  9000,
+  " or 12 or 13? Yeah. How many IPs? There was a lot. Yeah. Yeah. Okay."
+ ],
+ [
+  4,
+  9008,
+  "It's getting more and more data. So number 17, which layer two has the highest fee paid by user in the last ninety days? Yeah. Well, Lorenz "
+ ],
+ [
+  4,
+  9018,
+  "just left, so otherwise, he could have yeah. Like, the answers are on grow the pie. So which l two has the highest fee paid by user in last "
+ ],
+ [
+  4,
+  9029,
+  "ninety days? Avatron based Optimism Linea"
+ ],
+ [
+  4,
+  9032,
+  "ZK sync. I mean, this is basically, like, what's the l highest it's just like how highest the l two revenue in the last ninety days. So okay"
+ ],
+ [
+  4,
+  9050,
+  ". 18, which l two has the highest TVL? L two TVL. So Avatron based Optimism Lineaz, DKSync."
+ ],
+ [
+  4,
+  9062,
+  "A hint is that there like, there are two chains super close to each other. So it's very tricky, this question. Okay. 19. How many layer twos"
+ ],
+ [
+  4,
+  9080,
+  " have reached stage one? There are five letter two, six, seven, eight. Can anyone define stage one? I grabbed the numb"
+ ],
+ [
+  4,
+  9096,
+  "Stage one means you have a work in proof system, you have first transactions, and you have a security council for emergency upgrades. So sec"
+ ],
+ [
+  4,
+  9107,
+  "urity council is defined as a multisigature that has at least 75% threshold and a diverse enough set of members, meaning, you know, from dif"
+ ],
+ [
+  4,
+  9117,
+  "ferent entities. K. Thank you. How many"
+ ],
+ [
+  4,
+  9120,
+  "yeah. Yeah. How many layer twos have reached that stage one? 5678. Pick your number. And then number 20, which of the following is currently"
+ ],
+ [
+  4,
+  9133,
+  " not proposed as a candidate EIP for Glamsterdam? So EIP seven seven three two EPBS, Enshrined payload block separation,"
+ ],
+ [
+  4,
+  9144,
+  "EIP seven eight zero five, FOSO, fork choice enforced inclusion lists, EIP seven eight eight six, delayed execution, EIP seven seven eight t"
+ ],
+ [
+  4,
+  9154,
+  "wo, reduced block latency from twelve second to six second. If you pay attention to, like, you know, like, the talks in the first and second"
+ ],
+ [
+  4,
+  9164,
+  " day from, like, Duncred and Barnaby, I think this is"
+ ],
+ [
+  4,
+  9168,
+  "could be, you know, like, easier. So if you don't, you know, if you don't know the answer, just pick a random one, to be honest. Yeah. Alrig"
+ ],
+ [
+  4,
+  9181,
+  "ht. Number 21, who spends the most gas on Ethereum within one year? A, Wintermute, b, Jared from Subway,"
+ ],
+ [
+  4,
+  9190,
+  "c, SCP, Symbolic Capital Partners, d, Citadel, e, Hildalby. He might be a really crazy whale, Djinn. Yeah. Yeah. It's honestly, it's roughly"
+ ],
+ [
+  4,
+  9209,
+  " the same in the past few years. Yeah."
+ ],
+ [
+  4,
+  9214,
+  "Let's say the last one year. Who spent the most gas on Ethereum? Alright. 22, which l two posts the second most of bobs since Duncan Duncan "
+ ],
+ [
+  4,
+  9232,
+  "upgrade? Second most bobs. Abitron, WordChain,"
+ ],
+ [
+  4,
+  9238,
+  "Base, OpManet, Tyco. Again, think about the talk from the morning from the David. The second most blobs posted by l two. Alright. Next. 23. "
+ ],
+ [
+  4,
+  9255,
+  "What's the scale of total value restaked on the eigenlayer today? So what's the eigenlayer t TVL?"
+ ],
+ [
+  4,
+  9266,
+  "Point 1,000,000,000, 1,000,000,000, or 10,000,000,000, or a 100,000,000,000? So what's the eigenlayer TVL? You think point one is even too m"
+ ],
+ [
+  4,
+  9282,
+  "uch? That that would be a 100,000,000. Right? So okay. Okay. Okay."
+ ],
+ [
+  4,
+  9290,
+  "Write down your answer. Yeah. And then 24, how many authors are on the Uniswap white papers? So this is one this one's a trope, and I copied"
+ ],
+ [
+  4,
+  9299,
+  " it from one of the roasting Ethereum comedy happened in DevCon, but I really like this one because it's kinda funny. So if you can write ou"
+ ],
+ [
+  4,
+  9308,
+  "t how many author's name are on the white paper of Uniswap for v one, v two, v three, v four, and Unichain,"
+ ],
+ [
+  4,
+  9315,
+  "just write a bunch of numbers and write, like, when we score it, like, anything. Yeah. Just make sure you write, you know, a bunch of comma "
+ ],
+ [
+  4,
+  9325,
+  "and so you know what number you're writing for which paper. So yeah. For each one. So, like, for v one, how many author? For v two, how many"
+ ],
+ [
+  4,
+  9335,
+  " author? For v three, how many? And each of them can be one point later when we score them."
+ ],
+ [
+  4,
+  9342,
+  "Yeah. Okay. So five numbers, comma separated. Yep. Okay. 25. What's the highest percentage of staked E source right now? So, like, among all"
+ ],
+ [
+  4,
+  9362,
+  " the ETH staked on Ethereum,"
+ ],
+ [
+  4,
+  9366,
+  "some of them are, like, solo stakers that are running validator putting their ETH on their validator. Some are through, like, staking servic"
+ ],
+ [
+  4,
+  9375,
+  "es. Some are through liquid staking services. Some are through liquid restaking services, or some are using, like, centralized institution s"
+ ],
+ [
+  4,
+  9384,
+  "taking. So what is the biggest source of stake Ethereum right now among a b c d e? Solo staker or staking or liquid staking or restaking"
+ ],
+ [
+  4,
+  9393,
+  "or centralized exchange staking. Okay. Now 26. How many active validators for Ethereum on right now? Is it a 100 k, 300 k, 500 k, 800 k, or "
+ ],
+ [
+  4,
+  9407,
+  "more than a million? How many active validators does Ethereum have right now? Yeah."
+ ],
+ [
+  4,
+  9416,
+  "Okay. 27. How many meme coins have launched on pumped off on? So is it 37,000 or a 137,000 or 1,100,000 or 11,000,000 or a 113,000,000? How "
+ ],
+ [
+  4,
+  9435,
+  "many tokens have launched on pumped off on? Yeah."
+ ],
+ [
+  4,
+  9442,
+  "Okay. 28. Which NFT had the highest trading volume in the last thirty days on OpenSea specifically on Ethereum? So is it CryptoPunks or Mela"
+ ],
+ [
+  4,
+  9454,
+  "dy or PudgyPenguin or Bored Ape? All of them are pretty good. All of them are particularly cool. Okay. Which NFT has the highest trading vol"
+ ],
+ [
+  4,
+  9467,
+  "ume in the last thirty days on Ethereum on OpenSea?"
+ ],
+ [
+  4,
+  9471,
+  "Just on OpenSea. Just on OpenSea? Yes. It's like you go to OpenSea website and you look at the metrics. Okay. Okay. 29. Which coin is not in"
+ ],
+ [
+  4,
+  9493,
+  " the top five by market cap?"
+ ],
+ [
+  4,
+  9497,
+  "XRP or BNB or SO or Ethereum or USDT? So, like, basically, what are the you know, among this list, which one is not top five? There's one in"
+ ],
+ [
+  4,
+  9510,
+  " this list, and I'll just give it away. And, you know, the top one is Bitcoin, and it's not here. Right? Like, so the one of this is not in "
+ ],
+ [
+  4,
+  9524,
+  "the top five"
+ ],
+ [
+  4,
+  9525,
+  "by market cap. So which one is not top five? Okay. Alright. Last question. So we know that, like, there are rewards from the consensus layer"
+ ],
+ [
+  4,
+  9537,
+  ", comes from, like, attestation and, like, the sync committee, like, as being a validator. There's also rewards from the execution layer for"
+ ],
+ [
+  4,
+  9549,
+  ", like, gas priority fee and MEV tip. So what is the split ratio between the execution and consensus rewards in last thirty days for Ethereu"
+ ],
+ [
+  4,
+  9560,
+  "m? Is 90"
+ ],
+ [
+  4,
+  9561,
+  "to 10 or 70 to 30 or fifty fifty or 30 to 70 or 10 to 90? So as in, like, you know, validators are getting rewards from both execution layer"
+ ],
+ [
+  4,
+  9574,
+  " and consensus layer. Which one do you think is, like, bigger than the other or, like, maybe they are similar? Yeah."
+ ],
+ [
+  4,
+  9585,
+  "I mean, you kinda basically measure, like, the whole how big of a in industry it is for staking services. Right? Like, if you look at consen"
+ ],
+ [
+  4,
+  9594,
+  "sus layer rewards and MEV is kinda like a subset of, like, the exclusion layer rewards, you know, as a sub industry. Okay. Everyone got thei"
+ ],
+ [
+  4,
+  9604,
+  "r answers? Cool. And so now find someone next to you to review your score. Yeah."
+ ],
+ [
+  4,
+  9609,
+  "Has can I go back? 26. 26. Okay. This is how many active validators for Ethereum right now? Okay. Okay. Are we ready for the answers? Have e"
+ ],
+ [
+  4,
+  9630,
+  "veryone find a reviewer? Okay."
+ ],
+ [
+  4,
+  9634,
+  "So we'll go through the answers now. First question, it's Vitalik who wrote the white paper. Italic. I mean, if you said if Italic was our l"
+ ],
+ [
+  4,
+  9647,
+  "ast name, it's okay. Right? Like, it's the same person. Are we ready? Yeah? We got answer in? Okay. Cool. Second question, who wrote the yel"
+ ],
+ [
+  4,
+  9660,
+  "low paper?"
+ ],
+ [
+  4,
+  9661,
+  "Anyone? Okay. Gavin Wood? But he's doing Polkadot now. So yeah. Yeah. So alright. Cool. What was the DeFi called before DeFi Open Finance? Y"
+ ],
+ [
+  4,
+  9682,
+  "eah. Ring a bell? Yeah. Okay."
+ ],
+ [
+  4,
+  9686,
+  "What's the most common standard for NFT? ERC721, ERC1155. So okay. Number five, when was the merge? It was September '15. Yeah. Make sure yo"
+ ],
+ [
+  4,
+  9703,
+  "u get the right, exact date. Yeah? It was supposed to be the exact right date. Yeah."
+ ],
+ [
+  4,
+  9713,
+  "September '15. No. You don't get half points. No. No. No. No. No buffer. No. No. No. No. Have to real align to know the date. Yeah. Alright."
+ ],
+ [
+  4,
+  9728,
+  " Which chain has mempool? So Ethereum has mempool, Polygon has mempool,"
+ ],
+ [
+  4,
+  9736,
+  "Tyco based roll up also have a mempool, OPM based are a single sequencer with no mempool. So if you would get the answer a d e, then you are"
+ ],
+ [
+  4,
+  9750,
+  " correct. No half points. No half points. Okay. What does DAO stand for? It's decentralized autonomous"
+ ],
+ [
+  4,
+  9760,
+  "organization. And if you do the z instead of s, it's fine. So decentralized autonomous organization. And number eight, which one is related "
+ ],
+ [
+  4,
+  9776,
+  "to account abstraction? It's like all of them, but if you get only if you get only wait. Why not? Why you think not? So, like"
+ ],
+ [
+  4,
+  9791,
+  "Woah. I I've heard I've heard somebody told me every ERC is a EIP. Okay. Yeah. So there was a debate last time about this, but somebody educ"
+ ],
+ [
+  4,
+  9812,
+  "ated it. I looked it up as well. Like, every ERC is can be considered as an EIP. Like, you have"
+ ],
+ [
+  4,
+  9827,
+  "okay. Okay. Okay. Okay. Yeah. So, I mean, I think, like, there's controversy here. Either you get a b c d or you get b c d is both fine. Yea"
+ ],
+ [
+  4,
+  9845,
+  "h. So but you have to get a b c d or b c d. Yeah."
+ ],
+ [
+  4,
+  9851,
+  "Cool. So the next is devcon four was in Prague. Yeah. Yeah. Three was in Cancun. Yeah. Yeah. And then, like, five was Osaka, I think. And th"
+ ],
+ [
+  4,
+  9868,
+  "en six was Bogota. Wait. Is Bogota a DevCon or dev DevConnect? Both DevCon. Yeah. Yeah."
+ ],
+ [
+  4,
+  9878,
+  "Okay. So Prague wait. What'd you say? Cool. Thank you."
+ ],
+ [
+  4,
+  9902,
+  "10, the fork that made Ethereum classic is the DAO hack or the DAO fork. Yeah. Alright. 11, the first order book decks was EtherDelta. Ether"
+ ],
+ [
+  4,
+  9919,
+  "Delta and doesn't matter the capitalized or not. Okay. 12,"
+ ],
+ [
+  4,
+  9926,
+  "The minor mine the last proof of work block is F2 pool. Yeah. F2Pool. And I wanna show this basically this was a block last e POW block, and"
+ ],
+ [
+  4,
+  9940,
+  " there was it's by f two pool old. It was, like, Chinese signature. There's one transaction in this block."
+ ],
+ [
+  4,
+  9950,
+  "And in that transaction, they wrote a message. It was basically saying basically, sound like a statement and say, you make the commitment an"
+ ],
+ [
+  4,
+  9960,
+  "d nature will respond to that commitment by removing impossible obstacle during the impossible dream and the world will not grind you under."
+ ],
+ [
+  4,
+  9970,
+  " It will lift you up. This is the trick. Oh, yeah."
+ ],
+ [
+  4,
+  9974,
+  "Yeah. I think it also I mean, my understanding of this is, like, it kinda represents the, how to say, conviction of, you know, Ethereum tryi"
+ ],
+ [
+  4,
+  9984,
+  "ng to really transition towards, like, resources, saving, like, not no longer, like, mining with a lot of energy consumption. So they sell t"
+ ],
+ [
+  4,
+  9994,
+  "hat NFV. Should I try open this?"
+ ],
+ [
+  4,
+  9996,
+  "Okay. Let's see. Oh, what's going on here? Oh, should I do, like, h a h t t f, or does anyone know what's the format? Is this correct? Wait."
+ ],
+ [
+  4,
+  10013,
+  " I think we haven't got the format right. I hope Sarah is here. Oh,"
+ ],
+ [
+  4,
+  10021,
+  "okay. And then slash IPFS again, and that's it. I think we're not getting it right, but okay. We can check after, but yeah. Okay. Next one, "
+ ],
+ [
+  4,
+  10040,
+  "the first, Windows virtual UI is curved dot five."
+ ],
+ [
+  4,
+  10046,
+  "Curve five. Yeah. Curve. Curve is fine. Yeah. And then number 14, it was Crypto Zombies. It was a Solidity game. It was pretty interesting. "
+ ],
+ [
+  4,
+  10060,
+  "It looks like the the zombie and plants game. Yeah. And then number 15, the first Ponzi scheme is FOMO three d."
+ ],
+ [
+  4,
+  10071,
+  "Yeah. Yeah. Maybe I think some people are getting CryptoKitty, but I think it's FOMO three d first. I mean, CryptoKitty is not a Ponzi. So y"
+ ],
+ [
+  4,
+  10082,
+  "eah. But it was a game that clogged the chain. Yeah. I mean, it was an NF NFT that clogged in. So how many EIP was shipped in the pack drop "
+ ],
+ [
+  4,
+  10093,
+  "grade? 11. And these are all 11."
+ ],
+ [
+  4,
+  10096,
+  "And then number 17, the l two has the highest fee paid by user. Last nineteen day is base. So highest l two revenue in the last ninety days "
+ ],
+ [
+  4,
+  10109,
+  "is base. But for number 18, the highest to TVL is Avstrom. It's pretty crazy. Oh, well, okay. Look at this chart from Grow the Pie. It's lik"
+ ],
+ [
+  4,
+  10121,
+  "e based on Arbitron is like just"
+ ],
+ [
+  4,
+  10124,
+  "sometimes based up a little bit, and then today, Arbitron is higher. Yeah. This yeah. So Arbitron is a. Yeah. And then number 19, how many l"
+ ],
+ [
+  4,
+  10137,
+  " two reached the stage one? It's seven. So base, Arbitron, Optimism, Unichain, Scroll, StarkNet, Inc, f seven,"
+ ],
+ [
+  4,
+  10147,
+  "stage one l two. Okay. Number 20, reduce block latency from twelve second to six second is not considered yet by Glamsterdam so far. Everyth"
+ ],
+ [
+  4,
+  10160,
+  "ing else is considered in Glamsterdam. So EPBS, Fossil, and Delayed Execution. Okay. 21, Jared from Subway is the highest spend spender by g"
+ ],
+ [
+  4,
+  10172,
+  "as. He's the he's the biggest sandwicher,"
+ ],
+ [
+  4,
+  10176,
+  "like, MEV sandwich searcher. Yeah. Jared from subway.east in one year. Okay. Alright. 22. Taiko is the l two post the second most blob since"
+ ],
+ [
+  4,
+  10192,
+  " Duncan. Well, Taiko, like, posted as a base roll up, posted every"
+ ],
+ [
+  4,
+  10200,
+  "Yeah. Yeah. Yeah. Well, check your own dashboards. We should. Yeah. Yeah. Yeah. And then so next to 23, I can layer TVL is 10,000,000,000 ri"
+ ],
+ [
+  4,
+  10217,
+  "ght now. Yeah. 10,000,000,000. Okay. 26"
+ ],
+ [
+  4,
+  10222,
+  "oh, 24. 24. So how many authors are on the Uniswap white papers? There was, like, obvious inflation. I was like, the first one was from so, "
+ ],
+ [
+  4,
+  10233,
+  "guys, so this one for this one, there are five ounces here. If you get any of them in for the right the the right white paper, you get one p"
+ ],
+ [
+  4,
+  10245,
+  "oint. Okay? So for for v one, there was one author, v two, three, v three, five,"
+ ],
+ [
+  4,
+  10251,
+  "and v four, there's 10 author, and the Unichan, there's 12 authors. If you if you wanna see it here, like, you just saw v one white paper co"
+ ],
+ [
+  4,
+  10261,
+  "mes from, like, Hayden's hack MD. And then v two had Hayden, Noah, and Dan Robinson. And then v three had two more authors. And v four just,"
+ ],
+ [
+  4,
+  10270,
+  " like, instantly inflated. And then Unicheng has even more you know, some people also contributed from OP Labs and FlashWatch."
+ ],
+ [
+  4,
+  10279,
+  "So so the answer is one, three, five, ten, 12. So if you get any of them correctly for the right position, you're you're getting points. If "
+ ],
+ [
+  4,
+  10288,
+  "you get flat five of them, you get five points. Okay. 25. What's the highest percentage of a stake esource right now? It's liquid staking. Y"
+ ],
+ [
+  4,
+  10298,
+  "eah. It's liquid staking, which is c, and it's coming from Dolby's dashboards again. And caveats is that there is a cert a good amount of, l"
+ ],
+ [
+  4,
+  10307,
+  "ike, 20% of source, it's unidentified."
+ ],
+ [
+  4,
+  10310,
+  "So only it's not liquid. Okay. So it's like likely central exchange, which means this answer could be flipped. Right? Right. It's possible y"
+ ],
+ [
+  4,
+  10321,
+  "eah. It's most likely? Okay. So when you push that so when you push that spell book, the answer is different again, maybe. Yeah. Well, yeah,"
+ ],
+ [
+  4,
+  10333,
+  " for now, what we know is that it's liquid staking. Yeah. So it's the answer is c. Okay. 26,"
+ ],
+ [
+  4,
+  10340,
+  "there is more than a million active validators on Ethereum right now. And this number kinda dropped slightly, like, from one point o seven t"
+ ],
+ [
+  4,
+  10349,
+  "o one point o five after Petra because there's, like, a consolidation feature. So that you right. And, like, the average, staked amount went"
+ ],
+ [
+  4,
+  10359,
+  " up from 32 to 32.4 or something, but it kinda went back to one point o seven now per check from BeaconChain,"
+ ],
+ [
+  4,
+  10366,
+  "BeaconChain Explorer. And then so, yeah, the answer is e. Okay. So '27, there is 11,000,000 tokens have launched so far and pumped off on. O"
+ ],
+ [
+  4,
+  10379,
+  "h oh, really? I just checked on June. It's twelve? Okay. Yeah. It's probably yeah. It's probably it's"
+ ],
+ [
+  4,
+  10389,
+  "probably e already now. Yeah. Yeah. It's eleven million. Okay. '28. Which NFT has highest trading volume last thirty days? CryptoPunks. I me"
+ ],
+ [
+  4,
+  10403,
+  "an, the volume is inflated by the price. Right? Okay. Okay. So part of the question"
+ ],
+ [
+  4,
+  10412,
+  "were contributed by my friend, Faye, and I'll have to ask where he got the source, but, I trust these, checks, CryptoPunks. And 29, which co"
+ ],
+ [
+  4,
+  10425,
+  "in is not in the top five? So is not in the top five? So is number six. Yeah. Yeah. BNB is holding strong, number five."
+ ],
+ [
+  4,
+  10436,
+  "And the, like, the market cap difference is not that big, to be honest. Like, one is 90,000,000,000 and Solana is 76. Oh, yeah. Like like li"
+ ],
+ [
+  4,
+  10448,
+  "ke, when Trump tweet something, instantly gonna become number five, I guess. So yeah. You're right. Yeah. Actually, it's for a lot of billio"
+ ],
+ [
+  4,
+  10459,
+  "n. Okay. Last question."
+ ],
+ [
+  4,
+  10461,
+  "So execution layer rewards including MEV tip and gas priority fee is actually very small compared to consensus layer rewards, which means ET"
+ ],
+ [
+  4,
+  10470,
+  "H issuance is pretty big still. And staking industry is, like, way bigger than MEV, to be honest. So yeah. Like, this number comes from a ra"
+ ],
+ [
+  4,
+  10478,
+  "ted network. So if you check their website, they have a rewards distribution breakdown where they say as consensus is constructing of 90% al"
+ ],
+ [
+  4,
+  10487,
+  "most,"
+ ],
+ [
+  4,
+  10487,
+  "and the rest are, like, 10% from execution both priority fee and base baseline MEV. So the answer is e. Okay. Alright. So I think the stream"
+ ],
+ [
+  4,
+  10497,
+  " gonna stop at this point. If anyone from the audience that are watching stream got higher points, please DM any of us, and I will figure ou"
+ ],
+ [
+  4,
+  10507,
+  "t what what presents we can get you. And, thank you so much, for watching this, and thanks, Shaka, for helping to stream. Bye bye."
+ ],
+ [
   5,
   2,
   "Alright. Hello, everyone. Welcome to the Wizard Day in Zoo Berlin. And, this is a full day event, curated by me, Danning. I'm a data scienti"
