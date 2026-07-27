@@ -1,5 +1,1635 @@
 [
  [
+  10,
+  5,
+  "And we can start getting my HDMI up here with the slides. Yeah. It's beautiful to look at such a quiet room full of people"
+ ],
+ [
+  10,
+  29,
+  "that you all made your way here. Let me actually take a picture of that if I find my phone. Yeah. Welcome to our next iteration of Superlin."
+ ],
+ [
+  10,
+  54,
+  "Same same but different. You might already notice this is a bit different than the usual conference. We sitting here on the floor like gurus"
+ ],
+ [
+  10,
+  67,
+  ". But, yeah, let's get started. So, Suberlin, what is Suberlin? You might be asking yourself, some of you"
+ ],
+ [
+  10,
+  77,
+  "have been here already and some of you know a bit what it's about and others are like about it and we can't really grasp this pop up village"
+ ],
+ [
+  10,
+  88,
+  " thing. It's it's not a conference. It's not a retreat. It's not a tribe. It's not a residency. It's something else. And it's what we'll fig"
+ ],
+ [
+  10,
+  99,
+  "ure out together step by step what it is and how it feels."
+ ],
+ [
+  10,
+  104,
+  "Some premises, some things we or I noticed, sometimes you go to crypto conferences or a lot of you go to crypto conferences a lot and it can"
+ ],
+ [
+  10,
+  114,
+  " feel very chaotic. Sometimes you can feel lost. There's a lot of people. But, yeah, just finding your tribe and getting a different feeling"
+ ],
+ [
+  10,
+  125,
+  " for that could be nice. And there's value"
+ ],
+ [
+  10,
+  128,
+  "to sometimes be with really, really, really smart people and just spend casual time and just get a bit deeper and feel comfortable with your"
+ ],
+ [
+  10,
+  138,
+  "selves. And then have conversations which just feel inspiring, which feel like you're not selling yourself and you're not trying to know mor"
+ ],
+ [
+  10,
+  148,
+  "e than the other person, but you're just inspiring each other."
+ ],
+ [
+  10,
+  153,
+  "And no matter how smart we are, how big our brains are, in the end, we're all just humans. And when we recognize that, then different types "
+ ],
+ [
+  10,
+  161,
+  "of collaboration are possible of working together and we don't even have to be in the same company or the same group of people, but overall,"
+ ],
+ [
+  10,
+  170,
+  " we can feel like we can have conversations with each other which feel collaborative"
+ ],
+ [
+  10,
+  175,
+  "and that's really nice. And how about creating such spaces which feel a bit like home or which feel different, where we feel comfortable rea"
+ ],
+ [
+  10,
+  189,
+  "lly, really quickly? Maybe a space that feels like a garden, a garden where the future can grow together, where we can"
+ ],
+ [
+  10,
+  200,
+  "look at futuristic scenarios, where we can talk about technology, but it's not only technology, it's not only the left side of the brain, bu"
+ ],
+ [
+  10,
+  210,
+  "t there's there's more to it. There's a certain feeling to it, maybe for Tura Garden. So what are the ingredients to make something like tha"
+ ],
+ [
+  10,
+  219,
+  "t happen? What do we need for that? Well,"
+ ],
+ [
+  10,
+  222,
+  "first of all, the space we're in makes a difference for our experience. You've noticed this place that feels nice to some extent, doesn't fe"
+ ],
+ [
+  10,
+  233,
+  "el like a normal hotel. But it's not only that, it's also the people who create this space. Can you guess what that is on the left, that big"
+ ],
+ [
+  10,
+  243,
+  " picture? That picture is actually this room a couple of days ago. This room looked exactly like that."
+ ],
+ [
+  10,
+  251,
+  "And thanks to some of the wonderful people in this room, it doesn't look like that anymore. And there's one special person who played a big "
+ ],
+ [
+  10,
+  262,
+  "role there. She's actually is she here right now? No. She's resting right now. But there's many other people who also played a big role and "
+ ],
+ [
+  10,
+  273,
+  "so I and we can be really grateful for that. And then there's also other people"
+ ],
+ [
+  10,
+  279,
+  "who who make sure the tech works so that I that you can actually hear me through this microphone and you can see the screen out there and th"
+ ],
+ [
+  10,
+  289,
+  "ey're doing amazing work. They built all this up here in super short time working days and nights. And there's amazing people who actually m"
+ ],
+ [
+  10,
+  300,
+  "ake the content here happen"
+ ],
+ [
+  10,
+  302,
+  "because we can't just do it by ourselves. Like, we could select people for talks, but, like, to curate actually a whole day where it's not j"
+ ],
+ [
+  10,
+  311,
+  "ust talk after talk, but it's a day where everything fits together and advances a space, that's not something we could just do by ourselves."
+ ],
+ [
+  10,
+  321,
+  " And that's why we have people here like Lisa, Luca, Ellie,"
+ ],
+ [
+  10,
+  325,
+  "who've been doing amazing work there and we're extremely grateful for that. And Pascal as well. Where is he? Nice. Cool. So what do we have "
+ ],
+ [
+  10,
+  337,
+  "in terms of topics this time? I guess most of you know already, we have some some big tracks here. I don't have to talk about all of them."
+ ],
+ [
+  10,
+  349,
+  "But I think it's a really nice and broad beautiful selection and we'll go pretty deep on those. I'm kinda curious in terms of the group of p"
+ ],
+ [
+  10,
+  358,
+  "eople, what are your topics here? So like, for example, if you look at interoperability, I'd be curious like if that's one of the topics you"
+ ],
+ [
+  10,
+  368,
+  "'re really excited about, I would like to see a raise of hand. Who is that? Keep your hands up."
+ ],
+ [
+  10,
+  374,
+  "Nice. Good amount of the room. Cryptography and privacy. Who is that? Oh, nice. We can see Lisa did a good job there inviting a lot of those"
+ ],
+ [
+  10,
+  387,
+  " people. Nice. Data data wizards. Nice. And then more abstractly, future society and AI. Who's excited about that?"
+ ],
+ [
+  10,
+  397,
+  "Oh, that's a big part of the room. I guess a lot of people like that. Protocol and MEV topics. Okay. Again, a big part of the room. So we se"
+ ],
+ [
+  10,
+  408,
+  "e a big overlap that most of you are interested in all of that. Last one, human connection experiences. Anyone? Yes. Here we go. Nice. Cool."
+ ],
+ [
+  10,
+  419,
+  " But we have more than that. We also try to bring in some of the more Berlin flavors"
+ ],
+ [
+  10,
+  426,
+  "And this wonderful person sitting next to me has been doing a lot to curate wonderful facilitators. So this time, we have like a whole notio"
+ ],
+ [
+  10,
+  434,
+  "n sheet which introduces these facilitators. And so you can read about them, you can see their beautiful faces. And I I'd like to encourage "
+ ],
+ [
+  10,
+  443,
+  "you to really go there in the evenings. Like, you might feel exhausted after a full day of programming,"
+ ],
+ [
+  10,
+  449,
+  "but try it out. It's a different feeling. It's a different way of connecting. It expands your horizon. So, yeah, give it a chance even after"
+ ],
+ [
+  10,
+  461,
+  " full days. And, yeah, also some more of the Berlin experiences. You'll see there'll be more of that towards the end. But most importantly,"
+ ],
+ [
+  10,
+  472,
+  "it's about all of you in here and how you connect, relate to each other, and also create the space together and bring in your own flavor. So"
+ ],
+ [
+  10,
+  483,
+  " what to do with all of this? I'd like us all to treat this as a space for experimentation. Like every time we do this, it's another experim"
+ ],
+ [
+  10,
+  493,
+  "ent. We don't know the actual outcomes."
+ ],
+ [
+  10,
+  496,
+  "We're, yeah, creating this together. And take your time to get to know people, spend time here, join our daily breakfasts. Like, even if you"
+ ],
+ [
+  10,
+  505,
+  "'re not living here, if you're not staying at this place, the daily breakfast here is amazing. Shaka can confirm that. He'll love the party "
+ ],
+ [
+  10,
+  513,
+  "this morning. And so, like, really join there, take your time, join the breakfast, socialize there with people, and the evening sessions as "
+ ],
+ [
+  10,
+  522,
+  "well."
+ ],
+ [
+  10,
+  522,
+  "So, yeah. Trust the process. We'll go step by step. And with that, I'll hand it over to Sonya. Thanks, Chris. So welcome, everybody, to Zoo "
+ ],
+ [
+  10,
+  548,
+  "Berlin."
+ ],
+ [
+  10,
+  549,
+  "A couple of the pillars of Zoo Berlin are connection and care. And Chris invited me here the first time because he was attending something c"
+ ],
+ [
+  10,
+  560,
+  "alled the church of interbeing where the pillars there are also connection and care. It's a nondogmatic space where we gather and, explore t"
+ ],
+ [
+  10,
+  570,
+  "opics together and really"
+ ],
+ [
+  10,
+  572,
+  "feel into what it means to be connecting that one layer deeper, not as we would if we just bump into each other and super superficially exch"
+ ],
+ [
+  10,
+  582,
+  "ange hellos and, how are you and I'm goods. But just, yeah, that one layer deeper, what does it feel like to really meet each other here? An"
+ ],
+ [
+  10,
+  592,
+  "d as Chris said, this isn't we're not, like, a community right now necessarily."
+ ],
+ [
+  10,
+  598,
+  "But what becomes possible if we start to create little steps in that direction? What creates community? Do you want community? And so this n"
+ ],
+ [
+  10,
+  616,
+  "ext little chunk of time is going to be dedicated to connecting,"
+ ],
+ [
+  10,
+  624,
+  "caringly connecting. And what that's gonna look like is that we'll have a small guided contemplation, meditative moment where you can connec"
+ ],
+ [
+  10,
+  637,
+  "t with yourself and just arrive in this space and be here as you are. And then we'll do a little movement related something something."
+ ],
+ [
+  10,
+  649,
+  "And then we will have triads where we'll meet each other in dialogue, and all of that's gonna be guided. And you don't have to participate. "
+ ],
+ [
+  10,
+  660,
+  "There's nothing you actually have to do here. You're really welcome to also witness, but you're encouraged to step into the experience and j"
+ ],
+ [
+  10,
+  671,
+  "ust see what it's like and see how you are, see how you're doing."
+ ],
+ [
+  10,
+  676,
+  "Does that sound okay to all of you? Cool. That was silence, but I got some I got some thumbs up. You all didn't see it in the back, but it h"
+ ],
+ [
+  10,
+  685,
+  "appened. Okay. Great. So we're gonna begin with a meditative moment. I welcome you to get comfortable. For those of you that are sitting up "
+ ],
+ [
+  10,
+  693,
+  "on the chairs, yeah, wiggle yourself around and find yourself upright and feeling good. For those of you sitting down, you're welcome to lie"
+ ],
+ [
+  10,
+  702,
+  " down. You don't have to sit down. You can just, again, find yourself comfortable."
+ ],
+ [
+  10,
+  707,
+  "Take a moment to really care about your own comfort. And, again, you don't have to close your eyes, but you can if you want to. And I I do e"
+ ],
+ [
+  10,
+  721,
+  "ncourage you to just to have a moment of meeting yourself first and foremost before all the data of this visual world floods into your syste"
+ ],
+ [
+  10,
+  735,
+  "m."
+ ],
+ [
+  10,
+  735,
+  "Just tuning in to you. Practicing slowing down. Noticing that you're breathing. Maybe letting out a deep exhale"
+ ],
+ [
+  10,
+  771,
+  "to release any tension that you might be carrying also from socializing, meeting new people, Seeing if you can sense the space between your "
+ ],
+ [
+  10,
+  793,
+  "heartbeats."
+ ],
+ [
+  10,
+  795,
+  "Can you become that slow? And then letting your senses open up. What can you hear? How far can you hear?"
+ ],
+ [
+  10,
+  835,
+  "How does the floor feel beneath you or the chair? When you slow down,"
+ ],
+ [
+  10,
+  869,
+  "what do you notice about yourself? How much acceptance can you bring to the fact that you are just as you are,"
+ ],
+ [
+  10,
+  895,
+  "exactly as you are, Allowing whatever thoughts to surface, whatever feelings to be known, whatever sensations"
+ ],
+ [
+  10,
+  920,
+  "to simply be there as they are. And just spending this next minute in silence with yourself just as you are"
+ ],
+ [
+  10,
+  947,
+  "here and now. And when you feel ready"
+ ],
+ [
+  10,
+  1004,
+  "to open your eyes and just see if you feel a little different to just before, So just see if you can keep this connection to yourself,"
+ ],
+ [
+  10,
+  1028,
+  "this slowness. And we're gonna move into a little practice of welcoming each other here. So"
+ ],
+ [
+  10,
+  1052,
+  "I welcome you to stand up. And those of you that are, like, here on the carpets, just to move the soft stuff over to the sides and watch out"
+ ],
+ [
+  10,
+  1073,
+  " for your drinks. Great."
+ ],
+ [
+  10,
+  1077,
+  "And slowly, everybody, welcome to the carpet space. Walk into the carpet space. And then welcome feel welcome to walk around the carpet spac"
+ ],
+ [
+  10,
+  1090,
+  "e as if you're busy bees walking through each other. Don't collide, but be the molecules. Just keep walking."
+ ],
+ [
+  10,
+  1100,
+  "You don't have to make any eye contact if you don't want to. But what does it feel like to be in a crowd? What does the collective field fee"
+ ],
+ [
+  10,
+  1125,
+  "l like? Who are you in this space?"
+ ],
+ [
+  10,
+  1131,
+  "And when the bell rings, find yourself in front of a person. Great. And if you don't want to, you don't have to. Great."
+ ],
+ [
+  10,
+  1154,
+  "And now as you as you find yourself in front of this person, check the distance. Is this a good distance? Do you wanna do move, like, a coup"
+ ],
+ [
+  10,
+  1165,
+  "le centimeters closer and see how that feels? Mhmm. Is that is that too close? Do you wanna move a couple centimeters away and see how that "
+ ],
+ [
+  10,
+  1177,
+  "feels?"
+ ],
+ [
+  10,
+  1177,
+  "So every every person you meet, there'll be a different nearness, a different closeness. Experiment with that. Okay. Good. And now everybody"
+ ],
+ [
+  10,
+  1195,
+  ", for a moment, just look at the person in front of you in silence."
+ ],
+ [
+  10,
+  1204,
+  "Thank you. And take a breath together. Breathe in. Breathe out. And one of you welcome the other person here. Welcome. And the other one of "
+ ],
+ [
+  10,
+  1219,
+  "you welcome the other person here. Welcome. And then continue buzzing around the room. Keep"
+ ],
+ [
+  10,
+  1229,
+  "it moving. Keep it moving. Moving through the space as molecules, as a beehive. How does it feel to just have met somebody? How do you feel "
+ ],
+ [
+  10,
+  1251,
+  "to be walking"
+ ],
+ [
+  10,
+  1253,
+  "potentially awkwardly through a group of people? And when you hear the bell, to stop in front of another person. And again, everybody."
+ ],
+ [
+  10,
+  1295,
+  "Thank you. Please proceed with this silently and just spending a moment in front of this person, looking at them, acknowledging them, making"
+ ],
+ [
+  10,
+  1307,
+  " brief moments of eye contact with them. And one of you, welcome the other into the space. Welcome. And then welcome the other into the spac"
+ ],
+ [
+  10,
+  1319,
+  "e."
+ ],
+ [
+  10,
+  1319,
+  "And if you'd like to introduce yourselves this time, please. It's going to happen anyway. And when you're ready, continue walking around the"
+ ],
+ [
+  10,
+  1340,
+  " space. Keep walking. Keep walking. Keep walking."
+ ],
+ [
+  10,
+  1348,
+  "Keep it moving, everybody. Saying goodbye to this person. I'm going to try ads now. And finding yourself in a group of three. Finding yourse"
+ ],
+ [
+  10,
+  1370,
+  "lf in a group of three."
+ ],
+ [
+  10,
+  1374,
+  "And if you know these people, find a different group. Find a different group into a group of three that you don't know. And when you're in y"
+ ],
+ [
+  10,
+  1402,
+  "our group of three, sit down. When you're in your group of three, sit down."
+ ],
+ [
+  10,
+  1417,
+  "There are still some people looking for a three. Okay. Okay. Who's still looking? Okay. Great. Is there a four some Is there a group of four"
+ ],
+ [
+  10,
+  1440,
+  "?"
+ ],
+ [
+  10,
+  1440,
+  "One of you? Give up a person. Cool. Alright. Here. We've got we've got a rogue Zoe. So you can join these two. Oh, okay. That's that's now b"
+ ],
+ [
+  10,
+  1459,
+  "ecome a group of four. Okay. Mhmm."
+ ],
+ [
+  10,
+  1463,
+  "So, everyone, I know that we all wanna have the chats with each other right now. Okay? But we're going to do a practice listening and in sha"
+ ],
+ [
+  10,
+  1477,
+  "ring. There are going to be three questions. The first question, I will share it with you, and one person will have two minutes"
+ ],
+ [
+  10,
+  1490,
+  "to answer the question. And the other two people will simply be listening and learning about this person, not asking questions, but just giv"
+ ],
+ [
+  10,
+  1499,
+  "ing them that space. It's their space to just share and for you to learn and for you to listen. And then the bell will ring, and then it'll "
+ ],
+ [
+  10,
+  1509,
+  "be the other person sharing for two minutes, and the other two people will listen."
+ ],
+ [
+  10,
+  1514,
+  "And then the third person. Does that make sense to everybody? Yeah. Great. Okay. So the first question is, well, what is your name? You can "
+ ],
+ [
+  10,
+  1531,
+  "contemplate on that. And then to share something that you enjoy"
+ ],
+ [
+  10,
+  1538,
+  "sharing with others. What do you enjoy sharing with others so that the people around you learn about who it is that you are and what you lik"
+ ],
+ [
+  10,
+  1551,
+  "e to give. And the person with the shortest hair will begin. And then the person with the next length of hair and then the longest hair."
+ ],
+ [
+  10,
+  1564,
+  "Okay. You may begin. Oh, join Tomash."
+ ],
+ [
+  10,
+  1708,
+  "Cool. Okay. So letting there be a moment of of quietness between shares just to digest that information. And now to move on to the medium le"
+ ],
+ [
+  10,
+  1807,
+  "ngth haired person. You have two minutes. Please share. Letting a moment of silence,"
+ ],
+ [
+  10,
+  1867,
+  "a little moment of stillness to digest this share, and then the final person, your name, and what you love to share with others. Your time s"
+ ],
+ [
+  10,
+  1886,
+  "tarts now. I will do another another two minutes where they can just chat"
+ ],
+ [
+  10,
+  1896,
+  "so that the groups of four have the the chance to Slowly bringing your share to an end and now having a couple of minutes to just talk to ea"
+ ],
+ [
+  10,
+  1961,
+  "ch other without any structure and for the groups of four to have a moment to let the your fourth fourth person speak."
+ ],
+ [
+  10,
+  2015,
+  "Enjoy. Do you think we should do three questions or two?"
+ ],
+ [
+  10,
+  2056,
+  "We'll see. Maybe three or three is nice because this feels like the most Give me, like, three cycles or two cycles. You can decide if the se"
+ ],
+ [
+  10,
+  2072,
+  "cond one will be someone another one. You can also look at time and then after that. I think time, we're good. Yeah. We're doing really good"
+ ],
+ [
+  10,
+  2089,
+  ". Do you wanna ask the next question?"
+ ],
+ [
+  10,
+  2093,
+  "Which would be how do how do you or how would you like to contribute to this ecosystem while you're here? But I will I will get them to move"
+ ],
+ [
+  10,
+  2112,
+  " and mingle and yep. Bringing your"
+ ],
+ [
+  10,
+  2117,
+  "conversation to a close, finding a way to thank thank your triad or your quad. So thank yous and thank yous for sharing. Mhmm. And we're goi"
+ ],
+ [
+  10,
+  2130,
+  "ng to do the arduous task of finding new triads. We're doing it. Alright? So bring yourselves back to your feet and find another group of th"
+ ],
+ [
+  10,
+  2143,
+  "ree."
+ ],
+ [
+  10,
+  2143,
+  "And feel free to take up the whole room of space, also the stage. Finding yourself in a group of three. Look around. You'll make some eye co"
+ ],
+ [
+  10,
+  2160,
+  "ntact and be like, I think you. Yeah. You. And once you have your triad,"
+ ],
+ [
+  10,
+  2168,
+  "you can sit down. And if you're still walking around, choose people now. Once you're in your triad, please sit down."
+ ],
+ [
+  10,
+  2210,
+  "Great. There's some space here. There's some space on the stage. Mhmm. And if there is a quad, that's okay. And it's essentially the same se"
+ ],
+ [
+  10,
+  2231,
+  "tup. It's gonna be another question and two minutes each."
+ ],
+ [
+  10,
+  2240,
+  "And, and it's going to be the person with the longest hair that starts. It will be the longest hair. That's right. And the question is, how "
+ ],
+ [
+  10,
+  2257,
+  "would you like to contribute to your ecosystem"
+ ],
+ [
+  10,
+  2262,
+  "while you're here? And you can define ecosystem in the widest context you find for yourself. So whatever space you feel yourself in and how "
+ ],
+ [
+  10,
+  2349,
+  "would you like to contribute to that? That's the question. So yeah, start with the first person. Can I tell them?"
+ ],
+ [
+  10,
+  2419,
+  "Moment of silence. Moment to digest. And then it will move to whoever feels like sharing next. Mhmm. You may begin. And just another moment "
+ ],
+ [
+  10,
+  2538,
+  "of silence, finishing off your share,"
+ ],
+ [
+  10,
+  2570,
+  "letting whatever the other person said land for you, and then creating space for the final person to share. You can go for it. Great."
+ ],
+ [
+  10,
+  2712,
+  "And now having just a couple of minutes to talk amongst yourself as the group of four has two more minutes for the fourth person to share. S"
+ ],
+ [
+  10,
+  2821,
+  "o enjoy conversation. Mhmm. Great."
+ ],
+ [
+  10,
+  2848,
+  "I'm letting the room fall quiet again. We're gonna try something where only one person from your triad or quad will stand and move to anothe"
+ ],
+ [
+  10,
+  2860,
+  "r group. How do you choose this person? I don't know. I don't know. But you can choose the person amongst yourselves or or you actually you "
+ ],
+ [
+  10,
+  2871,
+  "can volunteer yourself."
+ ],
+ [
+  10,
+  2873,
+  "One of you will move to another group. Stand up and just move to another group. If you're looking for a if you're looking for somebody, put "
+ ],
+ [
+  10,
+  2937,
+  "your hand up."
+ ],
+ [
+  10,
+  2943,
+  "Here's the group. Okay. Who is looking for a third person? Your two. Eva? Great. Okay."
+ ],
+ [
+  10,
+  2972,
+  "Alright. And the final question is? What would make your experience here really fruitful and worth it in the next week? That's the final que"
+ ],
+ [
+  10,
+  2993,
+  "stion. And who starts? The person who wants to start. Oh. Agency. Courageous Longest what?"
+ ],
+ [
+  10,
+  3006,
+  "You you just choose. We don't take down the longest thing. What would make your experience here in the next week really fruitful and worthwh"
+ ],
+ [
+  10,
+  3110,
+  "ile and valuable? Again, having a moment to just digest that share"
+ ],
+ [
+  10,
+  3159,
+  "and whoever wants to go next or feels courageous enough to go next goes next. You may begin. And your third person"
+ ],
+ [
+  10,
+  3261,
+  "begin. And letting your share come to an end."
+ ],
+ [
+  10,
+  3411,
+  "And for the group of four, your fourth person can have time to is there a group of four? For your group of four, The last person has time to"
+ ],
+ [
+  10,
+  3489,
+  " share and for the rest of you just to have two minutes of conversation with each other. Great."
+ ],
+ [
+  10,
+  3542,
+  "I'm finding a way to just thank the people in your group for everybody sharing everything and for listening to each other. And rotate yourse"
+ ],
+ [
+  10,
+  3557,
+  "lves to face me, please. To me. Yeah. And just for a couple of minutes, we wanna hear or wanna create the space to hear some voices"
+ ],
+ [
+  10,
+  3572,
+  "on what you wanna get out of this experience, what's exciting you most about being here, things that you'd like for the collective to just k"
+ ],
+ [
+  10,
+  3583,
+  "now or to hear. And I do I'm aware that this can seem like an extroverted experience, like that we even just sharing something out loud in f"
+ ],
+ [
+  10,
+  3593,
+  "ront of a group of people can feel a little bit intimidating and uncomfortable."
+ ],
+ [
+  10,
+  3599,
+  "And I encourage us to to bring as little as much nonjudgment into the space as possible and as much courage into the space as you can muster"
+ ],
+ [
+  10,
+  3610,
+  ". So you don't have to share anything, but please do if you can. So the question is, what is most exciting to you about being here? What do "
+ ],
+ [
+  10,
+  3621,
+  "you wanna get out of this experience, or what do you wanna give to this experience?"
+ ],
+ [
+  10,
+  3628,
+  "And you just popcorn share with TS. Thank you."
+ ],
+ [
+  10,
+  3853,
+  "And so we've come to the end of this portion, which is the more kind of embodied meeting portion, as you may have noticed. And, and we have "
+ ],
+ [
+  10,
+  3868,
+  "Betsy. Betsy is going to share with us the art of salon. What does that mean? So"
+ ],
+ [
+  10,
+  3877,
+  "you will soon find out. But, essentially, it's just a continuation also of what it is that we're looking to cultivate here, these spaces of "
+ ],
+ [
+  10,
+  3902,
+  "connection and really being able to meet with each other. But Betsy has, studied this and will be sharing with us more depthfully what it is"
+ ],
+ [
+  10,
+  3927,
+  ", what it was, and what is possible."
+ ],
+ [
+  10,
+  3933,
+  "Testing. Yeah. Great. Okay. So we just recently practiced the art of presence without words. Now the next question is, how do we add words a"
+ ],
+ [
+  10,
+  3948,
+  "nd how do we maintain the presence? So I've recently been getting very interested as a historical phenomenon. So the idea of salon culture,"
+ ],
+ [
+  10,
+  3963,
+  "which is really the history of how humans have also come to be together, think together, co create, collaborate. And I think it's a very int"
+ ],
+ [
+  10,
+  3974,
+  "eresting example of a successful social technology for, yeah, communication, collaboration, and the art of co creation. So the reason I'm he"
+ ],
+ [
+  10,
+  3986,
+  "re,"
+ ],
+ [
+  10,
+  3986,
+  "well, firstly, my day job is in computational neuroscience, so it has really nothing to do with this. But in the, yeah, recent months, I've "
+ ],
+ [
+  10,
+  3996,
+  "been getting very interested in communities, the art of dialogue, the intentional design of social spaces that are optimized for collaborati"
+ ],
+ [
+  10,
+  4006,
+  "on and exchange between disciplines. So on the side, I've been building which"
+ ],
+ [
+  10,
+  4012,
+  "we are thinking of as a sort of cultural infrastructure for radically interdisciplinary exchange. And we are highly inspired by salon cultur"
+ ],
+ [
+  10,
+  4038,
+  "e as inspiration. Testing this one too? Okay."
+ ],
+ [
+  10,
+  4046,
+  "I'll I'll go with this for now. Right. So our goal is actually to bridge silos to encourage communication across disciplinary boundaries, an"
+ ],
+ [
+  10,
+  4055,
+  "d create, yeah, cross pollination between fields that don't usually interact. We're doing this starting in Munich where I'm currently based."
+ ],
+ [
+  10,
+  4064,
+  " And our main goal or focus at the moment is on interdisciplinary retreats in The Alps where we curate an a selection of"
+ ],
+ [
+  10,
+  4072,
+  "cross disciplinary creators and basically put them together in a hut for a few days and see what happens. And Chris came to our last retreat"
+ ],
+ [
+  10,
+  4081,
+  ", which is where we met, And this triggered its own sort of cross disciplinary collaboration, which is why I'm here today. And the idea woul"
+ ],
+ [
+  10,
+  4090,
+  "d be to inject some ideas as a starting point for this event about what I would call the social technology of the salon."
+ ],
+ [
+  10,
+  4098,
+  "So what were salons? In a nutshell, they were a particular type of social and intellectual gathering that became widespread in Europe mostly"
+ ],
+ [
+  10,
+  4107,
+  " during the seventeenth to nineteenth centuries. Now they were typically informal events that were led by a host. The idea being to gather a"
+ ],
+ [
+  10,
+  4115,
+  " huge variety of people from different disciplines, so thinkers, artists, writers, philosophers,"
+ ],
+ [
+  10,
+  4121,
+  "political figures, really to come together and just discuss ideas. And they became very influential over these centuries in actually shaping"
+ ],
+ [
+  10,
+  4130,
+  " the intellectual discourse of the time and providing a platform for exchange. Now I've become interested in salons as basically early socia"
+ ],
+ [
+  10,
+  4140,
+  "l technologies for thought and for thinking together, which is what we would like to also foster during these next weeks."
+ ],
+ [
+  10,
+  4148,
+  "So they were really they were quite loose and flexible, but they were also strongly anchored on, let's say, social protocols and norms for i"
+ ],
+ [
+  10,
+  4157,
+  "nteraction that have been refined over the centuries. And I think they can then teach us a lot about so design principles of good conversati"
+ ],
+ [
+  10,
+  4167,
+  "on, social protocols for, like, the decentralized exchange of ideas, and tools for"
+ ],
+ [
+  10,
+  4172,
+  "creating intentional presence. So I would like to take you on a brief history of the salon, like what were they, where did they come from, a"
+ ],
+ [
+  10,
+  4180,
+  "nd then sort of distill some key principles that I think you could take with you into the the next two weeks. So salons, they really had the"
+ ],
+ [
+  10,
+  4188,
+  "ir heyday, in Europe from around fifteen hundreds to nineteen hundreds. And the earliest salon was actually emerged in Italy during the rena"
+ ],
+ [
+  10,
+  4196,
+  "issance, where"
+ ],
+ [
+  10,
+  4197,
+  "they were an opportunity for artists, poets, musicians, radical thinkers to come together outside of the scrutiny of the Roman Catholic chur"
+ ],
+ [
+  10,
+  4207,
+  "ch at the time. And they were typically hosted by noble women of the Italian aristocracy. And you'll notice that this becomes a common theme"
+ ],
+ [
+  10,
+  4216,
+  " throughout the history of salons. They were actually always hosted by women. So for example, a woman named Isabella"
+ ],
+ [
+  10,
+  4224,
+  "Isabella Destine. She was a major political cultural figure of the Renaissance. And she, together with her sister-in-law, Elizabethta, hoste"
+ ],
+ [
+  10,
+  4233,
+  "d like pretty hardcore salons throughout their life where they hosted in in their domain, in their mansions. But there, it was established t"
+ ],
+ [
+  10,
+  4241,
+  "hat sort of key principles of social etiquette of the salon which were really curiosity, wit,"
+ ],
+ [
+  10,
+  4247,
+  "humor, civility, nuance. These became like bedrocks of what later then spread to France. So one of the first examples of the French salon wa"
+ ],
+ [
+  10,
+  4257,
+  "s a noble woman named Catherine de Vivonne. And she actually moved from Rome to Paris where she was basically then not satisfied with the Fr"
+ ],
+ [
+  10,
+  4266,
+  "ench coat. She found them very stuffy and very rigid."
+ ],
+ [
+  10,
+  4270,
+  "And she decided to set up her home called the Hotel de Remoy as a place for people to gather and to speak more intimately and more openly. A"
+ ],
+ [
+  10,
+  4278,
+  "nd she had this famous room called the where she basically created this very warm inviting atmosphere. And what was really interesting about"
+ ],
+ [
+  10,
+  4285,
+  " her is that she intentionally tried to bridge the classes. She really invited everybody no matter your status, no matter if you were a comm"
+ ],
+ [
+  10,
+  4293,
+  "on folk or even if you're a woman,"
+ ],
+ [
+  10,
+  4295,
+  "and really encouraged a sort of social mixing that was completely unheard of during the regime at the time where the hierarchy was extremely"
+ ],
+ [
+  10,
+  4304,
+  " fixed. And this social or cultural technology then absolutely caught fire and it spread massively especially during the French enlightenmen"
+ ],
+ [
+  10,
+  4313,
+  "t. And the key, I would say, ingredients, yeah, really remained the same."
+ ],
+ [
+  10,
+  4318,
+  "So it was always quite informal but highly structured space. You could think of them as counter institutions to to the academy or to the cou"
+ ],
+ [
+  10,
+  4327,
+  "rt, to the French court. They were always hosted by women. They became known as salon, salon women. Normally in private homes. So they caugh"
+ ],
+ [
+  10,
+  4336,
+  "t sort of created this bridge between the public and this private sphere, not fully domestic but also not fully public."
+ ],
+ [
+  10,
+  4343,
+  "I would call it like a liminal space. They were loosely curated always with a focus. So maybe a particular prompt, a topic, a reading, a wor"
+ ],
+ [
+  10,
+  4354,
+  "k of art with a sort of a structure always implicit. So the idea would be focused on on curiosity, on play, on intellectual freedom, and esp"
+ ],
+ [
+  10,
+  4365,
+  "ecially on being inter interdisciplinary"
+ ],
+ [
+  10,
+  4368,
+  "and inherently cross sector, inherently transgressive. So really getting altogether artists, scientists, poets, philosophers, and really jus"
+ ],
+ [
+  10,
+  4377,
+  "t seeing what would emerge. And I think what's interesting here is that there's a sort of paradox. You you add quite a lot of structure and "
+ ],
+ [
+  10,
+  4386,
+  "via that structure you get out freedom and liberation. The the constraints themselves"
+ ],
+ [
+  10,
+  4391,
+  "create these sort of containers for expression. And so later during the French Revolution, these always also became very important as as cru"
+ ],
+ [
+  10,
+  4399,
+  "cibles of revolutionary thought. There's a famous example, one woman called Germaine de Stel. She hosted salons that were pretty critical of"
+ ],
+ [
+  10,
+  4407,
+  " Napoleon at the time, and Napoleon got incredibly threatened by that. And, yeah, historically said she teaches people to think who had neve"
+ ],
+ [
+  10,
+  4416,
+  "r thought before who had forgotten how to think. And he actually then banished her from Paris for the next ten years because he was so threa"
+ ],
+ [
+  10,
+  4424,
+  "tened by this this cultural technology that seemed to be actually very, powerful and dangerously so in his perspective."
+ ],
+ [
+  10,
+  4431,
+  "So this tradition continued and evolved throughout the nineteenth and twentieth centuries, especially then in Paris which became sort of a h"
+ ],
+ [
+  10,
+  4439,
+  "ub of innovation and experimentation, modernism, the avant garde. There was notable examples here. So for example, some American expatriates"
+ ],
+ [
+  10,
+  4447,
+  ", for example, Natalie Clifford Barney, she hosted a salon in basically like Masonic temple in the back of her garden, which I find pretty b"
+ ],
+ [
+  10,
+  4455,
+  "adass."
+ ],
+ [
+  10,
+  4455,
+  "And she was explicitly well, she was lesbian. She was very feminist, very like open for sexual expression. And that she really shed light on"
+ ],
+ [
+  10,
+  4464,
+  " female artists at the time. And then there was also Gertrude Stein, who I think many are familiar with. And she, together with her life par"
+ ],
+ [
+  10,
+  4473,
+  "tner, Alice Toklas, she really became known for her weekly salons and her patronage and hosting"
+ ],
+ [
+  10,
+  4479,
+  "of modernist artists and writers. So Picasso, Matisse, Hemingway, James Joyce, F. Scott Fitzgerald. Anyone who was anyone at the time was sa"
+ ],
+ [
+  10,
+  4490,
+  "id to have passed through the salon of Gertrude Stein. And likewise in Berlin here and in Vienna at the time which was going through a sort "
+ ],
+ [
+  10,
+  4500,
+  "of cultural heyday, women became also known for hosting salons."
+ ],
+ [
+  10,
+  4505,
+  "They were typically Jewish intellectuals at the time. And in Vienna in particular, the the salons were quite critical in the emergence of th"
+ ],
+ [
+  10,
+  4514,
+  "e Vienna Succession Art movement and also in the development of psychoanalysis. And in general, during this time, it was just such a crucibl"
+ ],
+ [
+  10,
+  4523,
+  "e for supporting minority ideas and sort of heterodoxy and catalyzing new movements."
+ ],
+ [
+  10,
+  4529,
+  "So I hope this gave you a flavor of kind of what salons have done historically for us and why they've been so crucial. I think what I would "
+ ],
+ [
+  10,
+  4538,
+  "like to do is try to extract what do they have in common. What are the design principles that make them successful? So I would say we can di"
+ ],
+ [
+  10,
+  4547,
+  "still this into probably five main components. The first would be the space itself."
+ ],
+ [
+  10,
+  4552,
+  "So typically, it was private ish spaces, good lighting, good music, comfortable furniture, everybody normally in a circle or at eye level cr"
+ ],
+ [
+  10,
+  4561,
+  "eating the sense of psychological security and intimacy. And critically, like, bounded in space and time and also in person, right, rather t"
+ ],
+ [
+  10,
+  4570,
+  "han online or rather than asynchronous in the communication. And I think this boundedness creates that very intentional space. You have a fi"
+ ],
+ [
+  10,
+  4578,
+  "nite beginning, you have a finite end, And then you you all are there for the same reason."
+ ],
+ [
+  10,
+  4584,
+  "So I would maybe call this an aesthetic scaffolding for the thought itself that can emerge. The second would be the guests. So typically, it"
+ ],
+ [
+  10,
+  4592,
+  " was quite intentionally curated so people would be invited. Of course, it was voluntary to participate or not, but that element of curation"
+ ],
+ [
+  10,
+  4600,
+  " helped to shape the discourse in a particular way. So there was often an emphasis on being intentionally diverse, having people from really"
+ ],
+ [
+  10,
+  4607,
+  " a wide variety of backgrounds"
+ ],
+ [
+  10,
+  4609,
+  "to help create this divergence rather than just more echo chambers. And also there was then no strict hierarchy. So it was incredibly decent"
+ ],
+ [
+  10,
+  4618,
+  "ralized in what people could actually offer and who could share. And the reputation was sort of built through what you offered rather than f"
+ ],
+ [
+  10,
+  4627,
+  "rom what your status was with respect to the rest of society. Thirdly, there was the catalyst itself,"
+ ],
+ [
+  10,
+  4633,
+  "which was, yeah, often a sort of question, a prompt, a guiding theme, and this helped to create a shared frame of inquiry. Then there would "
+ ],
+ [
+  10,
+  4644,
+  "be what I would call the tone, which was, yeah, many things. You could say explicitly exploratory, curious, free. The host would do some sor"
+ ],
+ [
+  10,
+  4655,
+  "t of light moderation."
+ ],
+ [
+  10,
+  4657,
+  "But they would act rather as a a keeper of the context rather than a dictator of the content. And then we can identify quite strong, let's s"
+ ],
+ [
+  10,
+  4666,
+  "ay conversational protocols or conversational norms. So a huge emphasis on respect, civility, also wit and humor was highly valued. So conve"
+ ],
+ [
+  10,
+  4676,
+  "rsation was really seen as an art form that one can, like, indulge in. And this really formed an implicit norms for trust and for cooperatio"
+ ],
+ [
+  10,
+  4685,
+  "n."
+ ],
+ [
+  10,
+  4685,
+  "And then finally, the tempo itself, which was incredibly slow, human paced, human scale, with a focus on deep listening, sustained attention"
+ ],
+ [
+  10,
+  4697,
+  ", with no urgency to perform or to compete with each other, really just creating a space for incredibly high bandwidth,"
+ ],
+ [
+  10,
+  4708,
+  "high fidelity conversations. So I think to make the argument for what we've lost from that, I will maybe caricature modern society or modern"
+ ],
+ [
+  10,
+  4721,
+  " platforms, modern gatherings, which are not always but can be often very transactional, highly performative,"
+ ],
+ [
+  10,
+  4731,
+  "fast paced. They serve to flatten attention and flatten discourse. They often polarize and create sort of combative dynamics. And salons, I "
+ ],
+ [
+  10,
+  4742,
+  "would suggest, offer a sort of antidote to this. They are inherently exploratory, high context, intimate, high trust systems. They place emp"
+ ],
+ [
+  10,
+  4752,
+  "hasis on contribution,"
+ ],
+ [
+  10,
+  4754,
+  "not performance. They're designed for the efficiency, not for the efficiency of communication, but rather for the depth of communication. An"
+ ],
+ [
+  10,
+  4763,
+  "d they help to just reclaim attention. And, yeah, you could say create these containers for local intimacy within, let's say, a more global "
+ ],
+ [
+  10,
+  4773,
+  "network. And they were inherently decentralized, non hierarchical."
+ ],
+ [
+  10,
+  4777,
+  "So I would argue that Zu Berlin has pretty much all of these five core ingredients that I've introduced. And I would therefore invite you to"
+ ],
+ [
+  10,
+  4792,
+  " see this event as a form of living salon that you can explore together throughout these weeks. Create it for yourself, make it happen, and "
+ ],
+ [
+  10,
+  4807,
+  "basically see what emerges as a result. Thank you."
+ ],
+ [
+  10,
+  4812,
+  "Thanks a lot, Betsy. Any questions from the audience before we go? Oh, a lot of questions. Take a few here. Yeah. I think it was essential. "
+ ],
+ [
+  10,
+  4833,
+  "The salon historically"
+ ],
+ [
+  10,
+  4836,
+  "has became a container in a private sphere away from the gaze of the rest of the the public or the structure that was there at the time. And"
+ ],
+ [
+  10,
+  4845,
+  " you could only talk about certain things in certain spaces. And I think, yeah, precisely by creating those isolated containers for you knew"
+ ],
+ [
+  10,
+  4855,
+  " that you were not gonna have your head chopped off as soon as you got out onto the street because there was implicit trust that was develop"
+ ],
+ [
+  10,
+  4864,
+  "ed."
+ ],
+ [
+  10,
+  4864,
+  "So, of course, it depends what topic you would be debating. For some topics, maybe that's the privacy element is not so necessary. But proba"
+ ],
+ [
+  10,
+  4881,
+  "bly just the intentional selection of who you let in and who you let out and knowing who you can trust and who you cannot trust. I think it "
+ ],
+ [
+  10,
+  4898,
+  "was a very important, yeah, aspect of it. Yeah. It's an interesting question. I think one could even question whether they were trying to re"
+ ],
+ [
+  10,
+  4915,
+  "ach a certain result. I think in many cases,"
+ ],
+ [
+  10,
+  4920,
+  "there's an argument for non goal directed dialogue in the first place, not even trying, not having explicit direction or explicit goal that "
+ ],
+ [
+  10,
+  4930,
+  "you want to reach. So and probably a lot of the actual products or side effects were just just that, like a side effect. I am also intereste"
+ ],
+ [
+  10,
+  4940,
+  "d in, like, goal directed discussion and how do you design"
+ ],
+ [
+  10,
+  4944,
+  "a type of interaction in order to get a certain outcome. But I've been interested. So David Bohm, the physicist, he has this idea of dialogu"
+ ],
+ [
+  10,
+  4953,
+  "e. It's actually a term that he uses in a quite a specific context. And for him, one of the primary features of dialogue is everybody should"
+ ],
+ [
+  10,
+  4962,
+  " agree together to not try to be reaching a certain outcome. And that makes this interaction"
+ ],
+ [
+  10,
+  4968,
+  "incredibly open and flexible and creative. And that itself is like very, very generative in the in the end even though nobody is, yeah, is t"
+ ],
+ [
+  10,
+  4976,
+  "rying and precisely because they're not trying. Right? Then you don't know what comes out and in the end something that you did not expect t"
+ ],
+ [
+  10,
+  4984,
+  "hat might actually be much better than what you hadn't preformed as a as an outcome that you wanted. I would say there's probably two aspect"
+ ],
+ [
+  10,
+  4992,
+  "s,"
+ ],
+ [
+  10,
+  4992,
+  "and I would like to look further into the the second that you've just mentioned. Yeah. Alright. Final question, and then we'll take a break "
+ ],
+ [
+  10,
+  5010,
+  "for the panel. Yeah. I think the embodied element is is probably really crucial. There's so much more context that comes from being in perso"
+ ],
+ [
+  10,
+  5029,
+  "n."
+ ],
+ [
+  10,
+  5029,
+  "And, yeah, I I it is true that they were often recurring events and then you would meet the same subset of people each time. So, in a way, m"
+ ],
+ [
+  10,
+  5038,
+  "aybe that's precisely the lesson that we can learn, like create exactly this type of thing that could happen repeatedly in person. There the"
+ ],
+ [
+  10,
+  5047,
+  "re will be elements that can be replicated or distilled into an online format."
+ ],
+ [
+  10,
+  5052,
+  "I think there's certain heuristics to conversation such as, you know, listening for an incredibly long length of time, not interrupting, bei"
+ ],
+ [
+  10,
+  5061,
+  "ng silent, being comfortable with the silence, being radically honest, trying to force yourself to to be that honest. All the all these prin"
+ ],
+ [
+  10,
+  5071,
+  "ciples, you could easily set up a Zoom seminar and try to encourage that to happen."
+ ],
+ [
+  10,
+  5076,
+  "But I do think that I mean, it's so different already being here, right, altogether in front of each other's eyes directly. And there's so m"
+ ],
+ [
+  10,
+  5087,
+  "any signals that come nonverbally and just by the body itself. So I would say let's place an equal emphasis on getting together in person af"
+ ],
+ [
+  10,
+  5097,
+  "ter post COVID times just to extract"
+ ],
+ [
+  10,
+  5100,
+  "the, like, the extra variance that can come out from that. Thank you so much, Betsy. Alright. So now we'll have a five minute bio break, and"
+ ],
+ [
+  10,
+  5113,
+  " then we'll continue with our anticipated opening panel here, and we'll slowly prepare here in front the panel meanwhile."
+ ],
+ [
+  10,
+  5125,
+  "Five minutes."
+ ],
+ [
   12,
   1226,
   "We're gonna have some embodiment consciousness mapping in chaos, I believe. Sending that song out as a prayer, I would hope that our world c"
