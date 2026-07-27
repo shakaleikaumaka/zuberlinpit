@@ -1,15 +1,15 @@
 [
  {
-  "id": "1_XBfWl2J2hFI4SNswWCFeRfYIwHfSrm3",
-  "title": "From Vibes to Viability: Fixing Inequality…",
+  "id": "1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit",
+  "title": "25 zkVMs: Too Few or Too Many?",
   "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
+  "week": 2,
+  "source": "ZuBerlin 2025 · Futura Garden",
   "media": [
    {
-    "id": "1_XBfWl2J2hFI4SNswWCFeRfYIwHfSrm3",
+    "id": "1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit",
     "kind": "video",
-    "size": 2157251028,
+    "size": 0,
     "stream": true
    }
   ],
@@ -17,150 +17,20 @@
   "duration": null,
   "quality": "ok",
   "transponder": false,
-  "thumb": "thumbs/1_XBfWl2J2hFI4SNswWCFeRfYIwHfSrm3.jpg",
-  "note": "Title truncated in the source folder listing; the filename also carries a stream-operator artifact — “have to stop and start the stream to rebrand.” We keep the artifact. Pits are honest."
- },
- {
-  "id": "1gMn88RS1vOfMwBRW5rPkrr6rZB9wme2G",
-  "title": "Zuitzerland Architectural Stack for Startup Cities & Robotic Construction",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1gMn88RS1vOfMwBRW5rPkrr6rZB9wme2G",
-    "kind": "video",
-    "size": 3502005578,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1gMn88RS1vOfMwBRW5rPkrr6rZB9wme2G.jpg"
- },
- {
-  "id": "1s16w71y_C7K7zu0J_QzkFzutOqFkPVnN",
-  "title": "Cypherpunk Sessions",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1s16w71y_C7K7zu0J_QzkFzutOqFkPVnN",
-    "kind": "video",
-    "size": 2687403854,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1s16w71y_C7K7zu0J_QzkFzutOqFkPVnN.jpg",
-  "speakers": [
-   "@Narodism",
-   "@lunar_mining",
-   "@DarkFiSquad",
-   "@anticapture",
-   "@theZeugh"
-  ],
-  "featured": true
- },
- {
-  "id": "1EY5GwfSjdL_xP647O1wXAzQoVFSiQM2l",
-  "title": "d/acc Afternoon",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1EY5GwfSjdL_xP647O1wXAzQoVFSiQM2l",
-    "kind": "video",
-    "size": 3530202457,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1EY5GwfSjdL_xP647O1wXAzQoVFSiQM2l.jpg",
-  "speakers": [
-   "@calarsenc",
-   "@CatalinMitelut",
-   "@BH1991",
-   "@YeshodharaB",
-   "@yxucantseeme",
-   "@ron"
-  ]
- },
- {
-  "id": "1Z1t6-NzrhzpSWjeknKLkBQriLZUD2e1Y",
-  "title": "d/acc Morning",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1Z1t6-NzrhzpSWjeknKLkBQriLZUD2e1Y",
-    "kind": "video",
-    "size": 4386553296,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1Z1t6-NzrhzpSWjeknKLkBQriLZUD2e1Y.jpg",
-  "speakers": [
-   "Vitalik Buterin",
-   "Glen Weyl",
-   "@tkstanczak",
-   "@pujaohlhaver",
-   "@AlesFlidr"
-  ],
-  "featured": true
- },
- {
-  "id": "1AJVhWpr9gAMvvRrHg_Nq_vsZ_nkcXTkT",
-  "title": "Fireside Chat on Post-Sovereign Resistance…",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1AJVhWpr9gAMvvRrHg_Nq_vsZ_nkcXTkT",
-    "kind": "video",
-    "size": 2369924143,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1AJVhWpr9gAMvvRrHg_Nq_vsZ_nkcXTkT.jpg",
-  "speakers": [
-   "Jarrad Hope",
-   "Sterlin Lujan"
-  ],
   "featured": true,
-  "note": "Title truncated in the source listing — “on post-sovereign resistance, program…”"
+  "thumb": "thumbs/1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit.jpg"
  },
  {
-  "id": "1a_nzv_pCWcogLXNa0JGuXmucr3ZtfaDo",
-  "title": "Intentional Codes: Digital Art, Law, and the Architecture of Slower Futures",
+  "id": "1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ",
+  "title": "Cryptography Day 3",
   "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
+  "week": 2,
+  "source": "ZuBerlin 2025 · Futura Garden",
   "media": [
    {
-    "id": "1a_nzv_pCWcogLXNa0JGuXmucr3ZtfaDo",
+    "id": "1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ",
     "kind": "video",
-    "size": 2066284256,
+    "size": 0,
     "stream": true
    }
   ],
@@ -168,705 +38,243 @@
   "duration": null,
   "quality": "ok",
   "transponder": false,
-  "thumb": "thumbs/1a_nzv_pCWcogLXNa0JGuXmucr3ZtfaDo.jpg",
+  "featured": false,
+  "thumb": "thumbs/1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ.jpg"
+ },
+ {
+  "id": "1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh",
+  "title": "Cryptography Day 4",
+  "date": null,
+  "week": 2,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": false,
+  "thumb": "thumbs/1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh.jpg"
+ },
+ {
+  "id": "1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ",
+  "title": "Cryptography Day",
+  "date": null,
+  "week": 2,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": true,
+  "thumb": "thumbs/1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ.jpg"
+ },
+ {
+  "id": "1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y",
+  "title": "Data Wizardry Day (second camera)",
+  "date": null,
+  "week": 3,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": false,
+  "note": "Second recording of Data Wizardry Day — the pit keeps both.",
+  "thumb": "thumbs/1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y.jpg"
+ },
+ {
+  "id": "1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ",
+  "title": "Data Wizardry Day",
+  "date": null,
+  "week": 3,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": false,
+  "thumb": "thumbs/1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ.jpg"
+ },
+ {
+  "id": "1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw",
+  "title": "Future Society & AI Day",
+  "date": null,
+  "week": 5,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": true,
+  "thumb": "thumbs/1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw.jpg"
+ },
+ {
+  "id": "1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy",
+  "title": "Interop Day 1",
+  "date": null,
+  "week": 4,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": false,
+  "thumb": "thumbs/1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy.jpg"
+ },
+ {
+  "id": "18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL",
+  "title": "L2 Interop Day 2",
+  "date": null,
+  "week": 4,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": false,
+  "thumb": "thumbs/18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL.jpg"
+ },
+ {
+  "id": "1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY",
+  "title": "Protocol & MEV Day",
+  "date": null,
+  "week": 4,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": true,
+  "thumb": "thumbs/1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY.jpg"
+ },
+ {
+  "id": "1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj",
+  "title": "ZuBerlin 2025 Opening Ceremony",
+  "date": null,
+  "week": 1,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": true,
+  "thumb": "thumbs/1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj.jpg"
+ },
+ {
+  "id": "1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E",
+  "title": "ZuBerlin — Day 1",
+  "date": null,
+  "week": 1,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": false,
+  "thumb": "thumbs/1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E.jpg"
+ },
+ {
+  "id": "1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A",
+  "title": "ZuBerlin Jammin'",
+  "date": null,
+  "week": 5,
+  "source": "ZuBerlin 2025 · Futura Garden",
+  "media": [
+   {
+    "id": "1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A",
+    "kind": "video",
+    "size": 0,
+    "stream": true
+   }
+  ],
+  "transcript": null,
+  "duration": null,
+  "quality": "ok",
+  "transponder": false,
+  "featured": true,
   "speakers": [
-   "@anikojay"
-  ]
- },
- {
-  "id": "1Jl2HPQNBBmKNw46OQssz_i0VzJQ0ERZ2",
-  "title": "Panels: (1) Risks from Neurotech & the Intersection with Cryptography · (2) Investing in d/acc…",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1Jl2HPQNBBmKNw46OQssz_i0VzJQ0ERZ2",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
+   "the garden musicians"
   ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1Jl2HPQNBBmKNw46OQssz_i0VzJQ0ERZ2.jpg",
-  "note": "Title truncated in the source folder listing."
- },
- {
-  "id": "1_s9TD15CkmVMl-Wn6ZxaH4EgZV7WC3zs",
-  "title": "How to Run a Country On-Chain",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1_s9TD15CkmVMl-Wn6ZxaH4EgZV7WC3zs",
-    "kind": "video",
-    "size": 2348298142,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1_s9TD15CkmVMl-Wn6ZxaH4EgZV7WC3zs.jpg",
-  "featured": true
- },
- {
-  "id": "1ho75nsKQtiKCxGe-kp-1ehAsY1pbDCTJ",
-  "title": "An Intro to BCIs, Open Hardware, and the think2earn Model",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1ho75nsKQtiKCxGe-kp-1ehAsY1pbDCTJ",
-    "kind": "video",
-    "size": 1286661821,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1ho75nsKQtiKCxGe-kp-1ehAsY1pbDCTJ.jpg",
-  "speakers": [
-   "@DebateHeroes"
-  ]
- },
- {
-  "id": "1vnwFi3Pqx-pN5XQSuCpM-v8__6M19BcG",
-  "title": "Balaji Srinivasan Presentation",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1vnwFi3Pqx-pN5XQSuCpM-v8__6M19BcG",
-    "kind": "video",
-    "size": 2565061834,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1vnwFi3Pqx-pN5XQSuCpM-v8__6M19BcG.jpg",
-  "speakers": [
-   "Balaji Srinivasan"
-  ],
-  "featured": true
- },
- {
-  "id": "1rZn0gzgtSbGpK_0w1EwtI2fscP9XIbq1",
-  "title": "Building Future Living Infrastructure with DePIN",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1rZn0gzgtSbGpK_0w1EwtI2fscP9XIbq1",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1rZn0gzgtSbGpK_0w1EwtI2fscP9XIbq1.jpg",
-  "speakers": [
-   "@BallandiesMC",
-   "@0xkrisv"
-  ]
- },
- {
-  "id": "1evk28Bm1w0hWN-qrCthcPWUcOB8R1C4v",
-  "title": "Cognitive and Digital Sovereignty",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1evk28Bm1w0hWN-qrCthcPWUcOB8R1C4v",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1evk28Bm1w0hWN-qrCthcPWUcOB8R1C4v.jpg",
-  "speakers": [
-   "Burns"
-  ]
- },
- {
-  "id": "1owh0xv1SJpTq8ae_i6_XxzsgDzMbfcSk",
-  "title": "Decentralizing Election Campaign Financing",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1owh0xv1SJpTq8ae_i6_XxzsgDzMbfcSk",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1owh0xv1SJpTq8ae_i6_XxzsgDzMbfcSk.jpg",
-  "speakers": [
-   "Uwe Serdült (@serduelt)"
-  ]
- },
- {
-  "id": "1op-Yt9DXXmFz_blO2rbjaOryb-QA2uvt",
-  "title": "DeepGov",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1op-Yt9DXXmFz_blO2rbjaOryb-QA2uvt",
-    "kind": "video",
-    "size": 1432681275,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1op-Yt9DXXmFz_blO2rbjaOryb-QA2uvt.jpg",
-  "speakers": [
-   "@sejal_rekhan",
-   "@dwddao",
-   "@evalscience"
-  ]
- },
- {
-  "id": "1i6gV6Xbm469seOek1vcixEYJt6XKDR08",
-  "title": "Exploring Community Currencies",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1i6gV6Xbm469seOek1vcixEYJt6XKDR08",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1i6gV6Xbm469seOek1vcixEYJt6XKDR08.jpg"
- },
- {
-  "id": "1y3VX61tiNFwdtD38pd05KUvqMsKbu4EE",
-  "title": "Funding Ethereum Forever",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1y3VX61tiNFwdtD38pd05KUvqMsKbu4EE",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1y3VX61tiNFwdtD38pd05KUvqMsKbu4EE.jpg",
-  "speakers": [
-   "@julianzawist",
-   "@sejal_rekhan",
-   "@dwddao"
-  ]
- },
- {
-  "id": "1Vur8_WMxPPhZ7uhAs65JfG3HsiMLiHKw",
-  "title": "Governance, Money, and New Web3 Experiments",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1Vur8_WMxPPhZ7uhAs65JfG3HsiMLiHKw",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1Vur8_WMxPPhZ7uhAs65JfG3HsiMLiHKw.jpg",
-  "speakers": [
-   "Juan Sky (@0x7u4n)"
-  ]
- },
- {
-  "id": "18lm7hEoa_NNyJ0n_413NZGQAVgMQPBxW",
-  "title": "How to Make the World Great Again",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "18lm7hEoa_NNyJ0n_413NZGQAVgMQPBxW",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/18lm7hEoa_NNyJ0n_413NZGQAVgMQPBxW.jpg"
- },
- {
-  "id": "1RQemzpiLB42O4gDRkBWbJjKMFx6CrtIQ",
-  "title": "Intro to Base Scale Math",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1RQemzpiLB42O4gDRkBWbJjKMFx6CrtIQ",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1RQemzpiLB42O4gDRkBWbJjKMFx6CrtIQ.jpg",
-  "speakers": [
-   "@bestape"
-  ]
- },
- {
-  "id": "1GQ8F-ZerTliURQnNKjCwCMxrIua6Wdc5",
-  "title": "Intro to Swiss Democracy",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1GQ8F-ZerTliURQnNKjCwCMxrIua6Wdc5",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1GQ8F-ZerTliURQnNKjCwCMxrIua6Wdc5.jpg"
- },
- {
-  "id": "1ZwZRw3_SpvJkALeuYABTSGcttmY-H1o6",
-  "title": "Kick Off Permanent Hubs Tracks",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1ZwZRw3_SpvJkALeuYABTSGcttmY-H1o6",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false
- },
- {
-  "id": "1zj2GAq3htvWxRsAq9d6dknbieTxbXXJJ",
-  "title": "Meerkat Workshop with Vlad",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1zj2GAq3htvWxRsAq9d6dknbieTxbXXJJ",
-    "kind": "video",
-    "size": 270827143,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1zj2GAq3htvWxRsAq9d6dknbieTxbXXJJ.jpg",
-  "speakers": [
-   "Vlad"
-  ]
- },
- {
-  "id": "13HPKNFSqSwipaLweWs0BOTpnzrN1OH4b",
-  "title": "Opening Day Cognitive Sovereignty",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "13HPKNFSqSwipaLweWs0BOTpnzrN1OH4b",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/13HPKNFSqSwipaLweWs0BOTpnzrN1OH4b.jpg"
- },
- {
-  "id": "1h4VgnBEW2qBZWEnvAyWyhX_rLq6befrd",
-  "title": "Pectra Jam — Zuitzerland",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1h4VgnBEW2qBZWEnvAyWyhX_rLq6befrd",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1h4VgnBEW2qBZWEnvAyWyhX_rLq6befrd.jpg"
- },
- {
-  "id": "1PryogOZZ62yeGuwSL1sgQ4tqySEG8SjP",
-  "title": "Permanent Hubs Week Synthesis & Discussion",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1PryogOZZ62yeGuwSL1sgQ4tqySEG8SjP",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1PryogOZZ62yeGuwSL1sgQ4tqySEG8SjP.jpg"
- },
- {
-  "id": "1M51vpxpEfuLbBhGjtr1RTyhR5GcdzMI6",
-  "title": "Prove Your Humanity While Staying Anonymous",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1M51vpxpEfuLbBhGjtr1RTyhR5GcdzMI6",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1M51vpxpEfuLbBhGjtr1RTyhR5GcdzMI6.jpg",
-  "speakers": [
-   "@rems000"
-  ]
- },
- {
-  "id": "1pmGeGJIOn6hhe0q0Q8dprk0KZ4dNVLPZ",
-  "title": "Q/acc with How To DAO",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1pmGeGJIOn6hhe0q0Q8dprk0KZ4dNVLPZ",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1pmGeGJIOn6hhe0q0Q8dprk0KZ4dNVLPZ.jpg",
-  "speakers": [
-   "@HowToDAObook"
-  ]
- },
- {
-  "id": "1R0fpLXaIEWQGjTFY_GYz-uok9pw0-azL",
-  "title": "Security of Synthetic Biology and Cyber-Bio Risks",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1R0fpLXaIEWQGjTFY_GYz-uok9pw0-azL",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1R0fpLXaIEWQGjTFY_GYz-uok9pw0-azL.jpg",
-  "speakers": [
-   "Anish Mohammed (@anishmohammed)"
-  ]
- },
- {
-  "id": "1pwZZDohbabGNfnQptswl4Ykp1fXBhr1Q",
-  "title": "Swiss Voting Systems & Subsidiarity",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1pwZZDohbabGNfnQptswl4Ykp1fXBhr1Q",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1pwZZDohbabGNfnQptswl4Ykp1fXBhr1Q.jpg"
- },
- {
-  "id": "17xgNGz57NaCpSXsT9LIec2KyhwW91yxs",
-  "title": "Syntegration 101",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "17xgNGz57NaCpSXsT9LIec2KyhwW91yxs",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/17xgNGz57NaCpSXsT9LIec2KyhwW91yxs.jpg"
- },
- {
-  "id": "1lR8KCsftoflDykh_SwUwEoP5WF39VfQL",
-  "title": "The Full Potential of Cooperatives: A Model for a New Economy",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1lR8KCsftoflDykh_SwUwEoP5WF39VfQL",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1lR8KCsftoflDykh_SwUwEoP5WF39VfQL.jpg"
- },
- {
-  "id": "18SNr9xALLEDFZEJLlywOP8CNYtfelKdx",
-  "title": "The Hanseatic League: The Rise and Fall of a Medieval Network State",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "18SNr9xALLEDFZEJLlywOP8CNYtfelKdx",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/18SNr9xALLEDFZEJLlywOP8CNYtfelKdx.jpg",
-  "speakers": [
-   "Wlodek Gogloza (@WGogloza)"
-  ]
- },
- {
-  "id": "1sQv5Vc9uWecfDB_sssm9AtJ_DZUS8Sdd",
-  "title": "The Importance of Real Digital Cash",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1sQv5Vc9uWecfDB_sssm9AtJ_DZUS8Sdd",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1sQv5Vc9uWecfDB_sssm9AtJ_DZUS8Sdd.jpg",
-  "speakers": [
-   "@rohangrey",
-   "@vavesalon"
-  ]
- },
- {
-  "id": "14aHOnb9cLYCOQEsxSacUOTQ1Yj7KzcMU",
-  "title": "Zuitzerland Buildathon Submissions",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "14aHOnb9cLYCOQEsxSacUOTQ1Yj7KzcMU",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/14aHOnb9cLYCOQEsxSacUOTQ1Yj7KzcMU.jpg"
- },
- {
-  "id": "15w_HwhPQwLySgNUoc8HQ-C93nR940ZDn",
-  "title": "Zuitzerland Opening Ceremony",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "15w_HwhPQwLySgNUoc8HQ-C93nR940ZDn",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/15w_HwhPQwLySgNUoc8HQ-C93nR940ZDn.jpg",
-  "featured": true
- },
- {
-  "id": "1YaCFNPshYwUODUf9a-OlF8ASMmfdzeE4",
-  "title": "Zuitzerland Permanent Hub Visioning",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1YaCFNPshYwUODUf9a-OlF8ASMmfdzeE4",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false
- },
- {
-  "id": "1G3DxBxBJMRYOhnj71u60T6HSOMpIKfIH",
-  "title": "Zuitzerland Systems Mapping Workshop",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "1G3DxBxBJMRYOhnj71u60T6HSOMpIKfIH",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/1G3DxBxBJMRYOhnj71u60T6HSOMpIKfIH.jpg"
- },
- {
-  "id": "16U1oHvj5cfgmNsrkEnFDC4FjPYPV0qVH",
-  "title": "Zuitzers Attest to the Solarpunk Mensarius Oath v0",
-  "date": null,
-  "week": null,
-  "source": "Zuitzerland residency · May 2025",
-  "media": [
-   {
-    "id": "16U1oHvj5cfgmNsrkEnFDC4FjPYPV0qVH",
-    "kind": "video",
-    "size": 0,
-    "stream": true
-   }
-  ],
-  "transcript": null,
-  "duration": null,
-  "quality": "ok",
-  "transponder": false,
-  "thumb": "thumbs/16U1oHvj5cfgmNsrkEnFDC4FjPYPV0qVH.jpg",
-  "speakers": [
-   "@bestape"
-  ]
+  "note": "The garden jams — the OSO tradition lives wherever pits grow 🎻",
+  "thumb": "thumbs/1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A.jpg"
  }
 ]

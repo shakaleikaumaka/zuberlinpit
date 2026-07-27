@@ -1,9 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
   <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#0e2a4d"/><stop offset="1" stop-color="#050c16"/></linearGradient></defs>
+    <stop offset="0" stop-color="#1a2242"/><stop offset="1" stop-color="#0b0d1a"/></linearGradient></defs>
   <rect width="400" height="225" fill="url(#sg)"/>
-  <path fill="#123458" d="M0,180 L60,110 L110,150 L170,80 L230,150 L290,95 L350,160 L400,120 L400,225 L0,225 Z"/>
-  <path fill="#e6f7ff" opacity=".85" d="M170,80 L188,100 L176,97 L170,106 L163,97 L151,100 Z"/>
-  <path d="M0,192 Q100,186 200,192 T400,192" stroke="#8fe0ff" stroke-opacity=".35" fill="none"/>
-  <path d="M0,204 Q100,198 200,204 T400,204" stroke="#f04e9b" stroke-opacity=".22" fill="none"/>
+  <!-- Berlin skyline + Fernsehturm at dawn -->
+  <g fill="#101427">
+    <rect x="20" y="140" width="34" height="85"/><rect x="60" y="120" width="26" height="105"/>
+    <rect x="92" y="150" width="40" height="75"/><rect x="140" y="130" width="30" height="95"/>
+    <rect x="260" y="145" width="36" height="80"/><rect x="305" y="125" width="28" height="100"/>
+    <rect x="340" y="155" width="42" height="70"/>
+  </g>
+  <g stroke="#4ade80" stroke-opacity=".8" stroke-width="2.5" fill="none">
+    <path d="M215,225 L215,80"/><path d="M215,80 L215,60"/>
+  </g>
+  <circle cx="215" cy="95" r="9" fill="none" stroke="#4ade80" stroke-opacity=".8" stroke-width="2.5"/>
+  <!-- dawn glow + leaves -->
+  <g fill="#e8834a" opacity=".75"><circle cx="200" cy="185" r="16" opacity=".35"/><circle cx="70" cy="60" r="2"/><circle cx="330" cy="45" r="2"/></g>
+  <g stroke="#4ade80" stroke-opacity=".55" stroke-width="1.6" fill="none">
+    <path d="M30,225 Q34,190 22,172 M30,225 Q40,196 52,184"/>
+    <path d="M370,225 Q366,192 380,174 M370,225 Q360,198 348,186"/>
+  </g>
+  <path d="M0,205 Q100,199 200,205 T400,205" stroke="#b7f7cf" stroke-opacity=".25" fill="none"/>
 </svg>
