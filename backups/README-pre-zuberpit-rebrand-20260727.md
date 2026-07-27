@@ -1,8 +1,7 @@
-# 🇩🇪🕳️ The ZuBerPit
+# 🌿🕳️ The ZuBerlinPIT
 
-**Zu + Ber(lin) + pit — Public Information Transmission, über everything.** A demo P.I.T. Protocol
-instance. **The lineage's fifth fork.** *(Renamed from "ZuBerlinPIT" by canon, 2026-07-27 — the pun
-is the point; the repo slug stays `zuberlinpit` so every link keeps working.)*
+**Public Information Transmission, Futura Garden edition** — a demo P.I.T. Protocol instance.
+**The lineage's fifth fork.**
 
 🌐 **Live:** https://shakaleikaumaka.github.io/zuberlinpit/
 🧬 **Lineage:** esmeralda-pit → zuitzpit → **zuberlinpit** · 🚪 [publicinform.com](https://publicinform.com)
@@ -13,7 +12,7 @@ is the point; the repo slug stays `zuberlinpit` so every link keeps working.)*
 
 [ZuBerlin 2025](https://zuberlin.city) — the Futura Garden: an immersive residency on a Berlin
 rooftop, bridging humanity and technology during Berlin Blockchain Week. The garden's knowledge
-shouldn't compost — so it got a pit. And the pit got a name with a little über swagger: **The ZuBerPit**.
+shouldn't compost — so it got a pit.
 
 - **13 sessions** with the full Esmeralda genesis UX: Knowledge Transponder modal, synced glowing
   transcripts (as the harvest fleet lands them), tap-to-seek, deep transcript search
