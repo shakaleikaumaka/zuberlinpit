@@ -187,13 +187,14 @@
     "id": "18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL",
     "kind": "video",
     "size": 0,
-    "stream": true
+    "stream": true,
+    "hosted": "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL.mp3"
    }
   ],
-  "transcript": null,
-  "duration": null,
+  "transcript": "18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL",
+  "duration": "07:28:29",
   "quality": "ok",
-  "transponder": false,
+  "transponder": true,
   "featured": false,
   "thumb": "thumbs/18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL.jpg"
  },
