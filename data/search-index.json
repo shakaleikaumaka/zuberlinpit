@@ -1,5 +1,2400 @@
 [
  [
+  2,
+  2,
+  "Okay. Do I need to stand up? Hello. You can do it how you want. Okay. I can leave from here. Welcome, everybody. Welcome, everyone. My name "
+ ],
+ [
+  2,
+  16,
+  "is Rico, and I work at Makena IO team inside the PSC. So, yeah, if you want want to come closer, we can make it more interactive."
+ ],
+ [
+  2,
+  28,
+  "So the goal of this presentation is to really introduce IO from a new approach. So because, like, I also am relatively new to IO. I started "
+ ],
+ [
+  2,
+  40,
+  "I learned it from the first time at DevCon last year. And let's say, I I've been trying to understand it until now, and"
+ ],
+ [
+  2,
+  51,
+  "I kind of now found an an approach that made sense to me, so I wanted to to share with you. So this was basically, I think, the starting poi"
+ ],
+ [
+  2,
+  63,
+  "nt that was kind of difficult for me to to make sense of. So because on on one on one side, I found this a lot of where is it? Well, it's fi"
+ ],
+ [
+  2,
+  75,
+  "ne. So the on one side, you have these IO papers that are, like, very,"
+ ],
+ [
+  2,
+  81,
+  "very deep, and they require knowledge for, like I don't know. There's a a long line of work that you need to know about in order to read the"
+ ],
+ [
+  2,
+  91,
+  " paper. And on the other side, actually, it's not, like, that big of a site, but there are, like, some resources about IO that are, like, le"
+ ],
+ [
+  2,
+  100,
+  "t's say, for newbies. But what they really tell you about is what IO"
+ ],
+ [
+  2,
+  105,
+  "can do. So maybe you can understand at at the high level what are, like, the capabilities, the affordance of IO, but it doesn't really tell "
+ ],
+ [
+  2,
+  114,
+  "you how to build it, like, what's behind it. And it looks just okay. There are, like, some APIs, but what's what's really undervalued? So wh"
+ ],
+ [
+  2,
+  124,
+  "at I'm trying to do in this presentation is to bridge this gap. So"
+ ],
+ [
+  2,
+  128,
+  "it would be very arrogant to claim that I can bridge this gap in an hour or so. But, like, my goal is to give you this new perspective such "
+ ],
+ [
+  2,
+  137,
+  "as that, like, the problem IO, we kind of reduce this to a more smaller problem. And, hopefully, by the end of the presentation, I can give "
+ ],
+ [
+  2,
+  147,
+  "you this map that allows you to approach the problem. So if you want to study more, you have, like, I don't know, like, a map in mind, and y"
+ ],
+ [
+  2,
+  156,
+  "ou can map it out what are, like, the building blocks."
+ ],
+ [
+  2,
+  160,
+  "And you can I don't know? At least in your mind, I think it will be simpler approach. And, also, I think we can make it interactive. Like, s"
+ ],
+ [
+  2,
+  169,
+  "o if you have any question, we can also use the whiteboard or whatever. Just ask me if you don't understand anything. I think we can I can t"
+ ],
+ [
+  2,
+  177,
+  "ake as a goal that you all should understand everything by the end of the presentation? So if you don't understand any something, just let m"
+ ],
+ [
+  2,
+  186,
+  "e know."
+ ],
+ [
+  2,
+  186,
+  "So we are gonna take this presentation as a more like a iterative approach. So we are gonna have a goal, like, a engineering goal, and we ar"
+ ],
+ [
+  2,
+  196,
+  "e gonna try to use, like, different cryptography that we kind of know or that we are gonna know throughout the presentation and try to build"
+ ],
+ [
+  2,
+  206,
+  " this application. The application that we want to build is, I"
+ ],
+ [
+  2,
+  211,
+  "will claim, a simple dummy. So it's a I call it, like, a noninteractive conditional signature printer. So this is, like, the API of this pro"
+ ],
+ [
+  2,
+  223,
+  "gram. So it's simply a functionality that takes as a input, like, a a key k and some input x. And this function is gonna check if the x is a"
+ ],
+ [
+  2,
+  235,
+  " prime number."
+ ],
+ [
+  2,
+  236,
+  "And if so, they're gonna sign this prime number with, like, this signing key k and just return none otherwise. So what does it mean, like, t"
+ ],
+ [
+  2,
+  247,
+  "he name? Like, what are, like, the requirements of this application? So we know what condition means. So the condition is expressed by this "
+ ],
+ [
+  2,
+  258,
+  "if else statement."
+ ],
+ [
+  2,
+  259,
+  "The noninteractivity property is very important. So we want some someone to be able to consume this program in a noninteractive way, meaning"
+ ],
+ [
+  2,
+  272,
+  " that so let's say that we have, like, two set of users of this application. So there's, like, on one side, a key owner."
+ ],
+ [
+  2,
+  284,
+  "So this guy is the one that owns this sign in key, and this is also the one that create, deploys the program. And on the other side, we have"
+ ],
+ [
+  2,
+  299,
+  " a set of users. We might have, like, Alice. We might have Bob. We might have Carl. And these guys"
+ ],
+ [
+  2,
+  309,
+  "are gonna consume this program. So they are gonna bring the input x to this program, and the noninteractivity factor requires that they shou"
+ ],
+ [
+  2,
+  320,
+  "ld be able to run this program without speaking to to the key owner. And we don't assume any, like, let's say, knowledge about the user from"
+ ],
+ [
+  2,
+  331,
+  " the key owner. So they might just pop up in the future, and the key owner shouldn't know who's gonna interact with this"
+ ],
+ [
+  2,
+  340,
+  "application. And also a very important requirement is the security. So the security means that the key k should not be learned by this user,"
+ ],
+ [
+  2,
+  350,
+  " Alice, Bob, and Carl, because otherwise, it would just make no sense at all. So, of course, like, you can think of a very dummy solution ju"
+ ],
+ [
+  2,
+  360,
+  "st like publishing the source code. And, of course, this will be noninteractive"
+ ],
+ [
+  2,
+  366,
+  "because Alice, Bob, and Carl can run it, but this will break the security of the of the application because anyone will be able to basically"
+ ],
+ [
+  2,
+  377,
+  " read the the key. Do you think about Alice, Bob, and Carl in this model, like, unbounded unbounded computers? Or, like, what what they are?"
+ ],
+ [
+  2,
+  389,
+  " So they are just"
+ ],
+ [
+  2,
+  390,
+  "so I'm not gonna give, like, a precise security definition, but they are just simple users. So they are not wanna join? No. I'm moving for. "
+ ],
+ [
+  2,
+  403,
+  "Hello. Five minutes ago. So, no, we don't we don't assume any exponential capability from the users."
+ ],
+ [
+  2,
+  413,
+  "So they just I don't know. Let's say they have a they just entered the the input, and they just want to get something back. Okay. So this is"
+ ],
+ [
+  2,
+  426,
+  ", like, our setup, and our goal is to build this. So maybe do you guys have any suggestion? Maybe you know what's the solution, but let's tr"
+ ],
+ [
+  2,
+  439,
+  "y to think just"
+ ],
+ [
+  2,
+  440,
+  "some random idea. They put MPC in the center? Yeah. Yeah. And there's a solution that is based on that. But so how where what would be the M"
+ ],
+ [
+  2,
+  452,
+  "PC? Because remind that we don't want so this guy, like, they should just do the setup phase, do something, and then disappear forever."
+ ],
+ [
+  2,
+  464,
+  "So, like, the the the the interaction with this program is delayed from the user side. So if there's some MPC between Alice and the key owne"
+ ],
+ [
+  2,
+  478,
+  "r, it's it's breaking this interactivity requirement non interactivity requirement. No. The key owner will set up will set up an MPC, be ava"
+ ],
+ [
+  2,
+  493,
+  "ilable for the rest of the users where you can do this. Like, for example, you can have"
+ ],
+ [
+  2,
+  502,
+  "some, I don't know, application of inputs where one user puts one input, and some inputs are magically appear there. Yeah. Yeah. Yeah. Yeah."
+ ],
+ [
+  2,
+  512,
+  " It's a, let's say, abstract on a abstract level, it's very similar to the solution that we are gonna lend to eventually. But we're gonna do"
+ ],
+ [
+  2,
+  522,
+  " some more stuff. You wanted to say something? I mean, you're a long."
+ ],
+ [
+  2,
+  527,
+  "Yeah. Yeah. Yeah. Yeah. Yeah. That's true. So we can go home. So I'm gonna just go. Just yeah. And if, for example I I know it's not possibl"
+ ],
+ [
+  2,
+  539,
+  "e because it's the introduction of the talk, but, like, let's say that we are we wanna use FHC, for example. Yeah. Yeah. Yeah. We wanna encr"
+ ],
+ [
+  2,
+  550,
+  "ypt, like, our TK. Yeah. And, like, encrypt it with FHC and put it somewhere. Like,"
+ ],
+ [
+  2,
+  557,
+  "Yeah. We're gonna go for that. Yeah. Yeah. So we're gonna go for a set of attempts until we find a solution. So we're gonna start with anoth"
+ ],
+ [
+  2,
+  568,
+  "er naive solution. So we just call it, like, a public lookup table. And, actually, public lookup table is itself a sort of like a solution t"
+ ],
+ [
+  2,
+  580,
+  "o to."
+ ],
+ [
+  2,
+  580,
+  "So a public lookup table just mean that this key owner is gonna publish a lookup table that maps for each input x I in this input domain, th"
+ ],
+ [
+  2,
+  591,
+  "e solution y I. So they're just gonna basically take any number from zero to a bound that the the key owner is gonna choose, and they're gon"
+ ],
+ [
+  2,
+  602,
+  "na sign this message if if the sign this number, if the number is prime, or just return"
+ ],
+ [
+  2,
+  609,
+  "zero if this is not prime. And so I'm not now discussing about the security of this solution if this is potentially gonna break the security"
+ ],
+ [
+  2,
+  619,
+  " of the key. But just from a simple, like, effort perspective, you can see that this solution is not really sustainable because it's kind of"
+ ],
+ [
+  2,
+  630,
+  " exponential to the input bit size. So if we just set even just, I don't know, 64 input bit as the"
+ ],
+ [
+  2,
+  637,
+  "input domain of the input x, it it's gonna require, like, two to the 64 efforts computation efforts from the the setup owner. So this is not"
+ ],
+ [
+  2,
+  648,
+  " gonna be sustainable for, like, real world application. And, therefore, we have an extra requirement from additionally to the two that we i"
+ ],
+ [
+  2,
+  659,
+  "ntroduced before that we don't want"
+ ],
+ [
+  2,
+  662,
+  "the key owner to have an effort that is exponential to the input bit size. And we're gonna see later why we want to set this requirement as "
+ ],
+ [
+  2,
+  675,
+  "well. Okay. So this is not not not the way to go. The second attempt is gonna be, as Jani suggested,"
+ ],
+ [
+  2,
+  685,
+  "FHE. And we're gonna also present what are, like, the APIs of FHE just to give you some refresher on that. So note that this is, a secret ke"
+ ],
+ [
+  2,
+  698,
+  "y FHE. Just for simplicity, I'm gonna use secret key FHE. So there's, like, a key generation phase that returns a secret key, an encryption "
+ ],
+ [
+  2,
+  710,
+  "phase that encrypts"
+ ],
+ [
+  2,
+  712,
+  "some input k into CT of k. There's the evaluation phase that evaluates a function f on the ciphertext. And, eventually, we we can use the de"
+ ],
+ [
+  2,
+  722,
+  "cryption key, the secret key, to decrypt a ciphertext. So the only difference between secret key FAT and public key is that you also use the"
+ ],
+ [
+  2,
+  733,
+  " secret key for encryption,"
+ ],
+ [
+  2,
+  735,
+  "and you don't use a public key for encryption. So given that, we're gonna try to build this noninteractive conditional printer with this FHE"
+ ],
+ [
+  2,
+  747,
+  ". And this is, like, the graph of on how I was thinking about building this application. So, like, in the middle, you see there's this cloud"
+ ],
+ [
+  2,
+  758,
+  ". So the cloud really means just like publishing"
+ ],
+ [
+  2,
+  762,
+  "to the public because we assume that there's no interaction between the key owner and Alice. So in theory, the flow from the key owner shoul"
+ ],
+ [
+  2,
+  771,
+  "d stop here. They need to do some setup, publish, and then they they wouldn't appear anymore because, otherwise, it will break the requireme"
+ ],
+ [
+  2,
+  781,
+  "nts. And you already see that this is broken in a way. So they will Can you tell once you get what is the difference between key and secret "
+ ],
+ [
+  2,
+  790,
+  "key? Yeah. Yeah. Yeah. So secret key is the secret key for the for the FHC scheme. Oh. So k,"
+ ],
+ [
+  2,
+  796,
+  "in this case, in an is a is an input. I just put it k because in our application, the signing key is k, but it can be whatever, really, any "
+ ],
+ [
+  2,
+  807,
+  "input. So the key owner encrypts this signing key k, publish the ciphertext. And now any user, Alice, Bob, and Carl, can take this ciphertex"
+ ],
+ [
+  2,
+  819,
+  "t"
+ ],
+ [
+  2,
+  819,
+  "and evaluate this function f. So the function f is is is public. And they can evaluate using as an input this ciphertext for the signing key"
+ ],
+ [
+  2,
+  830,
+  ". And in this case, I I I just set Alice input as seven. And now they they they obtain a ciphertext that actually contains the output of thi"
+ ],
+ [
+  2,
+  842,
+  "s program that"
+ ],
+ [
+  2,
+  843,
+  "generated by the key owner. But still, there's a problem, as you can tell, that FHC somehow requires decryption. So the the problem is that "
+ ],
+ [
+  2,
+  854,
+  "Alice by itself by herself cannot obtain the the output, which is this f of k seven by herself without interacting the other ways, just send"
+ ],
+ [
+  2,
+  864,
+  "ing it back to the key owner, ask them to decrypt, and eventually,"
+ ],
+ [
+  2,
+  869,
+  "the key owner will send the the decrypted output to Alice. So we cannot see that there's an issue, that it requires interactivity during dec"
+ ],
+ [
+  2,
+  879,
+  "ryption. And I think you cannot really escape this. I think this is a well, this is basically how FHE is designed. So it gives you freedom. "
+ ],
+ [
+  2,
+  890,
+  "So on on this evaluation step, you have a lot of freedom. You can really evaluate"
+ ],
+ [
+  2,
+  896,
+  "whatever you want, any function that you want. But the drawback of this freedom is that in order to decrypt, you need to come back to someon"
+ ],
+ [
+  2,
+  908,
+  "e that will authorize this decryption. And, of course, if the key owner would publish the secret key, this will, again, break the security a"
+ ],
+ [
+  2,
+  921,
+  "nd, not not not gonna work. Clear?"
+ ],
+ [
+  2,
+  924,
+  "Okay. We can't take it because we need not interested. Yeah. Yeah. No. No good solution. We're gonna discard it. So now I'm gonna introduce "
+ ],
+ [
+  2,
+  938,
+  "a new technology, which is functional encryption, which I'm aware that is not very hyped or or famous"
+ ],
+ [
+  2,
+  948,
+  "in our space. And I I think the reason is that it's very difficult to find a utility for this, but we're gonna see why it's useful. We are g"
+ ],
+ [
+  2,
+  958,
+  "onna see an application that is like a real world application of function encryption, and then we are gonna see how this is also gonna help "
+ ],
+ [
+  2,
+  967,
+  "us to build IO. So these are, like, the the"
+ ],
+ [
+  2,
+  970,
+  "the APIs for functional encryption, and we are gonna go through that. And I so now I'm just gonna read the API, but I think later when I sho"
+ ],
+ [
+  2,
+  980,
+  "w you an application, it will make more sense who's doing what because it's kind of this is most difficult part. So there's a a setup phase "
+ ],
+ [
+  2,
+  990,
+  "that, returns a master public key and a master secret key."
+ ],
+ [
+  2,
+  994,
+  "Then there's a key generation phase, which is tied to a function f. And, this key generation phase is gonna return like a a functional secre"
+ ],
+ [
+  2,
+  1006,
+  "t key. And then there's an encryption step that takes some message, in this case k, the master public key, and returns a ciphertext."
+ ],
+ [
+  2,
+  1017,
+  "And the cool part is this decryption step so that you take a ciphertext, and you take functional secret key, and you can obtain f of k. So y"
+ ],
+ [
+  2,
+  1033,
+  "ou can maybe, if you want to find an analogy with parallelism with the is"
+ ],
+ [
+  2,
+  1041,
+  "that in a in the, in FHC, we had the evaluation step And the step that they were, like evaluation, and we had, like, this freedom in the eva"
+ ],
+ [
+  2,
+  1051,
+  "luation. But then the decryption was you need to come back to the key owner, to the to the decryption. Well, here, somehow, you blend togeth"
+ ],
+ [
+  2,
+  1061,
+  "er the evaluation and the decryption"
+ ],
+ [
+  2,
+  1064,
+  "in a single step, but you don't have the same freedom because the only thing that you can get is the evaluation of f of k, and this f was ch"
+ ],
+ [
+  2,
+  1076,
+  "osen in this key generation step. So I think now I'm gonna give an example that would make more sense. Encryption in the sense that our key "
+ ],
+ [
+  2,
+  1088,
+  "will will now find it by a challenge?"
+ ],
+ [
+  2,
+  1091,
+  "So I think a difference with witness encryption is that in witness encryption, you encrypt some value x. You get a ciphertext of x. And then"
+ ],
+ [
+  2,
+  1102,
+  " so the encryption is also tied to some, like, problem or, like, challenge. And whoever is able to solve this challenge is able to decrypt t"
+ ],
+ [
+  2,
+  1113,
+  "o obtain the x. So"
+ ],
+ [
+  2,
+  1114,
+  "the difference here is that you don't get the the the the encrypted value itself, but you get a function of the encrypted value. So it's kin"
+ ],
+ [
+  2,
+  1125,
+  "d of different. So you don't get, like, Just a random question. Why do you say it's not popular in this space? Because no one found maybe"
+ ],
+ [
+  2,
+  1136,
+  "a utility in the blockchain context, I guess. Maybe I'm wrong. This was just my my my sentiment. No. I've heard it I've heard it twice this "
+ ],
+ [
+  2,
+  1158,
+  "day. Okay. Okay. So it's positive. Maybe it's getting more popular now. No. I've heard twice that it's not from there yet. Ah. Ah. So what w"
+ ],
+ [
+  2,
+  1180,
+  "as the context in which they were also speaking about functional encryption?"
+ ],
+ [
+  2,
+  1192,
+  "So it's just Yeah. Yeah. But so just a side note, you can build IO, you also get Windows encryption as a as a side gift. But I think a But w"
+ ],
+ [
+  2,
+  1204,
+  "e forget about Windows encryption now. So we're gonna just see an example why function encryption is is useful, and this is just a non"
+ ],
+ [
+  2,
+  1215,
+  "blockchain or Ethereum related example. So the context is that we want to build a secure email spam filter. So the setup is that, there's, a"
+ ],
+ [
+  2,
+  1232,
+  " user, Again, Alice and can can see. But on the other side, she also doesn't want,"
+ ],
+ [
+  2,
+  1242,
+  "like, an encrypted email server that cannot filter emails. So if if all the emails are encrypted, like, of course, like, some some server ca"
+ ],
+ [
+  2,
+  1253,
+  "nnot tell which is spam or not. So she need to get everything decrypt and tell manually what are, like, non spam or spam. So this is the mot"
+ ],
+ [
+  2,
+  1263,
+  "ivating example. Okay? So this is, like, the solution basically to this dilemma that Alice is facing."
+ ],
+ [
+  2,
+  1271,
+  "So she's gonna run this initial setup, obtain this master public key and master secret key. And then she's gonna provide her email client to"
+ ],
+ [
+  2,
+  1283,
+  " a functional secret key. So this API. And she's gonna she's gonna set this f as a function that is able to detect whether an email is spam "
+ ],
+ [
+  2,
+  1295,
+  "or not. So let's say just return one if an email is spam and zero if not."
+ ],
+ [
+  2,
+  1301,
+  "And what should what is gonna happen then is that any email sender that wants to send an email to Alice will use her her master public key. "
+ ],
+ [
+  2,
+  1313,
+  "And this k, in this case, would just be the email itself. And encrypt the email, and the the the the email client will, like, receive"
+ ],
+ [
+  2,
+  1325,
+  "encrypted form. And what the client is gonna do is they can given the ciphertext and this functional secret key related to the function f, t"
+ ],
+ [
+  2,
+  1337,
+  "hey can now run the decryption and obtain f of k, which will be f, like this spamming detection function on the email, and just obtain one o"
+ ],
+ [
+  2,
+  1348,
+  "r zero."
+ ],
+ [
+  2,
+  1349,
+  "And doing that, they can serve to Alice only the emails that has passed the spamming filter and just throw the other ones away. Makes sense?"
+ ],
+ [
+  2,
+  1363,
+  " The setup. So this is like so we have basically, like, two yeah. Like, the yeah. I won't say anything else if it's clear."
+ ],
+ [
+  2,
+  1376,
+  "So this is like a motivating example of function encryption. And remember that our goal was, like, to use maybe try to use this technology t"
+ ],
+ [
+  2,
+  1394,
+  "o build our noninteractive signature printer. So maybe do you have any idea of how this can help or at least some intuition of why this migh"
+ ],
+ [
+  2,
+  1411,
+  "t be useful for, like, our our goal?"
+ ],
+ [
+  2,
+  1416,
+  "Yeah. Yeah. Yeah. Yeah. That's exactly the point. So the the cool part is that on one side, we have this this key generation that binds the "
+ ],
+ [
+  2,
+  1429,
+  "function to to to to a specific one, to f. And the other cool property is that the decryption is is noninteractive."
+ ],
+ [
+  2,
+  1440,
+  "So we kind of lose the freedom by binding the function, but then we gain on the noninteractivity of the decryption. So this is the the what "
+ ],
+ [
+  2,
+  1450,
+  "we're gonna use to try to build a functional encryption overall, Like, how practical it is? Like, what are the main schemes to use to wear? "
+ ],
+ [
+  2,
+  1461,
+  "Yeah. Yeah. Yeah. Yeah. Yeah. I'm gonna go through that. Because, like"
+ ],
+ [
+  2,
+  1466,
+  "the spoiler is that you're gonna go through function encryption in order to build IO. And this is also not practical. So that's the sad news"
+ ],
+ [
+  2,
+  1476,
+  ". Looks a bit too good today. Yeah. Yeah. But so at least, I guess, my opinion is that, like, just approaching the problem as building funct"
+ ],
+ [
+  2,
+  1486,
+  "ional encryption is seems less scary at least than just in IO. It's like okay."
+ ],
+ [
+  2,
+  1491,
+  "So this is how we the the sequence diagram for the effort based on FE to build our our construction. So we really have only, like, two peopl"
+ ],
+ [
+  2,
+  1504,
+  "e in this in this scenario or, let's say, many users, but we just focus on a single user. And you see that we already"
+ ],
+ [
+  2,
+  1514,
+  "bridged, so there's no interaction with the key owner after this point. So this is good. And in this scenario, the key owner is gonna encryp"
+ ],
+ [
+  2,
+  1524,
+  "t the signing key k, and they're also gonna generate a function a functional secret key for the function. And I also skip the setup, but, of"
+ ],
+ [
+  2,
+  1533,
+  " course, the key owner is doing the setup. They're gonna generate"
+ ],
+ [
+  2,
+  1538,
+  "a function secret key tied to the function f, which is the function that we defined originally. They're gonna publish these two. So the ciph"
+ ],
+ [
+  2,
+  1549,
+  "ertext and the function secret key are published to anyone in the world. They can be consumed by Alice. But and so, ideally, we should do th"
+ ],
+ [
+  2,
+  1559,
+  "is, the decryption starting from the function secret key and the ciphertext"
+ ],
+ [
+  2,
+  1565,
+  "to get f of k and seven. But maybe you can spot why there might be some issue here. How did they how did they add the seven as an? Yeah. Yea"
+ ],
+ [
+  2,
+  1579,
+  "h. Yeah. Yeah. Exactly. Exactly. Because, like so the way that the the function must be designed"
+ ],
+ [
+  2,
+  1589,
+  "so let's say, this function the way it is designed is that it takes only a single input. So the the the key owner can design it such that it"
+ ],
+ [
+  2,
+  1603,
+  " takes the k as input, but we cannot really add the dynamic dynamically chosen input by Alice. So there's a"
+ ],
+ [
+  2,
+  1613,
+  "way, as you noticed, it doesn't allow Alice to inject a new input to this decryption function. And we could think about, like, a dummy solut"
+ ],
+ [
+  2,
+  1623,
+  "ion to that. And in this dummy solution, basically, the the the functional secret key would be generated for a function that are codes the t"
+ ],
+ [
+  2,
+  1634,
+  "he possible inputs of Alice. So we define the function in this way, but we run into the same problem that we run with the public lookup. So "
+ ],
+ [
+  2,
+  1644,
+  "this is, again, exponential to the possible"
+ ],
+ [
+  2,
+  1647,
+  "input size to the, yeah, to the to the input bit size that any user is allowed to to to to choose. So, I mean, there's still something cool "
+ ],
+ [
+  2,
+  1658,
+  "here, but this is not enough. Functional encryption is not enough because of this requirement. Can you try this again? Yeah. Yeah. Yeah. So,"
+ ],
+ [
+  2,
+  1670,
+  " like, the way"
+ ],
+ [
+  2,
+  1671,
+  "function encryption is designed is that the the key generation is for a function that takes a single input. And in this case, the single inp"
+ ],
+ [
+  2,
+  1683,
+  "ut is the the input that has been encrypted by the key owner, which is the signing key k. But, actually, what we want to do is not allow Ali"
+ ],
+ [
+  2,
+  1696,
+  "ce to run f of k,"
+ ],
+ [
+  2,
+  1697,
+  "but f of k plus some input that is dynamically chosen by the users and that the key owner cannot know about in advance. So what what we do t"
+ ],
+ [
+  2,
+  1709,
+  "o to figure to find a solution for that is, like, to allow the key owner to generate the secret key, the function secret key, for"
+ ],
+ [
+  2,
+  1721,
+  "as many functions as there are the possible inputs of the user. So in this case, basically, the input is just are coded inside the function."
+ ],
+ [
+  2,
+  1731,
+  " So, really, we can we are still in the setup in which there is a single input, and the the potential input of the user is our coding to tha"
+ ],
+ [
+  2,
+  1741,
+  "t. But how is that different"
+ ],
+ [
+  2,
+  1743,
+  "from what you mentioned in the very beginning? Yeah. Yeah. Exactly. It it's not different. So Okay. This is not the solution. But we are get"
+ ],
+ [
+  2,
+  1754,
+  "ting there. We are getting there. So the so now I'm just gonna present IO in a in a different way. And, basically, we just think about, like"
+ ],
+ [
+  2,
+  1766,
+  ", this imaginary"
+ ],
+ [
+  2,
+  1767,
+  "API that if if it existed, it would actually give us a solution, And we call this API extend ciphertext. So, basically, really, this API jus"
+ ],
+ [
+  2,
+  1778,
+  "t takes a ciphertext and a and an input text and kind of concatenates this input inside the ciphertext. So it's just adding something to the"
+ ],
+ [
+  2,
+  1789,
+  " ciphertext."
+ ],
+ [
+  2,
+  1790,
+  "And we can easily see that this provide us a solution for for this problem. So the, basically, the the the role of the key owner is still th"
+ ],
+ [
+  2,
+  1802,
+  "e same. Everything is still the same, basically. Just that we just added this API such that Alice can take their input,"
+ ],
+ [
+  2,
+  1813,
+  "add it to the ciphertext, and now she can obtain the result f of k of seven. Starting from from the ciphertext that was provided by the that"
+ ],
+ [
+  2,
+  1827,
+  " only encoded this signing signing key. So, I mean, I'm not really giving you anything"
+ ],
+ [
+  2,
+  1836,
+  "crazy here. It's just a different way of seeing of seeing an extended version of FE, an augmented version of FE that actually gives us IO. I"
+ ],
+ [
+  2,
+  1849,
+  " mean, we didn't even define IO, but this is basically IO. So if we well, we can tell we can see that there are older original requirements"
+ ],
+ [
+  2,
+  1862,
+  "were were met by this solution. So we have the noninteractivity because the can just disappear at this point, and it's still possible to car"
+ ],
+ [
+  2,
+  1872,
+  "ry out the computation. Is secure because this is I mean, I didn't explain you why this is secure, but the the definition of of functional e"
+ ],
+ [
+  2,
+  1883,
+  "ncryption, the security definition"
+ ],
+ [
+  2,
+  1885,
+  "guarantees that the the ciphertext itself, let's say, informally, doesn't reveal anything about the the value k, which in our case is what w"
+ ],
+ [
+  2,
+  1898,
+  "e want to protect. And the only thing that gets learned by alias is this f of k of x. So as long as this function doesn't reveal information"
+ ],
+ [
+  2,
+  1910,
+  " about the the the k the key k,"
+ ],
+ [
+  2,
+  1913,
+  "this is secure. So Alice doesn't learn anything about the signing key k. And lastly, we also meet the non exponential effort because, we can"
+ ],
+ [
+  2,
+  1926,
+  " see that the the the functional secret key is not dependent on the input of of Alice as it was in our previous"
+ ],
+ [
+  2,
+  1937,
+  "non successful effort. So okay. So now we're just gonna do a sort of, like, cleanup of the interface. And we're gonna just basically just ch"
+ ],
+ [
+  2,
+  1954,
+  "ange the way of interpreting it in a way that meets the APIs of IO. But, really,"
+ ],
+ [
+  2,
+  1963,
+  "it's not there's there's not any difference in the in the meaning, in the substance. So we're just gonna define the three APIs, the setup AP"
+ ],
+ [
+  2,
+  1975,
+  "I, the keygen API, and the encryption API as this obfuscation API. And this obfuscation is gonna take a function f as a input together with,"
+ ],
+ [
+  2,
+  1986,
+  " like, some secret k."
+ ],
+ [
+  2,
+  1988,
+  "And this this means, like, there's just some some input space that is not known yet at this time, and this is gonna return an obfuscated cir"
+ ],
+ [
+  2,
+  2000,
+  "cuit. And starting from this obfuscated circuit, the evaluator, which is, like, Alice, Bob, Carl, whatever, they can just add their input."
+ ],
+ [
+  2,
+  2011,
+  "This should be on the other side. And obtain the function of f k x, which in our case is like either the signature or not. At what point did"
+ ],
+ [
+  2,
+  2022,
+  " the circuit enter the room? It's just a it's just a way of calling it an obfuscated circuit. We can just call it, like, obfuscated program "
+ ],
+ [
+  2,
+  2033,
+  "or obfuscated"
+ ],
+ [
+  2,
+  2034,
+  "artifacts. I haven't We call, like, all of that. Basically, like, these four artifacts, polynomials, whatever matrices, they become the obfu"
+ ],
+ [
+  2,
+  2047,
+  "scated program. Okay. So this means that this obfuscated program can be published whatever, and it won't reveal any information."
+ ],
+ [
+  2,
+  2058,
+  "And just by by updating our our setup, the key owner runs the obfuscation, publish the obfuscated program, and the obfuscated program can be"
+ ],
+ [
+  2,
+  2071,
+  " consumed during the evaluation phases. So, again, I didn't change anything. It's just a cleanup of API and function definitions. So,"
+ ],
+ [
+  2,
+  2084,
+  "basically, this is just a recap of what we built. We are gonna use this graph later in the presentation. So this is just the definition of o"
+ ],
+ [
+  2,
+  2095,
+  "f the function. But I think you can imagine this this this square as a as a as the obfuscated program. And everything that is in white is ac"
+ ],
+ [
+  2,
+  2105,
+  "tually public, so we know the function definition."
+ ],
+ [
+  2,
+  2109,
+  "We know what this thing is doing. But there's only one part that is secret, which is this secret signing key k that is used for for signing."
+ ],
+ [
+  2,
+  2122,
+  " So, actually, now we can either go into the application and come back at the end on the a bit of theory."
+ ],
+ [
+  2,
+  2132,
+  "Maybe what what do you prefer? Application or just a bit of theory? Okay. I just want to give you because I I promised you at the beginning "
+ ],
+ [
+  2,
+  2144,
+  "that I I was gonna tell you, like, how this is built, but I didn't really tell you much about this. So I I just have this slide"
+ ],
+ [
+  2,
+  2155,
+  "that I think is is is the core of of the theory. And so, basically, like, this encapsule the the map of building IO. So, really, what we is "
+ ],
+ [
+  2,
+  2169,
+  "a way at least to reduce the problems into something that might be more familiar or that is honestly, like, if you pick each each step,"
+ ],
+ [
+  2,
+  2183,
+  "it's not that difficult to to understand, to learn. So we have, like, a the core building blocks are are this BGG encoding and the lattice s"
+ ],
+ [
+  2,
+  2195,
+  "tructures. So BGG encoding is basically a way to well, I don't know if we should maybe we can see it later. I don't know."
+ ],
+ [
+  2,
+  2205,
+  "I I also have slides for this, but it might be too deep of a rabbit hole. Three sentences. Say that So it's really like what's So it's a it'"
+ ],
+ [
+  2,
+  2216,
+  "s a way maybe I can on the sides are private. Just I'm joking. At least have a nutrition about, like, what is this extension operation that "
+ ],
+ [
+  2,
+  2228,
+  "we are performing. Yeah. So, basically, like, at the point of BGG encoding so let's note"
+ ],
+ [
+  2,
+  2235,
+  "why. So the point of the BGG encoding is that this is so you have, like, this encoding. Let's just treat it as without going too deep into w"
+ ],
+ [
+  2,
+  2246,
+  "hat's inside. But there's, like, a a value x inside that, and there is a matrix a, a public matrix a. And every time that you know you do"
+ ],
+ [
+  2,
+  2257,
+  "computation on top of this, you will update the value after an addition and the public matrix. And the same for multiplication. So you're go"
+ ],
+ [
+  2,
+  2267,
+  "nna update the public matrix and the value inside of that. And the core property is that this is independent of of the value, but it's depen"
+ ],
+ [
+  2,
+  2278,
+  "dent on the on the computation"
+ ],
+ [
+  2,
+  2280,
+  "that you're doing. So in somehow some way, this component of the BGG encoding keeps a trace of the of the computation that you've been doing"
+ ],
+ [
+  2,
+  2292,
+  ", but it's not dependent on the input. So the next step is that you can use this thing called lattice trapdoors to provide a way to the eval"
+ ],
+ [
+  2,
+  2304,
+  "uator, in this case, to just"
+ ],
+ [
+  2,
+  2306,
+  "remove this step and obtain this thing in a way that is bounded sorry, that is binded to a specific computation even before knowing what's g"
+ ],
+ [
+  2,
+  2318,
+  "onna be the input here. Very, very brutal way of explaining it, but this is the key property that allows the the obfuscator,"
+ ],
+ [
+  2,
+  2329,
+  "the key owner, to establish a specific function and provide a way to the various user, to the various evaluators to remove to basically obta"
+ ],
+ [
+  2,
+  2341,
+  "in an output only on their inputs, only if a specific computation is is performed, is run. So there's this binding phase that is done here. "
+ ],
+ [
+  2,
+  2352,
+  "And this is not IO. This is like a"
+ ],
+ [
+  2,
+  2355,
+  "this is functional encryption, and I I wanted to put to point you to this paper that is a k y 24. Maybe we can so this is the paper that"
+ ],
+ [
+  2,
+  2377,
+  "was most the most important for us. We spent a lot of time on this paper. And I also probably suggest you to go through this version if you "
+ ],
+ [
+  2,
+  2387,
+  "are really interested. This version, not the latest one, because the latest one has some fix because of some attack, and it becomes a bit mo"
+ ],
+ [
+  2,
+  2397,
+  "re messy. But, like, the core idea is still the same as in the previous"
+ ],
+ [
+  2,
+  2402,
+  "implementation in this version. And so the really, the difference sorry. This is another presentation. So the point that I wanted to make he"
+ ],
+ [
+  2,
+  2413,
+  "re is that if you understand, like, BG encoding and lattice structures, you can build functional encryption. And the next step, what we real"
+ ],
+ [
+  2,
+  2423,
+  "ly did in our paper,"
+ ],
+ [
+  2,
+  2425,
+  "in the Diamond IO paper, but this is not the only paper that has been trying to do that, is add this additional API, this augment FE API, an"
+ ],
+ [
+  2,
+  2438,
+  "d this leads us to. So it's not that crazy, honestly. Just need FE, and this is not our our our goal, our issue. And we just came up with, l"
+ ],
+ [
+  2,
+  2451,
+  "ike, something else that allows us"
+ ],
+ [
+  2,
+  2454,
+  "to to let these evaluators add their own inputs. But it means you will extend matrices. Extend mattresses? Yeah. I mean, it's a bit more it'"
+ ],
+ [
+  2,
+  2468,
+  "s a kind of it's different. It's more like a we use some some some trapdoors that they have, like, some"
+ ],
+ [
+  2,
+  2479,
+  "some mathematical definition that allows to add more and more inputs. But I think I shouldn't go through this route now because it's probabl"
+ ],
+ [
+  2,
+  2491,
+  "y requires a lot of knowledge. But probably No. I'm I'm just curious from the perspective how bad it is in terms of the size of the So it's "
+ ],
+ [
+  2,
+  2503,
+  "not"
+ ],
+ [
+  2,
+  2503,
+  "well, it's a bit bad. So I we have some some probably benchmark somewhere. So this is, like, the, like, the results. So we just we have, lik"
+ ],
+ [
+  2,
+  2518,
+  "e, a circuit that is taking some bits as the input, and then it's performing"
+ ],
+ [
+  2,
+  2526,
+  "some some operation. Maybe I think we are doing, like, some one addition, one multiplication, and then doing the decryption. And these are t"
+ ],
+ [
+  2,
+  2537,
+  "he the the results. So you see that the so we separated between, like, obfuscation time and evaluation time. And you see that the the obfusc"
+ ],
+ [
+  2,
+  2548,
+  "ation times is somehow"
+ ],
+ [
+  2,
+  2550,
+  "sublinear, if not exponential, to the input size. And the input size is one to four bits. So it's not that we are we are saying that this is"
+ ],
+ [
+  2,
+  2560,
+  " practical, but two things that are promising are well, first of all, it's like a huge improvement from the latest state of the art because "
+ ],
+ [
+  2,
+  2570,
+  "now it takes six hours considering, like, these circuits"
+ ],
+ [
+  2,
+  2574,
+  "compared to this old paper that was saying ten to the twenty seven years. And one good thing is that as we noticed in our in our description"
+ ],
+ [
+  2,
+  2584,
+  ", like, the the the role of the key owner, the role of the office keytor is just a onetime setup thing. So we are kind of trying to build it"
+ ],
+ [
+  2,
+  2593,
+  " in a way that we push the trade off on the on the obfuscator side. It's similar to, like, if you want to be, like, a ZK system that pushes"
+ ],
+ [
+  2,
+  2603,
+  "all the hardware on the on the on the prover side and just the verification is very, very succinct, we are kind of doing something similar. "
+ ],
+ [
+  2,
+  2613,
+  "So we are assuming that the obfuscator might have some huge hardware, some GPU parallelization, whatever, to run this setup. And then the ev"
+ ],
+ [
+  2,
+  2622,
+  "aluation phase should be very, very, very, very lean. Should be very, very fast."
+ ],
+ [
+  2,
+  2628,
+  "So I'm not saying that this is fast, but at least the trade off is going is going this way. And I think this is this is promising. So we wan"
+ ],
+ [
+  2,
+  2640,
+  "t to go to the application. So the application, I was just like, my my motivation was, like, explaining how to build encrypted smart contrac"
+ ],
+ [
+  2,
+  2652,
+  "ts in a way that makes sense."
+ ],
+ [
+  2,
+  2655,
+  "Okay. I think you have so many applications for it if you can build it and not only the. Yeah. So I think this is, like, a general applicati"
+ ],
+ [
+  2,
+  2665,
+  "on, like, encrypted smart contract. It's a a umbrella term for many applications. But you can then just encrypt computer program, not necess"
+ ],
+ [
+  2,
+  2675,
+  "arily smart contract. Yeah. Yeah. Yeah. Yeah. But there's there's also, like"
+ ],
+ [
+  2,
+  2681,
+  "yeah. Yeah. That's true. But, like, if you really want to I think there's a sort of, like, a a trade off there. Because if you want, you can"
+ ],
+ [
+  2,
+  2692,
+  " potentially, of course, any program, but this will require a sort of, like, a program specific. So you want to do a program for, I don't kn"
+ ],
+ [
+  2,
+  2702,
+  "ow, voting, then you this."
+ ],
+ [
+  2,
+  2704,
+  "You want to do a program for, like, matchmaking, this. But we're also looking because we know that obfuscation is expensive, so we are tryin"
+ ],
+ [
+  2,
+  2714,
+  "g to make it such that we can obfuscate the smallest possible program that can help us then be reused across all the other applications. So "
+ ],
+ [
+  2,
+  2723,
+  "a sort of like a a one time setup that can then people can create application on and just use the obfuscation for this very"
+ ],
+ [
+  2,
+  2732,
+  "specific action, which is still like the fundamental action for for any of this application. And just the there there is something that's re"
+ ],
+ [
+  2,
+  2743,
+  "ally to me. So in terms of so the the bit that you have to to state is it is set it actually that you're going to perform. And I don't have "
+ ],
+ [
+  2,
+  2755,
+  "any intuition about, like like,"
+ ],
+ [
+  2,
+  2757,
+  "the representation of the second and what the second is performing. Because, like, if the benchmark doesn't seem like that different I'm not"
+ ],
+ [
+  2,
+  2767,
+  " afraid by the benchmark, but Yeah. Yeah. I don't have any clue about, like, even a simple program. Yeah. Yeah. Yeah. Like, what's the size "
+ ],
+ [
+  2,
+  2777,
+  "of it? Yeah. Okay. Yeah. I think my my setup wasn't very clear. So the so what we are doing so if we define it as a like, watch our office s"
+ ],
+ [
+  2,
+  2788,
+  "kating"
+ ],
+ [
+  2,
+  2788,
+  "because I've been told that I need only to use this portion of the whiteboard. So like what you're obfuscating, the obfuscator is obfuscatin"
+ ],
+ [
+  2,
+  2798,
+  "g like this program. So this function f with some k and the and the and some dynamically chosen input. And this is, like, the the beats. So "
+ ],
+ [
+  2,
+  2809,
+  "when we are seeing, like, one beat, two beats, four beats, we are just worrying about this part. So we're we're like, the program itself,"
+ ],
+ [
+  2,
+  2819,
+  "one the the one that we are running, the function is defined that I think it just multiplies the k with the input bit, or it just add the k "
+ ],
+ [
+  2,
+  2834,
+  "with the with the input bit. So it's it's really not really a a meaningful application."
+ ],
+ [
+  2,
+  2843,
+  "So in the current new frame, in the first place about, like, the condition of a signature with g l x? Yeah. Yeah. Yeah. Yeah. Exactly. MDF w"
+ ],
+ [
+  2,
+  2855,
+  "ill be designed to be to do, like, this check and either either sign or not. And but this is, like, the secret definition that is embedded i"
+ ],
+ [
+  2,
+  2867,
+  "n the in the obfuscation. So I think there are, two two set of"
+ ],
+ [
+  2,
+  2872,
+  "like, variables that influence the cost of the of the obfuscation. So one is the the size of the circuit that you want to execute, and the o"
+ ],
+ [
+  2,
+  2882,
+  "ther one is the size of the input bits. But as I as I mentioned, like, really, our effort is focused on this extend ciphertext API. So every"
+ ],
+ [
+  2,
+  2893,
+  "thing else well, actually, we are also working on that. But"
+ ],
+ [
+  2,
+  2897,
+  "it should be somehow outsourced to, like, the function encryption guys if they were doing their work. So that's why, like, our our our bench"
+ ],
+ [
+  2,
+  2908,
+  "mark explain you what is the cost of, like, on in terms of, like, user input bits, evaluator input bits. Why did you guys like to work on th"
+ ],
+ [
+  2,
+  2919,
+  "at? Because"
+ ],
+ [
+  2,
+  2920,
+  "it's it's cool, and it feels like so we have, like, this idea that, like maybe I can also give you well, I can just explain to you. Like, we"
+ ],
+ [
+  2,
+  2937,
+  " feel that, like, in the long term, like, this private"
+ ],
+ [
+  2,
+  2943,
+  "state shared state computation application, if they if they work as expected, like, the the the value locked inside this application will gr"
+ ],
+ [
+  2,
+  2957,
+  "ow up, will accumulate in. And if we rely on MPC or FHE on that, you will always have this issue of collusion risk."
+ ],
+ [
+  2,
+  2968,
+  "You know, that's I didn't go through that, but multiparty application based on FHE or MPC are are subject to this risk of collusion. And, po"
+ ],
+ [
+  2,
+  2980,
+  "tentially, people can just decrypt and access values without being being being accountable for it. Like, our thesis that really this applica"
+ ],
+ [
+  2,
+  2992,
+  "tion will never scale because of this issue. There's always gonna be a value that will make"
+ ],
+ [
+  2,
+  3000,
+  "people betray the system and just decrypt everything. And while by building this application with IO, we kind of remove this risk. And I thi"
+ ],
+ [
+  2,
+  3013,
+  "nk this like, personally, that was the reason because I work with MPC and FHE, but I was kind of dissatisfied by this. There was also this t"
+ ],
+ [
+  2,
+  3026,
+  "hing that I couldn't not think about."
+ ],
+ [
+  2,
+  3030,
+  "Okay. So let me go through this. Maybe we can do it in fifteen minutes, twenty minutes, and then I've launched. Okay. So the the application"
+ ],
+ [
+  2,
+  3043,
+  " that I wanted to take as a as a real example for IO, of course, is not the the noninteractive conditional signature printer,"
+ ],
+ [
+  2,
+  3054,
+  "but we're gonna see how really we can easily extend this application to something more meaningful. And this is, like, a a slide that I took "
+ ],
+ [
+  2,
+  3065,
+  "from Vitalik recently. And well, it was just basically saying, like, the possibility of having privacy of rights on chain. So having these a"
+ ],
+ [
+  2,
+  3077,
+  "pplications such as voting, DeFi, whatever,"
+ ],
+ [
+  2,
+  3080,
+  "private. So maybe the first question that I ask you is, like, I know that Lisa works at at Astec. So why you cannot build, like, a private D"
+ ],
+ [
+  2,
+  3094,
+  "eFi on Astec? You can do private DeFi? Pricewise contract. So let's say voting because I I'm gonna use this as a as an application."
+ ],
+ [
+  2,
+  3107,
+  "So when I I mean, like, private voting, I mean, an application in which you can like, the the result. So I have actually no. Don't go let's "
+ ],
+ [
+  2,
+  3119,
+  "not go there. So the votes are private. Okay? So I just cast a vote that is, like, one or zero. Everyone cast their vote,"
+ ],
+ [
+  2,
+  3130,
+  "and you want to just obtain the final result. Either this, I don't know, this law is passed or not. If there are more ones than zero is pass"
+ ],
+ [
+  2,
+  3152,
+  "ed, otherwise not. How can you build this with Aster? I don't know. Right? This first contract So, like, the"
+ ],
+ [
+  2,
+  3169,
+  "the the function that is able to to to compute the result in a verifiable way must have access to the to the votes in in plain. Yes. But it "
+ ],
+ [
+  2,
+  3180,
+  "doesn't know from whom. Yeah. Yeah. Yeah. Okay. Okay. That's a good point. Yeah. Yeah. Absolutely. That's that's doable with us. But still, "
+ ],
+ [
+  2,
+  3190,
+  "this reveals the the votes itself."
+ ],
+ [
+  2,
+  3193,
+  "Let's not argue about, like, the usefulness So, well, basically, like the I think you said MPC a few times."
+ ],
+ [
+  2,
+  3247,
+  "So, yeah, like, you can build this with with MPC. That's true. And I think the point is that so the order book example, I think then you're "
+ ],
+ [
+  2,
+  3259,
+  "fine doing with MPC. I'm totally fine with that. It's like what Renegade is doing, like matching. Fine, but, like, it's not so fine. Why not"
+ ],
+ [
+  2,
+  3270,
+  " fine?"
+ ],
+ [
+  2,
+  3271,
+  "Because if you want to do it in a private manner, that, like, it's only I want to trade. I put my trade. You put your you want to trade. You"
+ ],
+ [
+  2,
+  3281,
+  " put your trade. And you want the third party or whatever not to get access needed to my input in regards to yours. Yeah. Yeah. Yeah. You th"
+ ],
+ [
+  2,
+  3291,
+  "e only thing you can do is checking every against every I see. You're kind of brute forcing"
+ ],
+ [
+  2,
+  3298,
+  "Yeah. Yeah. Yeah. Okay. I do. Matching mechanism. I I I'm not sure, like, what's the design that you're in mind. Maybe a HDI. Yeah. That tha"
+ ],
+ [
+  2,
+  3309,
+  "t's actually what I was going for. But so, like, the the the point that I okay. Let's go for this and see the point that I'm making. So this"
+ ],
+ [
+  2,
+  3319,
+  " is, the private voting"
+ ],
+ [
+  2,
+  3321,
+  "application that I was mentioning. So we just really want to keep the vote private. So I think if we want to give a justification for that, "
+ ],
+ [
+  2,
+  3330,
+  "it's like we don't want to know if it was, like, ninety nine percent one or 51 or 49. We just want to know what is the result. And the requi"
+ ],
+ [
+  2,
+  3340,
+  "rements is that the until block t, everything should be public private. After block t, only the final result, either passed or not, should b"
+ ],
+ [
+  2,
+  3349,
+  "e revealed."
+ ],
+ [
+  2,
+  3350,
+  "And, like, there's an effort to use, like, FHC based virtual machines. Basically, a FHC roll up that is, for example, done by Zama. And they"
+ ],
+ [
+  2,
+  3362,
+  " just design smart contracts in a is an in an encrypted way. So the encrypted smart contract, in this sense, means that the state inside the"
+ ],
+ [
+  2,
+  3374,
+  " smart contract is encrypted under FHE,"
+ ],
+ [
+  2,
+  3377,
+  "and the the any state transition function is an FHE evaluation. And the smart contract itself is gonna set the decryption rules. So who can "
+ ],
+ [
+  2,
+  3388,
+  "access and when this can be accessed. And we can build our private voting app with that. So the each vote so the state is the partial result"
+ ],
+ [
+  2,
+  3399,
+  " of the of the referendum of the election,"
+ ],
+ [
+  2,
+  3402,
+  "And the state transition is really just taking an encrypted vote from a user and updating this state. And the decryption rule is set such th"
+ ],
+ [
+  2,
+  3416,
+  "at the decryption is public, so everyone can execute the decryption of the state only when block t is"
+ ],
+ [
+  2,
+  3426,
+  "reached. Does the does this make sense? Yes. So you don't know who voted what, but you know who voted back in that setting. Yeah. Yeah. Okay"
+ ],
+ [
+  2,
+  3438,
+  ". So, I mean, the who voted part, we can protect it with CK. So let's just Okay. Outsource it to some other technology. If we if we care abo"
+ ],
+ [
+  2,
+  3451,
+  "ut this, we can do that. We'd like semaphore or something like this."
+ ],
+ [
+  2,
+  3457,
+  "So the issue with that, I think I had the animation to avoid the spoiler, is that the what what what I was mentioning before so given FHE, g"
+ ],
+ [
+  2,
+  3469,
+  "iven how we describe even FHE originally, there's always this coming back to someone to do the decryption. And so we need someone to to hold"
+ ],
+ [
+  2,
+  3480,
+  " this this secret key, this decryption key."
+ ],
+ [
+  2,
+  3484,
+  "And, of course, like, giving it to just one person is not acceptable. So what at least Zama proposed in their in their paper is to kind of s"
+ ],
+ [
+  2,
+  3499,
+  "plit this key across a committee of people. So they have n committee members. And by"
+ ],
+ [
+  2,
+  3508,
+  "pooling together at least t of them, they can decrypt something. So if there's a vote to be decrypted, a state to be decrypted, you just bro"
+ ],
+ [
+  2,
+  3519,
+  "adcast your request to this committee, and someone will say, okay. Yeah. I'm gonna give you my decryption share. And by pulling together thi"
+ ],
+ [
+  2,
+  3529,
+  "s decryption share, you can obtain"
+ ],
+ [
+  2,
+  3532,
+  "the decryption result. And the risk, as I mentioned, is that there might be misuse of this decryption key. But I think one important point t"
+ ],
+ [
+  2,
+  3544,
+  "hat not many people really speak about is the fact that this can be something undetectable. Because when you speak with, like,"
+ ],
+ [
+  2,
+  3555,
+  "Zama people, so they say that, okay. But this is, like, a Ethereum consensus. Like, we are relying on a on a on a committee, and they can ei"
+ ],
+ [
+  2,
+  3565,
+  "ther behave in a good way or bad way, but it's still the same security assumption. But it's it's actually very different because in a Ethere"
+ ],
+ [
+  2,
+  3576,
+  "um consensus, you can detect someone that is, for example, broadcasting a a blog a blog that is"
+ ],
+ [
+  2,
+  3583,
+  "I don't know. It has some some issue. But here, you can you can think about, like, this committee members. They can literally just meet in t"
+ ],
+ [
+  2,
+  3593,
+  "his room. They can pull together their their decryption share and potentially decrypt the whole state of of the blockchain. And this will go"
+ ],
+ [
+  2,
+  3603,
+  " undetected. So there's no you cannot really account for them"
+ ],
+ [
+  2,
+  3607,
+  "in a way that you can maybe then penalize them financially. There are some papers for for this topic, which I think is also very interesting"
+ ],
+ [
+  2,
+  3627,
+  " and under under researched. And the the keyword is this so"
+ ],
+ [
+  2,
+  3635,
+  "I think this is the paper. Tracer tracing for so there's, like, this paper about, like, accountability for misbehavior and threshold descrip"
+ ],
+ [
+  2,
+  3649,
+  "tion. So this is exactly what I what I was describing. And but I I honestly tried to read this paper, and it doesn't really seem"
+ ],
+ [
+  2,
+  3662,
+  "something actionable, like something that you can say, okay. Let's go and try to implement. It's very abstract, and I I didn't really unders"
+ ],
+ [
+  2,
+  3673,
+  "tand it, to be honest. But so this is honestly a very interesting topic that I think, if solved, help a lot this FHC, let's say, FHC based p"
+ ],
+ [
+  2,
+  3684,
+  "rivate computation systems to add, like, some sort of accountability"
+ ],
+ [
+  2,
+  3689,
+  "and financial slashing mechanism, etcetera. So, anyway, what I was gonna go with is that we can find a solution for that with IO. And the co"
+ ],
+ [
+  2,
+  3702,
+  "ol part is that we don't really want to change the setup. Like, the Xama FHEVM can stay the same, can keep existing as it is. We only change"
+ ],
+ [
+  2,
+  3716,
+  "the component for the decryption part. So rather than relying on this committee, we build a conditional decryptor. We obfuscate this conditi"
+ ],
+ [
+  2,
+  3726,
+  "onal decryptor. We pub oops. We publish it, and then, like, everything else can remain the same. And every time that someone wants to decryp"
+ ],
+ [
+  2,
+  3737,
+  "t something, they can go and"
+ ],
+ [
+  2,
+  3739,
+  "and basically obtain the decryption. But that's the conditional part because, of course, we don't want them to just decrypt whatever whateve"
+ ],
+ [
+  2,
+  3750,
+  "r they want. And we design it in this way. So, like, what I'm what I'm presenting here is, like, how to design a program that if we are able"
+ ],
+ [
+  2,
+  3762,
+  " to obfuscate it,"
+ ],
+ [
+  2,
+  3763,
+  "it's a kind of relatively simple program. If we're able to offersgate this program, we can extend it to potentially offersgate any program. "
+ ],
+ [
+  2,
+  3775,
+  "So we cannot use the the FHE EVM as a infrastructure to just keep state private and manage state transition, etcetera. And we only rely on t"
+ ],
+ [
+  2,
+  3787,
+  "his"
+ ],
+ [
+  2,
+  3787,
+  "small component, relatively small component for the condition decryptor, such that we remove the trust assumption in the committee members t"
+ ],
+ [
+  2,
+  3799,
+  "hat is introduced in in existing FHE VMs. Can you can you this program will take as inputs all all the signatures from, like, a set of valid"
+ ],
+ [
+  2,
+  3810,
+  "ators."
+ ],
+ [
+  2,
+  3811,
+  "Yeah. Yeah. And then say, if the quorum is n out of m, then I release the description key publicly. So we we so we completely remove this pa"
+ ],
+ [
+  2,
+  3822,
+  "rt. Like, the the committee committee doesn't exist anymore. So this is just cut off and replaced by this. But so you're right. Like, the po"
+ ],
+ [
+  2,
+  3832,
+  "int I think that you were making is that"
+ ],
+ [
+  2,
+  3835,
+  "there still must be, like, some way to, like, reach consensus on what needs to be decrypted or not. So it's not out of a thin hair that you "
+ ],
+ [
+  2,
+  3846,
+  "can tell if something can be decrypted or not. And this will rely on a on, like, a consensus proof. So we can, for example, think that in ou"
+ ],
+ [
+  2,
+  3857,
+  "r in our voting application,"
+ ],
+ [
+  2,
+  3859,
+  "the smart contract that is handling this application is designed in a way that there's a slot. So I'm not super familiar with, like, a state"
+ ],
+ [
+  2,
+  3869,
+  " tree or an etcetera. Think you're more familiar than me. But, like, the so let's assume just just there's one slot in the Ethereum state, a"
+ ],
+ [
+  2,
+  3879,
+  "nd everything that goes into this slot is allowed to be decrypted."
+ ],
+ [
+  2,
+  3884,
+  "Okay? So the this noninteractive conditional decryptor will take a consensus proof that is signed by the set of Ethereum validators. Again, "
+ ],
+ [
+  2,
+  3895,
+  "I'm not an expert of that, but I assume that eventually it's basically a signature proof at the end of the day. And this consensus proof wil"
+ ],
+ [
+  2,
+  3905,
+  "l tell that there is a ciphertext"
+ ],
+ [
+  2,
+  3908,
+  "c t y in this slot. And if this proof verifies verified against the set of validators that sign this state, we can then proceed and decrypt."
+ ],
+ [
+  2,
+  3922,
+  " Otherwise, not. So I think if we really want to, you know, boil it down to a simple concept,"
+ ],
+ [
+  2,
+  3931,
+  "what we are really replacing is the the MPC for the for the committee chosen by Zama, etcetera, is replaced by just the Ethereum consensus. "
+ ],
+ [
+  2,
+  3943,
+  "And we we let's say, we still I'm not saying that we remove completely like any trust assumption. But now it's on chain. Yeah. Exactly."
+ ],
+ [
+  2,
+  3954,
+  "Exactly. That's the most important part. Yeah. It's not about who is deciding. It's about, like, being able to audit the fact that someone Y"
+ ],
+ [
+  2,
+  3969,
+  "eah. Yeah. Yeah. So maybe I I misunderstood. I thought that because they need composability between the components,"
+ ],
+ [
+  2,
+  3981,
+  "the entire network, like Phoenix, is encrypted with the same key. Yeah. Yeah. Correct. Correct. So how do you decrypt just one thing and not"
+ ],
+ [
+  2,
+  3991,
+  " the whole thing by mistake by the forward? So Is it part of the of the station? Or So if you if something is not so there's like a the basi"
+ ],
+ [
+  2,
+  4001,
+  "cally, like, the the way the smart contract is designed is that it has some decryption rules."
+ ],
+ [
+  2,
+  4007,
+  "And the way also this proof verification is designed is that, let's say, it it it it is already assumed to know this decryption rule. So if "
+ ],
+ [
+  2,
+  4017,
+  "something let's again, take the example is that everything that is in a slot is decryptable, and everything is that is not in the slot is no"
+ ],
+ [
+  2,
+  4028,
+  "t decryptable."
+ ],
+ [
+  2,
+  4029,
+  "So we kind of our code this information inside our proof verification. And as long as the consensus is telling us that something is in this "
+ ],
+ [
+  2,
+  4039,
+  "slot, yeah, everything can be decrypt because the way the smart contract is is is is designed on a on on another level of the application. S"
+ ],
+ [
+  2,
+  4050,
+  "o you have, like, selective or leadership?"
+ ],
+ [
+  2,
+  4053,
+  "Yeah. Yeah. Yeah. And and, also, this is really like a there's, like, a very old paper from from that is explaining, like, how to build IO f"
+ ],
+ [
+  2,
+  4066,
+  "or any program with a smaller program, what I was trying to explain before. And this is really the the point. So they they just"
+ ],
+ [
+  2,
+  4077,
+  "kind of try to outsource the computation to some FHC system that is that is doing, like, any arithmetic operation, etcetera. And then the IO"
+ ],
+ [
+  2,
+  4087,
+  " is only built for the for the conditional decryption such that you don't need to off scale like so if you think about a program, let's say,"
+ ],
+ [
+  2,
+  4098,
+  " least you reduce it complex its complexity to FHC, which"
+ ],
+ [
+  2,
+  4102,
+  "is still, like, order of magnitude more efficient than IO. So no one orders the encryption to be Yeah. On the obfuscated program? Yeah. Yeah"
+ ],
+ [
+  2,
+  4113,
+  ". Yeah. But but I think that's what I was gonna lend to. Because, like so if you remember, like, the way we describe the obfuscation part, S"
+ ],
+ [
+  2,
+  4124,
+  "o there was, like, this obfuscate API."
+ ],
+ [
+  2,
+  4127,
+  "So so, I I mean, maybe I I would put it as a question to you. Like, what's the still the remaining problem of this? I think you kind of were"
+ ],
+ [
+  2,
+  4139,
+  " alluding to that, or I don't know if implicitly or not. So it's on the key. Let's it's the the issue is on the key. The master's key key? N"
+ ],
+ [
+  2,
+  4151,
+  "o. No. This key key."
+ ],
+ [
+  2,
+  4153,
+  "Well, also, if you want the master secret key because at the end of the day, this is the If someone has the master master secret key, what h"
+ ],
+ [
+  2,
+  4163,
+  "appens? Yeah. The whole thing breaks? Yeah. So if you if you basically if it might but even if not not only on the master secret key, but ju"
+ ],
+ [
+  2,
+  4172,
+  "st even the the key k, which is, like, in our application is the,"
+ ],
+ [
+  2,
+  4177,
+  "for example, like, the potentially, like, the decryption key of of of the of the encrypted blockchain. Yeah. So, like, no. Well, so the the "
+ ],
+ [
+  2,
+  4190,
+  "problem is that in the way that I introduced to IO, there's, like, on the left hand side, there was this key owner Yeah. Which is a single p"
+ ],
+ [
+  2,
+  4203,
+  "erson, really. So if we think about IO this way,"
+ ],
+ [
+  2,
+  4208,
+  "like, yeah, like in the they can disappear. Of course, it's it's noninteractive. But They're still a root user. Yeah. At a certain point in "
+ ],
+ [
+  2,
+  4219,
+  "time, they had this key in their hands. So what we also want is basically some distributed setup for IO. And so, basically, this is similar "
+ ],
+ [
+  2,
+  4230,
+  "to, like, a ZK trusted"
+ ],
+ [
+  2,
+  4232,
+  "setup in which everyone is kind of additionally, homomorphically adding their randomness. And as long as one of them is is throwing away the"
+ ],
+ [
+  2,
+  4245,
+  "ir randomness, this is, like, secure. So this is, like, an area that in research has almost no trace."
+ ],
+ [
+  2,
+  4254,
+  "No one even figure out a problem because there are still other problems to solve before that. But we also have an idea on how to solve theor"
+ ],
+ [
+  2,
+  4264,
+  "etical idea on how to solve this problem. But yeah. So yeah. No. You go ahead. I was just No. No. No. I I was I was also getting to the to t"
+ ],
+ [
+  2,
+  4275,
+  "he file. So my question was about, like so if we go if we go back to our use case about, like,"
+ ],
+ [
+  2,
+  4282,
+  "unfold unfolding the results of the the vote and, like, looking to, like, a specific space in our block, like, how how would we trust becaus"
+ ],
+ [
+  2,
+  4294,
+  "e it's indistinguishable. How would we trust that the algorithm and keep the program is the right one? Yeah. Yeah. I how Yeah. Cannot someon"
+ ],
+ [
+  2,
+  4306,
+  "e spoof the fact that Yeah. Yeah. Yes. Yes. So I think this is like a"
+ ],
+ [
+  2,
+  4312,
+  "this is a good a good point. So and we get this question a lot. So for I think there are, like, two two levels. So one is on the FHC side. S"
+ ],
+ [
+  2,
+  4324,
+  "o I guess that on the FHC side, on the smart contract side, you can see how the evaluation is designed. So, again, let's assume that this is"
+ ],
+ [
+  2,
+  4336,
+  " just adding"
+ ],
+ [
+  2,
+  4337,
+  "stuff. So it's just adding encrypted vault, and it's adding to ciphertext. So this is like a we can assume that this is public. Okay? And so"
+ ],
+ [
+  2,
+  4349,
+  " this is something more familiar that we know. But, basically, this is also the same for for for for this obfuscated program. Really"
+ ],
+ [
+  2,
+  4360,
+  "so everything that is in white in this function, so this computation, the circuit itself is public. So the the person can access when they w"
+ ],
+ [
+  2,
+  4370,
+  "hen they have at their disposal like this c till the the obfuscated circuit. They can see that they are doing, like, an addition, a multipli"
+ ],
+ [
+  2,
+  4380,
+  "cation, an addition, a multiplication. What really cannot see is this k,"
+ ],
+ [
+  2,
+  4385,
+  "which actually still is FHE encrypted. I mean, this is, like, another level of complexity. But still, in our construction, still, FE relies "
+ ],
+ [
+  2,
+  4403,
+  "on FHE underdue. So it's not that we get, like, a computational encrypted data magically. Still, we need FHE in our in our system. Yes."
+ ],
+ [
+  2,
+  4421,
+  "Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Because it makes sense. This was also was also, like, the first observation that I got is, okay. But do "
+ ],
+ [
+  2,
+  4430,
+  "we need verifiable obfuscations such that you need to prove that you obfuscate a certain program? I mean, then it becomes no. But, like, we "
+ ],
+ [
+  2,
+  4439,
+  "don't have this issue. And yeah. So I think the presentation is over. So I just wanted to mention that"
+ ],
+ [
+  2,
+  4446,
+  "we kind of did, like, a chain of, like, reduction in terms of problems. So we we reduced the problem of building IO to the problem of extend"
+ ],
+ [
+  2,
+  4458,
+  "ing FE to this multi input FE. So the way I describe it here is, like, technically, this is called multi input f functional encryption. And "
+ ],
+ [
+  2,
+  4469,
+  "we also reduced the problem of building this"
+ ],
+ [
+  2,
+  4473,
+  "conditional decryptor to building a conditional signature printer. I mean, I don't know if it's really a reduction, but it's at least so, li"
+ ],
+ [
+  2,
+  4482,
+  "ke, the point that I wanted to make is that we don't need to figure out, like, a crazy amount of things. There are just a few very small pro"
+ ],
+ [
+  2,
+  4492,
+  "blems, very specific problems that we need to solve in order to get"
+ ],
+ [
+  2,
+  4496,
+  "to IO. So I hope that at least now it's less scary and you might, I don't know. I have a map in your mind of what what is needed for that. W"
+ ],
+ [
+  2,
+  4510,
+  "hat is the security? What is it using SIS for the hard problems to solve? Yes. So, like, the"
+ ],
+ [
+  2,
+  4519,
+  "so I I I am gonna speak about the security of our extension. So I think security of function encryption, the So this paper relies on a AVAZ "
+ ],
+ [
+  2,
+  4532,
+  "LWE, which is an extension of the learning with our assumption. And this is not considered a standard security assumption."
+ ],
+ [
+  2,
+  4544,
+  "And, actually, the reason I mentioned that they updated the paper was an update based on attack of this evasive assumption that recently hap"
+ ],
+ [
+  2,
+  4559,
+  "pened. So and, actually, in our paper, which I also gonna show, so there's this additional we also add an additional security assumption, wh"
+ ],
+ [
+  2,
+  4574,
+  "ich is"
+ ],
+ [
+  2,
+  4575,
+  "all product. Yeah. Yeah. So I think this is well, I think it's not. I'm most honestly not"
+ ],
+ [
+  2,
+  4605,
+  "I I cannot say I understand this. So only Sora understand this. But so there's an additional assumption that we built on for for our constru"
+ ],
+ [
+  2,
+  4615,
+  "ction, and this is actually where we get a lot of efficiency from. So, really, what what we are also trying to do right now is trying to bre"
+ ],
+ [
+  2,
+  4626,
+  "ak this assumption or at least get"
+ ],
+ [
+  2,
+  4628,
+  "researchers to try to break our assumption. So yeah. And so the the the the answer is that also it's not relying on, like, a super standard "
+ ],
+ [
+  2,
+  4644,
+  "security assumption, but it's more like a creative security. Thank you."
+ ],
+ [
+  2,
+  4652,
+  "Thank you. And at what?"
+ ],
+ [
   10,
   5,
   "And we can start getting my HDMI up here with the slides. Yeah. It's beautiful to look at such a quiet room full of people"
