@@ -1,0 +1,257 @@
+# Cryptography Day 3
+
+Date: 
+Source video: Cryptography Day 3
+Drive: https://drive.google.com/file/d/1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ/view
+Duration: 00:54:22
+Transcribed: 2026-07-27 · deepgram nova-3 · PIT BULL harvest fleet v3
+
+---
+
+[01:28] Alliance that you see here. Quantum Internet Alliance is, is a consortium. It's a European con risk consortium. So you see, we work mostly on the on applications for these, for these quantum networks. Not only, we also do a little bit of hardware. I may mention a little bit later, but, but mostly applications. The goal is to understand what is the quantum Internet, what does it take to build it, and,
+
+[01:53] you know, from our point of view, what is what is it useful for. Okay. So let's start with high level discussions about about quantum. And I'm gonna take the point of view of applications here. And but you know that quantum theory is is an old science today. I mean, roughly a 100 years old. And it has given us already a lot of
+
+[02:17] a lot of things, lots of applications. Probably the first one, one of the most important, is the transistor 1947, which roughly ten years later got the Nobel Prize. So the reason we can use computers already relies on quantum physics.
+
+[02:41] Another thing that came out of what we call the first quantum revolution is the trans the laser, sorry, from '19 from the sixties, the laser, which, of course, also got the Nobel Prize. So the the reason I mean, communication heavily relies on lasers. It's not only communication, but so heavily
+
+[03:05] relies on lasers. So these two these two parts, right, computing and communication rely heavily on quantum theory. And I wanna say that without quantum theory, we wouldn't have information society today. Now what I want to discuss further is what we sometimes call
+
+[03:30] the second quantum revolution. We heard this term a number of times. Again, I'm not going to deep dive into mathematics, but just try to give you some sort of intuition of how things are represented, what they're doing, and and what you can what you can do with with quantum here. So let's start with something you know, which are classical bits.
+
+[03:53] Classical bits have values zero and one. And just for the sake of this, you know, we talk about zero and one, but what I want you to think about is two things that you can perfectly distinguish. Right? So for example, horizontal and vertical is the the representation that I'm going to use for for for quantum bits in the next slide. So these are two things that I can perfectly distinguish, right, whether I'm standing or whether I'm lying.
+
+[04:21] So, yeah, horizontal and vertical. And, of course, something that probably you, you know, everybody has heard about is that quantum bits or qubits are a complex superposition of zero and ones. Right? So I'm not going to say so I'm not going to give you any equation here. You can write them down. Again, you just use
+
+[04:44] two perfectly distinguishable elements, so horizontal and vertical. And I'm writing a complex superposition of these two elements. And this is the pictorial representation that I'm going to use here. So this direction here gives me the me the complex I mean, the elements of superposition.
+
+[05:08] So if you're familiar with complex numbers, you can always think about it as a sphere. And the cubits, these elements of quantum information, are some vector on on the sphere. This is a perfectly legitimate representation. This, of course, is reminiscent of that. But more importantly, what you need to to know about about quantum states is how they operate.
+
+[05:34] And, you know, you can do lots of things with with these quantum states. But, again, because today, my proposal is mostly to talk about communications, we will only do one thing with them, which is measure or observe these these quantum states. And probably more important than these complex super complex superpositions, we very well know how to how to do them classically or how to write them classically.
+
+[06:00] But what is important is that when I measure these quantum states, something really weird is happening. The first thing is that I don't have only one way of observing the quantum state, but several ones. So for example, these are two ways of observing my quantum state. So I can ask the questions, is it horizontal or vertical?
+
+[06:25] Or I can ask, is it diagonal or anti diagonal? So these are physically well defined operations. I will tell you a little bit more about the physics later. But this is the fact that you can have measurements of quantum states, you you have to distinguish the state from from the way you observe it. Right? These are two different mathematical
+
+[06:52] elements in my in my model. And now the really intriguing part or weird part is that when I measure the state, I will actually modify the state. So for example, if I take this state here, I ask the question, is it horizontal or vertical? You see that it's neither of them. Right? So what happens is that I get the answer.
+
+[07:19] If I get the answer, it's horizontal, then my state is collapsed collapse to this one. And if I get the answer that it's, sorry. If I get that it's vertical, it gets collapsed here. And if it's horizontal, it gets collapsed there. So math so okay. Mathematically, it means that I'm performing this operation over that,
+
+[07:44] and then my my object is this one. So mathematically, there's there's no problem defining this mathematical operation. Physically, I I will discuss that a little bit later. So so, yeah, when we talk about qubits, qubits is a mathematical object. Right? It's the mathematical representation of the quantum properties
+
+[08:06] or of the well, of quantum information. So it's purely mathematical, and mapping mathematics to physics is a is a long standing problem. Yeah. Exactly. You've lost this probability
+
+[08:39] because it collapsed. Yeah. Yeah. But why would you collapse by asking a question? I'm sorry? Why can't you answer neither? Because you said neither. I mean, it's a good question, but I'm not sure that neither physics or mathematics wants to, you know, answer questions like why. You know, just describing what's happening is already
+
+[09:03] I mean, this is what has been happening. But I'm I'm going to, you know, just touch these questions and and very give you give you very little idea. Not not on why, but on how people approach these questions in scientifically. Alright. So this what I just said oh, by the way, I wrote here in in very little characters because I didn't want to discuss that that the probability of getting one of those depends on the overlap between the vector and the and the basis. So if I'm perfectly
+
+[09:33] diagonal here, it's exactly fifty fifty. Okay. So this is enough already to introduce our first application, which is quantum key distribution. Quantum key distribution is a cryptographic application. It was it was not historically the first application
+
+[09:56] of quantum information or quantum information processing, but it was the first one that sort of became famous. But the authors of I mean, the the researchers that introduced quantum key distribution referred to something even older called quantum money that was never published. I mean, there's, of course, lots of legends in the in the field. So,
+
+[10:20] basically, what, quantum key distribution does is well, it doesn't even distribute keys, but it allows two parties, Alice and Bob, to establish a key. And the interesting part here is that this key is unconditionally secure, or information theoretically secure, which we know is impossible. I mean, it's something that is impossible to achieve
+
+[10:43] using only classical communication. So now what does it mean, what does it mean, operationally? It means that if there is an eavesdropper here that tries to record the the communication between, Alice and Bob, this eavesdropper,
+
+[11:07] will get caught. You can you can perfectly well, you can you can observe or you can yeah. Well, you can catch an eavesdropper trying to extract some information from the from the from the communication. This is this is very deep, you know, even try if you try to understand physics, but it's also very operational. And, you know, it shows that with the basic principles of quantum information principles,
+
+[11:34] you can get inform you can get computing you can get processing tasks. How does that work? Well, roughly like this. Alice will just generate randomly one of those four states, so horizontal, vertical, or diagonal, antidiagonal. Bob will measure randomly these four states. And then I'm hiding first the details that allow you to extract a key out of that, but it's it's not too complicated. You have to,
+
+[12:03] afterward, you know, agree on which which good I mean, the ones where Alice and Bob used the same basis for generating the state and measuring. This is this is not difficult. Then you I mean, from that, you can try to extract some information or to to to see if information has leaked out of the to to an eavesdropper.
+
+[12:29] More importantly or maybe let me say for later. So where does the security comes from first? Knowing this is basically from from physical principles. And here, I'm just going to give you two of these physical principles. The first one is no cloning. So it is not possible. And this this
+
+[12:52] all follows from the from the mathematical description that I gave you earlier. If you formalize the mathematical description, you will be able you will be able to prove these two these two things. The first one is no cloning. So no cloning, it is not possible to create a perfect copy of a quantum state. So if I have these two or these four quantum states, it's not possible
+
+[13:17] to create a circuit, a quantum circuit, that takes one of the states and outputs two copies two perfect copies of the state. So there is some sort of trade off between so if if an eavesdropper, nevertheless, tries to do it, there is a trade off between the information that goes to to to Bob and the information that goes to the to the eavesdropper.
+
+[13:40] By the sum of these two informations, if you use well defined information operators, the sum of these two informations is bounded. So if if the eavesdropper tries to extract something, then Bob gets less information about what Alice has tried to to compute. And, you know, this is more like you know, these two things I I would
+
+[14:05] I'm not perfectly sure they are they are equivalent mathematically to each other, but at least they are they follow from the same sort of set of operations. The second one is this uncertainty relations, which I'm very sure you heard about before, which is that it's not possible to retrieve the state to get information
+
+[14:29] from both of these observables that I defined earlier. So if I observe horizontal or or vertical, I will not be able to get any information about diagonal or anti diagonal and vice versa. So, yeah, again, you know, trying to to understand sorry,
+
+[14:51] trying to transform these physical principles into, into information processing principles took few decades, around twenty years. But this is something that has been done. So quantum key distribution was defined approximately well, in the sorry. It was published in 1984.
+
+[15:15] And the first complete security proofs for QKD, yeah, from the mid two thousands. So approximately twenty years to get a complete security proof. And what you need for the to to get these security proofs is to have a very nice quantum Shannon theory. Right? So it's information theory that gives you the security proofs. More importantly for us
+
+[15:41] well, actually, what I'm not going to discuss here, but if we want to make this whole thing completely formal, you need to take into account another set of quantum phenomenas that happen, which are losses. So when communicate from Alice to Bob, you will lose a lot of these of these quantum states in practice and errors.
+
+[16:05] So because what I just told you before, when when these quantum states interact with their environments, they will get modified. And this induces errors to in this in this process. But there are ways to fix it. There are ways to take into account these errors, these losses, and put them in the security proofs, extract the key that is perfect between Alice and Bob. And by perfect, what I mean is that an user has no information
+
+[16:35] about what's what's about the key k here. Yes? Yeah. Yeah. Yeah. Look. This is my next slide. What are qubits in real life? And and especially during the the second part of the talk, I'm going to talk about quantum networks
+
+[16:59] and how they are implemented so so it will become clear. You know? So, again, I told you about qubits. Qubits are a mathematical object. And today, especially, there's a huge push toward quantum computing. So we we have lots of implementations of qubits. Right? So there are lots of way there there are lots of physical systems
+
+[17:25] that are described by described by these rules that I gave you before. The one that is going to be relevant for us are photons. Photons is what are used to communicate, so very close to this laser that I discussed earlier. So in photons, the qubits or the degrees of freedom that can be that are described by quantum physics are numerous.
+
+[17:48] Lots of them to the polarization of the photon, how it vibrates, whether it's horizontal or vertical, exactly. The phase, you know, how is the the the wave function compared to zero, but also lots of things for the numbers. I'm not a physicist, so it's very hard for me to to get into details here. Photons are the ones that I understand the most,
+
+[18:13] but there are lots of them, you know, in other systems. Yeah. Yeah. Are the photons the ones we use for particular pipeline? Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. I mean, up to few things. They they need to be clean. Need to be quantum. So they they need to be single photons. In this but not in real life? Or No. In real life, if you want to do if you want to to
+
+[18:37] encode something, you know, that is described by the rules of quantum mechanics, you need to output your photons once once at a time. But it's possible. It's possible modulo some. It's not it's not easy. So you don't need to change the well infrastructure. Exactly. You you'll see the infrastructures later. So there are lots of other,
+
+[19:02] implementations of qubits. In ions, you can have energy levels. In atoms, you're you're gonna have the spin of the electron. If you look at superconducting qubits that you might have heard about from, you know, IBM, Google, and others, they have lots of different ways of encoding these quantum states with super
+
+[19:25] weird things like transmits, fluxonium, XMons. One thing that is sorry. Artificial atoms also have different I mean, there are lots of different ways to reuse current infrastructure. Okay. So now the question that you asked before, what does it mean to collapse for a physical system? For a mathematical object, it's obvious. For a physical system,
+
+[19:50] what does that mean, to collapse in the post measurement state? And the answer roughly is nobody knows what it means. But people try to came up with different explanations for that from that for that. And for very practical reasons, I'm going to to look at one one of these explanations, which is that maybe the idea is that it was already in this state before.
+
+[20:14] Right? So so there are some there there is some there is some other another description of of your physical system for which you could have predicted in advance that this would be the the outcome. Right? So let's look at this. And to understand I mean, to discuss this hypothesis, I need to go you know, we described one qubit. And by the way by the way, we we all we started by saying that having
+
+[20:42] like, we we were looking at a second quantum revolution. And, of course, you know, manipulating single qubit systems got Serge Georges and Dave Weinland here the the Nobel Prize in 2012. So okay. Oops. Yeah. That's right. So now if I want to to discuss this hypothesis, I need to look at not one qubit, but two qubits.
+
+[21:08] And it's sufficient for for us today. Two qubits, mathematically, again, it's something that is very well defined. It was not maybe not defined like that a hundred years ago when people were doing quantum physics, but now it's very easy to you know, after after two years oh, sorry. After two hours of quantum information course, if you take quantum information one zero one, you will see this this mathematical description in in details, and you will have you would see the two qubits. Here, they live in the tensor product space. Right? So I have two spaces, and I take the tensor product states. And if you're if you studied that, you might remember that the tensor product
+
+[21:47] also so it's based on you know, the bay the the basis of the tensor product space is the tensor product of the basis of my spaces. And there are some so it's the you take the linear span of those, and it means that there are these nonseparable states. And these nonseparable states, it gave a lot of hurdles to to trying to understand what does it mean to have a physical system
+
+[22:17] where I have two two two physical systems that I can separate, but my theory only gives me a global description of these two systems. I don't have the theory. The the quantum physics quantum physics doesn't give you a a description of each system individually. And there was a very famous I mean, today, it's very famous
+
+[22:45] article by Einstein, Podolsky, and Rosen from 1936 where they came up with and and it's a fantastic paper. I mean, if you if you have the opportunity to read it, the argument is extremely precise. And it doesn't say and, you know, it doesn't say that quantum physics violates relativity. It doesn't say anything that you might read in popular media. It's
+
+[23:08] very, very neat proof. What they suggest in the article is that precisely, if I wanted to describe the system, there is a theory that is not quantum mechanics, that is an extension of quantum mechanics, where that I can obtain by adding some variables.
+
+[23:31] Maybe I cannot measure these variables. Maybe they are somewhere deep hidden in the systems. But if I had these hidden variables, I could explain the collapse that I discussed earlier. I could also explain this phenomenon, which is called entanglement, by the way, another term that you might have heard. Operationally,
+
+[23:55] the fact that my theory doesn't give me a local description of each system means that if I do an operation on the first one, it influences the second one. So of course, for Einstein, you don't want to violate relativity. And and it's a physical theory, it should be local. So the only what they show is that if if,
+
+[24:19] you know, if these two principles are satisfied, locality and relativity is correct, then you must add variables to your system. So there is not a one one mapping between the physical world and the
+
+[24:41] mathematical description of this physical world. The problem well, the problem. You see, 1936, the answer to this paradox sometimes it's called came in the sixties by another physicist, John Bell, who proved that actually an any any theory that agrees with the predictions of quantum mechanics is necessarily nonlocal.
+
+[25:06] So you you may add these hidden random variable or hidden variables to your system. If the predictions of your theory agrees with quantum mechanics, there will always be these nonlocal systems. Right? So entanglement seems to be something extremely deeply rooted in in quantum mechanics. Yes?
+
+[25:47] Again, there's not really an answer to why. We so you can try I mean, people have been trying to reconstruct quantum theory based on more reasonable principles. It's very interesting, but but, ultimately, there there is always this wall that there are nonlocal correlations. And by the way, these nonlocal correlations don't
+
+[26:13] they they still agree with general relativity. They don't allow you to signal instantaneously. There is an effect, a nonlocal effect, but it it doesn't it doesn't signal. It doesn't doesn't allow you to communicate faster than light. So, yeah, there's no there's no good answer to these questions. The goal is not to understand why it's like this, but to describe the system. And, actually, the reason it was so
+
+[26:41] you know, it took so much time for for Bell to come with this argument is because for a very long time, there was this idea that you should not look at these problems. These fundamental problems should let you should you should not you should just calculate and and prove things in the theory.
+
+[27:05] But Bell is sort of restarting the the idea. And, actually, and, actually, not only he proved this this you know, that nonlocality is so that quantum mechanics is fundamentally nonlocal. But he from from Bell's work, you can also
+
+[27:28] derive a an operational test to to to prove that that that physics that quantum physics is nonlocal. So can you sorry? So can you guess where the story ends? Here? I mean, what's the end of the story here? Well, as always, it ends up with the Nobel Prize. This is the the Nobel Prize of
+
+[27:52] 2022 by Aspect, Closer, and Zeilinger, who were the first to implement this operational test that can be derived from from Bell's work. Well so, yeah, so this is this is it. And the the reason I'm I'm I'm giving you all these Nobel Prizes, it's not only to brag about quantum physics, how awesome it is. It's also to show you a sort of perspective a time perspective. Right? We saw that the the Nobel Prizes for transistors and
+
+[28:28] and laser were from the And now the for for the second quantum revolution, manipulation of one qubit and manipulation of two qubits, the Nobel Prizes are from from 2010 and 2020. So it's not a surprise that we don't have, like, yet the quantum society. Right? It's something that you we should expect for the forties,
+
+[28:54] thirties, maybe fifties. It will it will still take a long time to to to to give us concrete applications. That would be incredible,
+
+[29:16] but, no, actually, their experiment was something, you know, like this, on a table. And you're right. I mean, if you want to if you want to location between have sure that the events are in what we call the
+
+[29:39] disjoint light cones, but but this is not what these experiments were were doing. Actually, this experiment and there are other loopholes, we call them. There are other loopholes in the the detecting rate. You know, if if you you know, when you measure your your your physical system,
+
+[30:03] it might be the case that the so as I was saying earlier, you lose a lot of particles. If there is a model in which these losses are on purpose made to make you think that that this is nonlocal. But if you take the event the loss event, yeah, there is a local model. I mean, it's a little bit
+
+[30:28] difficult to explain, but but you need to take these two loopholes into account at the same time, the losses and the disjoint light cones. And here, the first experiments that proved at the same time we're doing, like, the Bell test closing at the same time these two loopholes. They are from 2014. The the first experiment was was published by in 2014,
+
+[30:55] and then there were a few follow ups in 2015. So it's a very recent work, you know, at the time scale of science. They prove nonlocality or locality? Because it says violation of Bell inequality. So the violation of Bell inequality shows you nonlocality. Yeah. So they they showed nonlocality.
+
+[31:20] No. There's no there's no so nonlocality means that any physical equation describing these pairs of entangled states should you know, you cannot write it as a product of two local equations, but but it doesn't allow you to to signal once again.
+
+[31:47] Yes? Okay. So this is a very good introduction to the second part of the talk. I mean, here, I I was just I was just about to tell you how you can do cryptography with entanglement.
+
+[32:17] So we saw that earlier, I introduced this quantum key distribution. Quantum key distribution is redoing something that we used to do, classically, which is distributing keys, which we know is impossible to do with information theoretic security classically. So the the this is already you know, it's it's the same task but in a stronger security model.
+
+[32:40] Soon, we will see things that are impossible to do classically, completely. And here, we are already close. Using these entangled states, precisely because I don't have a local description of my system, it turns out that I can I can use these properties to to also extract a key by measuring these these two these two quantum states?
+
+[33:02] But by by looking at the violation of Bell inequality, people have proved the researcher have proved that you you only need to look at the statistics to show that there is entropy and there is security in this key. So you don't even need to know what is the physical the underlying system.
+
+[33:25] So you can even purchase a system from from an adversary if you if you can run these tests and prove that, you know, by observing the bell the bell the bell violation, there is some some so there is some violation, then you can deduce security from that. So this is, again, something that is completely impossible
+
+[33:51] classically. It's related to very, very deep, physics, and this is something that we call usually device independent cryptography. Device independent meaning that the cryptography doesn't or the security doesn't depend on who provided you with the system. It's just prove you can you can
+
+[34:15] prove a a bound on the entropy and a bound on the security just by observing the outputs of your of your your protocol. Okay. So now I think I can I'm gonna be quick on the second part. It's just to tell you a little bit more about other applications. Again, I will stay at a high level,
+
+[34:38] but but we're not gonna argue about the why here. It's it's more about the how. So, again, I showed you, QKD, and, but you remember the title of my talk is to discuss the quantum Internet. So we want to go somewhere beyond quantum key distribution. And what does that mean? When we talk about quantum networks,
+
+[35:05] we usually distinguish a number of stages of these networks. So QKD is the, you know, the stage that can run QKD for which you need to prepare a single qubit systems and measure them. That's pretty much it. Send them from one place to another and measure them. But beyond that so and and on the other hand, a quantum Internet
+
+[35:28] is a network where all the nodes are quantum systems, and they can prepare like a joint a joint quantum state. So something that lives in the tensor product of all the states here, which is not what Qkd is doing. Right? Qkd is just sending one state here, and that gets measured there. So usually to I mean,
+
+[35:51] the road map, let's say, from this quantum Internet alliance to to get from QKD networks to a quantum Internet distinguishes these these stages here where so we start from QKD networks. We add repeaters to the to the network. We add then entanglement. I'm going to discuss what are repeaters. Entanglement
+
+[36:13] and then memories to store qubits. And then at the very end, we have quantum system sorry, quantum computing systems that can perform any arbitrary operations. So the interesting thing here is that whenever you have whenever you you you unlock a new technology, like, in terms of quantum information processing,
+
+[36:36] whenever you have a new technology doing that, you unlock new applications. And, of course, what I want to show you today is what are those applications. It's much more important to me than what are those this technology. So I told you about quantum key distribution. I'm going to show you how we can have or no. I'm just going to mention classical confidential computing.
+
+[37:01] Then we're gonna see there is another range of applications called unclinable cryptography and then secure quantum cloud computing. So QKD networks is the current one could say it's the current stage. They already exist. Here, I mean, this is already an old picture old picture meaning, like, three years ago. But but in
+
+[37:24] in the EU, we currently have 27 well, we have 27 member states and 27 test beds being developed. So each member state has its test bed. Asia is probably the most advanced part of the world with China, Singapore, and Korea having commercial deployments as far as we know for China. And
+
+[37:48] import I mean, in The US, they have a different approach. I'm not sure well, they they are already aiming for entertainment distribution for local reasons. Anyway, so so it's it's here. And I just wanted to mention that, you know, using QKD, you can get secure communications. What we one thing that we do at VeriCloud is applications for QKD networks, and what we do is transferring the security
+
+[38:15] to storage to storage security. So we use we use completely classical cryptography on top of quantum cryptography to to ensure the long term security or in unconditional security of your stored data. Okay. So QQD networks are already there. They use
+
+[38:38] mostly optical fiber. So the same optical fiber, you need to the the same optical fiber that we use today, you need to replace the end nodes in order to to emit this single qubit state. They roughly do it. But, I mean, it's sufficiently good to get quantum key distribution, let's say. Now if if I have a network that is more complicated you know, look at this network. I have seven nodes, actually.
+
+[39:06] And I want to be able to exchange a quantum state be between any any pair of nodes of this network. What I need now is is a repeater. I need so you remember, I told you that when we when when we send information over optical fiber, actually, the like, half of the information gets lost after 20 kilometers, I think. So
+
+[39:30] so you you need to to have repeaters. But it's not possible to clone a quantum state. So what does it mean? You know, it's not possible to just to just have, like, a repetition code to to to and and implement it in in repeaters. It this doesn't exist in a quantum world. So there are various ways of getting repeaters
+
+[39:56] using entanglement or quantum error correction, but it's something that is still in labs. It doesn't exist out of the lab. There are companies that aim to get something along that line, but but it's not working yet. I would say you can expect them to to be commercial within the next five years if there is an incentive to commercialize them, of course.
+
+[40:23] No. No. No. No. You can reach using, like, just point to point QKD, you can you can reach, let's say, roughly a 100 kilometers. And then if if you the point is just to to establish keys, you can route the keys on your network. It's not ideal, but this is how China does it, for example.
+
+[40:47] It doesn't mean we can do the same in other parts of the world, but this is how China does it. Singapore, for example, well, I mean, within 100 kilometers, you can reach any two points of the island. Yeah. Once you have repeaters, what is more important to me is that you can you can have classical confidential compute. Confidential computing is just distributed computing where you don't have to reveal your your input.
+
+[41:15] Of course, there are lots of classical ways to do it. It turns out that you can do it with higher security using quantum communication. I'm not going to explain that here. I mean, if you if you're interested in the in the in references, just reach me later. I'm sorry? Do you have higher performance? It's not clear. It's not clear. It's not clear because the
+
+[41:40] yeah. It's not clear. We missed a little bit implementations here in order to to get comparisons. One thing that I wanted to to show you very quickly here is unclinable cryptography. It's this whole set of applications that take advantage of the fact that we don't have
+
+[42:05] sorry, that you cannot copy quantum states. So quantum money, for example, is that you can you can issue these tokens with the physical guarantee that it cannot be cloned. And cloned by encryption. I'm going to show you in more details the certified deletion. Here, this is a website that we use in France that matches patients and doctors.
+
+[42:30] And and you can think of this scenario where you have to transfer your files to the doctor through this website. So the website now has two options. Either it transfers the files to the doctor or it destroys the files because maybe, you know, you found another doctor somewhere else or you're not sick anymore or you went to the hospital. And it turns out that using those principles that I showed you earlier,
+
+[42:54] it's possible to to ask for a mathematical proof that the that the the records have been destroyed. Sorry. And it's quite I mean, again, protocol is easy to write. Proving security is is difficult. You know, either it gets transferred to the to the doctor, and the doctor measures in basis one to extract
+
+[43:19] an encryption key, for example. Or there is a way to encode things so that if you measure the states in the other basis, you can extract a proof of deletion. Yeah. Yes. Okay.
+
+[43:47] You're right. Here, you know, this is my timeline going from QKD networks to quantum Internet. We're here, right, with memory quantum memory networks. There are various ways to to store states. So, again, what when we when we send this quantum information, it's encoded into photons. What we want to have is an end node that can receive photons
+
+[44:12] and transfer them into a quantum state, into the quantum state of something that doesn't move. So photons are very good to communicate because they travel very fast, but they're very hard to manipulate. And and you they tend to be extremely lossy. I mean, you you lose photons every time. So so you need to transfer that into something that is a quantum memory. There are various proposals to to do that.
+
+[44:38] One is to actually make the photon enter an optical cavity. So it's like a perfectly round mirror and where it will bounce in the optical cavity. And, I mean, it's possible to do it in principle. Another one another one is to have an an a cloud of atomic a cloud of of atoms. And
+
+[45:04] when the when the the photon travels or goes through this cloud, it will transfer its state to to yeah. I mean, super complicated. It's super, super complicated. And, again, so the again,
+
+[45:28] things have been proved in labs already. There are a few companies that I can point out to start commercializing these quantum memories, but it's I mean, it's not yet something mainstream. Yes? Yep. So
+
+[45:56] for example, here, imagine your data is just so you you have a file, right, that you transferred, which is encrypted, let's say, with perfect encryption. And you just use that to transfer the the the encryption key. So you're right. If if if the
+
+[46:19] if the files are sorry. If the key is extracted, then, you know, anyone can use it later. I'm just saying that the scenario here is just that this intermediate party here either transmits or destroys the information. And if they destroy the information, then they can provide you with a proof that they did. Well,
+
+[46:47] if you send the data, you will not be able to prove that you destroyed them. Yeah. Yeah. Yeah. Yeah. I mean, it depends. Right.
+
+[47:11] I mean, I was just trying to give you an idea, but but you're right. You can probably build another scenario where it makes more sense. No. No. No. No. No. The the only products that exist now in quantum cryptography are quantum distribution product. It's just an yep. It's science fiction.
+
+[47:38] Okay. The last last one that I want to show you here, very quickly, secure quantum cloud computing. It turns out so the the the problem is just, you know, secure computing. You want to be able to delegate your computation to a to a quantum computer. But, of course, if you so this is something that, you know, ten years ago, IBM put their, quantum computer in the cloud. You can use it. If you do so, you would have to send a clear copy of what you're doing to IBM.
+
+[48:08] So you want to be able to encrypt your computation. This is very reminiscent to homomorphic encryption, of course. The classical one, it's exactly the same problem. And it turns out that there is a very nice elegant way of solve this of solving this problem in a quantum world. It's slightly different. It's called quantum key distribute sorry. It's called blind quantum computing. So you can you can encrypt your computation
+
+[48:32] before sending it to the to the quantum computer. And the interest the interesting thing is that the hardware that it uses is roughly the same as QKD. So if you so with a computation computing power that is QKD, basically, you can not only establish keys, but you can also encrypt a full, quantum computation or quantum circuit before sending it to a to a quantum computer.
+
+[48:56] Of course, this is very long term. You need quantum computers first, but you also need to have an interface that connects your quantum computer to a to a quantum network. So this is the this is sort of the killer app of quantum network, but it's also the furthest term. Alright. This is pretty much it. So we
+
+[49:19] this is just to mention that we participate to to research efforts, and we have an state of the art implementation of this blind quantum computing. Of course, we didn't have a quantum computer to do it, but but we can do some sort of quantum process. In general, I cannot come here without mentioning that this effort that we we participate to, QuantumPunks,
+
+[49:45] is a study group to try to find interactions or good interplay between blockchain and quantum information. If you're interested, visit the website and contact the the founders. They would be a you know, it's a very, very nice way to I mean, this is by joining this group that I got here.
+
+[50:08] This is it. So, okay, just in conclusion, you see that quantum communication today is a mature technology, but it only runs quantum key distribution. If you wanna go beyond I mean, it's hard in terms of physics, but it's also hard in terms of use case design. I tried to give you one, but, of course, it's debatable where whether it's whether it's useful in real life scenarios.
+
+[50:36] So it's not it's not it's not obvious at all. Well, look. This is what I want to say. So the the the furthest term for us is interconnecting quantum computers, connecting them to to quantum networks. This is what we call in house the quantum utopia. This is me. You can contact me if you want more information. I'm gonna hang out here the the whole day. Another thing that is probably of interest for I mean, if you're interested in the topic, we're hosting this quantum protocol zoo. It's just a wiki of the of the protocols that can be run on on quantum networks in general
+
+[51:14] with sometimes simulations of these these protocols. Thank you. So so you're talking about the these these simulations?
+
+[51:40] We use something that is we use quantum network simulators. Luckily, on the nodes, they use something very light. So it's not I I don't remember. So when we say when we say quantum,
+
+[52:03] networks or quantum, does it mean that you have to rebuild the entire communication protocols that, like, I don't know, HTTP, TCP? Yes and no. Yes. You have to rebuild some protocols. So okay. Here's the situation for quantum key distribution. You, when you when you build a quantum communication network,
+
+[52:25] and, you know, I showed you that, they they already exist, it does not replace your classical networks. It comes on top of your classical networks. So you you you make them both work hand in hand, but then you need to design the integration of the quantum cryptography inside your classical network. And this is something that is actually done today by, network operators. Nokia is doing it. Cisco is doing it. And it's, yeah.
+
+[52:52] It's doable. It's doable. But it's not clear how to do it. I mean, if you take anything that beyond QKD, no one has done it. If quantum QKD like, if QKD ever gets efficient enough, do you think we'll just go back to, like, one time pad encryption where you, like, stream
+
+[53:18] the quantum key stream at the same time as you're encrypting the data just one time pad because you can generate the I don't think we're gonna go back. I I well, I don't think we ever use one time padding. True. Yeah. No. No. But I don't think we're gonna use a one time padding encryption. No. No. I mean, one time padding encryption is rather bad in terms of malleability and,
+
+[53:41] you know, the the probability that you have a long zero is quite high, actually. So you can extract a lot of information. Now people people tend to use AES for encryption just to boost the the the key rate, and this is this is already very good, right, because it gives you a quantum resistant, encryption already. Thanks. Thank you. Thanks, everyone.

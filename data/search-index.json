@@ -3885,6 +3885,1781 @@
   "s."
  ],
  [
+  1,
+  88,
+  "Alliance that you see here. Quantum Internet Alliance is, is a consortium. It's a European con risk consortium. So you see, we work mostly o"
+ ],
+ [
+  1,
+  97,
+  "n the on applications for these, for these quantum networks. Not only, we also do a little bit of hardware. I may mention a little bit later"
+ ],
+ [
+  1,
+  105,
+  ", but, but mostly applications. The goal is to understand what is the quantum Internet, what does it take to build it, and,"
+ ],
+ [
+  1,
+  113,
+  "you know, from our point of view, what is what is it useful for. Okay. So let's start with high level discussions about about quantum. And I"
+ ],
+ [
+  1,
+  123,
+  "'m gonna take the point of view of applications here. And but you know that quantum theory is is an old science today. I mean, roughly a 100"
+ ],
+ [
+  1,
+  133,
+  " years old. And it has given us already a lot of"
+ ],
+ [
+  1,
+  137,
+  "a lot of things, lots of applications. Probably the first one, one of the most important, is the transistor 1947, which roughly ten years la"
+ ],
+ [
+  1,
+  151,
+  "ter got the Nobel Prize. So the reason we can use computers already relies on quantum physics."
+ ],
+ [
+  1,
+  161,
+  "Another thing that came out of what we call the first quantum revolution is the trans the laser, sorry, from '19 from the sixties, the laser"
+ ],
+ [
+  1,
+  172,
+  ", which, of course, also got the Nobel Prize. So the the reason I mean, communication heavily relies on lasers. It's not only communication,"
+ ],
+ [
+  1,
+  184,
+  " but so heavily"
+ ],
+ [
+  1,
+  185,
+  "relies on lasers. So these two these two parts, right, computing and communication rely heavily on quantum theory. And I wanna say that with"
+ ],
+ [
+  1,
+  198,
+  "out quantum theory, we wouldn't have information society today. Now what I want to discuss further is what we sometimes call"
+ ],
+ [
+  1,
+  210,
+  "the second quantum revolution. We heard this term a number of times. Again, I'm not going to deep dive into mathematics, but just try to giv"
+ ],
+ [
+  1,
+  219,
+  "e you some sort of intuition of how things are represented, what they're doing, and and what you can what you can do with with quantum here."
+ ],
+ [
+  1,
+  229,
+  " So let's start with something you know, which are classical bits."
+ ],
+ [
+  1,
+  233,
+  "Classical bits have values zero and one. And just for the sake of this, you know, we talk about zero and one, but what I want you to think a"
+ ],
+ [
+  1,
+  242,
+  "bout is two things that you can perfectly distinguish. Right? So for example, horizontal and vertical is the the representation that I'm goi"
+ ],
+ [
+  1,
+  251,
+  "ng to use for for for quantum bits in the next slide. So these are two things that I can perfectly distinguish, right, whether I'm standing "
+ ],
+ [
+  1,
+  260,
+  "or whether I'm lying."
+ ],
+ [
+  1,
+  261,
+  "So, yeah, horizontal and vertical. And, of course, something that probably you, you know, everybody has heard about is that quantum bits or "
+ ],
+ [
+  1,
+  271,
+  "qubits are a complex superposition of zero and ones. Right? So I'm not going to say so I'm not going to give you any equation here. You can "
+ ],
+ [
+  1,
+  281,
+  "write them down. Again, you just use"
+ ],
+ [
+  1,
+  284,
+  "two perfectly distinguishable elements, so horizontal and vertical. And I'm writing a complex superposition of these two elements. And this "
+ ],
+ [
+  1,
+  296,
+  "is the pictorial representation that I'm going to use here. So this direction here gives me the me the complex I mean, the elements of super"
+ ],
+ [
+  1,
+  307,
+  "position."
+ ],
+ [
+  1,
+  308,
+  "So if you're familiar with complex numbers, you can always think about it as a sphere. And the cubits, these elements of quantum information"
+ ],
+ [
+  1,
+  318,
+  ", are some vector on on the sphere. This is a perfectly legitimate representation. This, of course, is reminiscent of that. But more importa"
+ ],
+ [
+  1,
+  328,
+  "ntly, what you need to to know about about quantum states is how they operate."
+ ],
+ [
+  1,
+  334,
+  "And, you know, you can do lots of things with with these quantum states. But, again, because today, my proposal is mostly to talk about comm"
+ ],
+ [
+  1,
+  343,
+  "unications, we will only do one thing with them, which is measure or observe these these quantum states. And probably more important than th"
+ ],
+ [
+  1,
+  352,
+  "ese complex super complex superpositions, we very well know how to how to do them classically or how to write them classically."
+ ],
+ [
+  1,
+  360,
+  "But what is important is that when I measure these quantum states, something really weird is happening. The first thing is that I don't have"
+ ],
+ [
+  1,
+  371,
+  " only one way of observing the quantum state, but several ones. So for example, these are two ways of observing my quantum state. So I can a"
+ ],
+ [
+  1,
+  381,
+  "sk the questions, is it horizontal or vertical?"
+ ],
+ [
+  1,
+  385,
+  "Or I can ask, is it diagonal or anti diagonal? So these are physically well defined operations. I will tell you a little bit more about the "
+ ],
+ [
+  1,
+  396,
+  "physics later. But this is the fact that you can have measurements of quantum states, you you have to distinguish the state from from the wa"
+ ],
+ [
+  1,
+  407,
+  "y you observe it. Right? These are two different mathematical"
+ ],
+ [
+  1,
+  412,
+  "elements in my in my model. And now the really intriguing part or weird part is that when I measure the state, I will actually modify the st"
+ ],
+ [
+  1,
+  424,
+  "ate. So for example, if I take this state here, I ask the question, is it horizontal or vertical? You see that it's neither of them. Right? "
+ ],
+ [
+  1,
+  436,
+  "So what happens is that I get the answer."
+ ],
+ [
+  1,
+  439,
+  "If I get the answer, it's horizontal, then my state is collapsed collapse to this one. And if I get the answer that it's, sorry. If I get th"
+ ],
+ [
+  1,
+  450,
+  "at it's vertical, it gets collapsed here. And if it's horizontal, it gets collapsed there. So math so okay. Mathematically, it means that I'"
+ ],
+ [
+  1,
+  461,
+  "m performing this operation over that,"
+ ],
+ [
+  1,
+  464,
+  "and then my my object is this one. So mathematically, there's there's no problem defining this mathematical operation. Physically, I I will "
+ ],
+ [
+  1,
+  474,
+  "discuss that a little bit later. So so, yeah, when we talk about qubits, qubits is a mathematical object. Right? It's the mathematical repre"
+ ],
+ [
+  1,
+  484,
+  "sentation of the quantum properties"
+ ],
+ [
+  1,
+  486,
+  "or of the well, of quantum information. So it's purely mathematical, and mapping mathematics to physics is a is a long standing problem. Yea"
+ ],
+ [
+  1,
+  512,
+  "h. Exactly. You've lost this probability"
+ ],
+ [
+  1,
+  519,
+  "because it collapsed. Yeah. Yeah. But why would you collapse by asking a question? I'm sorry? Why can't you answer neither? Because you said"
+ ],
+ [
+  1,
+  529,
+  " neither. I mean, it's a good question, but I'm not sure that neither physics or mathematics wants to, you know, answer questions like why. "
+ ],
+ [
+  1,
+  539,
+  "You know, just describing what's happening is already"
+ ],
+ [
+  1,
+  543,
+  "I mean, this is what has been happening. But I'm I'm going to, you know, just touch these questions and and very give you give you very litt"
+ ],
+ [
+  1,
+  552,
+  "le idea. Not not on why, but on how people approach these questions in scientifically. Alright. So this what I just said oh, by the way, I w"
+ ],
+ [
+  1,
+  560,
+  "rote here in in very little characters because I didn't want to discuss that that the probability of getting one of those depends on the ove"
+ ],
+ [
+  1,
+  569,
+  "rlap between the vector and the and the basis. So if I'm perfectly"
+ ],
+ [
+  1,
+  573,
+  "diagonal here, it's exactly fifty fifty. Okay. So this is enough already to introduce our first application, which is quantum key distributi"
+ ],
+ [
+  1,
+  586,
+  "on. Quantum key distribution is a cryptographic application. It was it was not historically the first application"
+ ],
+ [
+  1,
+  596,
+  "of quantum information or quantum information processing, but it was the first one that sort of became famous. But the authors of I mean, th"
+ ],
+ [
+  1,
+  606,
+  "e the researchers that introduced quantum key distribution referred to something even older called quantum money that was never published. I"
+ ],
+ [
+  1,
+  615,
+  " mean, there's, of course, lots of legends in the in the field. So,"
+ ],
+ [
+  1,
+  620,
+  "basically, what, quantum key distribution does is well, it doesn't even distribute keys, but it allows two parties, Alice and Bob, to establ"
+ ],
+ [
+  1,
+  629,
+  "ish a key. And the interesting part here is that this key is unconditionally secure, or information theoretically secure, which we know is i"
+ ],
+ [
+  1,
+  639,
+  "mpossible. I mean, it's something that is impossible to achieve"
+ ],
+ [
+  1,
+  643,
+  "using only classical communication. So now what does it mean, what does it mean, operationally? It means that if there is an eavesdropper he"
+ ],
+ [
+  1,
+  658,
+  "re that tries to record the the communication between, Alice and Bob, this eavesdropper,"
+ ],
+ [
+  1,
+  667,
+  "will get caught. You can you can perfectly well, you can you can observe or you can yeah. Well, you can catch an eavesdropper trying to extr"
+ ],
+ [
+  1,
+  676,
+  "act some information from the from the from the communication. This is this is very deep, you know, even try if you try to understand physic"
+ ],
+ [
+  1,
+  686,
+  "s, but it's also very operational. And, you know, it shows that with the basic principles of quantum information principles,"
+ ],
+ [
+  1,
+  694,
+  "you can get inform you can get computing you can get processing tasks. How does that work? Well, roughly like this. Alice will just generate"
+ ],
+ [
+  1,
+  704,
+  " randomly one of those four states, so horizontal, vertical, or diagonal, antidiagonal. Bob will measure randomly these four states. And the"
+ ],
+ [
+  1,
+  714,
+  "n I'm hiding first the details that allow you to extract a key out of that, but it's it's not too complicated. You have to,"
+ ],
+ [
+  1,
+  723,
+  "afterward, you know, agree on which which good I mean, the ones where Alice and Bob used the same basis for generating the state and measuri"
+ ],
+ [
+  1,
+  734,
+  "ng. This is this is not difficult. Then you I mean, from that, you can try to extract some information or to to to see if information has le"
+ ],
+ [
+  1,
+  746,
+  "aked out of the to to an eavesdropper."
+ ],
+ [
+  1,
+  749,
+  "More importantly or maybe let me say for later. So where does the security comes from first? Knowing this is basically from from physical pr"
+ ],
+ [
+  1,
+  760,
+  "inciples. And here, I'm just going to give you two of these physical principles. The first one is no cloning. So it is not possible. And thi"
+ ],
+ [
+  1,
+  772,
+  "s this"
+ ],
+ [
+  1,
+  772,
+  "all follows from the from the mathematical description that I gave you earlier. If you formalize the mathematical description, you will be a"
+ ],
+ [
+  1,
+  781,
+  "ble you will be able to prove these two these two things. The first one is no cloning. So no cloning, it is not possible to create a perfect"
+ ],
+ [
+  1,
+  791,
+  " copy of a quantum state. So if I have these two or these four quantum states, it's not possible"
+ ],
+ [
+  1,
+  797,
+  "to create a circuit, a quantum circuit, that takes one of the states and outputs two copies two perfect copies of the state. So there is som"
+ ],
+ [
+  1,
+  806,
+  "e sort of trade off between so if if an eavesdropper, nevertheless, tries to do it, there is a trade off between the information that goes t"
+ ],
+ [
+  1,
+  815,
+  "o to to Bob and the information that goes to the to the eavesdropper."
+ ],
+ [
+  1,
+  820,
+  "By the sum of these two informations, if you use well defined information operators, the sum of these two informations is bounded. So if if "
+ ],
+ [
+  1,
+  831,
+  "the eavesdropper tries to extract something, then Bob gets less information about what Alice has tried to to compute. And, you know, this is"
+ ],
+ [
+  1,
+  841,
+  " more like you know, these two things I I would"
+ ],
+ [
+  1,
+  845,
+  "I'm not perfectly sure they are they are equivalent mathematically to each other, but at least they are they follow from the same sort of se"
+ ],
+ [
+  1,
+  856,
+  "t of operations. The second one is this uncertainty relations, which I'm very sure you heard about before, which is that it's not possible t"
+ ],
+ [
+  1,
+  866,
+  "o retrieve the state to get information"
+ ],
+ [
+  1,
+  869,
+  "from both of these observables that I defined earlier. So if I observe horizontal or or vertical, I will not be able to get any information "
+ ],
+ [
+  1,
+  882,
+  "about diagonal or anti diagonal and vice versa. So, yeah, again, you know, trying to to understand sorry,"
+ ],
+ [
+  1,
+  891,
+  "trying to transform these physical principles into, into information processing principles took few decades, around twenty years. But this i"
+ ],
+ [
+  1,
+  903,
+  "s something that has been done. So quantum key distribution was defined approximately well, in the sorry. It was published in 1984."
+ ],
+ [
+  1,
+  915,
+  "And the first complete security proofs for QKD, yeah, from the mid two thousands. So approximately twenty years to get a complete security p"
+ ],
+ [
+  1,
+  926,
+  "roof. And what you need for the to to get these security proofs is to have a very nice quantum Shannon theory. Right? So it's information th"
+ ],
+ [
+  1,
+  936,
+  "eory that gives you the security proofs. More importantly for us"
+ ],
+ [
+  1,
+  941,
+  "well, actually, what I'm not going to discuss here, but if we want to make this whole thing completely formal, you need to take into account"
+ ],
+ [
+  1,
+  951,
+  " another set of quantum phenomenas that happen, which are losses. So when communicate from Alice to Bob, you will lose a lot of these of the"
+ ],
+ [
+  1,
+  962,
+  "se quantum states in practice and errors."
+ ],
+ [
+  1,
+  965,
+  "So because what I just told you before, when when these quantum states interact with their environments, they will get modified. And this in"
+ ],
+ [
+  1,
+  975,
+  "duces errors to in this in this process. But there are ways to fix it. There are ways to take into account these errors, these losses, and p"
+ ],
+ [
+  1,
+  985,
+  "ut them in the security proofs, extract the key that is perfect between Alice and Bob. And by perfect, what I mean is that an user has no in"
+ ],
+ [
+  1,
+  994,
+  "formation"
+ ],
+ [
+  1,
+  995,
+  "about what's what's about the key k here. Yes? Yeah. Yeah. Yeah. Look. This is my next slide. What are qubits in real life? And and especial"
+ ],
+ [
+  1,
+  1010,
+  "ly during the the second part of the talk, I'm going to talk about quantum networks"
+ ],
+ [
+  1,
+  1019,
+  "and how they are implemented so so it will become clear. You know? So, again, I told you about qubits. Qubits are a mathematical object. And"
+ ],
+ [
+  1,
+  1030,
+  " today, especially, there's a huge push toward quantum computing. So we we have lots of implementations of qubits. Right? So there are lots "
+ ],
+ [
+  1,
+  1041,
+  "of way there there are lots of physical systems"
+ ],
+ [
+  1,
+  1045,
+  "that are described by described by these rules that I gave you before. The one that is going to be relevant for us are photons. Photons is w"
+ ],
+ [
+  1,
+  1055,
+  "hat are used to communicate, so very close to this laser that I discussed earlier. So in photons, the qubits or the degrees of freedom that "
+ ],
+ [
+  1,
+  1064,
+  "can be that are described by quantum physics are numerous."
+ ],
+ [
+  1,
+  1068,
+  "Lots of them to the polarization of the photon, how it vibrates, whether it's horizontal or vertical, exactly. The phase, you know, how is t"
+ ],
+ [
+  1,
+  1078,
+  "he the the wave function compared to zero, but also lots of things for the numbers. I'm not a physicist, so it's very hard for me to to get "
+ ],
+ [
+  1,
+  1088,
+  "into details here. Photons are the ones that I understand the most,"
+ ],
+ [
+  1,
+  1093,
+  "but there are lots of them, you know, in other systems. Yeah. Yeah. Are the photons the ones we use for particular pipeline? Yeah. Yeah. Yea"
+ ],
+ [
+  1,
+  1102,
+  "h. Yeah. Yeah. Yeah. I mean, up to few things. They they need to be clean. Need to be quantum. So they they need to be single photons. In th"
+ ],
+ [
+  1,
+  1112,
+  "is but not in real life? Or No. In real life, if you want to do if you want to to"
+ ],
+ [
+  1,
+  1117,
+  "encode something, you know, that is described by the rules of quantum mechanics, you need to output your photons once once at a time. But it"
+ ],
+ [
+  1,
+  1127,
+  "'s possible. It's possible modulo some. It's not it's not easy. So you don't need to change the well infrastructure. Exactly. You you'll see"
+ ],
+ [
+  1,
+  1138,
+  " the infrastructures later. So there are lots of other,"
+ ],
+ [
+  1,
+  1142,
+  "implementations of qubits. In ions, you can have energy levels. In atoms, you're you're gonna have the spin of the electron. If you look at "
+ ],
+ [
+  1,
+  1152,
+  "superconducting qubits that you might have heard about from, you know, IBM, Google, and others, they have lots of different ways of encoding"
+ ],
+ [
+  1,
+  1163,
+  " these quantum states with super"
+ ],
+ [
+  1,
+  1165,
+  "weird things like transmits, fluxonium, XMons. One thing that is sorry. Artificial atoms also have different I mean, there are lots of diffe"
+ ],
+ [
+  1,
+  1175,
+  "rent ways to reuse current infrastructure. Okay. So now the question that you asked before, what does it mean to collapse for a physical sys"
+ ],
+ [
+  1,
+  1185,
+  "tem? For a mathematical object, it's obvious. For a physical system,"
+ ],
+ [
+  1,
+  1190,
+  "what does that mean, to collapse in the post measurement state? And the answer roughly is nobody knows what it means. But people try to came"
+ ],
+ [
+  1,
+  1199,
+  " up with different explanations for that from that for that. And for very practical reasons, I'm going to to look at one one of these explan"
+ ],
+ [
+  1,
+  1209,
+  "ations, which is that maybe the idea is that it was already in this state before."
+ ],
+ [
+  1,
+  1214,
+  "Right? So so there are some there there is some there is some other another description of of your physical system for which you could have "
+ ],
+ [
+  1,
+  1224,
+  "predicted in advance that this would be the the outcome. Right? So let's look at this. And to understand I mean, to discuss this hypothesis,"
+ ],
+ [
+  1,
+  1234,
+  " I need to go you know, we described one qubit. And by the way by the way, we we all we started by saying that having"
+ ],
+ [
+  1,
+  1242,
+  "like, we we were looking at a second quantum revolution. And, of course, you know, manipulating single qubit systems got Serge Georges and D"
+ ],
+ [
+  1,
+  1253,
+  "ave Weinland here the the Nobel Prize in 2012. So okay. Oops. Yeah. That's right. So now if I want to to discuss this hypothesis, I need to "
+ ],
+ [
+  1,
+  1265,
+  "look at not one qubit, but two qubits."
+ ],
+ [
+  1,
+  1268,
+  "And it's sufficient for for us today. Two qubits, mathematically, again, it's something that is very well defined. It was not maybe not defi"
+ ],
+ [
+  1,
+  1276,
+  "ned like that a hundred years ago when people were doing quantum physics, but now it's very easy to you know, after after two years oh, sorr"
+ ],
+ [
+  1,
+  1284,
+  "y. After two hours of quantum information course, if you take quantum information one zero one, you will see this this mathematical descript"
+ ],
+ [
+  1,
+  1292,
+  "ion in in details, and you will have you would see the two qubits. Here, they live in the tensor product space. Right? So I have two spaces,"
+ ],
+ [
+  1,
+  1300,
+  " and I take the tensor product states. And if you're if you studied that, you might remember that the tensor product"
+ ],
+ [
+  1,
+  1307,
+  "also so it's based on you know, the bay the the basis of the tensor product space is the tensor product of the basis of my spaces. And there"
+ ],
+ [
+  1,
+  1318,
+  " are some so it's the you take the linear span of those, and it means that there are these nonseparable states. And these nonseparable state"
+ ],
+ [
+  1,
+  1329,
+  "s, it gave a lot of hurdles to to trying to understand what does it mean to have a physical system"
+ ],
+ [
+  1,
+  1337,
+  "where I have two two two physical systems that I can separate, but my theory only gives me a global description of these two systems. I don'"
+ ],
+ [
+  1,
+  1349,
+  "t have the theory. The the quantum physics quantum physics doesn't give you a a description of each system individually. And there was a ver"
+ ],
+ [
+  1,
+  1362,
+  "y famous I mean, today, it's very famous"
+ ],
+ [
+  1,
+  1365,
+  "article by Einstein, Podolsky, and Rosen from 1936 where they came up with and and it's a fantastic paper. I mean, if you if you have the op"
+ ],
+ [
+  1,
+  1374,
+  "portunity to read it, the argument is extremely precise. And it doesn't say and, you know, it doesn't say that quantum physics violates rela"
+ ],
+ [
+  1,
+  1383,
+  "tivity. It doesn't say anything that you might read in popular media. It's"
+ ],
+ [
+  1,
+  1388,
+  "very, very neat proof. What they suggest in the article is that precisely, if I wanted to describe the system, there is a theory that is not"
+ ],
+ [
+  1,
+  1401,
+  " quantum mechanics, that is an extension of quantum mechanics, where that I can obtain by adding some variables."
+ ],
+ [
+  1,
+  1411,
+  "Maybe I cannot measure these variables. Maybe they are somewhere deep hidden in the systems. But if I had these hidden variables, I could ex"
+ ],
+ [
+  1,
+  1422,
+  "plain the collapse that I discussed earlier. I could also explain this phenomenon, which is called entanglement, by the way, another term th"
+ ],
+ [
+  1,
+  1432,
+  "at you might have heard. Operationally,"
+ ],
+ [
+  1,
+  1435,
+  "the fact that my theory doesn't give me a local description of each system means that if I do an operation on the first one, it influences t"
+ ],
+ [
+  1,
+  1446,
+  "he second one. So of course, for Einstein, you don't want to violate relativity. And and it's a physical theory, it should be local. So the "
+ ],
+ [
+  1,
+  1456,
+  "only what they show is that if if,"
+ ],
+ [
+  1,
+  1459,
+  "you know, if these two principles are satisfied, locality and relativity is correct, then you must add variables to your system. So there is"
+ ],
+ [
+  1,
+  1475,
+  " not a one one mapping between the physical world and the"
+ ],
+ [
+  1,
+  1481,
+  "mathematical description of this physical world. The problem well, the problem. You see, 1936, the answer to this paradox sometimes it's cal"
+ ],
+ [
+  1,
+  1492,
+  "led came in the sixties by another physicist, John Bell, who proved that actually an any any theory that agrees with the predictions of quan"
+ ],
+ [
+  1,
+  1503,
+  "tum mechanics is necessarily nonlocal."
+ ],
+ [
+  1,
+  1506,
+  "So you you may add these hidden random variable or hidden variables to your system. If the predictions of your theory agrees with quantum me"
+ ],
+ [
+  1,
+  1526,
+  "chanics, there will always be these nonlocal systems. Right? So entanglement seems to be something extremely deeply rooted in in quantum mec"
+ ],
+ [
+  1,
+  1545,
+  "hanics. Yes?"
+ ],
+ [
+  1,
+  1547,
+  "Again, there's not really an answer to why. We so you can try I mean, people have been trying to reconstruct quantum theory based on more re"
+ ],
+ [
+  1,
+  1558,
+  "asonable principles. It's very interesting, but but, ultimately, there there is always this wall that there are nonlocal correlations. And b"
+ ],
+ [
+  1,
+  1569,
+  "y the way, these nonlocal correlations don't"
+ ],
+ [
+  1,
+  1573,
+  "they they still agree with general relativity. They don't allow you to signal instantaneously. There is an effect, a nonlocal effect, but it"
+ ],
+ [
+  1,
+  1583,
+  " it doesn't it doesn't signal. It doesn't doesn't allow you to communicate faster than light. So, yeah, there's no there's no good answer to"
+ ],
+ [
+  1,
+  1592,
+  " these questions. The goal is not to understand why it's like this, but to describe the system. And, actually, the reason it was so"
+ ],
+ [
+  1,
+  1601,
+  "you know, it took so much time for for Bell to come with this argument is because for a very long time, there was this idea that you should "
+ ],
+ [
+  1,
+  1612,
+  "not look at these problems. These fundamental problems should let you should you should not you should just calculate and and prove things i"
+ ],
+ [
+  1,
+  1624,
+  "n the theory."
+ ],
+ [
+  1,
+  1625,
+  "But Bell is sort of restarting the the idea. And, actually, and, actually, not only he proved this this you know, that nonlocality is so tha"
+ ],
+ [
+  1,
+  1639,
+  "t quantum mechanics is fundamentally nonlocal. But he from from Bell's work, you can also"
+ ],
+ [
+  1,
+  1648,
+  "derive a an operational test to to to prove that that that physics that quantum physics is nonlocal. So can you sorry? So can you guess wher"
+ ],
+ [
+  1,
+  1660,
+  "e the story ends? Here? I mean, what's the end of the story here? Well, as always, it ends up with the Nobel Prize. This is the the Nobel Pr"
+ ],
+ [
+  1,
+  1671,
+  "ize of"
+ ],
+ [
+  1,
+  1672,
+  "2022 by Aspect, Closer, and Zeilinger, who were the first to implement this operational test that can be derived from from Bell's work. Well"
+ ],
+ [
+  1,
+  1684,
+  " so, yeah, so this is this is it. And the the reason I'm I'm I'm giving you all these Nobel Prizes, it's not only to brag about quantum phys"
+ ],
+ [
+  1,
+  1696,
+  "ics, how awesome it is. It's also to show you a sort of perspective a time perspective. Right? We saw that the the Nobel Prizes for transist"
+ ],
+ [
+  1,
+  1707,
+  "ors and"
+ ],
+ [
+  1,
+  1708,
+  "and laser were from the And now the for for the second quantum revolution, manipulation of one qubit and manipulation of two qubits, the Nob"
+ ],
+ [
+  1,
+  1719,
+  "el Prizes are from from 2010 and 2020. So it's not a surprise that we don't have, like, yet the quantum society. Right? It's something that "
+ ],
+ [
+  1,
+  1731,
+  "you we should expect for the forties,"
+ ],
+ [
+  1,
+  1734,
+  "thirties, maybe fifties. It will it will still take a long time to to to to give us concrete applications. That would be incredible,"
+ ],
+ [
+  1,
+  1756,
+  "but, no, actually, their experiment was something, you know, like this, on a table. And you're right. I mean, if you want to if you want to "
+ ],
+ [
+  1,
+  1772,
+  "location between have sure that the events are in what we call the"
+ ],
+ [
+  1,
+  1779,
+  "disjoint light cones, but but this is not what these experiments were were doing. Actually, this experiment and there are other loopholes, w"
+ ],
+ [
+  1,
+  1791,
+  "e call them. There are other loopholes in the the detecting rate. You know, if if you you know, when you measure your your your physical sys"
+ ],
+ [
+  1,
+  1803,
+  "tem,"
+ ],
+ [
+  1,
+  1803,
+  "it might be the case that the so as I was saying earlier, you lose a lot of particles. If there is a model in which these losses are on purp"
+ ],
+ [
+  1,
+  1815,
+  "ose made to make you think that that this is nonlocal. But if you take the event the loss event, yeah, there is a local model. I mean, it's "
+ ],
+ [
+  1,
+  1827,
+  "a little bit"
+ ],
+ [
+  1,
+  1828,
+  "difficult to explain, but but you need to take these two loopholes into account at the same time, the losses and the disjoint light cones. A"
+ ],
+ [
+  1,
+  1839,
+  "nd here, the first experiments that proved at the same time we're doing, like, the Bell test closing at the same time these two loopholes. T"
+ ],
+ [
+  1,
+  1849,
+  "hey are from 2014. The the first experiment was was published by in 2014,"
+ ],
+ [
+  1,
+  1855,
+  "and then there were a few follow ups in 2015. So it's a very recent work, you know, at the time scale of science. They prove nonlocality or "
+ ],
+ [
+  1,
+  1867,
+  "locality? Because it says violation of Bell inequality. So the violation of Bell inequality shows you nonlocality. Yeah. So they they showed"
+ ],
+ [
+  1,
+  1879,
+  " nonlocality."
+ ],
+ [
+  1,
+  1880,
+  "No. There's no there's no so nonlocality means that any physical equation describing these pairs of entangled states should you know, you ca"
+ ],
+ [
+  1,
+  1895,
+  "nnot write it as a product of two local equations, but but it doesn't allow you to to signal once again."
+ ],
+ [
+  1,
+  1907,
+  "Yes? Okay. So this is a very good introduction to the second part of the talk. I mean, here, I I was just I was just about to tell you how y"
+ ],
+ [
+  1,
+  1930,
+  "ou can do cryptography with entanglement."
+ ],
+ [
+  1,
+  1937,
+  "So we saw that earlier, I introduced this quantum key distribution. Quantum key distribution is redoing something that we used to do, classi"
+ ],
+ [
+  1,
+  1946,
+  "cally, which is distributing keys, which we know is impossible to do with information theoretic security classically. So the the this is alr"
+ ],
+ [
+  1,
+  1955,
+  "eady you know, it's it's the same task but in a stronger security model."
+ ],
+ [
+  1,
+  1960,
+  "Soon, we will see things that are impossible to do classically, completely. And here, we are already close. Using these entangled states, pr"
+ ],
+ [
+  1,
+  1969,
+  "ecisely because I don't have a local description of my system, it turns out that I can I can use these properties to to also extract a key b"
+ ],
+ [
+  1,
+  1978,
+  "y measuring these these two these two quantum states?"
+ ],
+ [
+  1,
+  1982,
+  "But by by looking at the violation of Bell inequality, people have proved the researcher have proved that you you only need to look at the s"
+ ],
+ [
+  1,
+  1993,
+  "tatistics to show that there is entropy and there is security in this key. So you don't even need to know what is the physical the underlyin"
+ ],
+ [
+  1,
+  2004,
+  "g system."
+ ],
+ [
+  1,
+  2005,
+  "So you can even purchase a system from from an adversary if you if you can run these tests and prove that, you know, by observing the bell t"
+ ],
+ [
+  1,
+  2017,
+  "he bell the bell violation, there is some some so there is some violation, then you can deduce security from that. So this is, again, someth"
+ ],
+ [
+  1,
+  2028,
+  "ing that is completely impossible"
+ ],
+ [
+  1,
+  2031,
+  "classically. It's related to very, very deep, physics, and this is something that we call usually device independent cryptography. Device in"
+ ],
+ [
+  1,
+  2043,
+  "dependent meaning that the cryptography doesn't or the security doesn't depend on who provided you with the system. It's just prove you can "
+ ],
+ [
+  1,
+  2054,
+  "you can"
+ ],
+ [
+  1,
+  2055,
+  "prove a a bound on the entropy and a bound on the security just by observing the outputs of your of your your protocol. Okay. So now I think"
+ ],
+ [
+  1,
+  2066,
+  " I can I'm gonna be quick on the second part. It's just to tell you a little bit more about other applications. Again, I will stay at a high"
+ ],
+ [
+  1,
+  2077,
+  " level,"
+ ],
+ [
+  1,
+  2078,
+  "but but we're not gonna argue about the why here. It's it's more about the how. So, again, I showed you, QKD, and, but you remember the titl"
+ ],
+ [
+  1,
+  2090,
+  "e of my talk is to discuss the quantum Internet. So we want to go somewhere beyond quantum key distribution. And what does that mean? When w"
+ ],
+ [
+  1,
+  2102,
+  "e talk about quantum networks,"
+ ],
+ [
+  1,
+  2105,
+  "we usually distinguish a number of stages of these networks. So QKD is the, you know, the stage that can run QKD for which you need to prepa"
+ ],
+ [
+  1,
+  2115,
+  "re a single qubit systems and measure them. That's pretty much it. Send them from one place to another and measure them. But beyond that so "
+ ],
+ [
+  1,
+  2125,
+  "and and on the other hand, a quantum Internet"
+ ],
+ [
+  1,
+  2128,
+  "is a network where all the nodes are quantum systems, and they can prepare like a joint a joint quantum state. So something that lives in th"
+ ],
+ [
+  1,
+  2138,
+  "e tensor product of all the states here, which is not what Qkd is doing. Right? Qkd is just sending one state here, and that gets measured t"
+ ],
+ [
+  1,
+  2149,
+  "here. So usually to I mean,"
+ ],
+ [
+  1,
+  2151,
+  "the road map, let's say, from this quantum Internet alliance to to get from QKD networks to a quantum Internet distinguishes these these sta"
+ ],
+ [
+  1,
+  2161,
+  "ges here where so we start from QKD networks. We add repeaters to the to the network. We add then entanglement. I'm going to discuss what ar"
+ ],
+ [
+  1,
+  2171,
+  "e repeaters. Entanglement"
+ ],
+ [
+  1,
+  2173,
+  "and then memories to store qubits. And then at the very end, we have quantum system sorry, quantum computing systems that can perform any ar"
+ ],
+ [
+  1,
+  2183,
+  "bitrary operations. So the interesting thing here is that whenever you have whenever you you you unlock a new technology, like, in terms of "
+ ],
+ [
+  1,
+  2194,
+  "quantum information processing,"
+ ],
+ [
+  1,
+  2196,
+  "whenever you have a new technology doing that, you unlock new applications. And, of course, what I want to show you today is what are those "
+ ],
+ [
+  1,
+  2205,
+  "applications. It's much more important to me than what are those this technology. So I told you about quantum key distribution. I'm going to"
+ ],
+ [
+  1,
+  2215,
+  " show you how we can have or no. I'm just going to mention classical confidential computing."
+ ],
+ [
+  1,
+  2221,
+  "Then we're gonna see there is another range of applications called unclinable cryptography and then secure quantum cloud computing. So QKD n"
+ ],
+ [
+  1,
+  2231,
+  "etworks is the current one could say it's the current stage. They already exist. Here, I mean, this is already an old picture old picture me"
+ ],
+ [
+  1,
+  2241,
+  "aning, like, three years ago. But but in"
+ ],
+ [
+  1,
+  2244,
+  "in the EU, we currently have 27 well, we have 27 member states and 27 test beds being developed. So each member state has its test bed. Asia"
+ ],
+ [
+  1,
+  2256,
+  " is probably the most advanced part of the world with China, Singapore, and Korea having commercial deployments as far as we know for China."
+ ],
+ [
+  1,
+  2268,
+  " And"
+ ],
+ [
+  1,
+  2268,
+  "import I mean, in The US, they have a different approach. I'm not sure well, they they are already aiming for entertainment distribution for"
+ ],
+ [
+  1,
+  2278,
+  " local reasons. Anyway, so so it's it's here. And I just wanted to mention that, you know, using QKD, you can get secure communications. Wha"
+ ],
+ [
+  1,
+  2287,
+  "t we one thing that we do at VeriCloud is applications for QKD networks, and what we do is transferring the security"
+ ],
+ [
+  1,
+  2295,
+  "to storage to storage security. So we use we use completely classical cryptography on top of quantum cryptography to to ensure the long term"
+ ],
+ [
+  1,
+  2308,
+  " security or in unconditional security of your stored data. Okay. So QQD networks are already there. They use"
+ ],
+ [
+  1,
+  2318,
+  "mostly optical fiber. So the same optical fiber, you need to the the same optical fiber that we use today, you need to replace the end nodes"
+ ],
+ [
+  1,
+  2328,
+  " in order to to emit this single qubit state. They roughly do it. But, I mean, it's sufficiently good to get quantum key distribution, let's"
+ ],
+ [
+  1,
+  2338,
+  " say. Now if if I have a network that is more complicated you know, look at this network. I have seven nodes, actually."
+ ],
+ [
+  1,
+  2346,
+  "And I want to be able to exchange a quantum state be between any any pair of nodes of this network. What I need now is is a repeater. I need"
+ ],
+ [
+  1,
+  2357,
+  " so you remember, I told you that when we when when we send information over optical fiber, actually, the like, half of the information gets"
+ ],
+ [
+  1,
+  2367,
+  " lost after 20 kilometers, I think. So"
+ ],
+ [
+  1,
+  2370,
+  "so you you need to to have repeaters. But it's not possible to clone a quantum state. So what does it mean? You know, it's not possible to j"
+ ],
+ [
+  1,
+  2381,
+  "ust to just have, like, a repetition code to to to and and implement it in in repeaters. It this doesn't exist in a quantum world. So there "
+ ],
+ [
+  1,
+  2393,
+  "are various ways of getting repeaters"
+ ],
+ [
+  1,
+  2396,
+  "using entanglement or quantum error correction, but it's something that is still in labs. It doesn't exist out of the lab. There are compani"
+ ],
+ [
+  1,
+  2407,
+  "es that aim to get something along that line, but but it's not working yet. I would say you can expect them to to be commercial within the n"
+ ],
+ [
+  1,
+  2417,
+  "ext five years if there is an incentive to commercialize them, of course."
+ ],
+ [
+  1,
+  2423,
+  "No. No. No. No. You can reach using, like, just point to point QKD, you can you can reach, let's say, roughly a 100 kilometers. And then if "
+ ],
+ [
+  1,
+  2435,
+  "if you the point is just to to establish keys, you can route the keys on your network. It's not ideal, but this is how China does it, for ex"
+ ],
+ [
+  1,
+  2446,
+  "ample."
+ ],
+ [
+  1,
+  2447,
+  "It doesn't mean we can do the same in other parts of the world, but this is how China does it. Singapore, for example, well, I mean, within "
+ ],
+ [
+  1,
+  2456,
+  "100 kilometers, you can reach any two points of the island. Yeah. Once you have repeaters, what is more important to me is that you can you "
+ ],
+ [
+  1,
+  2466,
+  "can have classical confidential compute. Confidential computing is just distributed computing where you don't have to reveal your your input"
+ ],
+ [
+  1,
+  2475,
+  "."
+ ],
+ [
+  1,
+  2475,
+  "Of course, there are lots of classical ways to do it. It turns out that you can do it with higher security using quantum communication. I'm "
+ ],
+ [
+  1,
+  2485,
+  "not going to explain that here. I mean, if you if you're interested in the in the in references, just reach me later. I'm sorry? Do you have"
+ ],
+ [
+  1,
+  2494,
+  " higher performance? It's not clear. It's not clear. It's not clear because the"
+ ],
+ [
+  1,
+  2500,
+  "yeah. It's not clear. We missed a little bit implementations here in order to to get comparisons. One thing that I wanted to to show you ver"
+ ],
+ [
+  1,
+  2513,
+  "y quickly here is unclinable cryptography. It's this whole set of applications that take advantage of the fact that we don't have"
+ ],
+ [
+  1,
+  2525,
+  "sorry, that you cannot copy quantum states. So quantum money, for example, is that you can you can issue these tokens with the physical guar"
+ ],
+ [
+  1,
+  2535,
+  "antee that it cannot be cloned. And cloned by encryption. I'm going to show you in more details the certified deletion. Here, this is a webs"
+ ],
+ [
+  1,
+  2546,
+  "ite that we use in France that matches patients and doctors."
+ ],
+ [
+  1,
+  2550,
+  "And and you can think of this scenario where you have to transfer your files to the doctor through this website. So the website now has two "
+ ],
+ [
+  1,
+  2558,
+  "options. Either it transfers the files to the doctor or it destroys the files because maybe, you know, you found another doctor somewhere el"
+ ],
+ [
+  1,
+  2566,
+  "se or you're not sick anymore or you went to the hospital. And it turns out that using those principles that I showed you earlier,"
+ ],
+ [
+  1,
+  2574,
+  "it's possible to to ask for a mathematical proof that the that the the records have been destroyed. Sorry. And it's quite I mean, again, pro"
+ ],
+ [
+  1,
+  2586,
+  "tocol is easy to write. Proving security is is difficult. You know, either it gets transferred to the to the doctor, and the doctor measures"
+ ],
+ [
+  1,
+  2597,
+  " in basis one to extract"
+ ],
+ [
+  1,
+  2599,
+  "an encryption key, for example. Or there is a way to encode things so that if you measure the states in the other basis, you can extract a p"
+ ],
+ [
+  1,
+  2622,
+  "roof of deletion. Yeah. Yes. Okay."
+ ],
+ [
+  1,
+  2627,
+  "You're right. Here, you know, this is my timeline going from QKD networks to quantum Internet. We're here, right, with memory quantum memory"
+ ],
+ [
+  1,
+  2637,
+  " networks. There are various ways to to store states. So, again, what when we when we send this quantum information, it's encoded into photo"
+ ],
+ [
+  1,
+  2647,
+  "ns. What we want to have is an end node that can receive photons"
+ ],
+ [
+  1,
+  2652,
+  "and transfer them into a quantum state, into the quantum state of something that doesn't move. So photons are very good to communicate becau"
+ ],
+ [
+  1,
+  2661,
+  "se they travel very fast, but they're very hard to manipulate. And and you they tend to be extremely lossy. I mean, you you lose photons eve"
+ ],
+ [
+  1,
+  2670,
+  "ry time. So so you need to transfer that into something that is a quantum memory. There are various proposals to to do that."
+ ],
+ [
+  1,
+  2678,
+  "One is to actually make the photon enter an optical cavity. So it's like a perfectly round mirror and where it will bounce in the optical ca"
+ ],
+ [
+  1,
+  2691,
+  "vity. And, I mean, it's possible to do it in principle. Another one another one is to have an an a cloud of atomic a cloud of of atoms. And"
+ ],
+ [
+  1,
+  2704,
+  "when the when the the photon travels or goes through this cloud, it will transfer its state to to yeah. I mean, super complicated. It's supe"
+ ],
+ [
+  1,
+  2722,
+  "r, super complicated. And, again, so the again,"
+ ],
+ [
+  1,
+  2728,
+  "things have been proved in labs already. There are a few companies that I can point out to start commercializing these quantum memories, but"
+ ],
+ [
+  1,
+  2748,
+  " it's I mean, it's not yet something mainstream. Yes? Yep. So"
+ ],
+ [
+  1,
+  2756,
+  "for example, here, imagine your data is just so you you have a file, right, that you transferred, which is encrypted, let's say, with perfec"
+ ],
+ [
+  1,
+  2769,
+  "t encryption. And you just use that to transfer the the the encryption key. So you're right. If if if the"
+ ],
+ [
+  1,
+  2779,
+  "if the files are sorry. If the key is extracted, then, you know, anyone can use it later. I'm just saying that the scenario here is just tha"
+ ],
+ [
+  1,
+  2792,
+  "t this intermediate party here either transmits or destroys the information. And if they destroy the information, then they can provide you "
+ ],
+ [
+  1,
+  2804,
+  "with a proof that they did. Well,"
+ ],
+ [
+  1,
+  2807,
+  "if you send the data, you will not be able to prove that you destroyed them. Yeah. Yeah. Yeah. Yeah. I mean, it depends. Right."
+ ],
+ [
+  1,
+  2831,
+  "I mean, I was just trying to give you an idea, but but you're right. You can probably build another scenario where it makes more sense. No. "
+ ],
+ [
+  1,
+  2844,
+  "No. No. No. No. The the only products that exist now in quantum cryptography are quantum distribution product. It's just an yep. It's scienc"
+ ],
+ [
+  1,
+  2857,
+  "e fiction."
+ ],
+ [
+  1,
+  2858,
+  "Okay. The last last one that I want to show you here, very quickly, secure quantum cloud computing. It turns out so the the the problem is j"
+ ],
+ [
+  1,
+  2867,
+  "ust, you know, secure computing. You want to be able to delegate your computation to a to a quantum computer. But, of course, if you so this"
+ ],
+ [
+  1,
+  2876,
+  " is something that, you know, ten years ago, IBM put their, quantum computer in the cloud. You can use it. If you do so, you would have to s"
+ ],
+ [
+  1,
+  2885,
+  "end a clear copy of what you're doing to IBM."
+ ],
+ [
+  1,
+  2888,
+  "So you want to be able to encrypt your computation. This is very reminiscent to homomorphic encryption, of course. The classical one, it's e"
+ ],
+ [
+  1,
+  2896,
+  "xactly the same problem. And it turns out that there is a very nice elegant way of solve this of solving this problem in a quantum world. It"
+ ],
+ [
+  1,
+  2904,
+  "'s slightly different. It's called quantum key distribute sorry. It's called blind quantum computing. So you can you can encrypt your comput"
+ ],
+ [
+  1,
+  2912,
+  "ation"
+ ],
+ [
+  1,
+  2912,
+  "before sending it to the to the quantum computer. And the interest the interesting thing is that the hardware that it uses is roughly the sa"
+ ],
+ [
+  1,
+  2921,
+  "me as QKD. So if you so with a computation computing power that is QKD, basically, you can not only establish keys, but you can also encrypt"
+ ],
+ [
+  1,
+  2930,
+  " a full, quantum computation or quantum circuit before sending it to a to a quantum computer."
+ ],
+ [
+  1,
+  2936,
+  "Of course, this is very long term. You need quantum computers first, but you also need to have an interface that connects your quantum compu"
+ ],
+ [
+  1,
+  2946,
+  "ter to a to a quantum network. So this is the this is sort of the killer app of quantum network, but it's also the furthest term. Alright. T"
+ ],
+ [
+  1,
+  2957,
+  "his is pretty much it. So we"
+ ],
+ [
+  1,
+  2959,
+  "this is just to mention that we participate to to research efforts, and we have an state of the art implementation of this blind quantum com"
+ ],
+ [
+  1,
+  2969,
+  "puting. Of course, we didn't have a quantum computer to do it, but but we can do some sort of quantum process. In general, I cannot come her"
+ ],
+ [
+  1,
+  2979,
+  "e without mentioning that this effort that we we participate to, QuantumPunks,"
+ ],
+ [
+  1,
+  2985,
+  "is a study group to try to find interactions or good interplay between blockchain and quantum information. If you're interested, visit the w"
+ ],
+ [
+  1,
+  2996,
+  "ebsite and contact the the founders. They would be a you know, it's a very, very nice way to I mean, this is by joining this group that I go"
+ ],
+ [
+  1,
+  3007,
+  "t here."
+ ],
+ [
+  1,
+  3008,
+  "This is it. So, okay, just in conclusion, you see that quantum communication today is a mature technology, but it only runs quantum key dist"
+ ],
+ [
+  1,
+  3018,
+  "ribution. If you wanna go beyond I mean, it's hard in terms of physics, but it's also hard in terms of use case design. I tried to give you "
+ ],
+ [
+  1,
+  3029,
+  "one, but, of course, it's debatable where whether it's whether it's useful in real life scenarios."
+ ],
+ [
+  1,
+  3036,
+  "So it's not it's not it's not obvious at all. Well, look. This is what I want to say. So the the the furthest term for us is interconnecting"
+ ],
+ [
+  1,
+  3045,
+  " quantum computers, connecting them to to quantum networks. This is what we call in house the quantum utopia. This is me. You can contact me"
+ ],
+ [
+  1,
+  3055,
+  " if you want more information. I'm gonna hang out here the the whole day. Another thing that is probably of interest for I mean, if you're i"
+ ],
+ [
+  1,
+  3064,
+  "nterested in the topic, we're hosting this quantum protocol zoo. It's just a wiki of the of the protocols that can be run on on quantum netw"
+ ],
+ [
+  1,
+  3073,
+  "orks in general"
+ ],
+ [
+  1,
+  3074,
+  "with sometimes simulations of these these protocols. Thank you. So so you're talking about the these these simulations?"
+ ],
+ [
+  1,
+  3100,
+  "We use something that is we use quantum network simulators. Luckily, on the nodes, they use something very light. So it's not I I don't reme"
+ ],
+ [
+  1,
+  3118,
+  "mber. So when we say when we say quantum,"
+ ],
+ [
+  1,
+  3123,
+  "networks or quantum, does it mean that you have to rebuild the entire communication protocols that, like, I don't know, HTTP, TCP? Yes and n"
+ ],
+ [
+  1,
+  3133,
+  "o. Yes. You have to rebuild some protocols. So okay. Here's the situation for quantum key distribution. You, when you when you build a quant"
+ ],
+ [
+  1,
+  3143,
+  "um communication network,"
+ ],
+ [
+  1,
+  3145,
+  "and, you know, I showed you that, they they already exist, it does not replace your classical networks. It comes on top of your classical ne"
+ ],
+ [
+  1,
+  3154,
+  "tworks. So you you you make them both work hand in hand, but then you need to design the integration of the quantum cryptography inside your"
+ ],
+ [
+  1,
+  3163,
+  " classical network. And this is something that is actually done today by, network operators. Nokia is doing it. Cisco is doing it. And it's,"
+ ],
+ [
+  1,
+  3172,
+  " yeah."
+ ],
+ [
+  1,
+  3172,
+  "It's doable. It's doable. But it's not clear how to do it. I mean, if you take anything that beyond QKD, no one has done it. If quantum QKD "
+ ],
+ [
+  1,
+  3185,
+  "like, if QKD ever gets efficient enough, do you think we'll just go back to, like, one time pad encryption where you, like, stream"
+ ],
+ [
+  1,
+  3198,
+  "the quantum key stream at the same time as you're encrypting the data just one time pad because you can generate the I don't think we're gon"
+ ],
+ [
+  1,
+  3207,
+  "na go back. I I well, I don't think we ever use one time padding. True. Yeah. No. No. But I don't think we're gonna use a one time padding e"
+ ],
+ [
+  1,
+  3215,
+  "ncryption. No. No. I mean, one time padding encryption is rather bad in terms of malleability and,"
+ ],
+ [
+  1,
+  3221,
+  "you know, the the probability that you have a long zero is quite high, actually. So you can extract a lot of information. Now people people "
+ ],
+ [
+  1,
+  3233,
+  "tend to use AES for encryption just to boost the the the key rate, and this is this is already very good, right, because it gives you a quan"
+ ],
+ [
+  1,
+  3245,
+  "tum resistant, encryption already. Thanks. Thank you. Thanks, everyone."
+ ],
+ [
   2,
   2,
   "Okay. Do I need to stand up? Hello. You can do it how you want. Okay. I can leave from here. Welcome, everybody. Welcome, everyone. My name "
