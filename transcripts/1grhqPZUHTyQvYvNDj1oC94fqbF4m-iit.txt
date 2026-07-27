@@ -1,0 +1,517 @@
+# 25 zkVMs: Too Few or Too Many?
+
+Date: 
+Source video: 25 zkVMs: Too Few or Too Many?
+Drive: https://drive.google.com/file/d/1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit/view
+Duration: 02:07:09
+Transcribed: 2026-07-27 · deepgram nova-3 · PIT BULL harvest fleet v3
+
+---
+
+[00:02] Hi, everybody. Thank you, beautiful people in the room. I think we have, yeah, more people in the crowd than panelists, so that's good. That's already a successful panel here in my attendance. So we're here together today to talk about, well, ZKVMs. We just checked right before. There are actually 25 ZKVMs, some of them quite unknown, actually. And today, we're gonna talk about whether that's too few or too many, and also maybe some more technical issues about it. So let's start
+
+[00:32] with, you know, introducing you guys. I I mean, I'm pretty sure some of you guys are quite famous, but let's not only introduce you guys, but also justify why you're here. Maybe for you, it's gonna be easy, Jacob, because, you know, Riscero. Start with the least famous person on this panel. I believe I have the least surprised. You'll be surprised. You have quite the following and asked. No. I think I have the least on all this. But, yeah, I'm Jacob. I work at risk zero.
+
+[00:58] I think people know us for the risk five z k v m at this point, which is getting quite popular. But the second production ready z k v z k v m will always get prompts to start with first. So, yeah, maybe we we switch them to to you, Zach, and there we go. I'm pretty sure people here in the room are familiar with Aztec, but also maybe try to focus on why, you know, why you're here to talking about the KBMs and maybe just give a little bit of context,
+
+[01:27] why you basically know about the KBMs and Yes. The Sure thing. So, yeah. So, yeah, I'm Zach. I'm the CEO of Aspect. We're a group of FirstNet two. So, yeah, why am I here? Well, I think Aspect kind of known for those in the know, as it's known for, like, not really doing much on the VM side as in we have a language nor which directly compiles the constraints. So I suspect I'm here to kind of, like, throw some shade and be annoying.
+
+[01:52] We do actually have a ZK VM. It was was it counted when were 25? No. I don't think it's No. It's not. Yeah. It's actually 26. Yeah. So the ASDIC VM. Because we we need one for the the nonprivate parts of our of our transaction flows. So yes. But why am I here? I mean, you know, I I I ship post a lot on Twitter.
+
+[02:16] I did a little bit of research, did a single plonk back in the day, which turned out to be kind of kind of meaningful. And yeah. You know, I think but mostly, like, what what we're focused on on ASIC as client said proving where we want maximal performance, particularly with regards to resource consumption, which means that we right. For now, we prefer the direct compilation method where you take the program statement and you basically try to find the most optimal constraints without having to go through a VM abstraction.
+
+[02:44] Yeah. We'll get back to that. But, yeah, Maya, up to you. So I am Maya from StarkWare. We build StarkNet, which is layer two z k roll up. And for that and even before that, we have the Cairo VM, which is the first general purpose z k VM. Today, you would call it call it a custom ISA. When we started, it wasn't, like
+
+[03:10] there was no standard, so Good. I mean, it's actually a good representation of kind of what you do with CKVM. Yeah. We have a a good panel, I for that. Well done, the organizers.
+
+[03:52] And we're gonna start actually with Jacob. So first, let's talk about kind of the the classic ZKVM, let's say. So why I mean, how is risk zero, you know, working on VMs? Why are you using, you know, risk five, the ISA, kind of the general purpose, the the classic ZKVM as we as we know it? And then maybe we will, you know, find different flavors of ZKVM
+
+[04:15] with the with the other panelists. Yeah. So risk zero is named risk zero because we use the risk five ISA. Why did our founders pick risk five? I tend to use this analogy. You know, risk five is, like, nice. It's used by a lot of people outside of, like, know, and whatnot. And why do people use RISC V, and where do you find it? The most common place you find is in tiny computers.
+
+[04:39] Class example is Raspberry Pi. And why does a Raspberry Pi use RISC V? It's because RISC V is terribly simple. There's, like, a 100 ish opcodes. And something really nice is if you don't have that many opcodes, you physically have to use less silica, which is nice if your computer is physically tiny. And that translates to being nice for ZK because in ZK, we have these things called constraints.
+
+[05:01] And if we can build a tinier computer, constraints tend to be closely correlated to prover performance. And if we have to do less constraints, ideally, the the prover will be more performant. There's a bunch of other things I would say. Risk five is formally verified. It's maintained by people that are really security focused as well. It never really changes
+
+[05:23] because if you change it, you bork the last generation of hardware, and that's tend to be frowned upon. And then we also get to inherit just like a lot of open source tooling around the risk five community. I would say pretty much all of our performance gains either come from two areas right now, GPU bumping or actually using open source risk five tooling for, like, optimizations,
+
+[05:48] profiling, and sort of doing, you know, high performance engineering. And the nice thing also is we get to use Rust, which I think has really grown in the cryptography space. One cool thing there is also is, like, yes, does Rust have problems? Yeah. Does LLVM have problems? Yeah. But you look at Facebook, Apple, Google, Amazon, they're actually in the process of changing all of their cryptography back ends to Rust libraries,
+
+[06:14] and they're spending you know, they're gonna spend over a $100,000,000 solidifying these libraries. So we're gonna get to inherit that security as well. Okay. Yeah. I think that makes sense. But now I want to hear from actually Maya because you just mentioned that actually, you know, StarkWire was kind of built a CKVM using custom ISA. So, I mean, you know, RISC V seems like the best thing since, like, hot water. So, you know, why not using RISC V for you guys? I mean, what was the the rationale behind it?
+
+[06:44] Is this working? When we started, there was no real discussion around RISC V in the context context of of the the KVMs. KVMs. There There there there was was no no ZKVM. ZKVM. In terms of timeline, we're talking pretty much kind of similar years. Right? Maybe even before? Yeah. Yeah. For three years at least. Yeah. So
+
+[07:13] the Cairo VM was developed by by Starkware really as a general purpose VM that is dedicated for the task of proving code. So we were not thinking about put tooling. When when we considered it, we we thought which direction to go, and we decided to go for the most performant
+
+[07:37] approach improving. This comes at a cost. You have to maintain a language and a compiler, and everything has to work, and the Starknet blockchain is written in Cairo or language, ZK language. So it's a nontrivial way to go, but it's the most performant way to go, we believe. In terms of security,
+
+[08:02] all of our errors, which is the translation from code to proving, basically, is formally verified. We write clean proofs for Stone and for Stuno, our new prover. And we, of course, audit both internally and externally the verifier. So in that regard, I don't think security
+
+[08:25] well, there's always concerns, but if you formally verify. Yes. And we see that when we compare the performance of STU now with Cairo, it outperforms available RISC V based ZKVMs by at least an order of magnitude. Yeah. Mean, we were actually
+
+[08:48] now already talking about trade off between like performance and the wide usage and like is it DevX basically. And actually, back to you, Zach, you were mentioning that you kind of so you do have a ZKVM with Astec, but went more like the ZKDSL way. Is it kind of the logical like almost like going more in the performance side, like a bit like, I guess, Stackway did,
+
+[09:12] even like even going further without actually doing the ZKBM? Well, it's a bit more complicated than that because it's all based around like the targeted execution environment, what we're trying to do because it's very different. It started out very different to risk zero and stock net. Because I think we were kind of starting that again for AIG. I was reading papers from Eli about talking about ZKBMs
+
+[09:38] that had like a one hertz approver rates like back from 2015. But we got started fairly soon after that. And but we have very different focus because back then, everyone was looking at ZK for proving blockchain transactions, doing scaling where the set of kind of operations you want to perform are relatively well understood, as in you know what to optimize for.
+
+[10:03] We wanted to do privacy at Astec. And specifically, why privacy? It's because we wanted to bring we wanted to make blockchain mainstream, which means basically touching real world the the real world on chain. And what that really means is is getting attestations from Web two into Web three, and that means Web two crypto. It means doing things like verifying OAuth within
+
+[10:28] Ezekiel SnarkSecond. It means doing things like verifying RSA signatures for passport proofs, which now, we we have that, well, not we, but they've built that using on top of our pruning tech. And and there's kind of this really nasty, ugly, bullshit Web two type crypto. That's very custom, arbitrarily defined, strange algorithms.
+
+[10:54] And so the path we took was very much modeled on honestly, it was I was looking at the path that computing took in the eighties and the seventies, where, you know, you you have this you have this this brand new paradigm. Right? Like, wow. Computers are a thing. Home computers are a thing. You know? Lots of code. It's a good feature. Everybody's like, okay. We need to get on top of this. And so people start creating these abstraction layers to make it easy to program, programming languages.
+
+[11:21] You know, in the sixties, it's Fortran. In the eighties, it's basic. And and these things provide abstraction layers, which make it the complexity manageable, but they are fucking sorry for swearing. Fucking slow. As in, you know, yeah, you could learn to program computers in basic in the eighties, but if you wanted to make a decent application, you needed to write it in machine code. And, you know, I'm I'm looking at the state of privacy tech in, you know, 2020.
+
+[11:45] I'm looking at what we want to achieve client side, and I'm looking at the technology that we have available. I'm thinking, you know, if you if we if we spread this up at 10 x, we spread this up at a 100 x, we would just like, what would happen is the applications would become a 100 times more complex. It wouldn't become a 100 times faster. And, like, what we want to achieve versus the resources we have, the scale is so off that what we should focus on is,
+
+[12:10] like maximizing the available resources we have at the cost of complexity and not try to create abstraction layers that will I thought would be a bit of an anchor around our necks in the future. And so that's why we went the DSL route. You know? Because, the thing about we can probably get into like, the thing about ZK VMs is they're they're they're beautifully general. As in yes. You can take any program and put them into them. But,
+
+[12:36] typically, you that might be quite slow. Right? Like, a VM has a lot of overhead because you instead of turning your your your your program statement into the constraints, you're turning into op codes, then you're verifying the op codes, which means you need a you need a memory trace. It means you need op code, like, you need to process individual op opcodes. You know, you now have a virtual machine where you're doing loads and you're doing stores reads and writes. And if you just directly dump it into constraints, you don't have that.
+
+[13:02] And and so where was I going with this? Yeah. So we went, yeah, I was sort of talking. Thank you. So we're like, yeah, let's just try DSL. Let's just do this the more direct way where you take the the language tenant to constraints. You know, we we our approach to making the complexity manageable
+
+[13:25] was much more at the DSL layer, like, where we looked at LLVM as an example, you know, NOAA doesn't compile directly to constraints, despite what I've been saying. It compiles to an intermediate representation, which isn't designed to be chunked into a virtual machine. It's designed to be taken by a back end compiler and converted into constraints. So it means it's modular. It means it's portable, more or less. So you get those advantages.
+
+[13:49] But much like in the in the the in the in the kind of the real world where you have this you know, you can have directly compiled programs in languages like Rust, where you can have interpretive programs in, like, in JavaScript or Java, you have this trade off between portability and performance. And, typically, the VMs will always be slower than the direct compiled code, and we thought that would be the same for snug circuits. So that's the way we went. Yeah. It's like pushing the ZKVM
+
+[14:13] up to the point where it's not a ZKVM anymore, basically. Because, I mean, for performance reason, you had to to do things differently for, you know, clients approving, etcetera. So yeah. I saw you you picked the mic. I guess you want to to react to that. To answer to this, I it feels like maybe we're at the very, very beginning of an attempt to blur the lines between VMs and non VMs. Because I think to the point of Jacob saying, people don't change, like, specifications such as risk five very often because they're hampered by hardware.
+
+[14:43] In the land of VMs and ZK, you're not really. And the newest designs of provers allow you to add as many opcodes as you want, and they make the ISA very almost not fungible, but very add on like. And we saw it because VMs, as you mentioned, Zach, used to be slow. Now they're faster. And they have identified bottlenecks in which
+
+[15:07] that that they can offset by building what they call precompiled or specialized chips. But now I it feels like we're gonna get into an era where there might be as we'll see, but it doesn't add so much cost to add a precompile, less formally very formal verification and bugs. We might come into a place where VMs have extension packages, and and they are completely fungible between VMs.
+
+[15:33] Kind of maybe I don't know if this is correct, but maybe like the SIMD extension of of ARM. So you might see RISC V, like, borrow precompiles from Cairo and then compose at the proof level. So I I have a very good opinion on that. Yes? Yeah. Okay. So I I think that I understand that why precompulsory come about, and it's quite a natural way of doing things. And I think they are trapped
+
+[16:00] in the way that SIMD was a trap for Intel, not not ARM. Intel back in the February where the idea was, okay. So, know, it's it's like the was it early two thousands, and Intel's like, you know, this Cisco architecture we have is kind of a pain. How do we compete with risk? How do we, like, get more performance? Oh, I know. We'll do vectorization, right, where we'll we'll do lots and lots of instructions in parallel. And, you know, this isn't currently how programs are written, but we'll let the compilers figure it out. You know? The the the compiler engineers are clever. They'll figure it out. And
+
+[16:28] spoiler alert, they didn't. Compilers engineers looked at this, and they're like, no one uses this stuff. This is really complicated. Bleh. And that was one of the reasons why, that that led to, I believe, AMD's, first period of domination of Rintel because basically Intel made this this decision to do vectorization. That was too complex at the time. And and so I'm like, this at that lunch. And and so what do I think is a trap for the g k world? It's because
+
+[16:57] precompiles are are great until they're not. As in if you want to achieve completely general purpose compute, but, like, the fundamental VM architecture is a little bit slow, then it's you know, if you're like a protocol engineer, right, like building, like, a an EVM prover, right, it's fine to go, oh, well, you know, Ketchack is slow in this VM and, Charles Flow, so we'll just write recompiles for that. But it's not you're going to random engineers and going, can build your app in ZK, and the app is slow, and the write a precompile.
+
+[17:26] Because writing a precompile is basically like defining a bunch of custom polynomial algebra. Way beyond the domain knowledge of a typical engineer that's not a cryptographer, not in ZK. And so it it's a way of getting VMs to scale for applications that the VMs scale
+
+[17:52] but, like, right now, because it's a kind of a very closed bubble, right, where who the people consuming ZK VMs there, either our VM engineers, they're very close to it. Right? So they can they can write complete compiles. They can figure it out themselves. If you if you wanna get real mainstream adoption, if you wanna get web two people starting to use this tech, then the precompiled abstraction is going to going to crash and burn because because, it's really,
+
+[18:16] really what what it's a statement saying only VM engineer VMX are able to handle the complexity required to speed up applications, and and I don't think that's scalable. So I think it's not like an either or kind of situation. So you have people working on ZKVMs,
+
+[18:38] and they can write precompiles for things. Like, for instance, I'm very biased. Like, we write precompiles mainly to support the StarkNet functionality. So we introduce it's not called precompiles in Cairo. Just an opcode for the Cairo VM because we write the VM. But we introduced precompiles to help speed up the execution of StarkNet because that really needs to run fast. But the language is general purpose, and we optimize for that to run fast
+
+[19:07] both on client side and for general smart contracts on Cairo. There's no uncertainty. It's not If was true, you wouldn't need to pick a bus because it would be fast enough. Fast enough is not fast enough. Well, fast fast enough is not a well defined notion. But if it's not fast enough to you, why is it gonna be fast enough that anybody else that's consuming all the end? First of all, it is because it's different scales. If you run a small program on your computer and you want to prove it for your specific
+
+[19:35] smallish application, then you can do that, and it's good enough. If you want to run a server farm to be an operator of a closed network, then you can invest in precompiles or built ins or whatever you want to call it or codes that are good for you. You don't have to I don't see it as a being I don't see why a purist approach to this is the right choice. I'm not being a I don't I'm not being a purist. I I just see myself as much as fragment as because
+
+[20:01] when I said the this approach doesn't scale, I think you're very much validating what I'm Yeah. Great.
+
+[20:30] You want to add something on precompiled? I just I think a nice thing right now is you only need, like, eight precompiled, and some ZKVMs have already written it. I will preface that with we're pretty much just proving EVM, like, state transition functions. I do think the work that Powder Labs is doing here with auto generated precompiles is very interesting. So they're making it to where you, like, write a general purpose program,
+
+[20:54] and then I'm gonna butcher the actual architecture so bad, but, like, they have a compiler that can, like, sort of generate a precompile for you that then goes in a general purpose CKVM, which I think is pretty dope. And we're definitely tracking the work they're doing over there. I mean, do you want to add something, I was gonna mention those as well. I just think one, it might be like a eruption of AI, but also explain why there are so many ZKVMs out there. I
+
+[21:22] think there are, like, 25 ZKVMs, but there is really, like, three or four architectures, maybe five, and then adding little twists to it. So you can add twist to the proof system, but you can also add twist to maybe the precompile. So I agree that it's not scalable. If you see precompiles or adding new extensions to your ISA as a very cumbersome process of adding constraints
+
+[21:44] by hand and having humans to do it. If you design some kind of DSL that allows you to, with a small subset of opcodes, create like, strong locality like computations, kind of like what auto prep combiners are doing or maybe the Zurgen or other languages, you could technically have more scalable ways to to to do it.
+
+[22:08] And I have one question, but vis a vis Asthek. You guys have black boxes. I wonder if it's close to a precompiled or it's different. Yeah. So it's a good point. The black boxes are they are maybe slightly a little bit of technical debt, as in you're right that they are close to precompiled. The idea is that instead of writing a little algorithm in Noir, the idea is, like, well, our back end has, like, very, very optimized series of constraints that that that have been created that use
+
+[22:37] it uses parts of our operating system that aren't exposed by NOR because they're complicated. So our goal is to remove those black boxes. And I do think it's different because at best, they give you like a 2x speed up. It's not dramatic. You can remove them entirely. And I wanna give an example of, like, the difference in in iterations scale of iteration between precompiles and the DSL. With the CK passport team, because I was chatting with Teo, and he was saying to me, oh, like, the the Italian passport uses SHA-one,
+
+[23:07] which is terrifying. So they were like, we need SHA one support. So I'm like, SHA one. Okay. So I basically I threw I threw together a null library in two hours at SHA one. Job done. Right? Because it's it's easy. Right? And, you know, if I try precompile for for SHA one, like, that's not that's not two hours. That's like scheduling a sprint with a team on a on a progress board. And, you know, yes, my I will I will change my tune if if tooling like Powder can get to the point where you can really do this stuff
+
+[23:36] really effectively, in a very natural way, that an average Web two engineer can understand. But, I think we're quite far away from that being practical, whether with without, like where Powder isn't adding in a lot of lot of things that slow things down substantially. But what if sorry. I wanted to add to that that, like okay. For for stew now, we could go for
+
+[24:01] precompiles for things that we had precompiles for for Stone, such as Ketchak and Chateau, I believe. Yeah. But but we we didn't. It wasn't worth the time to to do it, so we just implemented them in Cairo zero. And now when you call built in for Ketchik, it's just Cairo code in our back end.
+
+[24:23] So it's fast enough for for starting it. I was gonna say, to your example of writing fast, like, a SHA-one library in NOR, to some ZKVMs, this would be considered almost a precompile because it's a it's a constraint. And if What I'm saying is what if the ZKVM supported add on with NOR, for example, and then they just treated it as a precompile because Noir compiles to a constraint. So you're saying, oh, today, ZKVM's
+
+[25:06] engineers have to go to the low level and write the constraint for SHA one by hand to STO back end. But what I'm saying is in a world where people are looking into it, then it means that you would have your ZKVM, like, RISC V, and then, like, a NOR precompiled library where you can add as many NOR code and just get bundled into your proof. Yeah.
+
+[25:55] Yeah. So, I mean, like, for context, for us to write a precompile with our DSL. Transferred into a precompile in Riserum, which is pretty dope. Not ready for production and or releasing it to the public, but something we thought about. Like,
+
+[26:24] I think I chatted with someone from your team, like, last ZK Summit. Definitely a thing you could do. We have a lot of work to do, so we won't prioritize productionizing that, but Nice. It's a thing. Well, I just wanna add, you know, like, I've I've come across as having some strong principles here. But, you know, if if ZKVM starts to integrate Noir, then I I have other principles too. You know? And I will I will
+
+[26:46] will sing the praises of your ZKVM, you know, and, yeah. Yeah. I think we already touched quite well on to pre compiled aspects. Is there maybe any other, like, I don't know, angle, like differentiation ways, you know, between these 25 g k v m's? So we kind of understood that pre compiles maybe is one aspect. Other like we didn't really touch too much about like the ISA.
+
+[27:11] So yeah. Is it maybe the other big differentiation factor for for TKBN? Yeah. Go for it. I would like to talk about a differentiation factor that people never talk about, and that is Security? No. No. No. Not security. I think that's coming We have to talk about it or something. Yeah. We do. But use cases, like, personally, like, you ask me, like, is 25 z kVMs,
+
+[27:33] you know, too many? The answer is it it's, like, just not enough. Right? Like, you need, like, custom z k VMs probably to do, like, custom use cases. And the problem is is that, like, everyone's pretty much just proving ETH blocks right now. And I would probably say 25 is a little too much for that single use case. But, like, very interested in client side proving with, like, something like Noir
+
+[27:56] or Maiden or, you know, doing, like, web proofs in certain ways. I think that's where we need differentiation. Let's talk about, like, custom ISAs and and stuff. I mean, yeah, I guess, ISAs is a a mean to an end than being the different use case. You want to add something? I wanna build on what you're saying and say that
+
+[28:19] asking whether there are too many ZKVMs or should we use customize. Like, typically, when you start building something, you have a purpose for which you're building it. And I I feel like maybe this is kind of what's lacking a little bit. So everybody knows that this for years, everybody has known that this is groundbreaking technology, like the ZK proofs,
+
+[28:42] finally, blockchains are a use case. Okay. We need to use ZK. But there's still, like, a little bit of a sense that people don't know what they're building towards. And I think we we also, of course, at StarkWare had these considerations. And at some point, you pick a direction and you have to optimize for this direction even if it's it means that yours, KVM
+
+[29:05] isn't necessarily optimized generally. But it's optimized for what you're doing and you have a purpose in mind. So I think that's it. I mean I mean, that makes sense. Yeah. You want to add something, Nico? Use cases. I think ReZero was the first one. Yeah. Yeah. Yeah. But, like, know, iStack's focusing on privacy. Y'all are focusing on, like, client side proving. I think some people are focusing on, like, web proofs. I think that's really fascinating.
+
+[29:34] Right? I think the reason why I personally work on ZK is not to prove Ethereum blocks forever. I think one day, right, ZK is, like, as important as key pair cryptography. So let's start diving into web two stuff and, like, talking to big tech companies and, okay, what do you need? And let's optimize for that. I think one example is we had chatted with, like, a big tech company that wanted to generate proofs on an iPhone
+
+[29:57] for, like, RSA signatures. So we actually, like, forked risk zero and then made, like, a much more custom thing. And we actually got it to, like, a decent time. We could generate an RSA signature in, a second and a half, but it's, like, a, like, heavy fork compared to, like, what we let people use today. Yeah. Yeah. I mean, too few, too many. It really depends on what in your lens. Right? Are you looking at it from a product perspective? Are you looking at it from an ecosystem perspective? You know, if I was, you know, if I was dictator of the universe, I wouldn't force
+
+[30:27] these teams to use fewer ZKVMs. Very kind of you. Very welcome. But that being said, you know, I don't think it's wise. You know, if a new team comes up and they're like, we're doing a new ZKVM to preview VM blocks, then it's like, great. You're gonna die. But Risk five. Mhmm. Three. Yeah. But but but but their contributions before they die may be useful in incorporating to other things. So they'll so it'll be useful in that way. And,
+
+[30:55] I mean, it's it's it's evolution. Right? It's natural selection. You know? Like, every every species is exploiting some kind of ecological niche. If you have two species exploiting the same niche and they're undifferentiated, one of them will be better at it, and the other one will die and go extinct. Because there's more competition. Yeah. And, yeah, I think what needs to happen is, you know, that the like, if you if you have a custom VM, like, it need you need it needs to have a purpose that's unique from others and needs to have a serve some kind of unique value proposition. That's
+
+[31:24] not really the case right now with the 25 z KVMs, but that'll shake out soon enough. Right? I can give a a wish list for, so I think '25 is a good number for us to iterate and and exchange. For example, the Zisk team, when I saw Polygon was building on this file, it was like another one. And then in a few, like, months, they came up with
+
+[31:50] a way to 10 x tracer speed a trace generation speed. And everyone was like, oh, okay. We have to incorporate this. So I I think in some sense and at the beginning when a succinct fork the zero, like, tool chain, people were like, oh, they're forking. It's open source, it's forking. But then they came up with the Jack, the polynomial and the Hypercube, and then they proved the theory in real time, most of the blocks. So I think it's quite nice. And as a community, like, at the beginning, we're fighting or very tribal.
+
+[32:18] Towards the end, we're saying, okay. Everything is the same thing in some sense because now people are agreeing that you probably want to compile from Rust or some high level language. So for example, Maeden started they were a very custom ZKVM. Now they're saying, okay, guys, we're adding WebAssembly modules. So we want higher level language support. Same for Petra. Cairo, we're thinking about being able to compile higher level languages as well. So
+
+[32:41] that's that's one thing we kind of agree on. We say, okay. High level language is good. Custom stuff, you guys have Rust, but your recursions recursion is coded in to your DSL. So we agree that DSL are good. So I think, yeah, high level language is a must. So I think people are going to convert to this custom
+
+[33:04] optimizations for recursion and then pushing the research the research field. So I I think I wanna add that high levels are good for end developers and lower levels are good for speed and performance. And that's okay for them to coexist because some people want to drive performance and some people want stuff that's easy to do in a short period of time.
+
+[33:29] But, also, I I wanna say that the eth proofs race, it it has very good aspects in the sense that it seems to be driving the technology forward. But it's also, I fear, kind of like, everybody overfitting their models to a single, like, dataset. So it's kind of, in that sense, maybe biasing the whole industry towards the direction that might not be that interesting.
+
+[33:55] So are you guys all agreeing that Justin Griggs is basically causing you to prove theorem block and that's I mean, is it good or bad? I mean, it's not causing me to prove Ethereum block. He's not there. He's not there. I was like honestly, peak mindshare for ZK was probably two, three years ago. That sound about right, Zach? Everyone was, like, super hot. I mean, it's pretty much the thing. Yeah. I mean, it's we're trending up and, like yeah. I want ZK to be the hot thing, and the only way that's gonna be is, like, is everyone is, like, making advancements, and we have a really nice crew.
+
+[34:35] Big? Today, not in the same way it was because there's less of us focus on the tech and more focus on what can this tech actually do, what are the products that you can build with it, which I think is completely appropriate. And, you know, I think it's no longer interesting if someone's like, you know, my ZKVM is 10% more performant than the other one. Great. Good job. What can you do with it? Yeah.
+
+[35:01] I think also two years ago, the fight was circuit versus ZKVM. Today, it kind of sounded like ZKDSL versus ZKVM, but I think we've we're past that some extent. It's not even a fight because it's like we have different, like, all the Yeah. Different trade offs and use cases. Expect, like, an l two a transparent l two to use a DSL. And yeah. Like, I'm not
+
+[35:25] no. Genuinely. If I was if I was proving if I was proving EVM blocks, I wouldn't use a DSL. I I don't use this. I just I just use, like, risk zero or, like, folks do or or use SP not. Yeah. It's just every every niche has a different way of exploiting it. But I think one cool is can you prove on the edge devices and the local proving for privacy, but even for decentralization
+
+[35:48] to some extent. Because the over maybe the overfitting so I I know it might be temporary, but the overfitting of the e proof challenge are pushing people to have data centers to prove, Etherm or blockchain. I think it might be interesting to look into ZKVM plus client side proving stuff. So that's that's also what we're doing right now. So in in this in the land of Cairo, but also Stu. So what if you could prove Etherm, but just one CPU, one GPU
+
+[36:16] in real time? Let me do it in the browser. Yeah. In the browser. Yeah. I mean, yeah, like, I I agree with you. That's it. Because we've been focusing on very different things where, like, the the narratives around the the l twos would like, we've we've been living in a parallel dimension, right, where for years, the okay. Right? That's fine.
+
+[36:45] Secrets in it. What do you do? And so, like, everything we've done is tailored towards client side proving. I mean, it's to the it's completely different. SDK stack is complete predict the future future will probably trend towards the, like, error error correcting codes, 32 bit prime stuff. But today, if you wanna do client side proving today efficiently with low memory,
+
+[37:10] I think we made so I just don't wanna be arrogant. I think we made all the right choices because, you know, like, today, like, take ZK passport. It's on the App Store. You can download you can, like, download it right now. Like, go to the App Store and and download ZK Passport. Right? And it's using ZK Proof's client side, and it's really fast. So, yeah, I think I think there has been a huge amount of overfitting, and the ecosystem has suffered a little bit because of it. I want to say that I think our stacks are not that different
+
+[37:37] technologically. Right. Look at them. Not that different. I mean, conceptually, probably not. But, like, in terms of implementation, right, like, if you're doing error correcting codes versus ECC, you're doing 32 bits versus two five six bit. Like, it gets really messy. If you read it in two papers detailing what you what you did, these are constants. Right? Listen. If you wanna put a PR into a Brattenberg to, like, to add add stew, you know, I would I'm all in favor of it. You know? It's it's easy. You should do it. Twenty minute job. Quick. You know, it'll be really quick. Really quick.
+
+[38:09] So there is there is one thing I want to talk about. I had this maybe talk about benchmarking, but actually, instead of benchmarking, I want to talk about the thing that most people don't talk about, which is the security. I so, yeah, I I want to hear you guys talk about about how you, you know, contemplating that problem. Like, you know, I how do you make sure that there is no less bug? How do you for that, you know, maybe we can talk about form verification.
+
+[38:33] So, yeah, I don't know. Maybe Jacob, we can start with that. And, yeah, I'm curious to hear about whether than comparing the performances and, yeah, which is faster or minus 10%. Like Yeah. I mean, the tech is new. There will be bugs. I think a big, like,
+
+[38:57] point is, like, how are you gonna deal with bugs and how are you gonna constantly check and have robust pipeline? Like, you know, security is always a journey. It's never a destination. You're never there. You know, the current state of security in some ZK projects saddens me at times because I think a large bug is just gonna hurt us all. So I would hope that we hold each other. You know? I think if someone would have done a trusted setup ceremony
+
+[39:22] three years ago and only had the team members do the trusted set setup ceremony behind closed doors, they probably would have gotten called out on Twitter pretty hard, but we don't do that anymore. So, yeah, I think there's great work. 20 mil up for grabs right now for formal verification. If you're looking for work from the EF, there's a bunch of cool tools. Happy to work with anyone on that. We have a few tools right now that,
+
+[39:46] you you know, are are actually in production. One's called Pikus where now. We check under, which is pretty dope. Yep. Shout out to Veradis for building that one for six months, which is really cool. And then, I think we're just lucky enough to have formal verification experts. So working on that. I think, you know, could we get to soundness formal verification, which, of course, you assume that the, you know, tooling is correct as well,
+
+[40:12] in the next nine to twelve months? Honestly, sooner than that, because if we're under constraint bugs, yeah, I think completeness is gonna be a whole other beast. Mhmm. Which is really difficult. We don't we're not too worried about Compass for EVM blocks specifically. Our our our ZKVM tends to be pretty memory efficient and, like, all of these prover killers, we don't really have any problems with. But, hey, if you wanna push yeah. Yeah. Yeah. Yeah. Yeah. But if you wanna push GigaGas, then, like, yeah, we might run into some problems.
+
+[40:47] I just think if you can, you should adopt a very pragmatic redundancy. So if you can, you should get multiple provers that rely on different back ends. We saw that two weeks ago, there was a bug in Punky three verifier. I think it was critical or high. So if possible, at least two. Yeah. So that's just for the maybe blockchain or high security, just redundancy and the prover. And as you mentioned, formally verification verification. Sorry. There's fuzzing efforts from the EF as well as fuzzing.
+
+[41:16] So multi I wanted to say multilayered approach. And yeah. Yeah. Do you wanna do this? I I just wanna touch on the completeness because, like, for us, this is a problem. Like, we have Sierra for this, so people can't use they can't write smart contracts that can't be proven in a block. But even after that, we now are implementing Stu. We're testing in production. We have to make sure that, okay, there's no smart contract that's not provable. We have to make sure a block is not provable.
+
+[41:48] Not not provable. So, like, it's a thing that we've been working towards for a long time and we are very aware of and we feel like that there's maybe not enough discussion about this. Yeah. Well, I'd I'd agree with that. I think that the state security in the ZK space is very primitive because largely because of the centralization.
+
+[42:15] Like right now, all the the ZKLTs, right, like, the approvers are centralized. The sequences are centralized. Right? Like, we where basically the p the the entity building, the the tech is running the sequencer. And so if there was a bug in the prover, it's not gonna be catastrophic because that bug is not gonna be exploited because you kinda trust that the people who wrote the tech are good actors, and they're not the Lazarus Group. For us, it gets a different
+
+[42:38] the centers are very, different. It's different kettle of fish. Right? Because we are decentralized. We launched our test net decentralized. We will launch our main net decentralized. And so if there is a bug in our prover, it can and likely will be used to steal funds. It's not something where, like, oh, we're centralized so we can protect. And so for us, security is it's the existential fear, that that that keeps us up at night. It's it's not a nice to have. It's not a branding thing. It's it's it's it's a need.
+
+[43:06] And so I can talk a bit about how we're doing security. You know? Like, there is no silver bullet. You know? We're we're Noah has now started starting to audits. We're basically triggering our code freezes. We're triggering triggering our audit cycles now where we're doing very rigorous internal audit processes, you know, where the idea is, you know, if the people who if you wrote a library, you wrote some code, you're not auditing it, you order something else.
+
+[43:31] We try to be very rigorous there. After the internal audits, we do external audits, ideally more than one. And we have different ordering agencies for different parts of our code base because it's, you know, there's lots of ramp like, lots of different domains across the whole tech stack. And then we have obviously a very generous well, we'll, once we're alive, have a very generous bug bounty because we because ultimately, like, the you need eyeballs on this thing.
+
+[43:57] We aren't gonna launch without any bugs. It's not possible. It's never been done before, and we're not gonna break that trend. What we want to make sure is that, you know, like, we can lean on and rely on our community because the community in Web three, you know, it's full of white hats. It's full of gray hats. It's full of people who will do the right thing, particularly if there's if they if if if if they're richly rewarded.
+
+[44:19] And we're still in this very the we're still in this window, right, where, the number of the people who actually have the domain knowledge to identify and exploit cryptography cryptographic bugs are typically within the industry. They're domain experts. They are high integrity. That's going to change. I imagine there's probably some very, very poor brutalized North Koreans in the basement somewhere, like reading up on Planck and Stew
+
+[44:42] and and finite field arithmetic. Yeah. What is Goblin point? Yeah. Yeah. I am I am probably I've I'm probably psychologically torturing a couple of North Koreans right now. So but that so that will change. But right now, you know, we we have this small window where we really need you know, that on our community to to help us find these bugs. Also, with our release, we even changed restructuring our entire release cycle around
+
+[45:04] security where, you know, we're we're focused our first main net release, we're calling it alpha, where we're gonna be very explicit about the risks. You know, we're not gonna be like, yo. YOLO money and, like, you know, it's great. It'll work. Like, no. We're gonna be like, this is bloody dangerous. So, you know, like like, it's very, very dangerous.
+
+[45:27] Only only, like, you you're putting your funds at risk. Expect relatively frequent hard forks as we patch things. And then once we have we we basically have a checklist of things that need to happen. For example, like, no serious or critical bug reports for three months, you know, 99% block up time. And once we've once all these preflight check checkpoints have been hit, then we'll be like, okay. Now we're going to move to beta where things are gonna be a bit more stable and secure. How will you know if someone has exploited the bug if the state is private? How what what what if someone just spends a note and creates mince some token and you will learn That's why I said in our communication, we'll we'll say expect hard forks because if you find a bug Ah, yeah. Would social consensus that person out of the Well, no. You just you'd literally do a hard fork. You're like, okay. Well, like, we'd we'd like try to have to migrate everything across and then at least in
+
+[46:13] the migration, right, if you basically have to if migrating between hard fork, if you have to turn your private state into public state, then at the very least, you identify the if an exploit has occurred. Okay. Welcome. Yeah. It's not a, like, a welcome. Yeah. Right. Yeah. Very aligned with Ilios. I think multi prover is gonna be very attractive. Right? Currently, to run, like, a ZK roll up per month is, like, 3 to $4,000,
+
+[46:39] which is starting to seem like people have the appetite for this. And as we do, like, another five, ten x, I don't know, 15 x in performance towards the end of the year, like, doing multiple proving systems, I think, is is really cool. Very much respect y'all's approach to security, and we have the same problem because Boundless is launching in, like, a few weeks, and it's fully permissionless and fully decentralized. And, like, once they click the button, we can't stop it,
+
+[47:06] which is, like, dope and based. I hope the market cares. But, yeah, we're gonna have the same problem. I think we made proving permissionless on Friday on Testnet. There's already 30 provers. I do not know who they are. So I'm I'm good. Glad. I'm glad you're I'm glad you're taking the steps. It's cool. Yeah. I wanna say that, like, a lot of what we're doing now with Stu is preparation towards decentralizing our proving. So
+
+[47:35] start net version fourteen, zero fourteen, will be the beginning of decentralized sequencing. So it will be us we implemented the entire stack to have things decentralized, and we're going to run ourselves several sequencers. And the next step would be to decentralize all sequencing. And after that, we want to also decentralize
+
+[47:58] proving. It's a different layer, so it adds a different layer of complexity. But this is why we are formally verifying all of our errors, auditing everything internally, externally, and, of course, bug bounties, everything. And it is terrifying. Right? But you you have to somehow somehow accommodate it. Yeah. One thing I didn't sorry. One one thing I forgot to mention is also we do a lot of fuzzing. Like, fuzzing is amazing. Like, amount of bugs that we found with fuzzing that we would never find by looking at the code is really impressive.
+
+[48:30] Yeah. We actually our our approach to fuzzing is just to like, with Stuna, we we just mirror our main net, and, like, test everything mirrored, and then you may find a lot of things that you didn't So I think we're approaching time, more or less. But I want to have a last round, you know, coming back to the topic 25 z k v f. So just have your, I don't know, your estimation or take a gamble. Maybe we we come back in a couple years here and we look at the at your at your prediction. So, you know, I'm wearing a a Sysmo shirt today. That's a dead company.
+
+[49:04] So how many how many ZKVMs are gonna be dead in two years? And maybe is gonna is the number of ZKVM actually gonna be higher than 25 or lower? I think the conclusion of our discussion is like, it kind of depends on the use case, I think. If it's only about proving Ethereum blocks, 25 is too many probably. But if you find other use case, which I think in this room we all hope for, it's gonna it makes sense to have actually more than that. So, yeah, starting with you, Jacob. So 25 Companies or teams or research teams? You know, go go for it. Whatever. I
+
+[49:37] just want some gambling guesses. I hope none of them are dead and we retain the talent that we have so we can continue to advance at the pace we're doing. I think it's really nice. If I had to give a prediction, I think half will probably die. But at the end of it all, there will be more Zika VMs than there are today doing more in special things, which I think is just so I want a number.
+
+[50:03] I have no idea. 50? We have to convince VCs to invest in ZK Tech again. They kind of did already, but yeah. Yeah. I think, I don't know how many are gonna be around, but I know there's a trend basically where, you know, the majority of use case is going to concentrate in a very small number of ZKBMs. And the absolute the absolute number of ZKBMs will probably still increase. But, like, you know, how many how many Ethereum variants are there? You know, if you look at all hard folks, like,
+
+[50:32] thousands, tens of thousands. Right? But how many are actually used? One. So similarly, ZKVMs, maybe three or four. And as for what will die, what will survive, I can make no predictions other than in five to ten years, Aztec will still be around. We we are like a cockroach. Okay. You can't get rid of been here eight years. Weddable guess. Okay.
+
+[50:58] So I I don't know if I wanna guess. I hope, like, there will be variety to match the use cases. Yeah. Use cases indefinitely,
+
+[51:23] I'm all for it. Yeah. Yeah. We all hope that's the case. I guess in terms of companies, think less. In terms of libraries, we're gonna see tons of flavors as modules. My guess is that some of the teams you see in the ETH proof list, not all of them are incorporate companies that try to make a profit. Some of them are research teams. So they'll get hired probably by no. I mean, I think probably more like ten
+
+[51:49] ten incorporated companies doing ZKVM stuff. Okay. I have some guesses. So yeah. We'll get the recording. I think it's gonna be more I mean, again, I think we all hope here that, you know, ZK is gonna get adopted and we're gonna find new use case. I think, you know, the the Google initiative with their wallets incorporating ZK is kind of an example. You know, some people in this very room working on ZK Passport, stuff like that. It's also a way to have another use case for ZK VM other than, you know, proving Ethereum block block, even though Justin Drake is a great guy. But there are other things you can do with ZK. So yeah. No. I hope it's gonna be more. I like the 50 prediction in terms of, you know, how many
+
+[52:27] how many ZKVMs there are. Maybe it's not 50 companies. Maybe it's like 1,000, like, you know, if you're I don't know, roll ups. The thing is, if it's 1,000, probably only like 1% of them are actually used. So I don't know if it's a good thing. I like 50 because it's big, but it's not too big either. Sometimes when it's too big, it means nobody's actually using it. So yeah. I will I can make a slice here for the connection, which is good. I think so
+
+[52:53] pardon? No. You gotta have faith, man. You gotta have faith. No. It's a a lot of a lot of what people are imagining, like, diversity KVMs are gonna be used for is actually gonna be gobbled up by Noir. And, you know, well because Noir is very it's it's it's back end agnostic. Right? It's not just an asset crypto thing. Know, world is building a back end for Noir.
+
+[53:16] Several others in the works, you know, like, you can verify Noir proofs on StarkNet. And and so I think that for a lot of people, you know, if you're not doing things like proving l two blocks, if you wanna do something client side, if you wanna do something in the world well, I'm I'm I'm very biased here, extremely biased, but I think that NOR is gonna be quite a natural language. And that's in five to ten years. It won't be viewed as a DSL. It'll be viewed as a language like Rust or Gerling.
+
+[53:42] I think that's a new Cairo. Game on. I thought you were just Everybody's biased. Account for the for the bet. No. No. No. I'm just I'm just saying that we'll we'll we'll the panel here thinks we'll be ZKPM. So, actually, we'll be eating by now. I I have a prediction that in twenty four months and this is not based on any insider information. In twenty four months, there will be a big tech company using risk zero on an iPhone to verify proofs for privacy.
+
+[54:10] Risk zero on iPhone? In twenty four months. What? Game on. Yeah. Happy to compete. I I think that in every bet, there is one liar and one one the in every bet, there's one cheater and one idiot. And if you don't know who you are, then you're the idiot. So I'm not going to make any predictions on this. But This is gonna be yeah. It's a good one. I
+
+[54:36] think it's a it's a great conclusion to this panel. Thank you very much, guys. You made my work very easy. And thanks to the organizer. Is it okay to start?
+
+[01:05:40] Should I use the mic? Mic check. I think it's gonna work. Stream. Oh, I'll just put the stream. I see. Okay. Okay. Yeah. So, so thanks. Thank you very much for the, you know, for the invitation, and I'm very happy to be here, to give a talk on on what I'm working on, which are SNARKs based on lattice assumptions. So this talk would be light, you know, so that you can,
+
+[01:06:09] you know, you can enjoy the lunch or some food with with this presentation. So it won't be super math heavy and, and the motivations behind, this research area. Okay. So, yeah, I will need to ask Lisa to say next every time I go through the slides. So, so next. So
+
+[01:06:34] okay. So so we have so the outline for the talk is, the talk will consist of three parts. So the first part will be the motivation for, lattice based cryptography, and the main motivation is basically post quantum cryptography. So we will cover that. Then we will move on to, to the question, you know, what lattices are. And then we will move on to, you know, to, at least give some
+
+[01:06:58] overview on how to build snarks and, you know, on the way how to build commitments, polynomial commitments, and so on. Okay? So, so I'm pretty sure everyone here is aware of, you know, that a lot of cryptography here is built on, you know, security of these primitives rely on some hard mathematical
+
+[01:07:21] assumptions like, discrete logarithm and RSA or factoring and so on. So, next. Sorry. Yeah. So and the problem is that, you know or, like, the concern is that these problems can be, efficiently solved by by quantum computer. So that's the shortest attack. Next.
+
+[01:07:48] Yes. So now so the question is that okay. So theoretically theoretically, it's cool. But, you know, should we really care? Like, would would they you know, is there is this a real concern, and when would these quantum computers be built next? Can we go yeah. You maybe you can, like, press so that it's faster, I guess. Yeah. So, like,
+
+[01:08:16] many people probably have seen a lot of progress in building quantum computers by the industry leaders such as IBM, Google, and so on. And, yeah. So there is this prediction that, so this study is from five years ago, so it may be even outdated by now. But, yeah, so there is, a 5% chance that it can break classical crypto, but then 5050%
+
+[01:08:39] chance by 2050, to bill to break RSA. Okay. So then here comes the natural question. If the classical crypto can be broken, let's say, in 2050, so, like, in twenty five years, then why should we care now? Right? Could we move on to the next slide? So the one of the main reasons is the the standard harvest and equip attack,
+
+[01:09:04] meaning that the adversary could this is a pretty problem. So
+
+[01:09:38] echo one, two, three. Clarissa? Yes? Yes. Right. So, obviously,
+
+[01:10:22] one can find, like I mean, yeah. Yeah. So so there are select specific examples where not everything is broken. But, like, you know, like so so these efforts, you know, the standardization effort that I will talk to is about, you know, like, in general that, you know, we should move on. But, like, I agree that there are specific cases where, you know, like, not everything is lost. But it really depends case by case. Yeah.
+
+[01:11:17] Right. Right. So what's the of the problem? Oh. Then yeah. So, like, there are these typical arguments,
+
+[01:12:04] like, it takes time to properly switch crypto systems if if, one needs to or, you know, like in in the case of, you know, from the research point of view, it takes time to actually design optimal, cryptographic protocols. Next. Yeah. So yeah. So you could we can just yeah. You can press next. I I don't want to, like, tell you so many times.
+
+[01:12:32] Can you go next then? Yeah. Right. So so as consequence, we we've seen, like, multiple countries and multiple, yeah, multiple countries, conducting, like, standardization efforts to move on to the post quantum setting in general, like, in cryptography. And, you know, like, one one consequence is that, there is this NIST report,
+
+[01:13:00] transition to post quantum cryptography standards, which, you know, which says that, these well known, algorithms like, you know, ECDSA based on elliptic curves or RSA should be deprecated and disallowed after, say, 2035. Right. So then I I mentioned this, efforts on standardizing post quantum,
+
+[01:13:28] primitives. So the first step was to, standardize, signatures and encryption schemes. So could you so yeah. So then this comes to the question of what's post quantum cryptography. So it is not quantum cryptography. So it's so quantum cryptography is about cryptography, which is run by quantum computers. Here in post quantum cryptography,
+
+[01:13:52] we care about the fact that we we can run these algorithms on a classical computer, so like a laptop or mobile phone, but then the security should be, you know, should be hard, well, to break for both classical and quantum computers. Okay? And then in this landscape, we have multiple, computational problems that people defined.
+
+[01:14:15] Could you please thanks. Like like lattice based cryptography. So, yes, it's a lunchtime, so I put some, food. So lattice based cryptography, we have some hash we have the have we have the hash based cryptography, which is well known as well. Isogeny based, code based, multivariable polynomial, and even more ideas coming,
+
+[01:14:39] by the research community. So in terms of the standardization, which, which happened, like, in 2022, we have seen four, you know, four schemes which were selected for standardization, which are like, Kuiper, the lithium, falcon, and sphinx.
+
+[01:15:01] And three out of four so can we get the next slide? Rely on these lattice assumptions. Okay? Can we get the next slide? So yeah. So I will I will discuss this, in more detail, but, like, at least from a cryptographic point of view,
+
+[01:15:25] people can see lattice based, constructions as nice post quantum alternatives. Thanks to some of relatively small sizes compared to the poll other post quantum schemes. Obviously, if you look at the, you know, the the group base or, pairing base, then this is these are horrible sizes. And also, you know, somewhat fast implementation because as we will see later on, lattices,
+
+[01:15:50] you know, use a lot of linear algebra. So it's a lot of, matrix and matrix vector multiplication. So with this could be parallelized and so on. So this comes the research, research question if we can design, you know, follow this this strategy and design, lattice based privacy preserving applications or or SNARKs and how they compare with other existing post quantum,
+
+[01:16:14] hash based SNARKs. Okay. So I just want to give somewhat a landscape of what's going on at least from a research point of view. Yes. Thank you. So, I would say that, it's this started, you know, as as, as expected, this was more of a theoretical world, sorry, theoretical work.
+
+[01:16:40] So we have seen a few constructions already 2018, 2020, 2021, which I would say were more of a theoretical side because, yeah, if one were to instantiate that, then we would one could get, like, hundreds of megabytes basically. Thank you. So so then sorry. Can we just yeah. I think it's fine.
+
+[01:17:04] So then it came, there was a scheme called Labrador and now you can see that, you know, the schemes get practical if you see that there are like names association associated to them or like acronyms. Right? So then it started with Labrador, act which was arguably the first one which actually produced, like, you know, real world,
+
+[01:17:27] you know, sizes, basically. And then later on in, you know, in the coming years, so until now, people focus on, actually fast verification. Okay? And then can we get one more? And then we what we will discuss I mean, not really discuss in much detail, but then, what's happening is that, you know, the the works which focus on fast verification, they lose on the proof size. So that's why they are a bit higher than the Labrador,
+
+[01:17:57] and Greyhound is a little bit of a middle ground between between somewhat fast verifier, but, very small precise. Yes. So, so now I want to move on to describing what lattices are very briefly, but any questions up to this point? Yes. Do you think exonony based on probability will go back? I
+
+[01:18:24] mean, so so it's still, from what I understand, it's still going. Obviously, like, you know, like they, there was this, so, you know, so that everyone's on the same page. There was, this scheme called psych which got broken recently. What's interesting enough is that people are building people are using this attack to to to break psych to actually build some stuff.
+
+[01:18:53] So the attack can be turned into you know, a scheme, which I found pretty interesting. Yeah. To answer your question, I I don't so so there is definitely a lot of research going on to, you know, to understand the the hardness of these isogeny based constructions. And yeah. So I I don't have a good intuition, but it seems that it's going.
+
+[01:19:22] Yes. So this seems you mentioned the trusted setup. Right? No. Most no. I mean, transparent setup. So it's a it's a twin over equipment Yeah. That is space Yeah. Without where the transparent setups. Yeah. I mean, it's so I think only,
+
+[01:19:49] like, one one of the schemes I mentioned has trust trusted set up. There was, like, a a a slab paper. I think all of almost all of them, definitely, most of them have transparent setup. And so do you know also vector,
+
+[01:20:15] like, lot of space vector? Yeah. Sure. Happy to talk. I mean, yeah, like, obviously, there are, different kind of criteria so, like, yeah. You know, so this is the the question that, you know, appears
+
+[01:20:38] when, you know, like, people ask me in the pub or people ask me in the family gatherings, but what is a lattice? Right? So it is not a lattice. So we can move on to the next slide. Yeah. So what is a lattice? Well, so here is a very, very simple, definition so that, you know, we can make this talk somewhat light.
+
+[01:21:04] So let b capital b be a set of linearly independent vectors, let's say. Okay. So we can define the lattice with respect to this basis b to be just integer, linear combinations of these factors. Okay? So for example so here are very simple examples like the,
+
+[01:21:27] the lattice corresponding to the set one is just, the set of all integers because all integers can be written as, you know, like integer times one. Right? Similarly, if we have the set one zero zero one, then if we take, like, all the integer, linear combinations, then we get z squared.
+
+[01:21:51] So maybe just, can we move on to the next slide? So maybe just, just to interact with the audience a little bit, can someone describe what, this lattice corresponding to the, set of just two is? The even numbers. Yes. So these so this this lattice here is just the set of even numbers.
+
+[01:22:16] And what about this one? Maybe maybe you we let's, ask other people. So here we are looking at yeah. Yeah. It's
+
+[01:22:39] it's it's close. It's close. But like these, here we are looking at the set of, like, vectors of dimension two. Right? Sure. Size more, so you're one dimensional embedded in the Right. Right. So so, that's good. So basically, this is this consists of all the vectors which are some integers, some integer in the first coordinate and zero in the second coordinate.
+
+[01:23:04] So what are the problems we are interested in? Well, the the most fundamental one which, you know, which basically carries the whole lattice cryptography is the so called shortest vector problem. So in the shortest vector problem, we are given the lattice with, with some basis, and we have to find a short non zero vector v which is in that lattice.
+
+[01:23:30] Okay? And when I say short, short means having small coefficients. For example, minus one zero one minus, you know so between, let's say, minus beta and beta. Okay? So that's, I will denote it as the infinity norm being at most beta. So yeah. So so for those who who want some challenge,
+
+[01:23:54] then, I I can give you the exercise where, we have the set four minus three minus five. Maybe I can write it on the board. So I won't use the board too much today. Sorry? V is the coefficients that you have to multiply the basis by?
+
+[01:24:33] No. No. Actually, v is the is the out, so you want to find the coefficients. You want to find some coefficients. So when you sum up, it's it has ternary entries. Does that make sense? So you have to find it starts to multiply four, three, and minus one such that Yes. Exactly. And for each each
+
+[01:24:58] Yes. Right. Okay. So so to sum up, you want you want to find Lambda some integers lambda one, lambda two, lambda three such that
+
+[01:25:28] lambda one times four minus three minus five plus lambda two times three zero one times lambda three minus one one two has minus one zero one coefficients,
+
+[01:25:54] and it's non zero. Yeah. And then we can move on. Sorry? Yeah.
+
+[01:26:19] I think yeah. There are, like, multiple solutions available. But, yeah, it was just like a warm up question. Yeah. Probably one zero three works because then the the whole vector is one zero one. Right? Like the so one zero three, then it's
+
+[01:26:44] yeah. Good. Yeah. So, like, in in lattice based cryptography, well, the question is, okay. So what type of lattices do we work with? Right? So what we will work with in this talk are these, random q ary lattices. So you can think of these, these lattices as, elements in the kernel of a random matrix a. Okay? So we we consider vectors s
+
+[01:27:09] such that a s is equal to zero for some random matrix a. So then the SVP corresponding to this lattice is basically called the shortest integer solution problem, which basically says that given the random matrix a, find a short nonzero vector s such that a s is equal to zero mod q.
+
+[01:27:33] Okay. So maybe the first question, if I if I remove the short part, then do you think this problem is still hard? So I Put zero everywhere. If I if you I'm not sure. Sorry. I thought you said No. Yeah. Yeah. Short. Yeah. You you can not just be all here? Yeah. That's that's a perfectly valid point. So so it can be, first of all, just all queues.
+
+[01:28:05] The second argument is that, you know, if if parameters are chosen nicely, which is the case, one can just use linear algebra to find the solution. How do you define the random matrix and who provides the randomness? Right. So it it can be generated from a seat. So this is Yeah.
+
+[01:28:36] Right. Right. So yeah. So when when we talked about this transparent setup, it's just the transparent setup is basically to generate a bunch of random matrices. That's it. Yep. Thanks.
+
+[01:29:44] Yes. So thanks for for moving. So yeah. So basically, can think of lattice based crypto as a combination of linear algebra, so some, vectors and and matrices. So here's the matrix and the combination of together with shortest conditions. Okay? So so, so I think it's a very nice combination of algebra and geometry.
+
+[01:30:09] Next slide. Yeah. Or just a matrix theme shorts. Okay. So, for for the remainder of my talk, I will move on to building, commitments briefly about polynomial commitments. But, yeah, I don't think there is much time, but, yeah, let's let's move on. Yes. So these are, like, pretty standard stuff. I guess everyone is familiar here.
+
+[01:30:38] So we have interactive proofs. So, yeah. So we have the prover and the witness, and the witness want the prover wants to prove knowledge of a witness which satisfies some relation, and, the proven the verifier sends, messages to each other and then the verifier, says accept or reject. Then if the, you know, if the protocol is nice enough, then it can be turned non interactive using catch a mirror transform. So everyone, I'm pretty sure, is familiar with all that stuff.
+
+[01:31:07] We can move on. Right. So then just so that everyone's on the same page page, we when we talk about snarks, we we look at the case when the proof is much smaller than the witness because if it was as large as the witness, then, you know, it could just send in the clear. And we are also interested in having a fast verification.
+
+[01:31:31] Okay? What we will discuss, I mean, yeah, what what we care about is this knowledge soundness or extract extractability property. So if a prover can convince the verifier with high probability, then the prover must know the witness. Okay. So or alternatively, the prover shouldn't be a cheating prover who doesn't know the witness shouldn't be able to,
+
+[01:31:54] to convince the verifier. Yeah. So how to build snarks? So that's a very standard framework used nowadays is by combining a cryptographic component, which, which are the polynomial commitments together with the information theoretical object, which are polynomial interactive oracles of proofs oracle proofs to to get, snarks or z k snarks.
+
+[01:32:20] So in the lattice setting, can we just yeah. So in the lattice setting no. There's the definition of polynomial commitment. Right. So yeah. So that again, everyone's on the same page. Yeah. So what's a polynomial commitment? It's, you know, you can think of it as a gen you know, one party is just the commitment scheme. So a party who has
+
+[01:32:45] possesses a polynomial of degree at most l, let's say, it can commit to it using this function commit. And, interesting properties to us are, let's say, binding. So it's hard to find two different o two different, messages f and f prime, which map to the same commitment. And, then we have hiding if people care about zero knowledge, then the the the adversary cannot learn any information about the the polynomial from the commitment.
+
+[01:33:18] Then we have the polynomial part which is basically the polynomial evaluation proof where the verifier sends the, evaluation point or like another party sends the evaluation point and, the first party needs to output the out needs to output the evaluation under, you know, evaluation of f f under, this evaluation point x.
+
+[01:33:44] So f of x is equal to y together with a proof that it's it's it has done it correctly. So the pi is the proof that f of x is equal to y and t is a commitment to f. And then we have these standards, you know, properties which are similar to what I described before like completeness. For an honest prover, the verifier should accept.
+
+[01:34:09] Knowledge soundness. So, again, if a prover can convince the verifier with high probability, then it must know the, polynomial f. As your knowledge, succinctness everyone is familiar with, I guess. Can we move on? So in the lattice setting, what's kind of interesting is that, you know, like even building, you know, more advanced stuff,
+
+[01:34:33] it's easy if one can build just commitments with succinct proofs of opening. And this seems to be very hard in the lattice case. So I just want I want to give some, you know, brief, overview why this seems to be hard. Even even this step seems to be hard. Yes. Can we move on?
+
+[01:34:58] Good. So now let's talk a bit, you know, let's talk about some proper constructions. So the first one is the ITECH commitment, which some of you may have seen it as, lots of space hash functions. Okay. So let's, let's define z q to be the ring of integers modulo q. And if I want to commit to a a short message vector s
+
+[01:35:24] of dimension m. Let's say s is very long like, you know, dimension million or something. What we can do is that we just multiply with this random matrix a from the on the left hand side to get the commitment. Okay? So so think of a as the think of a as the very wide matrix with the constant number of rows. And to commit to it, you just multiply a with s.
+
+[01:35:51] So that's basically it. And because the commitment is basically the number of, the length of the commitment is the number of rows, which I said is constant. Let's keep it informal as constant size. Then the, you know, like, it compresses the commitment compresses the the message, of course.
+
+[01:36:18] Yeah. So let me just talk about binding. So if I if someone manages to, to come up with two different messages which map to the same commitment, then we will have the equation a s is equal to a s prime, not q. So if you subtract, then you get a times s minus s prime equal to zero. And because both s and s prime were short, then s minus s prime is also short, so you've solved this.
+
+[01:36:48] Sorry? It's impossible. Yeah. To to find two different messages which map to the same commitment. Yeah. Under under the It's it's as hard as s I s. Okay. K. Yeah. Yeah. So under the the s I means that you have found a short non zero vector Yeah. That sort of this? Right.
+
+[01:37:16] Which should be hard. No. I mean, you if you believe that that's this is hard, then then this implies that binding of this commitment holds. That's it. Any other questions about,
+
+[01:37:41] the definition? Well, about the construction. So one may think, okay. So I have this commitment scheme. Why not just you know, I already have the commitment. Why not just prove knowledge of this s? Right?
+
+[01:38:07] So the problem here is that the main issue is the the verification time because as I described, you can think of this matrix a to be very, very wide. Right? And then if it's unstructured, then the verifier would, you know, like in the process of verifying the proof, it will need to make, you know, perform operations on this matrix a. So inherently, the verifier runtimes,
+
+[01:38:36] I mean, the verifier would base, first of all, have to read this a. So in, so this implies that the verifier the runtime is linear in in m. So that's not great. There have been, some works which try to basically either add more structure to a to make the verifier, faster
+
+[01:38:59] or use some pre processing. Okay. And we will basically use this commitment as a subroutine to build a different style, different type commitment. Yeah. So I think with our time, we will only focus on the square root, but this approach can be actually
+
+[01:39:24] generalized to cube root, proof size or even like polylogarithmic later on. Thanks. Okay. So what is the commitment scheme? Because I said that, we won't use the the vanilla ITI commitment.
+
+[01:39:47] So the commitment scheme can be described as follows. So I have this long vector s. Sorry. Long in terms of the dimension, but, short in terms of coefficients. And what I will do is, well, I said it's a square root approach. So I will split this vector s into, you know, chunks of smaller sub vectors, into square root of m,
+
+[01:40:11] such, sub vectors. So I split s into s one, s two, and so on. Then I multiply then I commit to each of them using the ITECH commitment. So I have a s one, a s two, up to a s squared of n. Okay? And then I get these, you know, partial commitments. So t one, t two, up to t square root of m.
+
+[01:40:34] So this this is my commitment scheme. And, you know, from the previous slide, we said that the commitment size is constant. So now we have square root of m constant, things. So the commitment is square root. So that's the, so that's the commitment scheme and then I will move on to proving knowledge of an opening and why this structure helps.
+
+[01:41:02] So any questions about, the construction? Right. I mean I mean, it's not really, you know, well, how to say it? I mean, it's yeah. You just need to add, you know, more.
+
+[01:41:28] Yeah. Obviously, here, you can just add more. Right? Some zeros or something. But, I would say it's, it hasn't instigated in practice, like, much padding adds. It's still more like a, you know, theoretical side. Yeah. But yeah. Well, I mean, it's it's quite a bit different than you you might pay security. Right? In what sense?
+
+[01:41:58] Yeah. Yeah. So, basically, your SIS will be of this instance. So you want to break SIS for this. And, what we haven't discussed basically is that if SIS gets easier, if your matrix a is wider.
+
+[01:42:23] What? Yes. Again. The wider, the easier? Yeah. The the wider, the easier. To solve this, I guess. Yes. Because if you can solve it for the small matrix, then, you know, you can consider the the wider matrix and just those. Right? Sorry. Ignore the columns so that you end up with a smaller instance.
+
+[01:42:47] Yeah. Yeah. But the way the width is annual or the width is I don't know. The width is annual. So, obviously, if you can solve SIS, you know, like, for for this. Right? Let's say a zero a one, then, you know, you can if you can solve it for a zero, then obviously you can you can set your solution to be a zero and a zero. Right?
+
+[01:43:16] So this this cancels out the a one. Wait. So m can be ignored. It it's not correlated to like, is not part of the parametrized security of SIS. Only m? Yes. It's m. Yeah. But so technically speaking, there is some, there is some dependence like minimal.
+
+[01:43:41] A minimum or something. The there is, like, some optimal m where, the the current, lattice attacks for this problem seem to be, you know basically, there is an optimal m for which the problem is the hardest based on the current attacks. Yeah. But, very good questions.
+
+[01:44:15] So why is this, commitment scheme I described earlier interesting? Because now if you want to prove knowledge of, you know, of the opening, it's basically this type of statement. I want to prove knowledge of some s, you know, of some s i's such that a s I is equal to t I and s i's are short. Yeah. Also, what I want to say is that the square root of m is just, you know, I just said it as square root of m, but, you know, there is if you
+
+[01:44:45] you can split your vector as however you want as long as it's of equal dimension. Yeah. What I also want to highlight is that it's very extremely important that this a so you have bunch of state kind of bunch of similar statements but it's the same a for all of them. And you know, if you have different a's for each, you know, for each I,
+
+[01:45:10] then it would this solution wouldn't work. Okay. So, this is kind of the template how how to, how the opening proof works. Well, it's actually very simple. So say the verifier sends some random linear
+
+[01:45:33] some random coefficients and the prover outputs the linear combination of these coefficients with these s i's. Okay? So the the prover sends z equal to c one s one plus c two s two and so on. And then the verifier just checks whether a times z is equal to c one t one plus c two t two and so on. And then in terms of the, the proven message size which is just z in that case,
+
+[01:46:01] the the length of z is the same as the length of all each s I which is square root. So in particular, you we get like a square root, proof size. But, yeah, as already hinted here, there is a problem. So can so the problem here lies with soundness because
+
+[01:46:24] I can define a cheating prover who doesn't know the witness and can convince the verifier. What's the strategy? Not really. But we can see that we, you know, the prover knows as eyes which are short. But if you look at this, you know, this protocol, there's nothing about shortness. Right? So how can we
+
+[01:46:54] make use of it, you know, as a malicious prover? Yeah. Exactly. So if you don't have any shortness condition here, the malicious prover can just, you know, which doesn't know anything, could just solve this equation and send the corresponding set.
+
+[01:47:22] So this leads to, sorry. Can we get another slide? The second verification condition that z should be short, okay, which would exclude this type of, attacks. But then to if z is short, then, you know, z is defined this way. Right? So in particular, the the challenges c I should also be short because if c i's were large, then z would also be large.
+
+[01:47:52] Right? So so this means that we should pick the challenges somewhat carefully. And, so for the sake of simplicity, just say that these guys come from z are just binary, zero one. Okay. So then for for zero one, because the challenges are short, s i's are short, then zed should also have small coefficients. So this would be satisfied for an honest prover,
+
+[01:48:21] but there is another problem here. So there is a cheating prover which can win with probability one half without knowing the full witness. And what's the what's the problem? So suppose I have there is a prover which knows,
+
+[01:48:57] you know, all, you know, all the s, let's say s two, s three, s four, and so on, but it doesn't know the s one. What can they try to cheat this verifier without knowing s one? Oh, yeah. I
+
+[01:49:23] mean, but short. S y should be short. Yeah. Yes. So so in this particular case, the exactly. So, suppose I have this prover which knows everything apart from s one and it will just hope that c one will be zero. Okay? If because if c one is zero, then the this prover can actually respond without knowing s one. Right? Because,
+
+[01:49:50] for c one equal to zero, this, vanishes. Yeah. So, obviously, one can generalize this attack by, you know, by guessing c one. But yeah. So in particular, a cheating prover may win with probability one half. Yes. I mean so
+
+[01:50:17] there's so we can call it if we look consider knowledge soundness. Okay? So we can call we can call, a cheating proven malicious if it doesn't know the whole witness. Right? The whole witness is s one, s two, s three. So suppose it doesn't know s one. Right? So it should be the case that without knowing s one, it shouldn't be able to convince the verifier.
+
+[01:50:43] So the easy strategy is now to, you know, informally run this protocol in parallel. Can we get the next slide? So then we we have the first invocation, second invocation, and so on. So kappa invocations of the protocol, so then the verifier sends multiple c I j's. The
+
+[01:51:08] and then for each, you know, first invocation, the verifier sorry, the prover outputs the corresponding z one. For the second one, it sends z two and so on and it sends kappa kappa sets. And then the verifications equations are the same, but, you know, you you do it for each, you know, instantiation from one to kappa.
+
+[01:51:32] And then this attack that's that we we talked about, you know, you you get the cheating probability from one half to, one over two to the kappa. Okay. So you can just pick kappa somewhat large like 128 and, you should be fine. So that's kind of the informal argument, but, like, there is like a proper knowledge soundness proof for this.
+
+[01:51:59] Yeah. So then the prover message size is you can see that it has to send many of z's, so kappa of them. So that's why we have like kappa times square root of n basically. Yeah. So that's kind of the, very brief overview of this square root approach. Right. So so there are a few optimizations one can do to get much smaller proof sizes
+
+[01:52:27] because, just sticking with the square root approach will give you, I would say, like, maybe like 10 megabytes proofs or something for large enough, messages. So there are a few tricks which I find, you know, interesting from a theoretical point of view. So now instead what we've seen is that we had to rely you know, this protocol was over integers modulo q.
+
+[01:52:54] But if you if we move on to, you know, much more interesting rings which are related to algebraic number theory. So if we run it over these polynomial rings, then one could get, much better sizes. Okay. So in particular here, the problem that if I if I need challenges which are short, right, because that was one of the conditions,
+
+[01:53:19] but we also wanted this challenge space to be large. And, in this particular case, it's it's bad because, you know, for zero one, there is this cheating attack of with probability one half. One can come up with these nice challenge spaces where you don't have to repeat them. Okay. So first of the first trick is to move on from integers mod q to these polynomial rings.
+
+[01:53:45] The second step is that, instead of having this somewhat large commitment of t one, t two, and so on, one can one can additionally commit to these t i's together even as, you know, a single commitment basically. And then the next step is that instead of sending this set in the clear, one can prove knowledge of of the final message which satisfies the verification equations
+
+[01:54:14] using the Labrador, protocol. So this results in a succinct commitment and proof sizes and, still square root verify runtime. Yeah. So what I wanted to say is that if whether you can push, the square root approach to cube root, four fruit, or even, you know, logarithmic?
+
+[01:54:39] Yes. So it is possible. So the the idea is that when you have these commitments t one, t two, and so on, you will commit it further, basically. So you commit to these commitments and then, you know, you build somewhat something of a tree and then, you kind of run this protocol that I showed you in the recursion.
+
+[01:55:04] But, yeah, at some point in practice, this actually doesn't help. So, you know, maybe asymptotically, it's nice to have, you know, a logarithmic, verify time. But, like, in practice, what we can see is that it's not it doesn't particularly give you, like, good efficiency gains. Yeah. So so this slide is about performance of lots of PCS.
+
+[01:55:30] So the Greyhound that I talked about, you know, for large messages or for large polynomials, it gives you, proof sizes of of around 50 kilobytes, which are much better than like, other LUTs based schemes which focus on, you know, logarithmic verify time. Okay. But then, yeah. So there there is this trade off whether you want
+
+[01:55:57] better verification or better proof sizes and so on. And comparing to to the hash based constructions or hash based polynomic commitments, we can see that, you know, they they can be somewhat comparable if we consider, like, vectors of length 1,000,000. But here we are talking about, like, billions and stuff, then,
+
+[01:56:21] we can see that lattices performed slightly better as of now. And, you know, this should be somewhat of a this shouldn't be this shouldn't be a surprise because instead of relying on hash functions here, we rely on, you know, like, on these assumptions which are very rich algebraically. Right? Like, it uses a lot of linear algebra. There's a lot of homomorphisms. So it should be the case that this
+
+[01:56:46] at least intuitively that, you know, this rich algebraic structure should give you some efficiency gains. Can we get the next slide? Oh, can the pre it's intuition. Intuition. So So I I don't don't get get it. It. Right. Right. So the intuition is that, solving lattice problems like SIS should be
+
+[01:57:11] should seem easier than breaking hash functions because because of this rich rich algebraic structure of, you know, of, of lattices of homomorphism. Yeah. I can give you a counterintention. Yeah. Which I don't know what is true of course. Right. Right. Right. Yeah.
+
+[01:57:52] Yeah. I mean, it you know, it it it may also be the case. But but anyway, like, these are, like, very active fields and, you know, we've we have seen a lot of progress in, you know, in getting, much more efficient schemes for sure. Yes? So this l is related the the the message size Right. Right. Yeah. So for example,
+
+[01:58:18] the degree of the polynomial you commit to in the polynomial commitments. Arbitrarily like like So q so q is chosen based on like so you rely on this SIS assumption and then the q has to be chosen in such a way that, you know, the problem is hard. Q is what is the, you know, modulus, the proof system modulus. Everything you do mod q. Right? So that that's q. Yeah.
+
+[01:58:47] But just to give some intuition, you can think of q being like around two to the 32, let's say. That's enough for SIS. Yeah. Yeah. I mean, for SIS, it can be like, you know, for if you look at the nest standardized schemes, it could be like two to the 16 or something. Can you say about the prover and verify time in this thing? Right.
+
+[01:59:11] So so what I want to say is that, at least currently with these schemes, we can see that, the hash based, proof systems are much faster in terms of verification, you know, with being like milliseconds or even faster than that. But for the lattice in the lattice setting, actually, it's, it's pretty bad. I mean, okay. So not read it really depends how you define bad, but, like, it can be in the you know, it can be, like, one second verification or two seconds.
+
+[01:59:43] But what comes as a as a trade off is the proof of time, which, for extremely large statements like, you know, two to 30, it can reach around forty forty seconds, which from what I've seen in the tables can be, you know, let's say around two times faster than the, than the alternatives, hash based alternatives. Yeah. So Sorry. Sorry. Yeah. Yes.
+
+[02:00:14] So first, you you can try it with different hashes. Right? Yeah. Right. Right. So hash function is this thing when it hurts to the Yeah. For the time. Right? But if it's, like, the shark 56, okay. Shark is the same size of the the digest. But there's Poseidon, there's other stuff? Yes. I think
+
+[02:00:45] Using the arithmetic based function. Which I mean for a very hard time or set process? Yeah. Just one I mean, I'm just wondering. Right. So so I think the the sizes which which were reported, so I think I took these from, like, from various papers which basically implemented these or, like, instantiated these. I think these were just based on, you know, like, some SHA functions.
+
+[02:01:09] Like, I don't think these were, like, specialized for specialized hash functions. Yes. Good. Any other questions?
+
+[02:01:37] So what is based Right. So the there are a lot of other motivations like, you know, like, the most popular way to build FHE is using lattices. And if you want some kind of verifiable FHE, then you already,
+
+[02:02:00] you basically have to prove some lattice statements. So so, yeah, if you want to prove that, you know, you know, your your encryption was done correctly, then you end up with basically a lattice statement, like approving short s such that a s is equal to something. And then, you know, like, of trying to convert the statement, one can also use a lattice based proof system to directly prove this lattice statement.
+
+[02:02:25] Does it make sense? So yeah. So I guess, yeah, FHE, IO, I mean, this this sort of stuff is also the motivation for lattice based cryptography. Yes? Sorry. Could you repeat the question? No. If you wanted to move the cursor Yeah. How is it looking today in the research?
+
+[02:03:00] Is it not yet at that moment? I I'm not super sure it's at that moment, like, at this level yet. Yeah. So I think it's a very, like, early, looking field. Yeah. Yeah. So basically, everything I said. But yeah. So this concludes my talk. Yeah. Thanks.
+
+[02:03:40] So so there is this, Shor's algorithm in 1994, which, you know, can be adapted to proving discrete logarithm. For SIS, yeah, obviously, it is hard to prove that, you know, that there is no quantum algorithm which can solve SIS. The the kind of just a brief intuition why this,
+
+[02:04:07] let's say, why Shor's algorithm doesn't work for SIS is is exactly this, diagram that I have, like two circles. It is, you know, the thing that, you know, I guess, secures, lattice based crypto from this type of attacks is this interesting combination of, algebra and geometry.
+
+[02:04:32] So, so because of carrying about the shortness condition, it's it circumvents these type of quantum attacks that I mentioned before. But on the other hand, as not really hinted too much in this talk, this shortness condition also is a bit annoying in terms of constructing stuff. Because you when you add stuff, when you analyze parameters, you always have to keep in mind that, you know, all your secrets
+
+[02:05:00] components should be short because this this is this is this is the fundamental problem in LATScript. So in particular, if you, you know, add, know, like, if you want to do, you know, if you look at, let's say, folding schemes, I guess, like, this could be, a simple, analogy. You have folding schemes. So in the latter setting, you could just, think about, okay. I I have this ITEC commitment. I want to use a I want to build a folding scheme out of it that when you add, you know, when you add your,
+
+[02:05:31] let's say, your witnesses, then the norm grows, grows, grows, and it gets bigger, bigger, bigger. And then parameters have to be adjusted so that this, you know, it has to be adjusted to accommodate for this norm growth. So which is gets extremely annoying, basically. Yeah. Thanks.

@@ -1,5 +1,3890 @@
 [
  [
+  0,
+  2,
+  "Hi, everybody. Thank you, beautiful people in the room. I think we have, yeah, more people in the crowd than panelists, so that's good. That"
+ ],
+ [
+  0,
+  11,
+  "'s already a successful panel here in my attendance. So we're here together today to talk about, well, ZKVMs. We just checked right before. "
+ ],
+ [
+  0,
+  19,
+  "There are actually 25 ZKVMs, some of them quite unknown, actually. And today, we're gonna talk about whether that's too few or too many, and"
+ ],
+ [
+  0,
+  28,
+  " also maybe some more technical issues about it. So let's start"
+ ],
+ [
+  0,
+  32,
+  "with, you know, introducing you guys. I I mean, I'm pretty sure some of you guys are quite famous, but let's not only introduce you guys, bu"
+ ],
+ [
+  0,
+  40,
+  "t also justify why you're here. Maybe for you, it's gonna be easy, Jacob, because, you know, Riscero. Start with the least famous person on "
+ ],
+ [
+  0,
+  47,
+  "this panel. I believe I have the least surprised. You'll be surprised. You have quite the following and asked. No. I think I have the least "
+ ],
+ [
+  0,
+  55,
+  "on all this. But, yeah, I'm Jacob. I work at risk zero."
+ ],
+ [
+  0,
+  58,
+  "I think people know us for the risk five z k v m at this point, which is getting quite popular. But the second production ready z k v z k v "
+ ],
+ [
+  0,
+  67,
+  "m will always get prompts to start with first. So, yeah, maybe we we switch them to to you, Zach, and there we go. I'm pretty sure people he"
+ ],
+ [
+  0,
+  76,
+  "re in the room are familiar with Aztec, but also maybe try to focus on why, you know, why you're here to talking about the KBMs and maybe ju"
+ ],
+ [
+  0,
+  85,
+  "st give a little bit of context,"
+ ],
+ [
+  0,
+  87,
+  "why you basically know about the KBMs and Yes. The Sure thing. So, yeah. So, yeah, I'm Zach. I'm the CEO of Aspect. We're a group of FirstNe"
+ ],
+ [
+  0,
+  95,
+  "t two. So, yeah, why am I here? Well, I think Aspect kind of known for those in the know, as it's known for, like, not really doing much on "
+ ],
+ [
+  0,
+  103,
+  "the VM side as in we have a language nor which directly compiles the constraints. So I suspect I'm here to kind of, like, throw some shade a"
+ ],
+ [
+  0,
+  111,
+  "nd be annoying."
+ ],
+ [
+  0,
+  112,
+  "We do actually have a ZK VM. It was was it counted when were 25? No. I don't think it's No. It's not. Yeah. It's actually 26. Yeah. So the A"
+ ],
+ [
+  0,
+  123,
+  "SDIC VM. Because we we need one for the the nonprivate parts of our of our transaction flows. So yes. But why am I here? I mean, you know, I"
+ ],
+ [
+  0,
+  134,
+  " I I ship post a lot on Twitter."
+ ],
+ [
+  0,
+  136,
+  "I did a little bit of research, did a single plonk back in the day, which turned out to be kind of kind of meaningful. And yeah. You know, I"
+ ],
+ [
+  0,
+  143,
+  " think but mostly, like, what what we're focused on on ASIC as client said proving where we want maximal performance, particularly with rega"
+ ],
+ [
+  0,
+  151,
+  "rds to resource consumption, which means that we right. For now, we prefer the direct compilation method where you take the program statemen"
+ ],
+ [
+  0,
+  158,
+  "t and you basically try to find the most optimal constraints without having to go through a VM abstraction."
+ ],
+ [
+  0,
+  164,
+  "Yeah. We'll get back to that. But, yeah, Maya, up to you. So I am Maya from StarkWare. We build StarkNet, which is layer two z k roll up. An"
+ ],
+ [
+  0,
+  175,
+  "d for that and even before that, we have the Cairo VM, which is the first general purpose z k VM. Today, you would call it call it a custom "
+ ],
+ [
+  0,
+  187,
+  "ISA. When we started, it wasn't, like"
+ ],
+ [
+  0,
+  190,
+  "there was no standard, so Good. I mean, it's actually a good representation of kind of what you do with CKVM. Yeah. We have a a good panel, "
+ ],
+ [
+  0,
+  223,
+  "I for that. Well done, the organizers."
+ ],
+ [
+  0,
+  232,
+  "And we're gonna start actually with Jacob. So first, let's talk about kind of the the classic ZKVM, let's say. So why I mean, how is risk ze"
+ ],
+ [
+  0,
+  241,
+  "ro, you know, working on VMs? Why are you using, you know, risk five, the ISA, kind of the general purpose, the the classic ZKVM as we as we"
+ ],
+ [
+  0,
+  250,
+  " know it? And then maybe we will, you know, find different flavors of ZKVM"
+ ],
+ [
+  0,
+  255,
+  "with the with the other panelists. Yeah. So risk zero is named risk zero because we use the risk five ISA. Why did our founders pick risk fi"
+ ],
+ [
+  0,
+  264,
+  "ve? I tend to use this analogy. You know, risk five is, like, nice. It's used by a lot of people outside of, like, know, and whatnot. And wh"
+ ],
+ [
+  0,
+  273,
+  "y do people use RISC V, and where do you find it? The most common place you find is in tiny computers."
+ ],
+ [
+  0,
+  279,
+  "Class example is Raspberry Pi. And why does a Raspberry Pi use RISC V? It's because RISC V is terribly simple. There's, like, a 100 ish opco"
+ ],
+ [
+  0,
+  287,
+  "des. And something really nice is if you don't have that many opcodes, you physically have to use less silica, which is nice if your compute"
+ ],
+ [
+  0,
+  294,
+  "r is physically tiny. And that translates to being nice for ZK because in ZK, we have these things called constraints."
+ ],
+ [
+  0,
+  301,
+  "And if we can build a tinier computer, constraints tend to be closely correlated to prover performance. And if we have to do less constraint"
+ ],
+ [
+  0,
+  310,
+  "s, ideally, the the prover will be more performant. There's a bunch of other things I would say. Risk five is formally verified. It's mainta"
+ ],
+ [
+  0,
+  318,
+  "ined by people that are really security focused as well. It never really changes"
+ ],
+ [
+  0,
+  323,
+  "because if you change it, you bork the last generation of hardware, and that's tend to be frowned upon. And then we also get to inherit just"
+ ],
+ [
+  0,
+  332,
+  " like a lot of open source tooling around the risk five community. I would say pretty much all of our performance gains either come from two"
+ ],
+ [
+  0,
+  341,
+  " areas right now, GPU bumping or actually using open source risk five tooling for, like, optimizations,"
+ ],
+ [
+  0,
+  348,
+  "profiling, and sort of doing, you know, high performance engineering. And the nice thing also is we get to use Rust, which I think has reall"
+ ],
+ [
+  0,
+  357,
+  "y grown in the cryptography space. One cool thing there is also is, like, yes, does Rust have problems? Yeah. Does LLVM have problems? Yeah."
+ ],
+ [
+  0,
+  365,
+  " But you look at Facebook, Apple, Google, Amazon, they're actually in the process of changing all of their cryptography back ends to Rust li"
+ ],
+ [
+  0,
+  374,
+  "braries,"
+ ],
+ [
+  0,
+  374,
+  "and they're spending you know, they're gonna spend over a $100,000,000 solidifying these libraries. So we're gonna get to inherit that secur"
+ ],
+ [
+  0,
+  382,
+  "ity as well. Okay. Yeah. I think that makes sense. But now I want to hear from actually Maya because you just mentioned that actually, you k"
+ ],
+ [
+  0,
+  390,
+  "now, StarkWire was kind of built a CKVM using custom ISA. So, I mean, you know, RISC V seems like the best thing since, like, hot water. So,"
+ ],
+ [
+  0,
+  399,
+  " you know, why not using RISC V for you guys? I mean, what was the the rationale behind it?"
+ ],
+ [
+  0,
+  404,
+  "Is this working? When we started, there was no real discussion around RISC V in the context context of of the the KVMs. KVMs. There There th"
+ ],
+ [
+  0,
+  417,
+  "ere there was was no no ZKVM. ZKVM. In terms of timeline, we're talking pretty much kind of similar years. Right? Maybe even before? Yeah. Y"
+ ],
+ [
+  0,
+  429,
+  "eah. For three years at least. Yeah. So"
+ ],
+ [
+  0,
+  433,
+  "the Cairo VM was developed by by Starkware really as a general purpose VM that is dedicated for the task of proving code. So we were not thi"
+ ],
+ [
+  0,
+  445,
+  "nking about put tooling. When when we considered it, we we thought which direction to go, and we decided to go for the most performant"
+ ],
+ [
+  0,
+  457,
+  "approach improving. This comes at a cost. You have to maintain a language and a compiler, and everything has to work, and the Starknet block"
+ ],
+ [
+  0,
+  469,
+  "chain is written in Cairo or language, ZK language. So it's a nontrivial way to go, but it's the most performant way to go, we believe. In t"
+ ],
+ [
+  0,
+  481,
+  "erms of security,"
+ ],
+ [
+  0,
+  482,
+  "all of our errors, which is the translation from code to proving, basically, is formally verified. We write clean proofs for Stone and for S"
+ ],
+ [
+  0,
+  494,
+  "tuno, our new prover. And we, of course, audit both internally and externally the verifier. So in that regard, I don't think security"
+ ],
+ [
+  0,
+  505,
+  "well, there's always concerns, but if you formally verify. Yes. And we see that when we compare the performance of STU now with Cairo, it ou"
+ ],
+ [
+  0,
+  518,
+  "tperforms available RISC V based ZKVMs by at least an order of magnitude. Yeah. Mean, we were actually"
+ ],
+ [
+  0,
+  528,
+  "now already talking about trade off between like performance and the wide usage and like is it DevX basically. And actually, back to you, Za"
+ ],
+ [
+  0,
+  537,
+  "ch, you were mentioning that you kind of so you do have a ZKVM with Astec, but went more like the ZKDSL way. Is it kind of the logical like "
+ ],
+ [
+  0,
+  546,
+  "almost like going more in the performance side, like a bit like, I guess, Stackway did,"
+ ],
+ [
+  0,
+  552,
+  "even like even going further without actually doing the ZKBM? Well, it's a bit more complicated than that because it's all based around like"
+ ],
+ [
+  0,
+  561,
+  " the targeted execution environment, what we're trying to do because it's very different. It started out very different to risk zero and sto"
+ ],
+ [
+  0,
+  570,
+  "ck net. Because I think we were kind of starting that again for AIG. I was reading papers from Eli about talking about ZKBMs"
+ ],
+ [
+  0,
+  578,
+  "that had like a one hertz approver rates like back from 2015. But we got started fairly soon after that. And but we have very different focu"
+ ],
+ [
+  0,
+  588,
+  "s because back then, everyone was looking at ZK for proving blockchain transactions, doing scaling where the set of kind of operations you w"
+ ],
+ [
+  0,
+  597,
+  "ant to perform are relatively well understood, as in you know what to optimize for."
+ ],
+ [
+  0,
+  603,
+  "We wanted to do privacy at Astec. And specifically, why privacy? It's because we wanted to bring we wanted to make blockchain mainstream, wh"
+ ],
+ [
+  0,
+  612,
+  "ich means basically touching real world the the real world on chain. And what that really means is is getting attestations from Web two into"
+ ],
+ [
+  0,
+  622,
+  " Web three, and that means Web two crypto. It means doing things like verifying OAuth within"
+ ],
+ [
+  0,
+  628,
+  "Ezekiel SnarkSecond. It means doing things like verifying RSA signatures for passport proofs, which now, we we have that, well, not we, but "
+ ],
+ [
+  0,
+  639,
+  "they've built that using on top of our pruning tech. And and there's kind of this really nasty, ugly, bullshit Web two type crypto. That's v"
+ ],
+ [
+  0,
+  650,
+  "ery custom, arbitrarily defined, strange algorithms."
+ ],
+ [
+  0,
+  654,
+  "And so the path we took was very much modeled on honestly, it was I was looking at the path that computing took in the eighties and the seve"
+ ],
+ [
+  0,
+  662,
+  "nties, where, you know, you you have this you have this this brand new paradigm. Right? Like, wow. Computers are a thing. Home computers are"
+ ],
+ [
+  0,
+  669,
+  " a thing. You know? Lots of code. It's a good feature. Everybody's like, okay. We need to get on top of this. And so people start creating t"
+ ],
+ [
+  0,
+  677,
+  "hese abstraction layers to make it easy to program, programming languages."
+ ],
+ [
+  0,
+  681,
+  "You know, in the sixties, it's Fortran. In the eighties, it's basic. And and these things provide abstraction layers, which make it the comp"
+ ],
+ [
+  0,
+  688,
+  "lexity manageable, but they are fucking sorry for swearing. Fucking slow. As in, you know, yeah, you could learn to program computers in bas"
+ ],
+ [
+  0,
+  695,
+  "ic in the eighties, but if you wanted to make a decent application, you needed to write it in machine code. And, you know, I'm I'm looking a"
+ ],
+ [
+  0,
+  703,
+  "t the state of privacy tech in, you know, 2020."
+ ],
+ [
+  0,
+  705,
+  "I'm looking at what we want to achieve client side, and I'm looking at the technology that we have available. I'm thinking, you know, if you"
+ ],
+ [
+  0,
+  713,
+  " if we if we spread this up at 10 x, we spread this up at a 100 x, we would just like, what would happen is the applications would become a "
+ ],
+ [
+  0,
+  720,
+  "100 times more complex. It wouldn't become a 100 times faster. And, like, what we want to achieve versus the resources we have, the scale is"
+ ],
+ [
+  0,
+  728,
+  " so off that what we should focus on is,"
+ ],
+ [
+  0,
+  730,
+  "like maximizing the available resources we have at the cost of complexity and not try to create abstraction layers that will I thought would"
+ ],
+ [
+  0,
+  738,
+  " be a bit of an anchor around our necks in the future. And so that's why we went the DSL route. You know? Because, the thing about we can pr"
+ ],
+ [
+  0,
+  747,
+  "obably get into like, the thing about ZK VMs is they're they're they're beautifully general. As in yes. You can take any program and put the"
+ ],
+ [
+  0,
+  755,
+  "m into them. But,"
+ ],
+ [
+  0,
+  756,
+  "typically, you that might be quite slow. Right? Like, a VM has a lot of overhead because you instead of turning your your your your program "
+ ],
+ [
+  0,
+  763,
+  "statement into the constraints, you're turning into op codes, then you're verifying the op codes, which means you need a you need a memory t"
+ ],
+ [
+  0,
+  769,
+  "race. It means you need op code, like, you need to process individual op opcodes. You know, you now have a virtual machine where you're doin"
+ ],
+ [
+  0,
+  776,
+  "g loads and you're doing stores reads and writes. And if you just directly dump it into constraints, you don't have that."
+ ],
+ [
+  0,
+  782,
+  "And and so where was I going with this? Yeah. So we went, yeah, I was sort of talking. Thank you. So we're like, yeah, let's just try DSL. L"
+ ],
+ [
+  0,
+  793,
+  "et's just do this the more direct way where you take the the language tenant to constraints. You know, we we our approach to making the comp"
+ ],
+ [
+  0,
+  804,
+  "lexity manageable"
+ ],
+ [
+  0,
+  805,
+  "was much more at the DSL layer, like, where we looked at LLVM as an example, you know, NOAA doesn't compile directly to constraints, despite"
+ ],
+ [
+  0,
+  813,
+  " what I've been saying. It compiles to an intermediate representation, which isn't designed to be chunked into a virtual machine. It's desig"
+ ],
+ [
+  0,
+  820,
+  "ned to be taken by a back end compiler and converted into constraints. So it means it's modular. It means it's portable, more or less. So yo"
+ ],
+ [
+  0,
+  828,
+  "u get those advantages."
+ ],
+ [
+  0,
+  829,
+  "But much like in the in the the in the in the kind of the real world where you have this you know, you can have directly compiled programs i"
+ ],
+ [
+  0,
+  836,
+  "n languages like Rust, where you can have interpretive programs in, like, in JavaScript or Java, you have this trade off between portability"
+ ],
+ [
+  0,
+  843,
+  " and performance. And, typically, the VMs will always be slower than the direct compiled code, and we thought that would be the same for snu"
+ ],
+ [
+  0,
+  850,
+  "g circuits. So that's the way we went. Yeah. It's like pushing the ZKVM"
+ ],
+ [
+  0,
+  853,
+  "up to the point where it's not a ZKVM anymore, basically. Because, I mean, for performance reason, you had to to do things differently for, "
+ ],
+ [
+  0,
+  861,
+  "you know, clients approving, etcetera. So yeah. I saw you you picked the mic. I guess you want to to react to that. To answer to this, I it "
+ ],
+ [
+  0,
+  868,
+  "feels like maybe we're at the very, very beginning of an attempt to blur the lines between VMs and non VMs. Because I think to the point of "
+ ],
+ [
+  0,
+  876,
+  "Jacob saying, people don't change, like, specifications such as risk five very often because they're hampered by hardware."
+ ],
+ [
+  0,
+  883,
+  "In the land of VMs and ZK, you're not really. And the newest designs of provers allow you to add as many opcodes as you want, and they make "
+ ],
+ [
+  0,
+  893,
+  "the ISA very almost not fungible, but very add on like. And we saw it because VMs, as you mentioned, Zach, used to be slow. Now they're fast"
+ ],
+ [
+  0,
+  903,
+  "er. And they have identified bottlenecks in which"
+ ],
+ [
+  0,
+  907,
+  "that that they can offset by building what they call precompiled or specialized chips. But now I it feels like we're gonna get into an era w"
+ ],
+ [
+  0,
+  916,
+  "here there might be as we'll see, but it doesn't add so much cost to add a precompile, less formally very formal verification and bugs. We m"
+ ],
+ [
+  0,
+  926,
+  "ight come into a place where VMs have extension packages, and and they are completely fungible between VMs."
+ ],
+ [
+  0,
+  933,
+  "Kind of maybe I don't know if this is correct, but maybe like the SIMD extension of of ARM. So you might see RISC V, like, borrow precompile"
+ ],
+ [
+  0,
+  943,
+  "s from Cairo and then compose at the proof level. So I I have a very good opinion on that. Yes? Yeah. Okay. So I I think that I understand t"
+ ],
+ [
+  0,
+  952,
+  "hat why precompulsory come about, and it's quite a natural way of doing things. And I think they are trapped"
+ ],
+ [
+  0,
+  960,
+  "in the way that SIMD was a trap for Intel, not not ARM. Intel back in the February where the idea was, okay. So, know, it's it's like the wa"
+ ],
+ [
+  0,
+  966,
+  "s it early two thousands, and Intel's like, you know, this Cisco architecture we have is kind of a pain. How do we compete with risk? How do"
+ ],
+ [
+  0,
+  973,
+  " we, like, get more performance? Oh, I know. We'll do vectorization, right, where we'll we'll do lots and lots of instructions in parallel. "
+ ],
+ [
+  0,
+  979,
+  "And, you know, this isn't currently how programs are written, but we'll let the compilers figure it out. You know? The the the compiler engi"
+ ],
+ [
+  0,
+  986,
+  "neers are clever. They'll figure it out. And"
+ ],
+ [
+  0,
+  988,
+  "spoiler alert, they didn't. Compilers engineers looked at this, and they're like, no one uses this stuff. This is really complicated. Bleh. "
+ ],
+ [
+  0,
+  997,
+  "And that was one of the reasons why, that that led to, I believe, AMD's, first period of domination of Rintel because basically Intel made t"
+ ],
+ [
+  0,
+  1006,
+  "his this decision to do vectorization. That was too complex at the time. And and so I'm like, this at that lunch. And and so what do I think"
+ ],
+ [
+  0,
+  1014,
+  " is a trap for the g k world? It's because"
+ ],
+ [
+  0,
+  1017,
+  "precompiles are are great until they're not. As in if you want to achieve completely general purpose compute, but, like, the fundamental VM "
+ ],
+ [
+  0,
+  1025,
+  "architecture is a little bit slow, then it's you know, if you're like a protocol engineer, right, like building, like, a an EVM prover, righ"
+ ],
+ [
+  0,
+  1032,
+  "t, it's fine to go, oh, well, you know, Ketchack is slow in this VM and, Charles Flow, so we'll just write recompiles for that. But it's not"
+ ],
+ [
+  0,
+  1040,
+  " you're going to random engineers and going, can build your app in ZK, and the app is slow, and the write a precompile."
+ ],
+ [
+  0,
+  1046,
+  "Because writing a precompile is basically like defining a bunch of custom polynomial algebra. Way beyond the domain knowledge of a typical e"
+ ],
+ [
+  0,
+  1060,
+  "ngineer that's not a cryptographer, not in ZK. And so it it's a way of getting VMs to scale for applications that the VMs scale"
+ ],
+ [
+  0,
+  1072,
+  "but, like, right now, because it's a kind of a very closed bubble, right, where who the people consuming ZK VMs there, either our VM enginee"
+ ],
+ [
+  0,
+  1079,
+  "rs, they're very close to it. Right? So they can they can write complete compiles. They can figure it out themselves. If you if you wanna ge"
+ ],
+ [
+  0,
+  1086,
+  "t real mainstream adoption, if you wanna get web two people starting to use this tech, then the precompiled abstraction is going to going to"
+ ],
+ [
+  0,
+  1094,
+  " crash and burn because because, it's really,"
+ ],
+ [
+  0,
+  1096,
+  "really what what it's a statement saying only VM engineer VMX are able to handle the complexity required to speed up applications, and and I"
+ ],
+ [
+  0,
+  1108,
+  " don't think that's scalable. So I think it's not like an either or kind of situation. So you have people working on ZKVMs,"
+ ],
+ [
+  0,
+  1118,
+  "and they can write precompiles for things. Like, for instance, I'm very biased. Like, we write precompiles mainly to support the StarkNet fu"
+ ],
+ [
+  0,
+  1127,
+  "nctionality. So we introduce it's not called precompiles in Cairo. Just an opcode for the Cairo VM because we write the VM. But we introduce"
+ ],
+ [
+  0,
+  1136,
+  "d precompiles to help speed up the execution of StarkNet because that really needs to run fast. But the language is general purpose, and we "
+ ],
+ [
+  0,
+  1145,
+  "optimize for that to run fast"
+ ],
+ [
+  0,
+  1147,
+  "both on client side and for general smart contracts on Cairo. There's no uncertainty. It's not If was true, you wouldn't need to pick a bus "
+ ],
+ [
+  0,
+  1155,
+  "because it would be fast enough. Fast enough is not fast enough. Well, fast fast enough is not a well defined notion. But if it's not fast e"
+ ],
+ [
+  0,
+  1162,
+  "nough to you, why is it gonna be fast enough that anybody else that's consuming all the end? First of all, it is because it's different scal"
+ ],
+ [
+  0,
+  1170,
+  "es. If you run a small program on your computer and you want to prove it for your specific"
+ ],
+ [
+  0,
+  1175,
+  "smallish application, then you can do that, and it's good enough. If you want to run a server farm to be an operator of a closed network, th"
+ ],
+ [
+  0,
+  1183,
+  "en you can invest in precompiles or built ins or whatever you want to call it or codes that are good for you. You don't have to I don't see "
+ ],
+ [
+  0,
+  1191,
+  "it as a being I don't see why a purist approach to this is the right choice. I'm not being a I don't I'm not being a purist. I I just see my"
+ ],
+ [
+  0,
+  1199,
+  "self as much as fragment as because"
+ ],
+ [
+  0,
+  1201,
+  "when I said the this approach doesn't scale, I think you're very much validating what I'm Yeah. Great."
+ ],
+ [
+  0,
+  1230,
+  "You want to add something on precompiled? I just I think a nice thing right now is you only need, like, eight precompiled, and some ZKVMs ha"
+ ],
+ [
+  0,
+  1238,
+  "ve already written it. I will preface that with we're pretty much just proving EVM, like, state transition functions. I do think the work th"
+ ],
+ [
+  0,
+  1245,
+  "at Powder Labs is doing here with auto generated precompiles is very interesting. So they're making it to where you, like, write a general p"
+ ],
+ [
+  0,
+  1253,
+  "urpose program,"
+ ],
+ [
+  0,
+  1254,
+  "and then I'm gonna butcher the actual architecture so bad, but, like, they have a compiler that can, like, sort of generate a precompile for"
+ ],
+ [
+  0,
+  1262,
+  " you that then goes in a general purpose CKVM, which I think is pretty dope. And we're definitely tracking the work they're doing over there"
+ ],
+ [
+  0,
+  1271,
+  ". I mean, do you want to add something, I was gonna mention those as well. I just think one, it might be like a eruption of AI, but also exp"
+ ],
+ [
+  0,
+  1279,
+  "lain why there are so many ZKVMs out there. I"
+ ],
+ [
+  0,
+  1282,
+  "think there are, like, 25 ZKVMs, but there is really, like, three or four architectures, maybe five, and then adding little twists to it. So"
+ ],
+ [
+  0,
+  1290,
+  " you can add twist to the proof system, but you can also add twist to maybe the precompile. So I agree that it's not scalable. If you see pr"
+ ],
+ [
+  0,
+  1298,
+  "ecompiles or adding new extensions to your ISA as a very cumbersome process of adding constraints"
+ ],
+ [
+  0,
+  1304,
+  "by hand and having humans to do it. If you design some kind of DSL that allows you to, with a small subset of opcodes, create like, strong l"
+ ],
+ [
+  0,
+  1315,
+  "ocality like computations, kind of like what auto prep combiners are doing or maybe the Zurgen or other languages, you could technically hav"
+ ],
+ [
+  0,
+  1325,
+  "e more scalable ways to to to do it."
+ ],
+ [
+  0,
+  1328,
+  "And I have one question, but vis a vis Asthek. You guys have black boxes. I wonder if it's close to a precompiled or it's different. Yeah. S"
+ ],
+ [
+  0,
+  1336,
+  "o it's a good point. The black boxes are they are maybe slightly a little bit of technical debt, as in you're right that they are close to p"
+ ],
+ [
+  0,
+  1345,
+  "recompiled. The idea is that instead of writing a little algorithm in Noir, the idea is, like, well, our back end has, like, very, very opti"
+ ],
+ [
+  0,
+  1353,
+  "mized series of constraints that that that have been created that use"
+ ],
+ [
+  0,
+  1357,
+  "it uses parts of our operating system that aren't exposed by NOR because they're complicated. So our goal is to remove those black boxes. An"
+ ],
+ [
+  0,
+  1365,
+  "d I do think it's different because at best, they give you like a 2x speed up. It's not dramatic. You can remove them entirely. And I wanna "
+ ],
+ [
+  0,
+  1373,
+  "give an example of, like, the difference in in iterations scale of iteration between precompiles and the DSL. With the CK passport team, bec"
+ ],
+ [
+  0,
+  1381,
+  "ause I was chatting with Teo, and he was saying to me, oh, like, the the Italian passport uses SHA-one,"
+ ],
+ [
+  0,
+  1387,
+  "which is terrifying. So they were like, we need SHA one support. So I'm like, SHA one. Okay. So I basically I threw I threw together a null "
+ ],
+ [
+  0,
+  1395,
+  "library in two hours at SHA one. Job done. Right? Because it's it's easy. Right? And, you know, if I try precompile for for SHA one, like, t"
+ ],
+ [
+  0,
+  1403,
+  "hat's not that's not two hours. That's like scheduling a sprint with a team on a on a progress board. And, you know, yes, my I will I will c"
+ ],
+ [
+  0,
+  1411,
+  "hange my tune if if tooling like Powder can get to the point where you can really do this stuff"
+ ],
+ [
+  0,
+  1416,
+  "really effectively, in a very natural way, that an average Web two engineer can understand. But, I think we're quite far away from that bein"
+ ],
+ [
+  0,
+  1426,
+  "g practical, whether with without, like where Powder isn't adding in a lot of lot of things that slow things down substantially. But what if"
+ ],
+ [
+  0,
+  1435,
+  " sorry. I wanted to add to that that, like okay. For for stew now, we could go for"
+ ],
+ [
+  0,
+  1441,
+  "precompiles for things that we had precompiles for for Stone, such as Ketchak and Chateau, I believe. Yeah. But but we we didn't. It wasn't "
+ ],
+ [
+  0,
+  1452,
+  "worth the time to to do it, so we just implemented them in Cairo zero. And now when you call built in for Ketchik, it's just Cairo code in o"
+ ],
+ [
+  0,
+  1462,
+  "ur back end."
+ ],
+ [
+  0,
+  1463,
+  "So it's fast enough for for starting it. I was gonna say, to your example of writing fast, like, a SHA-one library in NOR, to some ZKVMs, th"
+ ],
+ [
+  0,
+  1477,
+  "is would be considered almost a precompile because it's a it's a constraint. And if What I'm saying is what if the ZKVM supported add on wit"
+ ],
+ [
+  0,
+  1492,
+  "h NOR, for example, and then they just treated it as a precompile because Noir compiles to a constraint. So you're saying, oh, today, ZKVM's"
+ ],
+ [
+  0,
+  1506,
+  "engineers have to go to the low level and write the constraint for SHA one by hand to STO back end. But what I'm saying is in a world where "
+ ],
+ [
+  0,
+  1526,
+  "people are looking into it, then it means that you would have your ZKVM, like, RISC V, and then, like, a NOR precompiled library where you c"
+ ],
+ [
+  0,
+  1546,
+  "an add as many NOR code and just get bundled into your proof. Yeah."
+ ],
+ [
+  0,
+  1555,
+  "Yeah. So, I mean, like, for context, for us to write a precompile with our DSL. Transferred into a precompile in Riserum, which is pretty do"
+ ],
+ [
+  0,
+  1572,
+  "pe. Not ready for production and or releasing it to the public, but something we thought about. Like,"
+ ],
+ [
+  0,
+  1584,
+  "I think I chatted with someone from your team, like, last ZK Summit. Definitely a thing you could do. We have a lot of work to do, so we won"
+ ],
+ [
+  0,
+  1591,
+  "'t prioritize productionizing that, but Nice. It's a thing. Well, I just wanna add, you know, like, I've I've come across as having some str"
+ ],
+ [
+  0,
+  1599,
+  "ong principles here. But, you know, if if ZKVM starts to integrate Noir, then I I have other principles too. You know? And I will I will"
+ ],
+ [
+  0,
+  1606,
+  "will sing the praises of your ZKVM, you know, and, yeah. Yeah. I think we already touched quite well on to pre compiled aspects. Is there ma"
+ ],
+ [
+  0,
+  1615,
+  "ybe any other, like, I don't know, angle, like differentiation ways, you know, between these 25 g k v m's? So we kind of understood that pre"
+ ],
+ [
+  0,
+  1625,
+  " compiles maybe is one aspect. Other like we didn't really touch too much about like the ISA."
+ ],
+ [
+  0,
+  1631,
+  "So yeah. Is it maybe the other big differentiation factor for for TKBN? Yeah. Go for it. I would like to talk about a differentiation factor"
+ ],
+ [
+  0,
+  1639,
+  " that people never talk about, and that is Security? No. No. No. Not security. I think that's coming We have to talk about it or something. "
+ ],
+ [
+  0,
+  1648,
+  "Yeah. We do. But use cases, like, personally, like, you ask me, like, is 25 z kVMs,"
+ ],
+ [
+  0,
+  1653,
+  "you know, too many? The answer is it it's, like, just not enough. Right? Like, you need, like, custom z k VMs probably to do, like, custom u"
+ ],
+ [
+  0,
+  1661,
+  "se cases. And the problem is is that, like, everyone's pretty much just proving ETH blocks right now. And I would probably say 25 is a littl"
+ ],
+ [
+  0,
+  1669,
+  "e too much for that single use case. But, like, very interested in client side proving with, like, something like Noir"
+ ],
+ [
+  0,
+  1676,
+  "or Maiden or, you know, doing, like, web proofs in certain ways. I think that's where we need differentiation. Let's talk about, like, custo"
+ ],
+ [
+  0,
+  1686,
+  "m ISAs and and stuff. I mean, yeah, I guess, ISAs is a a mean to an end than being the different use case. You want to add something? I wann"
+ ],
+ [
+  0,
+  1696,
+  "a build on what you're saying and say that"
+ ],
+ [
+  0,
+  1699,
+  "asking whether there are too many ZKVMs or should we use customize. Like, typically, when you start building something, you have a purpose f"
+ ],
+ [
+  0,
+  1708,
+  "or which you're building it. And I I feel like maybe this is kind of what's lacking a little bit. So everybody knows that this for years, ev"
+ ],
+ [
+  0,
+  1717,
+  "erybody has known that this is groundbreaking technology, like the ZK proofs,"
+ ],
+ [
+  0,
+  1722,
+  "finally, blockchains are a use case. Okay. We need to use ZK. But there's still, like, a little bit of a sense that people don't know what t"
+ ],
+ [
+  0,
+  1731,
+  "hey're building towards. And I think we we also, of course, at StarkWare had these considerations. And at some point, you pick a direction a"
+ ],
+ [
+  0,
+  1740,
+  "nd you have to optimize for this direction even if it's it means that yours, KVM"
+ ],
+ [
+  0,
+  1745,
+  "isn't necessarily optimized generally. But it's optimized for what you're doing and you have a purpose in mind. So I think that's it. I mean"
+ ],
+ [
+  0,
+  1754,
+  " I mean, that makes sense. Yeah. You want to add something, Nico? Use cases. I think ReZero was the first one. Yeah. Yeah. Yeah. But, like, "
+ ],
+ [
+  0,
+  1763,
+  "know, iStack's focusing on privacy. Y'all are focusing on, like, client side proving. I think some people are focusing on, like, web proofs."
+ ],
+ [
+  0,
+  1772,
+  " I think that's really fascinating."
+ ],
+ [
+  0,
+  1774,
+  "Right? I think the reason why I personally work on ZK is not to prove Ethereum blocks forever. I think one day, right, ZK is, like, as impor"
+ ],
+ [
+  0,
+  1782,
+  "tant as key pair cryptography. So let's start diving into web two stuff and, like, talking to big tech companies and, okay, what do you need"
+ ],
+ [
+  0,
+  1789,
+  "? And let's optimize for that. I think one example is we had chatted with, like, a big tech company that wanted to generate proofs on an iPh"
+ ],
+ [
+  0,
+  1797,
+  "one"
+ ],
+ [
+  0,
+  1797,
+  "for, like, RSA signatures. So we actually, like, forked risk zero and then made, like, a much more custom thing. And we actually got it to, "
+ ],
+ [
+  0,
+  1804,
+  "like, a decent time. We could generate an RSA signature in, a second and a half, but it's, like, a, like, heavy fork compared to, like, what"
+ ],
+ [
+  0,
+  1812,
+  " we let people use today. Yeah. Yeah. I mean, too few, too many. It really depends on what in your lens. Right? Are you looking at it from a"
+ ],
+ [
+  0,
+  1819,
+  " product perspective? Are you looking at it from an ecosystem perspective? You know, if I was, you know, if I was dictator of the universe, "
+ ],
+ [
+  0,
+  1826,
+  "I wouldn't force"
+ ],
+ [
+  0,
+  1827,
+  "these teams to use fewer ZKVMs. Very kind of you. Very welcome. But that being said, you know, I don't think it's wise. You know, if a new t"
+ ],
+ [
+  0,
+  1836,
+  "eam comes up and they're like, we're doing a new ZKVM to preview VM blocks, then it's like, great. You're gonna die. But Risk five. Mhmm. Th"
+ ],
+ [
+  0,
+  1845,
+  "ree. Yeah. But but but but their contributions before they die may be useful in incorporating to other things. So they'll so it'll be useful"
+ ],
+ [
+  0,
+  1854,
+  " in that way. And,"
+ ],
+ [
+  0,
+  1855,
+  "I mean, it's it's it's evolution. Right? It's natural selection. You know? Like, every every species is exploiting some kind of ecological n"
+ ],
+ [
+  0,
+  1862,
+  "iche. If you have two species exploiting the same niche and they're undifferentiated, one of them will be better at it, and the other one wi"
+ ],
+ [
+  0,
+  1869,
+  "ll die and go extinct. Because there's more competition. Yeah. And, yeah, I think what needs to happen is, you know, that the like, if you i"
+ ],
+ [
+  0,
+  1876,
+  "f you have a custom VM, like, it need you need it needs to have a purpose that's unique from others and needs to have a serve some kind of u"
+ ],
+ [
+  0,
+  1882,
+  "nique value proposition. That's"
+ ],
+ [
+  0,
+  1884,
+  "not really the case right now with the 25 z KVMs, but that'll shake out soon enough. Right? I can give a a wish list for, so I think '25 is "
+ ],
+ [
+  0,
+  1895,
+  "a good number for us to iterate and and exchange. For example, the Zisk team, when I saw Polygon was building on this file, it was like anot"
+ ],
+ [
+  0,
+  1905,
+  "her one. And then in a few, like, months, they came up with"
+ ],
+ [
+  0,
+  1910,
+  "a way to 10 x tracer speed a trace generation speed. And everyone was like, oh, okay. We have to incorporate this. So I I think in some sens"
+ ],
+ [
+  0,
+  1918,
+  "e and at the beginning when a succinct fork the zero, like, tool chain, people were like, oh, they're forking. It's open source, it's forkin"
+ ],
+ [
+  0,
+  1925,
+  "g. But then they came up with the Jack, the polynomial and the Hypercube, and then they proved the theory in real time, most of the blocks. "
+ ],
+ [
+  0,
+  1933,
+  "So I think it's quite nice. And as a community, like, at the beginning, we're fighting or very tribal."
+ ],
+ [
+  0,
+  1938,
+  "Towards the end, we're saying, okay. Everything is the same thing in some sense because now people are agreeing that you probably want to co"
+ ],
+ [
+  0,
+  1945,
+  "mpile from Rust or some high level language. So for example, Maeden started they were a very custom ZKVM. Now they're saying, okay, guys, we"
+ ],
+ [
+  0,
+  1952,
+  "'re adding WebAssembly modules. So we want higher level language support. Same for Petra. Cairo, we're thinking about being able to compile "
+ ],
+ [
+  0,
+  1959,
+  "higher level languages as well. So"
+ ],
+ [
+  0,
+  1961,
+  "that's that's one thing we kind of agree on. We say, okay. High level language is good. Custom stuff, you guys have Rust, but your recursion"
+ ],
+ [
+  0,
+  1971,
+  "s recursion is coded in to your DSL. So we agree that DSL are good. So I think, yeah, high level language is a must. So I think people are g"
+ ],
+ [
+  0,
+  1982,
+  "oing to convert to this custom"
+ ],
+ [
+  0,
+  1984,
+  "optimizations for recursion and then pushing the research the research field. So I I think I wanna add that high levels are good for end dev"
+ ],
+ [
+  0,
+  1994,
+  "elopers and lower levels are good for speed and performance. And that's okay for them to coexist because some people want to drive performan"
+ ],
+ [
+  0,
+  2004,
+  "ce and some people want stuff that's easy to do in a short period of time."
+ ],
+ [
+  0,
+  2009,
+  "But, also, I I wanna say that the eth proofs race, it it has very good aspects in the sense that it seems to be driving the technology forwa"
+ ],
+ [
+  0,
+  2019,
+  "rd. But it's also, I fear, kind of like, everybody overfitting their models to a single, like, dataset. So it's kind of, in that sense, mayb"
+ ],
+ [
+  0,
+  2029,
+  "e biasing the whole industry towards the direction that might not be that interesting."
+ ],
+ [
+  0,
+  2035,
+  "So are you guys all agreeing that Justin Griggs is basically causing you to prove theorem block and that's I mean, is it good or bad? I mean"
+ ],
+ [
+  0,
+  2044,
+  ", it's not causing me to prove Ethereum block. He's not there. He's not there. I was like honestly, peak mindshare for ZK was probably two, "
+ ],
+ [
+  0,
+  2054,
+  "three years ago. That sound about right, Zach? Everyone was, like, super hot. I mean, it's pretty much the thing. Yeah. I mean, it's we're t"
+ ],
+ [
+  0,
+  2063,
+  "rending up and, like yeah. I want ZK to be the hot thing, and the only way that's gonna be is, like, is everyone is, like, making advancemen"
+ ],
+ [
+  0,
+  2073,
+  "ts, and we have a really nice crew."
+ ],
+ [
+  0,
+  2075,
+  "Big? Today, not in the same way it was because there's less of us focus on the tech and more focus on what can this tech actually do, what a"
+ ],
+ [
+  0,
+  2084,
+  "re the products that you can build with it, which I think is completely appropriate. And, you know, I think it's no longer interesting if so"
+ ],
+ [
+  0,
+  2093,
+  "meone's like, you know, my ZKVM is 10% more performant than the other one. Great. Good job. What can you do with it? Yeah."
+ ],
+ [
+  0,
+  2101,
+  "I think also two years ago, the fight was circuit versus ZKVM. Today, it kind of sounded like ZKDSL versus ZKVM, but I think we've we're pas"
+ ],
+ [
+  0,
+  2110,
+  "t that some extent. It's not even a fight because it's like we have different, like, all the Yeah. Different trade offs and use cases. Expec"
+ ],
+ [
+  0,
+  2120,
+  "t, like, an l two a transparent l two to use a DSL. And yeah. Like, I'm not"
+ ],
+ [
+  0,
+  2125,
+  "no. Genuinely. If I was if I was proving if I was proving EVM blocks, I wouldn't use a DSL. I I don't use this. I just I just use, like, ris"
+ ],
+ [
+  0,
+  2134,
+  "k zero or, like, folks do or or use SP not. Yeah. It's just every every niche has a different way of exploiting it. But I think one cool is "
+ ],
+ [
+  0,
+  2142,
+  "can you prove on the edge devices and the local proving for privacy, but even for decentralization"
+ ],
+ [
+  0,
+  2148,
+  "to some extent. Because the over maybe the overfitting so I I know it might be temporary, but the overfitting of the e proof challenge are p"
+ ],
+ [
+  0,
+  2157,
+  "ushing people to have data centers to prove, Etherm or blockchain. I think it might be interesting to look into ZKVM plus client side provin"
+ ],
+ [
+  0,
+  2165,
+  "g stuff. So that's that's also what we're doing right now. So in in this in the land of Cairo, but also Stu. So what if you could prove Ethe"
+ ],
+ [
+  0,
+  2174,
+  "rm, but just one CPU, one GPU"
+ ],
+ [
+  0,
+  2176,
+  "in real time? Let me do it in the browser. Yeah. In the browser. Yeah. I mean, yeah, like, I I agree with you. That's it. Because we've been"
+ ],
+ [
+  0,
+  2188,
+  " focusing on very different things where, like, the the narratives around the the l twos would like, we've we've been living in a parallel d"
+ ],
+ [
+  0,
+  2200,
+  "imension, right, where for years, the okay. Right? That's fine."
+ ],
+ [
+  0,
+  2205,
+  "Secrets in it. What do you do? And so, like, everything we've done is tailored towards client side proving. I mean, it's to the it's complet"
+ ],
+ [
+  0,
+  2214,
+  "ely different. SDK stack is complete predict the future future will probably trend towards the, like, error error correcting codes, 32 bit p"
+ ],
+ [
+  0,
+  2224,
+  "rime stuff. But today, if you wanna do client side proving today efficiently with low memory,"
+ ],
+ [
+  0,
+  2230,
+  "I think we made so I just don't wanna be arrogant. I think we made all the right choices because, you know, like, today, like, take ZK passp"
+ ],
+ [
+  0,
+  2237,
+  "ort. It's on the App Store. You can download you can, like, download it right now. Like, go to the App Store and and download ZK Passport. R"
+ ],
+ [
+  0,
+  2244,
+  "ight? And it's using ZK Proof's client side, and it's really fast. So, yeah, I think I think there has been a huge amount of overfitting, an"
+ ],
+ [
+  0,
+  2251,
+  "d the ecosystem has suffered a little bit because of it. I want to say that I think our stacks are not that different"
+ ],
+ [
+  0,
+  2257,
+  "technologically. Right. Look at them. Not that different. I mean, conceptually, probably not. But, like, in terms of implementation, right, "
+ ],
+ [
+  0,
+  2265,
+  "like, if you're doing error correcting codes versus ECC, you're doing 32 bits versus two five six bit. Like, it gets really messy. If you re"
+ ],
+ [
+  0,
+  2272,
+  "ad it in two papers detailing what you what you did, these are constants. Right? Listen. If you wanna put a PR into a Brattenberg to, like, "
+ ],
+ [
+  0,
+  2280,
+  "to add add stew, you know, I would I'm all in favor of it. You know? It's it's easy. You should do it. Twenty minute job. Quick. You know, i"
+ ],
+ [
+  0,
+  2287,
+  "t'll be really quick. Really quick."
+ ],
+ [
+  0,
+  2289,
+  "So there is there is one thing I want to talk about. I had this maybe talk about benchmarking, but actually, instead of benchmarking, I want"
+ ],
+ [
+  0,
+  2296,
+  " to talk about the thing that most people don't talk about, which is the security. I so, yeah, I I want to hear you guys talk about about ho"
+ ],
+ [
+  0,
+  2303,
+  "w you, you know, contemplating that problem. Like, you know, I how do you make sure that there is no less bug? How do you for that, you know"
+ ],
+ [
+  0,
+  2311,
+  ", maybe we can talk about form verification."
+ ],
+ [
+  0,
+  2313,
+  "So, yeah, I don't know. Maybe Jacob, we can start with that. And, yeah, I'm curious to hear about whether than comparing the performances an"
+ ],
+ [
+  0,
+  2326,
+  "d, yeah, which is faster or minus 10%. Like Yeah. I mean, the tech is new. There will be bugs. I think a big, like,"
+ ],
+ [
+  0,
+  2337,
+  "point is, like, how are you gonna deal with bugs and how are you gonna constantly check and have robust pipeline? Like, you know, security i"
+ ],
+ [
+  0,
+  2345,
+  "s always a journey. It's never a destination. You're never there. You know, the current state of security in some ZK projects saddens me at "
+ ],
+ [
+  0,
+  2353,
+  "times because I think a large bug is just gonna hurt us all. So I would hope that we hold each other. You know? I think if someone would hav"
+ ],
+ [
+  0,
+  2360,
+  "e done a trusted setup ceremony"
+ ],
+ [
+  0,
+  2362,
+  "three years ago and only had the team members do the trusted set setup ceremony behind closed doors, they probably would have gotten called "
+ ],
+ [
+  0,
+  2370,
+  "out on Twitter pretty hard, but we don't do that anymore. So, yeah, I think there's great work. 20 mil up for grabs right now for formal ver"
+ ],
+ [
+  0,
+  2378,
+  "ification. If you're looking for work from the EF, there's a bunch of cool tools. Happy to work with anyone on that. We have a few tools rig"
+ ],
+ [
+  0,
+  2385,
+  "ht now that,"
+ ],
+ [
+  0,
+  2386,
+  "you you know, are are actually in production. One's called Pikus where now. We check under, which is pretty dope. Yep. Shout out to Veradis "
+ ],
+ [
+  0,
+  2394,
+  "for building that one for six months, which is really cool. And then, I think we're just lucky enough to have formal verification experts. S"
+ ],
+ [
+  0,
+  2403,
+  "o working on that. I think, you know, could we get to soundness formal verification, which, of course, you assume that the, you know, toolin"
+ ],
+ [
+  0,
+  2411,
+  "g is correct as well,"
+ ],
+ [
+  0,
+  2412,
+  "in the next nine to twelve months? Honestly, sooner than that, because if we're under constraint bugs, yeah, I think completeness is gonna b"
+ ],
+ [
+  0,
+  2421,
+  "e a whole other beast. Mhmm. Which is really difficult. We don't we're not too worried about Compass for EVM blocks specifically. Our our ou"
+ ],
+ [
+  0,
+  2430,
+  "r ZKVM tends to be pretty memory efficient and, like, all of these prover killers, we don't really have any problems with. But, hey, if you "
+ ],
+ [
+  0,
+  2439,
+  "wanna push yeah. Yeah. Yeah. Yeah. Yeah. But if you wanna push GigaGas, then, like, yeah, we might run into some problems."
+ ],
+ [
+  0,
+  2447,
+  "I just think if you can, you should adopt a very pragmatic redundancy. So if you can, you should get multiple provers that rely on different"
+ ],
+ [
+  0,
+  2455,
+  " back ends. We saw that two weeks ago, there was a bug in Punky three verifier. I think it was critical or high. So if possible, at least tw"
+ ],
+ [
+  0,
+  2463,
+  "o. Yeah. So that's just for the maybe blockchain or high security, just redundancy and the prover. And as you mentioned, formally verificati"
+ ],
+ [
+  0,
+  2471,
+  "on verification. Sorry. There's fuzzing efforts from the EF as well as fuzzing."
+ ],
+ [
+  0,
+  2476,
+  "So multi I wanted to say multilayered approach. And yeah. Yeah. Do you wanna do this? I I just wanna touch on the completeness because, like"
+ ],
+ [
+  0,
+  2485,
+  ", for us, this is a problem. Like, we have Sierra for this, so people can't use they can't write smart contracts that can't be proven in a b"
+ ],
+ [
+  0,
+  2494,
+  "lock. But even after that, we now are implementing Stu. We're testing in production. We have to make sure that, okay, there's no smart contr"
+ ],
+ [
+  0,
+  2503,
+  "act that's not provable. We have to make sure a block is not provable."
+ ],
+ [
+  0,
+  2508,
+  "Not not provable. So, like, it's a thing that we've been working towards for a long time and we are very aware of and we feel like that ther"
+ ],
+ [
+  0,
+  2519,
+  "e's maybe not enough discussion about this. Yeah. Well, I'd I'd agree with that. I think that the state security in the ZK space is very pri"
+ ],
+ [
+  0,
+  2531,
+  "mitive because largely because of the centralization."
+ ],
+ [
+  0,
+  2535,
+  "Like right now, all the the ZKLTs, right, like, the approvers are centralized. The sequences are centralized. Right? Like, we where basicall"
+ ],
+ [
+  0,
+  2542,
+  "y the p the the entity building, the the tech is running the sequencer. And so if there was a bug in the prover, it's not gonna be catastrop"
+ ],
+ [
+  0,
+  2549,
+  "hic because that bug is not gonna be exploited because you kinda trust that the people who wrote the tech are good actors, and they're not t"
+ ],
+ [
+  0,
+  2556,
+  "he Lazarus Group. For us, it gets a different"
+ ],
+ [
+  0,
+  2558,
+  "the centers are very, different. It's different kettle of fish. Right? Because we are decentralized. We launched our test net decentralized."
+ ],
+ [
+  0,
+  2566,
+  " We will launch our main net decentralized. And so if there is a bug in our prover, it can and likely will be used to steal funds. It's not "
+ ],
+ [
+  0,
+  2573,
+  "something where, like, oh, we're centralized so we can protect. And so for us, security is it's the existential fear, that that that keeps u"
+ ],
+ [
+  0,
+  2581,
+  "s up at night. It's it's not a nice to have. It's not a branding thing. It's it's it's it's a need."
+ ],
+ [
+  0,
+  2586,
+  "And so I can talk a bit about how we're doing security. You know? Like, there is no silver bullet. You know? We're we're Noah has now starte"
+ ],
+ [
+  0,
+  2594,
+  "d starting to audits. We're basically triggering our code freezes. We're triggering triggering our audit cycles now where we're doing very r"
+ ],
+ [
+  0,
+  2601,
+  "igorous internal audit processes, you know, where the idea is, you know, if the people who if you wrote a library, you wrote some code, you'"
+ ],
+ [
+  0,
+  2609,
+  "re not auditing it, you order something else."
+ ],
+ [
+  0,
+  2611,
+  "We try to be very rigorous there. After the internal audits, we do external audits, ideally more than one. And we have different ordering ag"
+ ],
+ [
+  0,
+  2619,
+  "encies for different parts of our code base because it's, you know, there's lots of ramp like, lots of different domains across the whole te"
+ ],
+ [
+  0,
+  2627,
+  "ch stack. And then we have obviously a very generous well, we'll, once we're alive, have a very generous bug bounty because we because ultim"
+ ],
+ [
+  0,
+  2634,
+  "ately, like, the you need eyeballs on this thing."
+ ],
+ [
+  0,
+  2637,
+  "We aren't gonna launch without any bugs. It's not possible. It's never been done before, and we're not gonna break that trend. What we want "
+ ],
+ [
+  0,
+  2644,
+  "to make sure is that, you know, like, we can lean on and rely on our community because the community in Web three, you know, it's full of wh"
+ ],
+ [
+  0,
+  2651,
+  "ite hats. It's full of gray hats. It's full of people who will do the right thing, particularly if there's if they if if if if they're richl"
+ ],
+ [
+  0,
+  2658,
+  "y rewarded."
+ ],
+ [
+  0,
+  2659,
+  "And we're still in this very the we're still in this window, right, where, the number of the people who actually have the domain knowledge t"
+ ],
+ [
+  0,
+  2666,
+  "o identify and exploit cryptography cryptographic bugs are typically within the industry. They're domain experts. They are high integrity. T"
+ ],
+ [
+  0,
+  2674,
+  "hat's going to change. I imagine there's probably some very, very poor brutalized North Koreans in the basement somewhere, like reading up o"
+ ],
+ [
+  0,
+  2681,
+  "n Planck and Stew"
+ ],
+ [
+  0,
+  2682,
+  "and and finite field arithmetic. Yeah. What is Goblin point? Yeah. Yeah. I am I am probably I've I'm probably psychologically torturing a co"
+ ],
+ [
+  0,
+  2689,
+  "uple of North Koreans right now. So but that so that will change. But right now, you know, we we have this small window where we really need"
+ ],
+ [
+  0,
+  2696,
+  " you know, that on our community to to help us find these bugs. Also, with our release, we even changed restructuring our entire release cyc"
+ ],
+ [
+  0,
+  2704,
+  "le around"
+ ],
+ [
+  0,
+  2704,
+  "security where, you know, we're we're focused our first main net release, we're calling it alpha, where we're gonna be very explicit about t"
+ ],
+ [
+  0,
+  2713,
+  "he risks. You know, we're not gonna be like, yo. YOLO money and, like, you know, it's great. It'll work. Like, no. We're gonna be like, this"
+ ],
+ [
+  0,
+  2722,
+  " is bloody dangerous. So, you know, like like, it's very, very dangerous."
+ ],
+ [
+  0,
+  2727,
+  "Only only, like, you you're putting your funds at risk. Expect relatively frequent hard forks as we patch things. And then once we have we w"
+ ],
+ [
+  0,
+  2734,
+  "e basically have a checklist of things that need to happen. For example, like, no serious or critical bug reports for three months, you know"
+ ],
+ [
+  0,
+  2740,
+  ", 99% block up time. And once we've once all these preflight check checkpoints have been hit, then we'll be like, okay. Now we're going to m"
+ ],
+ [
+  0,
+  2747,
+  "ove to beta where things are gonna be a bit more stable and secure. How will you know if someone has exploited the bug if the state is priva"
+ ],
+ [
+  0,
+  2753,
+  "te? How what what what if someone just spends a note and creates mince some token and you will learn That's why I said in our communication,"
+ ],
+ [
+  0,
+  2760,
+  " we'll we'll say expect hard forks because if you find a bug Ah, yeah. Would social consensus that person out of the Well, no. You just you'"
+ ],
+ [
+  0,
+  2767,
+  "d literally do a hard fork. You're like, okay. Well, like, we'd we'd like try to have to migrate everything across and then at least in"
+ ],
+ [
+  0,
+  2773,
+  "the migration, right, if you basically have to if migrating between hard fork, if you have to turn your private state into public state, the"
+ ],
+ [
+  0,
+  2782,
+  "n at the very least, you identify the if an exploit has occurred. Okay. Welcome. Yeah. It's not a, like, a welcome. Yeah. Right. Yeah. Very "
+ ],
+ [
+  0,
+  2790,
+  "aligned with Ilios. I think multi prover is gonna be very attractive. Right? Currently, to run, like, a ZK roll up per month is, like, 3 to "
+ ],
+ [
+  0,
+  2799,
+  "$4,000,"
+ ],
+ [
+  0,
+  2799,
+  "which is starting to seem like people have the appetite for this. And as we do, like, another five, ten x, I don't know, 15 x in performance"
+ ],
+ [
+  0,
+  2807,
+  " towards the end of the year, like, doing multiple proving systems, I think, is is really cool. Very much respect y'all's approach to securi"
+ ],
+ [
+  0,
+  2815,
+  "ty, and we have the same problem because Boundless is launching in, like, a few weeks, and it's fully permissionless and fully decentralized"
+ ],
+ [
+  0,
+  2823,
+  ". And, like, once they click the button, we can't stop it,"
+ ],
+ [
+  0,
+  2826,
+  "which is, like, dope and based. I hope the market cares. But, yeah, we're gonna have the same problem. I think we made proving permissionles"
+ ],
+ [
+  0,
+  2836,
+  "s on Friday on Testnet. There's already 30 provers. I do not know who they are. So I'm I'm good. Glad. I'm glad you're I'm glad you're takin"
+ ],
+ [
+  0,
+  2845,
+  "g the steps. It's cool. Yeah. I wanna say that, like, a lot of what we're doing now with Stu is preparation towards decentralizing our provi"
+ ],
+ [
+  0,
+  2855,
+  "ng. So"
+ ],
+ [
+  0,
+  2855,
+  "start net version fourteen, zero fourteen, will be the beginning of decentralized sequencing. So it will be us we implemented the entire sta"
+ ],
+ [
+  0,
+  2865,
+  "ck to have things decentralized, and we're going to run ourselves several sequencers. And the next step would be to decentralize all sequenc"
+ ],
+ [
+  0,
+  2875,
+  "ing. And after that, we want to also decentralize"
+ ],
+ [
+  0,
+  2878,
+  "proving. It's a different layer, so it adds a different layer of complexity. But this is why we are formally verifying all of our errors, au"
+ ],
+ [
+  0,
+  2886,
+  "diting everything internally, externally, and, of course, bug bounties, everything. And it is terrifying. Right? But you you have to somehow"
+ ],
+ [
+  0,
+  2894,
+  " somehow accommodate it. Yeah. One thing I didn't sorry. One one thing I forgot to mention is also we do a lot of fuzzing. Like, fuzzing is "
+ ],
+ [
+  0,
+  2903,
+  "amazing. Like, amount of bugs that we found with fuzzing that we would never find by looking at the code is really impressive."
+ ],
+ [
+  0,
+  2910,
+  "Yeah. We actually our our approach to fuzzing is just to like, with Stuna, we we just mirror our main net, and, like, test everything mirror"
+ ],
+ [
+  0,
+  2919,
+  "ed, and then you may find a lot of things that you didn't So I think we're approaching time, more or less. But I want to have a last round, "
+ ],
+ [
+  0,
+  2927,
+  "you know, coming back to the topic 25 z k v f. So just have your, I don't know, your estimation or take a gamble. Maybe we we come back in a"
+ ],
+ [
+  0,
+  2936,
+  " couple years here and we look at the at your at your prediction. So, you know, I'm wearing a a Sysmo shirt today. That's a dead company."
+ ],
+ [
+  0,
+  2944,
+  "So how many how many ZKVMs are gonna be dead in two years? And maybe is gonna is the number of ZKVM actually gonna be higher than 25 or lowe"
+ ],
+ [
+  0,
+  2952,
+  "r? I think the conclusion of our discussion is like, it kind of depends on the use case, I think. If it's only about proving Ethereum blocks"
+ ],
+ [
+  0,
+  2961,
+  ", 25 is too many probably. But if you find other use case, which I think in this room we all hope for, it's gonna it makes sense to have act"
+ ],
+ [
+  0,
+  2969,
+  "ually more than that. So, yeah, starting with you, Jacob. So 25 Companies or teams or research teams? You know, go go for it. Whatever. I"
+ ],
+ [
+  0,
+  2977,
+  "just want some gambling guesses. I hope none of them are dead and we retain the talent that we have so we can continue to advance at the pac"
+ ],
+ [
+  0,
+  2986,
+  "e we're doing. I think it's really nice. If I had to give a prediction, I think half will probably die. But at the end of it all, there will"
+ ],
+ [
+  0,
+  2996,
+  " be more Zika VMs than there are today doing more in special things, which I think is just so I want a number."
+ ],
+ [
+  0,
+  3003,
+  "I have no idea. 50? We have to convince VCs to invest in ZK Tech again. They kind of did already, but yeah. Yeah. I think, I don't know how "
+ ],
+ [
+  0,
+  3011,
+  "many are gonna be around, but I know there's a trend basically where, you know, the majority of use case is going to concentrate in a very s"
+ ],
+ [
+  0,
+  3020,
+  "mall number of ZKBMs. And the absolute the absolute number of ZKBMs will probably still increase. But, like, you know, how many how many Eth"
+ ],
+ [
+  0,
+  3028,
+  "ereum variants are there? You know, if you look at all hard folks, like,"
+ ],
+ [
+  0,
+  3032,
+  "thousands, tens of thousands. Right? But how many are actually used? One. So similarly, ZKVMs, maybe three or four. And as for what will die"
+ ],
+ [
+  0,
+  3042,
+  ", what will survive, I can make no predictions other than in five to ten years, Aztec will still be around. We we are like a cockroach. Okay"
+ ],
+ [
+  0,
+  3053,
+  ". You can't get rid of been here eight years. Weddable guess. Okay."
+ ],
+ [
+  0,
+  3058,
+  "So I I don't know if I wanna guess. I hope, like, there will be variety to match the use cases. Yeah. Use cases indefinitely,"
+ ],
+ [
+  0,
+  3083,
+  "I'm all for it. Yeah. Yeah. We all hope that's the case. I guess in terms of companies, think less. In terms of libraries, we're gonna see t"
+ ],
+ [
+  0,
+  3092,
+  "ons of flavors as modules. My guess is that some of the teams you see in the ETH proof list, not all of them are incorporate companies that "
+ ],
+ [
+  0,
+  3101,
+  "try to make a profit. Some of them are research teams. So they'll get hired probably by no. I mean, I think probably more like ten"
+ ],
+ [
+  0,
+  3109,
+  "ten incorporated companies doing ZKVM stuff. Okay. I have some guesses. So yeah. We'll get the recording. I think it's gonna be more I mean,"
+ ],
+ [
+  0,
+  3116,
+  " again, I think we all hope here that, you know, ZK is gonna get adopted and we're gonna find new use case. I think, you know, the the Googl"
+ ],
+ [
+  0,
+  3124,
+  "e initiative with their wallets incorporating ZK is kind of an example. You know, some people in this very room working on ZK Passport, stuf"
+ ],
+ [
+  0,
+  3131,
+  "f like that. It's also a way to have another use case for ZK VM other than, you know, proving Ethereum block block, even though Justin Drake"
+ ],
+ [
+  0,
+  3139,
+  " is a great guy. But there are other things you can do with ZK. So yeah. No. I hope it's gonna be more. I like the 50 prediction in terms of"
+ ],
+ [
+  0,
+  3146,
+  ", you know, how many"
+ ],
+ [
+  0,
+  3147,
+  "how many ZKVMs there are. Maybe it's not 50 companies. Maybe it's like 1,000, like, you know, if you're I don't know, roll ups. The thing is"
+ ],
+ [
+  0,
+  3155,
+  ", if it's 1,000, probably only like 1% of them are actually used. So I don't know if it's a good thing. I like 50 because it's big, but it's"
+ ],
+ [
+  0,
+  3163,
+  " not too big either. Sometimes when it's too big, it means nobody's actually using it. So yeah. I will I can make a slice here for the conne"
+ ],
+ [
+  0,
+  3171,
+  "ction, which is good. I think so"
+ ],
+ [
+  0,
+  3173,
+  "pardon? No. You gotta have faith, man. You gotta have faith. No. It's a a lot of a lot of what people are imagining, like, diversity KVMs ar"
+ ],
+ [
+  0,
+  3182,
+  "e gonna be used for is actually gonna be gobbled up by Noir. And, you know, well because Noir is very it's it's it's back end agnostic. Righ"
+ ],
+ [
+  0,
+  3191,
+  "t? It's not just an asset crypto thing. Know, world is building a back end for Noir."
+ ],
+ [
+  0,
+  3196,
+  "Several others in the works, you know, like, you can verify Noir proofs on StarkNet. And and so I think that for a lot of people, you know, "
+ ],
+ [
+  0,
+  3203,
+  "if you're not doing things like proving l two blocks, if you wanna do something client side, if you wanna do something in the world well, I'"
+ ],
+ [
+  0,
+  3211,
+  "m I'm I'm very biased here, extremely biased, but I think that NOR is gonna be quite a natural language. And that's in five to ten years. It"
+ ],
+ [
+  0,
+  3218,
+  " won't be viewed as a DSL. It'll be viewed as a language like Rust or Gerling."
+ ],
+ [
+  0,
+  3222,
+  "I think that's a new Cairo. Game on. I thought you were just Everybody's biased. Account for the for the bet. No. No. No. I'm just I'm just "
+ ],
+ [
+  0,
+  3231,
+  "saying that we'll we'll we'll the panel here thinks we'll be ZKPM. So, actually, we'll be eating by now. I I have a prediction that in twent"
+ ],
+ [
+  0,
+  3239,
+  "y four months and this is not based on any insider information. In twenty four months, there will be a big tech company using risk zero on a"
+ ],
+ [
+  0,
+  3248,
+  "n iPhone to verify proofs for privacy."
+ ],
+ [
+  0,
+  3250,
+  "Risk zero on iPhone? In twenty four months. What? Game on. Yeah. Happy to compete. I I think that in every bet, there is one liar and one on"
+ ],
+ [
+  0,
+  3260,
+  "e the in every bet, there's one cheater and one idiot. And if you don't know who you are, then you're the idiot. So I'm not going to make an"
+ ],
+ [
+  0,
+  3271,
+  "y predictions on this. But This is gonna be yeah. It's a good one. I"
+ ],
+ [
+  0,
+  3276,
+  "think it's a it's a great conclusion to this panel. Thank you very much, guys. You made my work very easy. And thanks to the organizer. Is i"
+ ],
+ [
+  0,
+  3872,
+  "t okay to start?"
+ ],
+ [
+  0,
+  3940,
+  "Should I use the mic? Mic check. I think it's gonna work. Stream. Oh, I'll just put the stream. I see. Okay. Okay. Yeah. So, so thanks. Than"
+ ],
+ [
+  0,
+  3951,
+  "k you very much for the, you know, for the invitation, and I'm very happy to be here, to give a talk on on what I'm working on, which are SN"
+ ],
+ [
+  0,
+  3962,
+  "ARKs based on lattice assumptions. So this talk would be light, you know, so that you can,"
+ ],
+ [
+  0,
+  3969,
+  "you know, you can enjoy the lunch or some food with with this presentation. So it won't be super math heavy and, and the motivations behind,"
+ ],
+ [
+  0,
+  3982,
+  " this research area. Okay. So, yeah, I will need to ask Lisa to say next every time I go through the slides. So, so next. So"
+ ],
+ [
+  0,
+  3994,
+  "okay. So so we have so the outline for the talk is, the talk will consist of three parts. So the first part will be the motivation for, latt"
+ ],
+ [
+  0,
+  4003,
+  "ice based cryptography, and the main motivation is basically post quantum cryptography. So we will cover that. Then we will move on to, to t"
+ ],
+ [
+  0,
+  4012,
+  "he question, you know, what lattices are. And then we will move on to, you know, to, at least give some"
+ ],
+ [
+  0,
+  4018,
+  "overview on how to build snarks and, you know, on the way how to build commitments, polynomial commitments, and so on. Okay? So, so I'm pret"
+ ],
+ [
+  0,
+  4029,
+  "ty sure everyone here is aware of, you know, that a lot of cryptography here is built on, you know, security of these primitives rely on som"
+ ],
+ [
+  0,
+  4040,
+  "e hard mathematical"
+ ],
+ [
+  0,
+  4041,
+  "assumptions like, discrete logarithm and RSA or factoring and so on. So, next. Sorry. Yeah. So and the problem is that, you know or, like, t"
+ ],
+ [
+  0,
+  4055,
+  "he concern is that these problems can be, efficiently solved by by quantum computer. So that's the shortest attack. Next."
+ ],
+ [
+  0,
+  4068,
+  "Yes. So now so the question is that okay. So theoretically theoretically, it's cool. But, you know, should we really care? Like, would would"
+ ],
+ [
+  0,
+  4080,
+  " they you know, is there is this a real concern, and when would these quantum computers be built next? Can we go yeah. You maybe you can, li"
+ ],
+ [
+  0,
+  4091,
+  "ke, press so that it's faster, I guess. Yeah. So, like,"
+ ],
+ [
+  0,
+  4096,
+  "many people probably have seen a lot of progress in building quantum computers by the industry leaders such as IBM, Google, and so on. And, "
+ ],
+ [
+  0,
+  4105,
+  "yeah. So there is this prediction that, so this study is from five years ago, so it may be even outdated by now. But, yeah, so there is, a 5"
+ ],
+ [
+  0,
+  4115,
+  "% chance that it can break classical crypto, but then 5050%"
+ ],
+ [
+  0,
+  4119,
+  "chance by 2050, to bill to break RSA. Okay. So then here comes the natural question. If the classical crypto can be broken, let's say, in 20"
+ ],
+ [
+  0,
+  4130,
+  "50, so, like, in twenty five years, then why should we care now? Right? Could we move on to the next slide? So the one of the main reasons i"
+ ],
+ [
+  0,
+  4141,
+  "s the the standard harvest and equip attack,"
+ ],
+ [
+  0,
+  4144,
+  "meaning that the adversary could this is a pretty problem. So"
+ ],
+ [
+  0,
+  4178,
+  "echo one, two, three. Clarissa? Yes? Yes. Right. So, obviously,"
+ ],
+ [
+  0,
+  4222,
+  "one can find, like I mean, yeah. Yeah. So so there are select specific examples where not everything is broken. But, like, you know, like so"
+ ],
+ [
+  0,
+  4240,
+  " so these efforts, you know, the standardization effort that I will talk to is about, you know, like, in general that, you know, we should m"
+ ],
+ [
+  0,
+  4258,
+  "ove on. But, like, I agree that there are specific cases where, you know, like, not everything is lost. But it really depends case by case. "
+ ],
+ [
+  0,
+  4276,
+  "Yeah."
+ ],
+ [
+  0,
+  4277,
+  "Right. Right. So what's the of the problem? Oh. Then yeah. So, like, there are these typical arguments,"
+ ],
+ [
+  0,
+  4324,
+  "like, it takes time to properly switch crypto systems if if, one needs to or, you know, like in in the case of, you know, from the research "
+ ],
+ [
+  0,
+  4335,
+  "point of view, it takes time to actually design optimal, cryptographic protocols. Next. Yeah. So yeah. So you could we can just yeah. You ca"
+ ],
+ [
+  0,
+  4347,
+  "n press next. I I don't want to, like, tell you so many times."
+ ],
+ [
+  0,
+  4352,
+  "Can you go next then? Yeah. Right. So so as consequence, we we've seen, like, multiple countries and multiple, yeah, multiple countries, con"
+ ],
+ [
+  0,
+  4364,
+  "ducting, like, standardization efforts to move on to the post quantum setting in general, like, in cryptography. And, you know, like, one on"
+ ],
+ [
+  0,
+  4376,
+  "e consequence is that, there is this NIST report,"
+ ],
+ [
+  0,
+  4380,
+  "transition to post quantum cryptography standards, which, you know, which says that, these well known, algorithms like, you know, ECDSA base"
+ ],
+ [
+  0,
+  4393,
+  "d on elliptic curves or RSA should be deprecated and disallowed after, say, 2035. Right. So then I I mentioned this, efforts on standardizin"
+ ],
+ [
+  0,
+  4407,
+  "g post quantum,"
+ ],
+ [
+  0,
+  4408,
+  "primitives. So the first step was to, standardize, signatures and encryption schemes. So could you so yeah. So then this comes to the questi"
+ ],
+ [
+  0,
+  4418,
+  "on of what's post quantum cryptography. So it is not quantum cryptography. So it's so quantum cryptography is about cryptography, which is r"
+ ],
+ [
+  0,
+  4428,
+  "un by quantum computers. Here in post quantum cryptography,"
+ ],
+ [
+  0,
+  4432,
+  "we care about the fact that we we can run these algorithms on a classical computer, so like a laptop or mobile phone, but then the security "
+ ],
+ [
+  0,
+  4442,
+  "should be, you know, should be hard, well, to break for both classical and quantum computers. Okay? And then in this landscape, we have mult"
+ ],
+ [
+  0,
+  4452,
+  "iple, computational problems that people defined."
+ ],
+ [
+  0,
+  4455,
+  "Could you please thanks. Like like lattice based cryptography. So, yes, it's a lunchtime, so I put some, food. So lattice based cryptography"
+ ],
+ [
+  0,
+  4465,
+  ", we have some hash we have the have we have the hash based cryptography, which is well known as well. Isogeny based, code based, multivaria"
+ ],
+ [
+  0,
+  4476,
+  "ble polynomial, and even more ideas coming,"
+ ],
+ [
+  0,
+  4479,
+  "by the research community. So in terms of the standardization, which, which happened, like, in 2022, we have seen four, you know, four schem"
+ ],
+ [
+  0,
+  4492,
+  "es which were selected for standardization, which are like, Kuiper, the lithium, falcon, and sphinx."
+ ],
+ [
+  0,
+  4501,
+  "And three out of four so can we get the next slide? Rely on these lattice assumptions. Okay? Can we get the next slide? So yeah. So I will I"
+ ],
+ [
+  0,
+  4516,
+  " will discuss this, in more detail, but, like, at least from a cryptographic point of view,"
+ ],
+ [
+  0,
+  4525,
+  "people can see lattice based, constructions as nice post quantum alternatives. Thanks to some of relatively small sizes compared to the poll"
+ ],
+ [
+  0,
+  4534,
+  " other post quantum schemes. Obviously, if you look at the, you know, the the group base or, pairing base, then this is these are horrible s"
+ ],
+ [
+  0,
+  4544,
+  "izes. And also, you know, somewhat fast implementation because as we will see later on, lattices,"
+ ],
+ [
+  0,
+  4550,
+  "you know, use a lot of linear algebra. So it's a lot of, matrix and matrix vector multiplication. So with this could be parallelized and so "
+ ],
+ [
+  0,
+  4559,
+  "on. So this comes the research, research question if we can design, you know, follow this this strategy and design, lattice based privacy pr"
+ ],
+ [
+  0,
+  4568,
+  "eserving applications or or SNARKs and how they compare with other existing post quantum,"
+ ],
+ [
+  0,
+  4574,
+  "hash based SNARKs. Okay. So I just want to give somewhat a landscape of what's going on at least from a research point of view. Yes. Thank y"
+ ],
+ [
+  0,
+  4587,
+  "ou. So, I would say that, it's this started, you know, as as, as expected, this was more of a theoretical world, sorry, theoretical work."
+ ],
+ [
+  0,
+  4600,
+  "So we have seen a few constructions already 2018, 2020, 2021, which I would say were more of a theoretical side because, yeah, if one were t"
+ ],
+ [
+  0,
+  4611,
+  "o instantiate that, then we would one could get, like, hundreds of megabytes basically. Thank you. So so then sorry. Can we just yeah. I thi"
+ ],
+ [
+  0,
+  4623,
+  "nk it's fine."
+ ],
+ [
+  0,
+  4624,
+  "So then it came, there was a scheme called Labrador and now you can see that, you know, the schemes get practical if you see that there are "
+ ],
+ [
+  0,
+  4634,
+  "like names association associated to them or like acronyms. Right? So then it started with Labrador, act which was arguably the first one wh"
+ ],
+ [
+  0,
+  4644,
+  "ich actually produced, like, you know, real world,"
+ ],
+ [
+  0,
+  4647,
+  "you know, sizes, basically. And then later on in, you know, in the coming years, so until now, people focus on, actually fast verification. "
+ ],
+ [
+  0,
+  4657,
+  "Okay? And then can we get one more? And then we what we will discuss I mean, not really discuss in much detail, but then, what's happening i"
+ ],
+ [
+  0,
+  4667,
+  "s that, you know, the the works which focus on fast verification, they lose on the proof size. So that's why they are a bit higher than the "
+ ],
+ [
+  0,
+  4676,
+  "Labrador,"
+ ],
+ [
+  0,
+  4677,
+  "and Greyhound is a little bit of a middle ground between between somewhat fast verifier, but, very small precise. Yes. So, so now I want to "
+ ],
+ [
+  0,
+  4690,
+  "move on to describing what lattices are very briefly, but any questions up to this point? Yes. Do you think exonony based on probability wil"
+ ],
+ [
+  0,
+  4703,
+  "l go back? I"
+ ],
+ [
+  0,
+  4704,
+  "mean, so so it's still, from what I understand, it's still going. Obviously, like, you know, like they, there was this, so, you know, so tha"
+ ],
+ [
+  0,
+  4715,
+  "t everyone's on the same page. There was, this scheme called psych which got broken recently. What's interesting enough is that people are b"
+ ],
+ [
+  0,
+  4726,
+  "uilding people are using this attack to to to break psych to actually build some stuff."
+ ],
+ [
+  0,
+  4733,
+  "So the attack can be turned into you know, a scheme, which I found pretty interesting. Yeah. To answer your question, I I don't so so there "
+ ],
+ [
+  0,
+  4745,
+  "is definitely a lot of research going on to, you know, to understand the the hardness of these isogeny based constructions. And yeah. So I I"
+ ],
+ [
+  0,
+  4757,
+  " don't have a good intuition, but it seems that it's going."
+ ],
+ [
+  0,
+  4762,
+  "Yes. So this seems you mentioned the trusted setup. Right? No. Most no. I mean, transparent setup. So it's a it's a twin over equipment Yeah"
+ ],
+ [
+  0,
+  4778,
+  ". That is space Yeah. Without where the transparent setups. Yeah. I mean, it's so I think only,"
+ ],
+ [
+  0,
+  4789,
+  "like, one one of the schemes I mentioned has trust trusted set up. There was, like, a a a slab paper. I think all of almost all of them, def"
+ ],
+ [
+  0,
+  4806,
+  "initely, most of them have transparent setup. And so do you know also vector,"
+ ],
+ [
+  0,
+  4815,
+  "like, lot of space vector? Yeah. Sure. Happy to talk. I mean, yeah, like, obviously, there are, different kind of criteria so, like, yeah. Y"
+ ],
+ [
+  0,
+  4831,
+  "ou know, so this is the the question that, you know, appears"
+ ],
+ [
+  0,
+  4838,
+  "when, you know, like, people ask me in the pub or people ask me in the family gatherings, but what is a lattice? Right? So it is not a latti"
+ ],
+ [
+  0,
+  4850,
+  "ce. So we can move on to the next slide. Yeah. So what is a lattice? Well, so here is a very, very simple, definition so that, you know, we "
+ ],
+ [
+  0,
+  4861,
+  "can make this talk somewhat light."
+ ],
+ [
+  0,
+  4864,
+  "So let b capital b be a set of linearly independent vectors, let's say. Okay. So we can define the lattice with respect to this basis b to b"
+ ],
+ [
+  0,
+  4877,
+  "e just integer, linear combinations of these factors. Okay? So for example so here are very simple examples like the,"
+ ],
+ [
+  0,
+  4887,
+  "the lattice corresponding to the set one is just, the set of all integers because all integers can be written as, you know, like integer tim"
+ ],
+ [
+  0,
+  4899,
+  "es one. Right? Similarly, if we have the set one zero zero one, then if we take, like, all the integer, linear combinations, then we get z s"
+ ],
+ [
+  0,
+  4910,
+  "quared."
+ ],
+ [
+  0,
+  4911,
+  "So maybe just, can we move on to the next slide? So maybe just, just to interact with the audience a little bit, can someone describe what, "
+ ],
+ [
+  0,
+  4923,
+  "this lattice corresponding to the, set of just two is? The even numbers. Yes. So these so this this lattice here is just the set of even num"
+ ],
+ [
+  0,
+  4936,
+  "bers."
+ ],
+ [
+  0,
+  4936,
+  "And what about this one? Maybe maybe you we let's, ask other people. So here we are looking at yeah. Yeah. It's"
+ ],
+ [
+  0,
+  4959,
+  "it's it's close. It's close. But like these, here we are looking at the set of, like, vectors of dimension two. Right? Sure. Size more, so y"
+ ],
+ [
+  0,
+  4969,
+  "ou're one dimensional embedded in the Right. Right. So so, that's good. So basically, this is this consists of all the vectors which are som"
+ ],
+ [
+  0,
+  4978,
+  "e integers, some integer in the first coordinate and zero in the second coordinate."
+ ],
+ [
+  0,
+  4984,
+  "So what are the problems we are interested in? Well, the the most fundamental one which, you know, which basically carries the whole lattice"
+ ],
+ [
+  0,
+  4994,
+  " cryptography is the so called shortest vector problem. So in the shortest vector problem, we are given the lattice with, with some basis, a"
+ ],
+ [
+  0,
+  5005,
+  "nd we have to find a short non zero vector v which is in that lattice."
+ ],
+ [
+  0,
+  5010,
+  "Okay? And when I say short, short means having small coefficients. For example, minus one zero one minus, you know so between, let's say, mi"
+ ],
+ [
+  0,
+  5022,
+  "nus beta and beta. Okay? So that's, I will denote it as the infinity norm being at most beta. So yeah. So so for those who who want some cha"
+ ],
+ [
+  0,
+  5033,
+  "llenge,"
+ ],
+ [
+  0,
+  5034,
+  "then, I I can give you the exercise where, we have the set four minus three minus five. Maybe I can write it on the board. So I won't use th"
+ ],
+ [
+  0,
+  5058,
+  "e board too much today. Sorry? V is the coefficients that you have to multiply the basis by?"
+ ],
+ [
+  0,
+  5073,
+  "No. No. Actually, v is the is the out, so you want to find the coefficients. You want to find some coefficients. So when you sum up, it's it"
+ ],
+ [
+  0,
+  5085,
+  " has ternary entries. Does that make sense? So you have to find it starts to multiply four, three, and minus one such that Yes. Exactly. And"
+ ],
+ [
+  0,
+  5097,
+  " for each each"
+ ],
+ [
+  0,
+  5098,
+  "Yes. Right. Okay. So so to sum up, you want you want to find Lambda some integers lambda one, lambda two, lambda three such that"
+ ],
+ [
+  0,
+  5128,
+  "lambda one times four minus three minus five plus lambda two times three zero one times lambda three minus one one two has minus one zero on"
+ ],
+ [
+  0,
+  5151,
+  "e coefficients,"
+ ],
+ [
+  0,
+  5154,
+  "and it's non zero. Yeah. And then we can move on. Sorry? Yeah."
+ ],
+ [
+  0,
+  5179,
+  "I think yeah. There are, like, multiple solutions available. But, yeah, it was just like a warm up question. Yeah. Probably one zero three w"
+ ],
+ [
+  0,
+  5194,
+  "orks because then the the whole vector is one zero one. Right? Like the so one zero three, then it's"
+ ],
+ [
+  0,
+  5204,
+  "yeah. Good. Yeah. So, like, in in lattice based cryptography, well, the question is, okay. So what type of lattices do we work with? Right? "
+ ],
+ [
+  0,
+  5214,
+  "So what we will work with in this talk are these, random q ary lattices. So you can think of these, these lattices as, elements in the kerne"
+ ],
+ [
+  0,
+  5225,
+  "l of a random matrix a. Okay? So we we consider vectors s"
+ ],
+ [
+  0,
+  5229,
+  "such that a s is equal to zero for some random matrix a. So then the SVP corresponding to this lattice is basically called the shortest inte"
+ ],
+ [
+  0,
+  5241,
+  "ger solution problem, which basically says that given the random matrix a, find a short nonzero vector s such that a s is equal to zero mod "
+ ],
+ [
+  0,
+  5253,
+  "q."
+ ],
+ [
+  0,
+  5253,
+  "Okay. So maybe the first question, if I if I remove the short part, then do you think this problem is still hard? So I Put zero everywhere. "
+ ],
+ [
+  0,
+  5266,
+  "If I if you I'm not sure. Sorry. I thought you said No. Yeah. Yeah. Short. Yeah. You you can not just be all here? Yeah. That's that's a per"
+ ],
+ [
+  0,
+  5279,
+  "fectly valid point. So so it can be, first of all, just all queues."
+ ],
+ [
+  0,
+  5285,
+  "The second argument is that, you know, if if parameters are chosen nicely, which is the case, one can just use linear algebra to find the so"
+ ],
+ [
+  0,
+  5301,
+  "lution. How do you define the random matrix and who provides the randomness? Right. So it it can be generated from a seat. So this is Yeah."
+ ],
+ [
+  0,
+  5316,
+  "Right. Right. So yeah. So when when we talked about this transparent setup, it's just the transparent setup is basically to generate a bunch"
+ ],
+ [
+  0,
+  5368,
+  " of random matrices. That's it. Yep. Thanks."
+ ],
+ [
+  0,
+  5384,
+  "Yes. So thanks for for moving. So yeah. So basically, can think of lattice based crypto as a combination of linear algebra, so some, vectors"
+ ],
+ [
+  0,
+  5395,
+  " and and matrices. So here's the matrix and the combination of together with shortest conditions. Okay? So so, so I think it's a very nice c"
+ ],
+ [
+  0,
+  5406,
+  "ombination of algebra and geometry."
+ ],
+ [
+  0,
+  5409,
+  "Next slide. Yeah. Or just a matrix theme shorts. Okay. So, for for the remainder of my talk, I will move on to building, commitments briefly"
+ ],
+ [
+  0,
+  5421,
+  " about polynomial commitments. But, yeah, I don't think there is much time, but, yeah, let's let's move on. Yes. So these are, like, pretty "
+ ],
+ [
+  0,
+  5434,
+  "standard stuff. I guess everyone is familiar here."
+ ],
+ [
+  0,
+  5438,
+  "So we have interactive proofs. So, yeah. So we have the prover and the witness, and the witness want the prover wants to prove knowledge of "
+ ],
+ [
+  0,
+  5447,
+  "a witness which satisfies some relation, and, the proven the verifier sends, messages to each other and then the verifier, says accept or re"
+ ],
+ [
+  0,
+  5455,
+  "ject. Then if the, you know, if the protocol is nice enough, then it can be turned non interactive using catch a mirror transform. So everyo"
+ ],
+ [
+  0,
+  5464,
+  "ne, I'm pretty sure, is familiar with all that stuff."
+ ],
+ [
+  0,
+  5467,
+  "We can move on. Right. So then just so that everyone's on the same page page, we when we talk about snarks, we we look at the case when the "
+ ],
+ [
+  0,
+  5477,
+  "proof is much smaller than the witness because if it was as large as the witness, then, you know, it could just send in the clear. And we ar"
+ ],
+ [
+  0,
+  5487,
+  "e also interested in having a fast verification."
+ ],
+ [
+  0,
+  5491,
+  "Okay? What we will discuss, I mean, yeah, what what we care about is this knowledge soundness or extract extractability property. So if a pr"
+ ],
+ [
+  0,
+  5500,
+  "over can convince the verifier with high probability, then the prover must know the witness. Okay. So or alternatively, the prover shouldn't"
+ ],
+ [
+  0,
+  5509,
+  " be a cheating prover who doesn't know the witness shouldn't be able to,"
+ ],
+ [
+  0,
+  5514,
+  "to convince the verifier. Yeah. So how to build snarks? So that's a very standard framework used nowadays is by combining a cryptographic co"
+ ],
+ [
+  0,
+  5525,
+  "mponent, which, which are the polynomial commitments together with the information theoretical object, which are polynomial interactive orac"
+ ],
+ [
+  0,
+  5535,
+  "les of proofs oracle proofs to to get, snarks or z k snarks."
+ ],
+ [
+  0,
+  5540,
+  "So in the lattice setting, can we just yeah. So in the lattice setting no. There's the definition of polynomial commitment. Right. So yeah. "
+ ],
+ [
+  0,
+  5550,
+  "So that again, everyone's on the same page. Yeah. So what's a polynomial commitment? It's, you know, you can think of it as a gen you know, "
+ ],
+ [
+  0,
+  5561,
+  "one party is just the commitment scheme. So a party who has"
+ ],
+ [
+  0,
+  5565,
+  "possesses a polynomial of degree at most l, let's say, it can commit to it using this function commit. And, interesting properties to us are"
+ ],
+ [
+  0,
+  5576,
+  ", let's say, binding. So it's hard to find two different o two different, messages f and f prime, which map to the same commitment. And, the"
+ ],
+ [
+  0,
+  5586,
+  "n we have hiding if people care about zero knowledge, then the the the adversary cannot learn any information about the the polynomial from "
+ ],
+ [
+  0,
+  5597,
+  "the commitment."
+ ],
+ [
+  0,
+  5598,
+  "Then we have the polynomial part which is basically the polynomial evaluation proof where the verifier sends the, evaluation point or like a"
+ ],
+ [
+  0,
+  5609,
+  "nother party sends the evaluation point and, the first party needs to output the out needs to output the evaluation under, you know, evaluat"
+ ],
+ [
+  0,
+  5621,
+  "ion of f f under, this evaluation point x."
+ ],
+ [
+  0,
+  5624,
+  "So f of x is equal to y together with a proof that it's it's it has done it correctly. So the pi is the proof that f of x is equal to y and "
+ ],
+ [
+  0,
+  5635,
+  "t is a commitment to f. And then we have these standards, you know, properties which are similar to what I described before like completenes"
+ ],
+ [
+  0,
+  5645,
+  "s. For an honest prover, the verifier should accept."
+ ],
+ [
+  0,
+  5649,
+  "Knowledge soundness. So, again, if a prover can convince the verifier with high probability, then it must know the, polynomial f. As your kn"
+ ],
+ [
+  0,
+  5659,
+  "owledge, succinctness everyone is familiar with, I guess. Can we move on? So in the lattice setting, what's kind of interesting is that, you"
+ ],
+ [
+  0,
+  5669,
+  " know, like even building, you know, more advanced stuff,"
+ ],
+ [
+  0,
+  5673,
+  "it's easy if one can build just commitments with succinct proofs of opening. And this seems to be very hard in the lattice case. So I just w"
+ ],
+ [
+  0,
+  5686,
+  "ant I want to give some, you know, brief, overview why this seems to be hard. Even even this step seems to be hard. Yes. Can we move on?"
+ ],
+ [
+  0,
+  5698,
+  "Good. So now let's talk a bit, you know, let's talk about some proper constructions. So the first one is the ITECH commitment, which some of"
+ ],
+ [
+  0,
+  5709,
+  " you may have seen it as, lots of space hash functions. Okay. So let's, let's define z q to be the ring of integers modulo q. And if I want "
+ ],
+ [
+  0,
+  5721,
+  "to commit to a a short message vector s"
+ ],
+ [
+  0,
+  5724,
+  "of dimension m. Let's say s is very long like, you know, dimension million or something. What we can do is that we just multiply with this r"
+ ],
+ [
+  0,
+  5735,
+  "andom matrix a from the on the left hand side to get the commitment. Okay? So so think of a as the think of a as the very wide matrix with t"
+ ],
+ [
+  0,
+  5745,
+  "he constant number of rows. And to commit to it, you just multiply a with s."
+ ],
+ [
+  0,
+  5751,
+  "So that's basically it. And because the commitment is basically the number of, the length of the commitment is the number of rows, which I s"
+ ],
+ [
+  0,
+  5764,
+  "aid is constant. Let's keep it informal as constant size. Then the, you know, like, it compresses the commitment compresses the the message,"
+ ],
+ [
+  0,
+  5777,
+  " of course."
+ ],
+ [
+  0,
+  5778,
+  "Yeah. So let me just talk about binding. So if I if someone manages to, to come up with two different messages which map to the same commitm"
+ ],
+ [
+  0,
+  5789,
+  "ent, then we will have the equation a s is equal to a s prime, not q. So if you subtract, then you get a times s minus s prime equal to zero"
+ ],
+ [
+  0,
+  5800,
+  ". And because both s and s prime were short, then s minus s prime is also short, so you've solved this."
+ ],
+ [
+  0,
+  5808,
+  "Sorry? It's impossible. Yeah. To to find two different messages which map to the same commitment. Yeah. Under under the It's it's as hard as"
+ ],
+ [
+  0,
+  5822,
+  " s I s. Okay. K. Yeah. Yeah. So under the the s I means that you have found a short non zero vector Yeah. That sort of this? Right."
+ ],
+ [
+  0,
+  5836,
+  "Which should be hard. No. I mean, you if you believe that that's this is hard, then then this implies that binding of this commitment holds."
+ ],
+ [
+  0,
+  5856,
+  " That's it. Any other questions about,"
+ ],
+ [
+  0,
+  5861,
+  "the definition? Well, about the construction. So one may think, okay. So I have this commitment scheme. Why not just you know, I already hav"
+ ],
+ [
+  0,
+  5879,
+  "e the commitment. Why not just prove knowledge of this s? Right?"
+ ],
+ [
+  0,
+  5887,
+  "So the problem here is that the main issue is the the verification time because as I described, you can think of this matrix a to be very, v"
+ ],
+ [
+  0,
+  5898,
+  "ery wide. Right? And then if it's unstructured, then the verifier would, you know, like in the process of verifying the proof, it will need "
+ ],
+ [
+  0,
+  5909,
+  "to make, you know, perform operations on this matrix a. So inherently, the verifier runtimes,"
+ ],
+ [
+  0,
+  5916,
+  "I mean, the verifier would base, first of all, have to read this a. So in, so this implies that the verifier the runtime is linear in in m. "
+ ],
+ [
+  0,
+  5928,
+  "So that's not great. There have been, some works which try to basically either add more structure to a to make the verifier, faster"
+ ],
+ [
+  0,
+  5939,
+  "or use some pre processing. Okay. And we will basically use this commitment as a subroutine to build a different style, different type commi"
+ ],
+ [
+  0,
+  5953,
+  "tment. Yeah. So I think with our time, we will only focus on the square root, but this approach can be actually"
+ ],
+ [
+  0,
+  5964,
+  "generalized to cube root, proof size or even like polylogarithmic later on. Thanks. Okay. So what is the commitment scheme? Because I said t"
+ ],
+ [
+  0,
+  5981,
+  "hat, we won't use the the vanilla ITI commitment."
+ ],
+ [
+  0,
+  5987,
+  "So the commitment scheme can be described as follows. So I have this long vector s. Sorry. Long in terms of the dimension, but, short in ter"
+ ],
+ [
+  0,
+  5997,
+  "ms of coefficients. And what I will do is, well, I said it's a square root approach. So I will split this vector s into, you know, chunks of"
+ ],
+ [
+  0,
+  6008,
+  " smaller sub vectors, into square root of m,"
+ ],
+ [
+  0,
+  6011,
+  "such, sub vectors. So I split s into s one, s two, and so on. Then I multiply then I commit to each of them using the ITECH commitment. So I"
+ ],
+ [
+  0,
+  6022,
+  " have a s one, a s two, up to a s squared of n. Okay? And then I get these, you know, partial commitments. So t one, t two, up to t square r"
+ ],
+ [
+  0,
+  6033,
+  "oot of m."
+ ],
+ [
+  0,
+  6034,
+  "So this this is my commitment scheme. And, you know, from the previous slide, we said that the commitment size is constant. So now we have s"
+ ],
+ [
+  0,
+  6045,
+  "quare root of m constant, things. So the commitment is square root. So that's the, so that's the commitment scheme and then I will move on t"
+ ],
+ [
+  0,
+  6057,
+  "o proving knowledge of an opening and why this structure helps."
+ ],
+ [
+  0,
+  6062,
+  "So any questions about, the construction? Right. I mean I mean, it's not really, you know, well, how to say it? I mean, it's yeah. You just "
+ ],
+ [
+  0,
+  6084,
+  "need to add, you know, more."
+ ],
+ [
+  0,
+  6088,
+  "Yeah. Obviously, here, you can just add more. Right? Some zeros or something. But, I would say it's, it hasn't instigated in practice, like,"
+ ],
+ [
+  0,
+  6101,
+  " much padding adds. It's still more like a, you know, theoretical side. Yeah. But yeah. Well, I mean, it's it's quite a bit different than y"
+ ],
+ [
+  0,
+  6114,
+  "ou you might pay security. Right? In what sense?"
+ ],
+ [
+  0,
+  6118,
+  "Yeah. Yeah. So, basically, your SIS will be of this instance. So you want to break SIS for this. And, what we haven't discussed basically is"
+ ],
+ [
+  0,
+  6136,
+  " that if SIS gets easier, if your matrix a is wider."
+ ],
+ [
+  0,
+  6143,
+  "What? Yes. Again. The wider, the easier? Yeah. The the wider, the easier. To solve this, I guess. Yes. Because if you can solve it for the s"
+ ],
+ [
+  0,
+  6154,
+  "mall matrix, then, you know, you can consider the the wider matrix and just those. Right? Sorry. Ignore the columns so that you end up with "
+ ],
+ [
+  0,
+  6165,
+  "a smaller instance."
+ ],
+ [
+  0,
+  6167,
+  "Yeah. Yeah. But the way the width is annual or the width is I don't know. The width is annual. So, obviously, if you can solve SIS, you know"
+ ],
+ [
+  0,
+  6179,
+  ", like, for for this. Right? Let's say a zero a one, then, you know, you can if you can solve it for a zero, then obviously you can you can "
+ ],
+ [
+  0,
+  6192,
+  "set your solution to be a zero and a zero. Right?"
+ ],
+ [
+  0,
+  6196,
+  "So this this cancels out the a one. Wait. So m can be ignored. It it's not correlated to like, is not part of the parametrized security of S"
+ ],
+ [
+  0,
+  6210,
+  "IS. Only m? Yes. It's m. Yeah. But so technically speaking, there is some, there is some dependence like minimal."
+ ],
+ [
+  0,
+  6221,
+  "A minimum or something. The there is, like, some optimal m where, the the current, lattice attacks for this problem seem to be, you know bas"
+ ],
+ [
+  0,
+  6239,
+  "ically, there is an optimal m for which the problem is the hardest based on the current attacks. Yeah. But, very good questions."
+ ],
+ [
+  0,
+  6255,
+  "So why is this, commitment scheme I described earlier interesting? Because now if you want to prove knowledge of, you know, of the opening, "
+ ],
+ [
+  0,
+  6265,
+  "it's basically this type of statement. I want to prove knowledge of some s, you know, of some s i's such that a s I is equal to t I and s i'"
+ ],
+ [
+  0,
+  6274,
+  "s are short. Yeah. Also, what I want to say is that the square root of m is just, you know, I just said it as square root of m, but, you kno"
+ ],
+ [
+  0,
+  6284,
+  "w, there is if you"
+ ],
+ [
+  0,
+  6285,
+  "you can split your vector as however you want as long as it's of equal dimension. Yeah. What I also want to highlight is that it's very extr"
+ ],
+ [
+  0,
+  6295,
+  "emely important that this a so you have bunch of state kind of bunch of similar statements but it's the same a for all of them. And you know"
+ ],
+ [
+  0,
+  6306,
+  ", if you have different a's for each, you know, for each I,"
+ ],
+ [
+  0,
+  6310,
+  "then it would this solution wouldn't work. Okay. So, this is kind of the template how how to, how the opening proof works. Well, it's actual"
+ ],
+ [
+  0,
+  6326,
+  "ly very simple. So say the verifier sends some random linear"
+ ],
+ [
+  0,
+  6333,
+  "some random coefficients and the prover outputs the linear combination of these coefficients with these s i's. Okay? So the the prover sends"
+ ],
+ [
+  0,
+  6343,
+  " z equal to c one s one plus c two s two and so on. And then the verifier just checks whether a times z is equal to c one t one plus c two t"
+ ],
+ [
+  0,
+  6354,
+  " two and so on. And then in terms of the, the proven message size which is just z in that case,"
+ ],
+ [
+  0,
+  6361,
+  "the the length of z is the same as the length of all each s I which is square root. So in particular, you we get like a square root, proof s"
+ ],
+ [
+  0,
+  6374,
+  "ize. But, yeah, as already hinted here, there is a problem. So can so the problem here lies with soundness because"
+ ],
+ [
+  0,
+  6384,
+  "I can define a cheating prover who doesn't know the witness and can convince the verifier. What's the strategy? Not really. But we can see t"
+ ],
+ [
+  0,
+  6398,
+  "hat we, you know, the prover knows as eyes which are short. But if you look at this, you know, this protocol, there's nothing about shortnes"
+ ],
+ [
+  0,
+  6412,
+  "s. Right? So how can we"
+ ],
+ [
+  0,
+  6414,
+  "make use of it, you know, as a malicious prover? Yeah. Exactly. So if you don't have any shortness condition here, the malicious prover can "
+ ],
+ [
+  0,
+  6430,
+  "just, you know, which doesn't know anything, could just solve this equation and send the corresponding set."
+ ],
+ [
+  0,
+  6442,
+  "So this leads to, sorry. Can we get another slide? The second verification condition that z should be short, okay, which would exclude this "
+ ],
+ [
+  0,
+  6454,
+  "type of, attacks. But then to if z is short, then, you know, z is defined this way. Right? So in particular, the the challenges c I should a"
+ ],
+ [
+  0,
+  6466,
+  "lso be short because if c i's were large, then z would also be large."
+ ],
+ [
+  0,
+  6472,
+  "Right? So so this means that we should pick the challenges somewhat carefully. And, so for the sake of simplicity, just say that these guys "
+ ],
+ [
+  0,
+  6483,
+  "come from z are just binary, zero one. Okay. So then for for zero one, because the challenges are short, s i's are short, then zed should al"
+ ],
+ [
+  0,
+  6495,
+  "so have small coefficients. So this would be satisfied for an honest prover,"
+ ],
+ [
+  0,
+  6501,
+  "but there is another problem here. So there is a cheating prover which can win with probability one half without knowing the full witness. A"
+ ],
+ [
+  0,
+  6524,
+  "nd what's the what's the problem? So suppose I have there is a prover which knows,"
+ ],
+ [
+  0,
+  6537,
+  "you know, all, you know, all the s, let's say s two, s three, s four, and so on, but it doesn't know the s one. What can they try to cheat t"
+ ],
+ [
+  0,
+  6556,
+  "his verifier without knowing s one? Oh, yeah. I"
+ ],
+ [
+  0,
+  6563,
+  "mean, but short. S y should be short. Yeah. Yes. So so in this particular case, the exactly. So, suppose I have this prover which knows ever"
+ ],
+ [
+  0,
+  6575,
+  "ything apart from s one and it will just hope that c one will be zero. Okay? If because if c one is zero, then the this prover can actually "
+ ],
+ [
+  0,
+  6586,
+  "respond without knowing s one. Right? Because,"
+ ],
+ [
+  0,
+  6590,
+  "for c one equal to zero, this, vanishes. Yeah. So, obviously, one can generalize this attack by, you know, by guessing c one. But yeah. So i"
+ ],
+ [
+  0,
+  6607,
+  "n particular, a cheating prover may win with probability one half. Yes. I mean so"
+ ],
+ [
+  0,
+  6617,
+  "there's so we can call it if we look consider knowledge soundness. Okay? So we can call we can call, a cheating proven malicious if it doesn"
+ ],
+ [
+  0,
+  6627,
+  "'t know the whole witness. Right? The whole witness is s one, s two, s three. So suppose it doesn't know s one. Right? So it should be the c"
+ ],
+ [
+  0,
+  6637,
+  "ase that without knowing s one, it shouldn't be able to convince the verifier."
+ ],
+ [
+  0,
+  6643,
+  "So the easy strategy is now to, you know, informally run this protocol in parallel. Can we get the next slide? So then we we have the first "
+ ],
+ [
+  0,
+  6656,
+  "invocation, second invocation, and so on. So kappa invocations of the protocol, so then the verifier sends multiple c I j's. The"
+ ],
+ [
+  0,
+  6668,
+  "and then for each, you know, first invocation, the verifier sorry, the prover outputs the corresponding z one. For the second one, it sends "
+ ],
+ [
+  0,
+  6679,
+  "z two and so on and it sends kappa kappa sets. And then the verifications equations are the same, but, you know, you you do it for each, you"
+ ],
+ [
+  0,
+  6689,
+  " know, instantiation from one to kappa."
+ ],
+ [
+  0,
+  6692,
+  "And then this attack that's that we we talked about, you know, you you get the cheating probability from one half to, one over two to the ka"
+ ],
+ [
+  0,
+  6703,
+  "ppa. Okay. So you can just pick kappa somewhat large like 128 and, you should be fine. So that's kind of the informal argument, but, like, t"
+ ],
+ [
+  0,
+  6714,
+  "here is like a proper knowledge soundness proof for this."
+ ],
+ [
+  0,
+  6719,
+  "Yeah. So then the prover message size is you can see that it has to send many of z's, so kappa of them. So that's why we have like kappa tim"
+ ],
+ [
+  0,
+  6731,
+  "es square root of n basically. Yeah. So that's kind of the, very brief overview of this square root approach. Right. So so there are a few o"
+ ],
+ [
+  0,
+  6742,
+  "ptimizations one can do to get much smaller proof sizes"
+ ],
+ [
+  0,
+  6747,
+  "because, just sticking with the square root approach will give you, I would say, like, maybe like 10 megabytes proofs or something for large"
+ ],
+ [
+  0,
+  6758,
+  " enough, messages. So there are a few tricks which I find, you know, interesting from a theoretical point of view. So now instead what we've"
+ ],
+ [
+  0,
+  6768,
+  " seen is that we had to rely you know, this protocol was over integers modulo q."
+ ],
+ [
+  0,
+  6774,
+  "But if you if we move on to, you know, much more interesting rings which are related to algebraic number theory. So if we run it over these "
+ ],
+ [
+  0,
+  6785,
+  "polynomial rings, then one could get, much better sizes. Okay. So in particular here, the problem that if I if I need challenges which are s"
+ ],
+ [
+  0,
+  6795,
+  "hort, right, because that was one of the conditions,"
+ ],
+ [
+  0,
+  6799,
+  "but we also wanted this challenge space to be large. And, in this particular case, it's it's bad because, you know, for zero one, there is t"
+ ],
+ [
+  0,
+  6809,
+  "his cheating attack of with probability one half. One can come up with these nice challenge spaces where you don't have to repeat them. Okay"
+ ],
+ [
+  0,
+  6819,
+  ". So first of the first trick is to move on from integers mod q to these polynomial rings."
+ ],
+ [
+  0,
+  6825,
+  "The second step is that, instead of having this somewhat large commitment of t one, t two, and so on, one can one can additionally commit to"
+ ],
+ [
+  0,
+  6836,
+  " these t i's together even as, you know, a single commitment basically. And then the next step is that instead of sending this set in the cl"
+ ],
+ [
+  0,
+  6847,
+  "ear, one can prove knowledge of of the final message which satisfies the verification equations"
+ ],
+ [
+  0,
+  6854,
+  "using the Labrador, protocol. So this results in a succinct commitment and proof sizes and, still square root verify runtime. Yeah. So what "
+ ],
+ [
+  0,
+  6867,
+  "I wanted to say is that if whether you can push, the square root approach to cube root, four fruit, or even, you know, logarithmic?"
+ ],
+ [
+  0,
+  6879,
+  "Yes. So it is possible. So the the idea is that when you have these commitments t one, t two, and so on, you will commit it further, basical"
+ ],
+ [
+  0,
+  6890,
+  "ly. So you commit to these commitments and then, you know, you build somewhat something of a tree and then, you kind of run this protocol th"
+ ],
+ [
+  0,
+  6901,
+  "at I showed you in the recursion."
+ ],
+ [
+  0,
+  6904,
+  "But, yeah, at some point in practice, this actually doesn't help. So, you know, maybe asymptotically, it's nice to have, you know, a logarit"
+ ],
+ [
+  0,
+  6915,
+  "hmic, verify time. But, like, in practice, what we can see is that it's not it doesn't particularly give you, like, good efficiency gains. Y"
+ ],
+ [
+  0,
+  6926,
+  "eah. So so this slide is about performance of lots of PCS."
+ ],
+ [
+  0,
+  6930,
+  "So the Greyhound that I talked about, you know, for large messages or for large polynomials, it gives you, proof sizes of of around 50 kilob"
+ ],
+ [
+  0,
+  6942,
+  "ytes, which are much better than like, other LUTs based schemes which focus on, you know, logarithmic verify time. Okay. But then, yeah. So "
+ ],
+ [
+  0,
+  6953,
+  "there there is this trade off whether you want"
+ ],
+ [
+  0,
+  6957,
+  "better verification or better proof sizes and so on. And comparing to to the hash based constructions or hash based polynomic commitments, w"
+ ],
+ [
+  0,
+  6968,
+  "e can see that, you know, they they can be somewhat comparable if we consider, like, vectors of length 1,000,000. But here we are talking ab"
+ ],
+ [
+  0,
+  6978,
+  "out, like, billions and stuff, then,"
+ ],
+ [
+  0,
+  6981,
+  "we can see that lattices performed slightly better as of now. And, you know, this should be somewhat of a this shouldn't be this shouldn't b"
+ ],
+ [
+  0,
+  6990,
+  "e a surprise because instead of relying on hash functions here, we rely on, you know, like, on these assumptions which are very rich algebra"
+ ],
+ [
+  0,
+  6998,
+  "ically. Right? Like, it uses a lot of linear algebra. There's a lot of homomorphisms. So it should be the case that this"
+ ],
+ [
+  0,
+  7006,
+  "at least intuitively that, you know, this rich algebraic structure should give you some efficiency gains. Can we get the next slide? Oh, can"
+ ],
+ [
+  0,
+  7018,
+  " the pre it's intuition. Intuition. So So I I don't don't get get it. It. Right. Right. So the intuition is that, solving lattice problems l"
+ ],
+ [
+  0,
+  7030,
+  "ike SIS should be"
+ ],
+ [
+  0,
+  7031,
+  "should seem easier than breaking hash functions because because of this rich rich algebraic structure of, you know, of, of lattices of homom"
+ ],
+ [
+  0,
+  7053,
+  "orphism. Yeah. I can give you a counterintention. Yeah. Which I don't know what is true of course. Right. Right. Right. Yeah."
+ ],
+ [
+  0,
+  7072,
+  "Yeah. I mean, it you know, it it it may also be the case. But but anyway, like, these are, like, very active fields and, you know, we've we "
+ ],
+ [
+  0,
+  7083,
+  "have seen a lot of progress in, you know, in getting, much more efficient schemes for sure. Yes? So this l is related the the the message si"
+ ],
+ [
+  0,
+  7095,
+  "ze Right. Right. Yeah. So for example,"
+ ],
+ [
+  0,
+  7098,
+  "the degree of the polynomial you commit to in the polynomial commitments. Arbitrarily like like So q so q is chosen based on like so you rel"
+ ],
+ [
+  0,
+  7109,
+  "y on this SIS assumption and then the q has to be chosen in such a way that, you know, the problem is hard. Q is what is the, you know, modu"
+ ],
+ [
+  0,
+  7120,
+  "lus, the proof system modulus. Everything you do mod q. Right? So that that's q. Yeah."
+ ],
+ [
+  0,
+  7127,
+  "But just to give some intuition, you can think of q being like around two to the 32, let's say. That's enough for SIS. Yeah. Yeah. I mean, f"
+ ],
+ [
+  0,
+  7137,
+  "or SIS, it can be like, you know, for if you look at the nest standardized schemes, it could be like two to the 16 or something. Can you say"
+ ],
+ [
+  0,
+  7147,
+  " about the prover and verify time in this thing? Right."
+ ],
+ [
+  0,
+  7151,
+  "So so what I want to say is that, at least currently with these schemes, we can see that, the hash based, proof systems are much faster in t"
+ ],
+ [
+  0,
+  7161,
+  "erms of verification, you know, with being like milliseconds or even faster than that. But for the lattice in the lattice setting, actually,"
+ ],
+ [
+  0,
+  7170,
+  " it's, it's pretty bad. I mean, okay. So not read it really depends how you define bad, but, like, it can be in the you know, it can be, lik"
+ ],
+ [
+  0,
+  7180,
+  "e, one second verification or two seconds."
+ ],
+ [
+  0,
+  7183,
+  "But what comes as a as a trade off is the proof of time, which, for extremely large statements like, you know, two to 30, it can reach aroun"
+ ],
+ [
+  0,
+  7196,
+  "d forty forty seconds, which from what I've seen in the tables can be, you know, let's say around two times faster than the, than the altern"
+ ],
+ [
+  0,
+  7208,
+  "atives, hash based alternatives. Yeah. So Sorry. Sorry. Yeah. Yes."
+ ],
+ [
+  0,
+  7214,
+  "So first, you you can try it with different hashes. Right? Yeah. Right. Right. So hash function is this thing when it hurts to the Yeah. For"
+ ],
+ [
+  0,
+  7229,
+  " the time. Right? But if it's, like, the shark 56, okay. Shark is the same size of the the digest. But there's Poseidon, there's other stuff"
+ ],
+ [
+  0,
+  7244,
+  "? Yes. I think"
+ ],
+ [
+  0,
+  7245,
+  "Using the arithmetic based function. Which I mean for a very hard time or set process? Yeah. Just one I mean, I'm just wondering. Right. So "
+ ],
+ [
+  0,
+  7254,
+  "so I think the the sizes which which were reported, so I think I took these from, like, from various papers which basically implemented thes"
+ ],
+ [
+  0,
+  7263,
+  "e or, like, instantiated these. I think these were just based on, you know, like, some SHA functions."
+ ],
+ [
+  0,
+  7269,
+  "Like, I don't think these were, like, specialized for specialized hash functions. Yes. Good. Any other questions?"
+ ],
+ [
+  0,
+  7297,
+  "So what is based Right. So the there are a lot of other motivations like, you know, like, the most popular way to build FHE is using lattice"
+ ],
+ [
+  0,
+  7313,
+  "s. And if you want some kind of verifiable FHE, then you already,"
+ ],
+ [
+  0,
+  7320,
+  "you basically have to prove some lattice statements. So so, yeah, if you want to prove that, you know, you know, your your encryption was do"
+ ],
+ [
+  0,
+  7328,
+  "ne correctly, then you end up with basically a lattice statement, like approving short s such that a s is equal to something. And then, you "
+ ],
+ [
+  0,
+  7337,
+  "know, like, of trying to convert the statement, one can also use a lattice based proof system to directly prove this lattice statement."
+ ],
+ [
+  0,
+  7345,
+  "Does it make sense? So yeah. So I guess, yeah, FHE, IO, I mean, this this sort of stuff is also the motivation for lattice based cryptograph"
+ ],
+ [
+  0,
+  7363,
+  "y. Yes? Sorry. Could you repeat the question? No. If you wanted to move the cursor Yeah. How is it looking today in the research?"
+ ],
+ [
+  0,
+  7380,
+  "Is it not yet at that moment? I I'm not super sure it's at that moment, like, at this level yet. Yeah. So I think it's a very, like, early, "
+ ],
+ [
+  0,
+  7402,
+  "looking field. Yeah. Yeah. So basically, everything I said. But yeah. So this concludes my talk. Yeah. Thanks."
+ ],
+ [
+  0,
+  7420,
+  "So so there is this, Shor's algorithm in 1994, which, you know, can be adapted to proving discrete logarithm. For SIS, yeah, obviously, it i"
+ ],
+ [
+  0,
+  7434,
+  "s hard to prove that, you know, that there is no quantum algorithm which can solve SIS. The the kind of just a brief intuition why this,"
+ ],
+ [
+  0,
+  7447,
+  "let's say, why Shor's algorithm doesn't work for SIS is is exactly this, diagram that I have, like two circles. It is, you know, the thing t"
+ ],
+ [
+  0,
+  7460,
+  "hat, you know, I guess, secures, lattice based crypto from this type of attacks is this interesting combination of, algebra and geometry."
+ ],
+ [
+  0,
+  7472,
+  "So, so because of carrying about the shortness condition, it's it circumvents these type of quantum attacks that I mentioned before. But on "
+ ],
+ [
+  0,
+  7482,
+  "the other hand, as not really hinted too much in this talk, this shortness condition also is a bit annoying in terms of constructing stuff. "
+ ],
+ [
+  0,
+  7491,
+  "Because you when you add stuff, when you analyze parameters, you always have to keep in mind that, you know, all your secrets"
+ ],
+ [
+  0,
+  7500,
+  "components should be short because this this is this is this is the fundamental problem in LATScript. So in particular, if you, you know, ad"
+ ],
+ [
+  0,
+  7509,
+  "d, know, like, if you want to do, you know, if you look at, let's say, folding schemes, I guess, like, this could be, a simple, analogy. You"
+ ],
+ [
+  0,
+  7517,
+  " have folding schemes. So in the latter setting, you could just, think about, okay. I I have this ITEC commitment. I want to use a I want to"
+ ],
+ [
+  0,
+  7526,
+  " build a folding scheme out of it that when you add, you know, when you add your,"
+ ],
+ [
+  0,
+  7531,
+  "let's say, your witnesses, then the norm grows, grows, grows, and it gets bigger, bigger, bigger. And then parameters have to be adjusted so"
+ ],
+ [
+  0,
+  7546,
+  " that this, you know, it has to be adjusted to accommodate for this norm growth. So which is gets extremely annoying, basically. Yeah. Thank"
+ ],
+ [
+  0,
+  7561,
+  "s."
+ ],
+ [
   2,
   2,
   "Okay. Do I need to stand up? Hello. You can do it how you want. Okay. I can leave from here. Welcome, everybody. Welcome, everyone. My name "
