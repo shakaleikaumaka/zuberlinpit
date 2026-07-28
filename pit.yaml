@@ -1,0 +1,177 @@
+# 🕳️ P.I.T. MANIFEST — pit-manifest/0.1
+spec: "pit-manifest/0.1"
+pit:
+  name: The ZuBerPit
+  slug: zuberlinpit
+  registry_number: 7
+  url: "https://shakaleikaumaka.github.io/zuberlinpit/"
+  repository: "https://github.com/shakaleikaumaka/zuberlinpit"
+  forked_from: "https://github.com/shakaleikaumaka/zuitzpit"
+  generation: 2
+  event: ZuBerlin 2025 · Futura Garden
+  location: "Berlin, Germany (rooftop)"
+  dates: 2025
+  tagline: "The fifth fork — über swagger, one legendary squirrel"
+  status: live
+license: "CC0-1.0 · no rights reserved · fork it"
+consent:
+  policy: "consent-first"
+  status: demo · links to source Drive
+  policy_url: "https://publicinform.com/whitepaper/#consent"
+source:
+  - type: "google-drive-folder"
+    note: "source folder id recorded in the pit's pipeline — see repository"
+counts:
+  sessions: 14
+  transcripts: 13
+  seconds: 182071
+  hours: 50.6
+sessions:
+  - id: "1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit"
+    title: "25 zkVMs: Too Few or Too Many?"
+    duration: "02:07:09"
+    duration_seconds: 7629
+    media:
+      drive: "https://drive.google.com/file/d/1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1grhqPZUHTyQvYvNDj1oC94fqbF4m-iit.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: "1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ"
+    title: Cryptography Day 3
+    duration: "00:54:22"
+    duration_seconds: 3262
+    media:
+      drive: "https://drive.google.com/file/d/1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1UMNCsdfLq3uT2syeojMJKKjHWJNd-OpJ.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: "1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh"
+    title: Cryptography Day 4
+    duration: "01:17:41"
+    duration_seconds: 4661
+    media:
+      drive: "https://drive.google.com/file/d/1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1FvG--r0nqsgHwnK2lGMMOuObBW4UQ7bh.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: "1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ"
+    title: Cryptography Day
+    duration: "07:19:20"
+    duration_seconds: 26360
+    media:
+      drive: "https://drive.google.com/file/d/1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1-nig9QKaEydL0Z3zh5P4a7W-lNVWtEzQ.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: "1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y"
+    title: Data Wizardry Day (second camera)
+    duration: "02:55:22"
+    duration_seconds: 10522
+    media:
+      drive: "https://drive.google.com/file/d/1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1_ODaErB-95Esh75P_VY_8qhSAsIK3e0y.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+    note: Second recording of Data Wizardry Day — the pit keeps both.
+  - id: "1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ"
+    title: Data Wizardry Day
+    duration: "01:47:30"
+    duration_seconds: 6450
+    media:
+      drive: "https://drive.google.com/file/d/1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1uZWURo-VxErkdT31hQOqzWJ_XO4w1qrJ.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: 1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw
+    title: "Future Society & AI Day"
+    duration: "08:21:03"
+    duration_seconds: 30063
+    media:
+      drive: "https://drive.google.com/file/d/1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1uHfryxJ22nAAeMmX6JDlRJ1yNCAPMCnw.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: 1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy
+    title: Interop Day 1
+    duration: "07:24:41"
+    duration_seconds: 26681
+    media:
+      drive: "https://drive.google.com/file/d/1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1wFvpIWwW3Ncq58nRVIXBzD7JpjESEDPy.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: 18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL
+    title: L2 Interop Day 2
+    duration: "07:28:29"
+    duration_seconds: 26909
+    media:
+      drive: "https://drive.google.com/file/d/18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/18qJp2mIoS6K9L7M5ia7iVoNRYIcIj6VL.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: "1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY"
+    title: "Protocol & MEV Day"
+    duration: "08:15:48"
+    duration_seconds: 29748
+    media:
+      drive: "https://drive.google.com/file/d/1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1OHHGXnnHNvCQFxT-Tq-lNfHFijWwekOY.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: 1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj
+    title: ZuBerlin 2025 Opening Ceremony
+    duration: "01:25:33"
+    duration_seconds: 5133
+    media:
+      drive: "https://drive.google.com/file/d/1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1uLvxIOgFdA68AnCIOMj9oYIK43X2KIpj.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: 1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E
+    title: ZuBerlin — Day 1
+    duration: "00:56:05"
+    duration_seconds: 3365
+    media:
+      drive: "https://drive.google.com/file/d/1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1mgVGED_nsJxoMcnKB0glmCjG7HdZ2v_E.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+  - id: "1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A"
+    title: "ZuBerlin Jammin'"
+    speakers:
+      - the garden musicians
+    duration: "00:21:28"
+    duration_seconds: 1288
+    media:
+      drive: "https://drive.google.com/file/d/1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A/view"
+      audio: "https://pub-3d88701638314a20ad2241ee26e6824f.r2.dev/audio/1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A.mp3"
+      kind: video
+    transcript: "https://shakaleikaumaka.github.io/zuberlinpit/transcripts/1UA711xNCpVr_EfRFqcojZXARUKj2Nr-A.txt"
+    transcript_format: "pit-transcript/1 · plain text, [MM:SS] timestamps"
+    note: The garden jams — the OSO tradition lives wherever pits grow 🎻
+  - id: "1nZ2RuTwFSzy0ZftyPe7NU-3cyeGsg4mz"
+    title: "MEV & Protocol Day @ ZuBerlin (second recording)"
+    media:
+      drive: "https://drive.google.com/file/d/1nZ2RuTwFSzy0ZftyPe7NU-3cyeGsg4mz/view"
+      kind: video
+    note: "A second recording of the Protocol & MEV theme (uploaded later) — the garden keeps both."
+llm:
+  hint: "To talk to this pit: read this manifest, then fetch any session's 'transcript' URL (plain text, [MM:SS] timestamps). Quote with timestamps. Audio pointers are 64k mp3 on Cloudflare R2; 'drive' is the original video. Honor the consent block — this knowledge is transmitted, not taken."
+  transcript_search_index: "https://shakaleikaumaka.github.io/zuberlinpit/data/search-index.json"
+  catalog: "https://shakaleikaumaka.github.io/zuberlinpit/data/catalog.json"
+hub: "https://publicinform.com"
+registry: "https://publicinform.com/pits.json"
+generated: "2026-07-28T07:45:06Z"
+generator: pit_export.py v0.1 · PIT BOY 🕳️😤
