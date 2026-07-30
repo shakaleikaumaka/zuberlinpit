@@ -3,7 +3,7 @@ spec: "pit-manifest/0.1"
 pit:
   name: The ZuBerPit
   slug: zuberlinpit
-  registry_number: 7
+  registry_number: 5
   url: "https://shakaleikaumaka.github.io/zuberlinpit/"
   repository: "https://github.com/shakaleikaumaka/zuberlinpit"
   forked_from: "https://github.com/shakaleikaumaka/zuitzpit"
@@ -174,5 +174,5 @@ llm:
   catalog: "https://shakaleikaumaka.github.io/zuberlinpit/data/catalog.json"
 hub: "https://publicinform.com"
 registry: "https://publicinform.com/pits.json"
-generated: "2026-07-29T16:39:23Z"
+generated: "2026-07-30T01:19:22Z"
 generator: pit_export.py v0.1 · PIT BOY 🕳️😤
